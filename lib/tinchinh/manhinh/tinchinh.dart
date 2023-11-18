@@ -40,9 +40,10 @@ class _MoiNhatState extends State<MoiNhat> {
               return ListView.builder(
                 itemCount: news.length,
                 itemBuilder: (context, index) {
-                  // final article = articles[index];
                   if (index == 0) {
-                    return Container1(news: news[index]);
+                    return Container1(
+                      news: news[index],
+                    );
                   } else {
                     return Container2(news: news[index]);
                   }
@@ -67,57 +68,80 @@ class Container1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(right: 10, left: 10),
-      height: 400,
-      // color: Colors.blue,
-      child: Column(
-        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Padding(padding: EdgeInsets.only(top: 10)),
-          if (news.imagetieude != null &&
-              news.imagetieude!.isNotEmpty) // Sửa thành articles
-            Expanded(
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width - 20,
-                child: ClipRect(
-                  child: AspectRatio(
-                    aspectRatio: 16 / 9,
-                    child: Image(
-                      image: NetworkImage(
-                          news.imagetieude ?? ''), // Sửa thành articles
-                      fit: BoxFit.cover,
-                      width: MediaQuery.of(context).size.width - 20,
+    return GestureDetector(
+      child: Container(
+        margin: const EdgeInsets.only(right: 10, left: 10),
+        height: 450,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Padding(padding: EdgeInsets.only(top: 5)),
+            if (news.imagetieude != null &&
+                news.imagetieude!.isNotEmpty) // Sửa thành articles
+              Expanded(
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width - 20,
+                  child: ClipRect(
+                    child: AspectRatio(
+                      aspectRatio: 16 / 9,
+                      child: Image(
+                        image: NetworkImage(
+                            news.imagetieude ?? ''), // Sửa thành articles
+                        fit: BoxFit.cover,
+                        width: MediaQuery.of(context).size.width - 20,
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          const Row(
-            children: [
-              Icon(Icons.abc),
-              Text('Báo người lao động'),
-            ],
-          ),
-          const Padding(padding: EdgeInsets.only(top: 10)),
-          Row(
-            children: [
-              Flexible(
-                child: Text(
-                  news.tieude ?? '',
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
+            const Padding(padding: EdgeInsets.only(top: 5)),
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    news.tieude ?? '',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                    maxLines: 3,
                   ),
-                  maxLines: 3,
                 ),
-              ),
-            ],
-          ),
-          Text(news.ngaytao?.toString() ?? ''),
-          const Divider()
-        ],
+              ],
+            ),
+            const Padding(padding: EdgeInsets.only(top: 5)),
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    news.noidung ?? '',
+                    maxLines: 3,
+                  ),
+                ),
+              ],
+            ),
+            const Padding(padding: EdgeInsets.only(top: 5)),
+            Text(
+              news.ngaytao?.toString() ?? '',
+              style: const TextStyle(fontSize: 12),
+            ),
+            const Padding(padding: EdgeInsets.only(top: 5)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Text(news.loaitinbai ?? ''),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.bookmark_border_outlined),
+                ),
+              ],
+            ),
+            const Divider()
+          ],
+        ),
       ),
     );
   }
@@ -130,88 +154,79 @@ class Container2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(right: 10, left: 10),
-      height: (news.imagetieude != null && news.imagetieude!.isNotEmpty)
-          ? 400
-          : 200,
-      // color: Colors.blue,
-      child: Column(
-        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          if (news.imagetieude != null &&
-              news.imagetieude!.isNotEmpty) // Sửa thành articles
-            Expanded(
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width - 20,
-                child: ClipRect(
-                  child: AspectRatio(
-                    aspectRatio: 16 / 9,
-                    child: Image(
-                      image: NetworkImage(
-                          news.imagetieude ?? ''), // Sửa thành articles
-                      fit: BoxFit.cover,
-                      width: MediaQuery.of(context).size.width - 20,
+    return GestureDetector(
+      child: Container(
+        margin: const EdgeInsets.only(right: 10, left: 10),
+        height: 450,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Padding(padding: EdgeInsets.only(top: 5)),
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    news.tieude ?? '',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
                     ),
+                    maxLines: 3,
                   ),
                 ),
-              ),
+              ],
             ),
-          const Padding(padding: EdgeInsets.only(top: 10)),
-          Row(
-            children: [
-              Flexible(
-                child: Text(
-                  news.tieude ?? '',
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
+            const Padding(padding: EdgeInsets.only(top: 5)),
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    news.noidung ?? '',
+                    maxLines: 3,
                   ),
-                  maxLines: 3,
                 ),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Flexible(
-                child: Text(
-                  news.noidung ?? '',
-                  maxLines: 4,
-                ),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text(''),
-              IconButton(
-                onPressed: () {},
-                icon: const Row(
-                  children: [
-                    Icon(
-                      Icons.visibility,
-                      color: Colors.red,
+              ],
+            ),
+            const Padding(padding: EdgeInsets.only(top: 5)),
+            Text(
+              news.ngaytao?.toString() ?? '',
+              style: const TextStyle(fontSize: 12),
+            ),
+            const Padding(padding: EdgeInsets.only(top: 5)),
+            if (news.imagetieude != null &&
+                news.imagetieude!.isNotEmpty) // Sửa thành articles
+              Expanded(
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width - 20,
+                  child: ClipRect(
+                    child: AspectRatio(
+                      aspectRatio: 16 / 9,
+                      child: Image(
+                        image: NetworkImage(
+                            news.imagetieude ?? ''), // Sửa thành articles
+                        fit: BoxFit.cover,
+                        width: MediaQuery.of(context).size.width - 20,
+                      ),
                     ),
-                    // const Padding(padding: EdgeInsets.only(right: 15)),
-                    Text(''),
-                  ],
+                  ),
                 ),
               ),
-            ],
-          ),
-
-          // const Padding(padding: EdgeInsets.only(top: 10)),
-          const Divider(
-            height: 0,
-            thickness: 10,
-            color: Color.fromARGB(255, 233, 228, 228),
-          ),
-          const Padding(padding: EdgeInsets.only(top: 10)),
-          // const Padding(padding: EdgeInsets.only(top: 10)),
-        ],
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Text(news.loaitinbai ?? ''),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.bookmark_border_outlined),
+                ),
+              ],
+            ),
+            const Divider()
+          ],
+        ),
       ),
     );
   }

@@ -69,14 +69,13 @@ class Container1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(right: 10, left: 10),
-      height: (news.imagetieude != null && news.imagetieude!.isNotEmpty)
-          ? 400
-          : 200,
+      height: 400,
       // color: Colors.blue,
       child: Column(
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          const Padding(padding: EdgeInsets.only(top: 10)),
           if (news.imagetieude != null &&
               news.imagetieude!.isNotEmpty) // Sửa thành articles
             Expanded(
@@ -95,6 +94,12 @@ class Container1 extends StatelessWidget {
                 ),
               ),
             ),
+          const Row(
+            children: [
+              Icon(Icons.abc),
+              Text('Báo người lao động'),
+            ],
+          ),
           const Padding(padding: EdgeInsets.only(top: 10)),
           Row(
             children: [
@@ -103,51 +108,15 @@ class Container1 extends StatelessWidget {
                   news.tieude ?? '',
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 18,
+                    fontSize: 20,
                   ),
                   maxLines: 3,
                 ),
               ),
             ],
           ),
-          Row(
-            children: [
-              Flexible(
-                child: Text(
-                  news.noidung ?? '',
-                  maxLines: 4,
-                ),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text(''),
-              IconButton(
-                onPressed: () {},
-                icon: const Row(
-                  children: [
-                    Icon(
-                      Icons.visibility,
-                      color: Colors.red,
-                    ),
-                    // const Padding(padding: EdgeInsets.only(right: 15)),
-                    Text(''),
-                  ],
-                ),
-              ),
-            ],
-          ),
-
-          // const Padding(padding: EdgeInsets.only(top: 10)),
-          const Divider(
-            height: 0,
-            thickness: 10,
-            color: Color.fromARGB(255, 233, 228, 228),
-          ),
-          const Padding(padding: EdgeInsets.only(top: 10)),
-          // const Padding(padding: EdgeInsets.only(top: 10)),
+          Text(news.ngaytao?.toString() ?? ''),
+          const Divider()
         ],
       ),
     );

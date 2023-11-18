@@ -31,53 +31,33 @@ class _MenuTinChinhState extends State<MenuTinChinh>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
+        title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextButton(
-              onPressed: () {},
-              child: const Row(
-                children: [
-                  Icon(
-                    Icons.fiber_new,
-                    size: 30,
-                  ),
-                  Padding(padding: EdgeInsets.only(right: 5)),
-                  Text(
-                    'Tin chính',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
-                  )
-                ],
+            Icon(
+              Icons.fiber_new,
+              size: 30,
+            ),
+            Padding(padding: EdgeInsets.only(right: 5)),
+            Text(
+              'Tin chính',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
               ),
             ),
           ],
         ),
         actions: [
-          Container(
-            margin: const EdgeInsets.only(right: 10),
-            child: Row(
-              children: [
-                TextButton(
-                  onPressed: () {},
-                  child: const Row(
-                    children: [
-                      Icon(Icons.notifications_none_outlined),
-                      Text('20'),
-                    ],
-                  ),
-                ),
-                ClipOval(
-                  child: Image.asset(
-                    'assets/images/tantv.jpg',
-                    width: 30,
-                    height: 30,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ],
+          TextButton(
+            onPressed: () {},
+            child: ClipOval(
+              child: Image.asset(
+                'assets/images/tantv.jpg',
+                width: 30,
+                height: 30,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ],

@@ -95,7 +95,7 @@ class _Container1State extends State<Container1> {
       },
       child: Container(
         margin: const EdgeInsets.only(right: 10, left: 10),
-        height: 480,
+        height: 450,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

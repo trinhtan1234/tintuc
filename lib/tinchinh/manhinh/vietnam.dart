@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:tintuc/tinchinh/bloc/news_bloc.dart';
 import 'package:tintuc/tinchinh/networking/models/model_news.dart';
 
-class MoiNhat extends StatefulWidget {
-  const MoiNhat({super.key});
+class VietNam extends StatefulWidget {
+  const VietNam({super.key});
 
   @override
-  State<MoiNhat> createState() => _MoiNhatState();
+  State<VietNam> createState() => _VietNamState();
 }
 
-class _MoiNhatState extends State<MoiNhat> {
+class _VietNamState extends State<VietNam> {
   final NewsBloc _newsbloc = NewsBloc();
 
   @override
@@ -37,15 +37,18 @@ class _MoiNhatState extends State<MoiNhat> {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               final news = snapshot.data!;
+              final tintucVietNam =
+                  news.where((news) => news.diadiem == 'Việt Nam').toList();
               return ListView.builder(
-                itemCount: news.length,
+                itemCount: tintucVietNam.length,
                 itemBuilder: (context, index) {
+                  final news = tintucVietNam[index];
                   if (index == 0) {
                     return Container1(
-                      news: news[index],
+                      news: news,
                     );
                   } else {
-                    return Container2(news: news[index]);
+                    return Container2(news: news);
                   }
                 },
               );
@@ -110,6 +113,11 @@ class Container1 extends StatelessWidget {
               ],
             ),
             const Padding(padding: EdgeInsets.only(top: 5)),
+            Text(
+              news.ngaytao?.toString() ?? '',
+              style: const TextStyle(fontSize: 12),
+            ),
+            const Padding(padding: EdgeInsets.only(top: 5)),
             Row(
               children: [
                 Expanded(
@@ -119,11 +127,6 @@ class Container1 extends StatelessWidget {
                   ),
                 ),
               ],
-            ),
-            const Padding(padding: EdgeInsets.only(top: 5)),
-            Text(
-              news.ngaytao?.toString() ?? '',
-              style: const TextStyle(fontSize: 12),
             ),
             const Padding(padding: EdgeInsets.only(top: 5)),
             Row(
@@ -177,6 +180,11 @@ class Container2 extends StatelessWidget {
               ],
             ),
             const Padding(padding: EdgeInsets.only(top: 5)),
+            Text(
+              news.ngaytao?.toString() ?? '',
+              style: const TextStyle(fontSize: 12),
+            ),
+            const Padding(padding: EdgeInsets.only(top: 5)),
             Row(
               children: [
                 Expanded(
@@ -186,11 +194,6 @@ class Container2 extends StatelessWidget {
                   ),
                 ),
               ],
-            ),
-            const Padding(padding: EdgeInsets.only(top: 5)),
-            Text(
-              news.ngaytao?.toString() ?? '',
-              style: const TextStyle(fontSize: 12),
             ),
             const Padding(padding: EdgeInsets.only(top: 5)),
             if (news.imagetieude != null &&

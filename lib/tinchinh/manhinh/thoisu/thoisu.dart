@@ -66,7 +66,7 @@ class _ThoiSuState extends State<ThoiSu> {
 }
 
 // ignore: constant_identifier_names
-enum SampleItem { itemOne, itemTwo, itemThree }
+enum SampleItem { itemOne, itemTwo }
 
 class Container1 extends StatefulWidget {
   final ModelNews news;
@@ -95,7 +95,7 @@ class _Container1State extends State<Container1> {
       },
       child: Container(
         margin: const EdgeInsets.only(right: 10, left: 10),
-        height: 450,
+        height: 480,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -148,42 +148,48 @@ class _Container1State extends State<Container1> {
               ],
             ),
             const Padding(padding: EdgeInsets.only(top: 5)),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextButton(
-                  onPressed: () {},
-                  child: Text(widget.news.loaitinbai ?? ''),
-                ),
-                // IconButton(
-                //   onPressed: () {},
-                //   icon: const Icon(Icons.bookmark_border_outlined),
-                // ),
-                MenuAnchor(
-                  builder: (BuildContext context, MenuController controller,
-                      Widget? child) {
-                    return IconButton(
-                      onPressed: () {
-                        if (controller.isOpen) {
-                          controller.close();
-                        } else {
-                          controller.open();
-                        }
-                      },
-                      icon: const Icon(Icons.bookmark_border_outlined),
-                      tooltip: 'Show menu',
-                    );
-                  },
-                  menuChildren: List<MenuItemButton>.generate(
-                    2,
-                    (int index) => MenuItemButton(
-                      onPressed: () => setState(
-                          () => selectedMenu = SampleItem.values[index]),
-                      child: Text('Item ${index + 1}'),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(widget.news.loaitinbai ?? ''),
+                  ),
+                  // IconButton(
+                  //   onPressed: () {},
+                  //   icon: const Icon(Icons.bookmark_border_outlined),
+                  // ),
+                  MenuAnchor(
+                    builder: (BuildContext context, MenuController controller,
+                        Widget? child) {
+                      return IconButton(
+                        onPressed: () {
+                          if (controller.isOpen) {
+                            controller.close();
+                          } else {
+                            controller.open();
+                          }
+                        },
+                        icon: const Icon(Icons.bookmark_border_outlined),
+                        tooltip: 'Show menu',
+                      );
+                    },
+                    menuChildren: List<MenuItemButton>.generate(
+                      2,
+                      (int index) => MenuItemButton(
+                        onPressed: () => setState(
+                            () => selectedMenu = SampleItem.values[index]),
+                        child: Row(
+                          children: [
+                            Text('Item ${index == 0}'),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             const Divider()
           ],

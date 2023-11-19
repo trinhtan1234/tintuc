@@ -1,39 +1,45 @@
 import 'package:flutter/material.dart';
 
 class ThongBao extends StatelessWidget {
-  const ThongBao({super.key});
+  const ThongBao({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Thông báo'),
+        title: const Center(
+          child: Text('Thông báo'),
+        ),
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          margin: const EdgeInsets.all(10),
-          child: const Column(
+      body: ListView.builder(
+        itemCount: 20,
+        itemBuilder: (context, index) {
+          return Column(
             children: [
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      Text('Tin hot - 1 giờ trước'),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                            'Doanh nghiệp kêu lãi suất cao, ngân hàng than không có lãi trong 2 tháng cuối năm'),
+              const Divider(),
+              Container(
+                margin: const EdgeInsets.all(10),
+                height: 80,
+                child: Row(
+                  children: [
+                    const Flexible(
+                      child: Text(
+                        'Quyền lực tuyệt đối của bà Trương Mỹ Lan trong hệ thống ngân hàng SCB',
                       ),
-                    ],
-                  ),
-                ],
+                    ),
+                    const Padding(padding: EdgeInsets.only(right: 10)),
+                    Image.asset(
+                      'assets/images/tantv.jpg',
+                      width: 80,
+                      height: 80,
+                      fit: BoxFit.cover,
+                    ),
+                  ],
+                ),
               ),
             ],
-          ),
-        ),
+          );
+        },
       ),
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tintuc/tinchinh/manhinh/giaitri.dart';
 import 'package:tintuc/tinchinh/manhinh/thegioi.dart';
-import 'package:tintuc/tinchinh/manhinh/thoisu.dart';
+import 'package:tintuc/tinchinh/manhinh/thoisu/thoisu.dart';
 import 'package:tintuc/tinchinh/manhinh/vietnam.dart';
 
 class MenuTinChinh extends StatefulWidget {

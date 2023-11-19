@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tintuc/tinchinh/bloc/news_bloc.dart';
+import 'package:tintuc/tinchinh/manhinh/thoisu/chitiet_thoisu.dart';
 import 'package:tintuc/tinchinh/networking/models/model_news.dart';
 
 class ThoiSu extends StatefulWidget {
@@ -64,35 +65,53 @@ class _ThoiSuState extends State<ThoiSu> {
   }
 }
 
-class Container1 extends StatelessWidget {
+// ignore: constant_identifier_names
+enum SampleItem { itemOne, itemTwo, itemThree }
+
+class Container1 extends StatefulWidget {
   final ModelNews news;
 
   const Container1({required this.news, Key? key}) : super(key: key);
 
   @override
+  State<Container1> createState() => _Container1State();
+}
+
+class _Container1State extends State<Container1> {
+  SampleItem? selectedMenu;
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ChiTietThoiSu(
+              news: widget.news,
+            ),
+          ),
+        );
+      },
       child: Container(
         margin: const EdgeInsets.only(right: 10, left: 10),
-        height: 400,
+        height: 450,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Padding(padding: EdgeInsets.only(top: 5)),
-            if (news.imagetieude != null &&
-                news.imagetieude!.isNotEmpty) // Sửa thành articles
-              Expanded(
-                child: SizedBox(
-                  width: MediaQuery.of(context).size.width - 20,
-                  child: ClipRect(
-                    child: AspectRatio(
-                      aspectRatio: 16 / 9,
-                      child: Image(
-                        image: NetworkImage(
-                            news.imagetieude ?? ''), // Sửa thành articles
-                        fit: BoxFit.cover,
-                        width: MediaQuery.of(context).size.width - 20,
-                      ),
+            if (widget.news.imagetieude != null &&
+                widget.news.imagetieude!.isNotEmpty) // Sửa thành articles
+              SizedBox(
+                width: MediaQuery.of(context).size.width - 20,
+                child: ClipRect(
+                  child: AspectRatio(
+                    aspectRatio: 16 / 9,
+                    child: Image(
+                      image: NetworkImage(
+                          widget.news.imagetieude ?? ''), // Sửa thành articles
+                      fit: BoxFit.cover,
+                      width: MediaQuery.of(context).size.width - 20,
                     ),
                   ),
                 ),
@@ -102,7 +121,7 @@ class Container1 extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                    news.tieude ?? '',
+                    widget.news.tieude ?? '',
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
@@ -114,7 +133,7 @@ class Container1 extends StatelessWidget {
             ),
             const Padding(padding: EdgeInsets.only(top: 5)),
             Text(
-              news.ngaytao?.toString() ?? '',
+              widget.news.ngaytao?.toString() ?? '',
               style: const TextStyle(fontSize: 12),
             ),
             const Padding(padding: EdgeInsets.only(top: 5)),
@@ -122,7 +141,7 @@ class Container1 extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                    news.noidung ?? '',
+                    widget.news.noidung ?? '',
                     maxLines: 3,
                   ),
                 ),
@@ -134,11 +153,35 @@ class Container1 extends StatelessWidget {
               children: [
                 TextButton(
                   onPressed: () {},
-                  child: Text(news.loaitinbai ?? ''),
+                  child: Text(widget.news.loaitinbai ?? ''),
                 ),
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.bookmark_border_outlined),
+                // IconButton(
+                //   onPressed: () {},
+                //   icon: const Icon(Icons.bookmark_border_outlined),
+                // ),
+                MenuAnchor(
+                  builder: (BuildContext context, MenuController controller,
+                      Widget? child) {
+                    return IconButton(
+                      onPressed: () {
+                        if (controller.isOpen) {
+                          controller.close();
+                        } else {
+                          controller.open();
+                        }
+                      },
+                      icon: const Icon(Icons.bookmark_border_outlined),
+                      tooltip: 'Show menu',
+                    );
+                  },
+                  menuChildren: List<MenuItemButton>.generate(
+                    2,
+                    (int index) => MenuItemButton(
+                      onPressed: () => setState(
+                          () => selectedMenu = SampleItem.values[index]),
+                      child: Text('Item ${index + 1}'),
+                    ),
+                  ),
                 ),
               ],
             ),

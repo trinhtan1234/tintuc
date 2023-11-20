@@ -1,0 +1,188 @@
+!! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
+Dart Code extension: 3.76.1
+Flutter extension: 3.77.20231101 (not activated)
+
+App: Visual Studio Code
+App Host: desktop
+Version: win 1.84.2
+
+
+Logging Categories:
+    DAP
+
+Mon Nov 20 2023 [08:49:01 GMT+0700 (Indochina Time)] Log file started
+[10:46:23 AM] [DAP] [Info] Starting debug session d2dfc119-37d3-48c8-8a0d-a66a8431ecfe
+[10:46:23 AM] [DAP] [Info] ==> {"command":"initialize","arguments":{"clientID":"vscode","clientName":"Visual Studio Code","adapterID":"dart","pathFormat":"path","linesStartAt1":true,"columnsStartAt1":true,"supportsVariableType":true,"supportsVariablePaging":true,"supportsRunInTerminalRequest":true,"locale":"en","supportsProgressReporting":true,"supportsInvalidatedEvent":true,"supportsMemoryReferences":true,"supportsArgsCanBeInterpretedByShell":true,"supportsMemoryEvent":true,"supportsStartDebuggingRequest":true},"type":"request","seq":1}
+[10:46:24 AM] [DAP] [Info] <== {"seq":1,"type":"response","body":{"exceptionBreakpointFilters":[{"default":false,"filter":"All","label":"All Exceptions"},{"default":true,"filter":"Unhandled","label":"Uncaught Exceptions"}],"supportsClipboardContext":true,"supportsConditionalBreakpoints":true,"supportsConfigurationDoneRequest":true,"supportsDelayedStackTraceLoading":true,"supportsEvaluateForHovers":true,"supportsLogPoints":true,"supportsRestartRequest":false,"supportsTerminateRequest":true,"supportsValueFormattingOptions":true},"command":"initialize","request_seq":1,"success":true}
+[10:46:24 AM] [DAP] [Info] <== {"seq":2,"type":"event","body":{},"event":"initialized"}
+[10:46:24 AM] [DAP] [Info] ==> {"command":"launch","arguments":{"name":"Dart  (Pixel 6 Pro API 33)","noDebug":false,"request":"launch","type":"dart","program":"D:\\Flutter\\tintuc\\lib\\main.dart","dartCodeDebugSessionID":"session-abb20","cwd":"D:\\Flutter\\tintuc","deviceId":"emulator-5554","deviceName":"Pixel 6 Pro API 33 (android-x64)","toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\src\\flutter"},"sendLogsToClient":false,"sendCustomProgressEvents":true,"allowAnsiColorOutput":true,"additionalProjectPaths":["D:\\Flutter\\tintuc"],"args":[],"vmAdditionalArgs":[],"toolArgs":["-d","emulator-5554","--devtools-server-address","http://127.0.0.1:9100/"],"vmServicePort":0,"dartSdkPath":"C:\\src\\flutter\\bin\\cache\\dart-sdk","vmServiceLogFile":"D:\\Flutter\\tintuc\\logs\\observatory.txt","maxLogLineLength":2000,"dartTestLogFile":"D:\\Flutter\\tintuc\\logs\\dart_test.txt","debugSdkLibraries":false,"debugExternalPackageLibraries":false,"showDartDeveloperLogs":true,"evaluateGettersInDebugViews":true,"evaluateToStringInDebugViews":true,"flutterSdkPath":"C:\\src\\flutter","useInspectorNotificationsForWidgetErrors":true,"flutterRunLogFile":"D:\\Flutter\\tintuc\\logs\\flutter_run.txt","flutterTestLogFile":"D:\\Flutter\\tintuc\\logs\\flutter_test.txt","showMemoryUsage":false,"debuggerType":2,"__sessionId":"d2dfc119-37d3-48c8-8a0d-a66a8431ecfe"},"type":"request","seq":2}
+[10:46:24 AM] [DAP] [Info] ==> {"command":"setExceptionBreakpoints","arguments":{"filters":["Unhandled"]},"type":"request","seq":3}
+[10:46:24 AM] [DAP] [Info] <== {"seq":3,"type":"response","body":{},"command":"setExceptionBreakpoints","request_seq":3,"success":true}
+[10:46:24 AM] [DAP] [Info] ==> {"command":"configurationDone","type":"request","seq":4}
+[10:46:24 AM] [DAP] [Info] <== {"seq":4,"type":"response","command":"configurationDone","request_seq":4,"success":true}
+[10:46:24 AM] [DAP] [Info] ==> {"command":"threads","type":"request","seq":5}
+[10:46:24 AM] [DAP] [Info] <== {"seq":5,"type":"event","body":{"message":"Launching…","progressId":"launch_1","title":"Flutter"},"event":"dart.progressStart"}
+[10:46:24 AM] [DAP] [Info] <== {"seq":6,"type":"response","command":"launch","request_seq":2,"success":true}
+[10:46:24 AM] [DAP] [Info] <== {"seq":7,"type":"response","body":{"threads":[]},"command":"threads","request_seq":5,"success":true}
+[10:46:25 AM] [DAP] [Info] <== {"seq":8,"type":"event","body":{"capabilities":{"supportsRestartRequest":true}},"event":"capabilities"}
+[10:46:25 AM] [DAP] [Info] <== {"seq":9,"type":"event","body":{"appId":"665c40d5-b6c8-4f3c-9970-f801bd0f7d0b","deviceId":"emulator-5554","directory":"D:\\Flutter\\tintuc","supportsRestart":true,"launchMode":"run","mode":"debug"},"event":"flutter.appStart"}
+[10:46:25 AM] [DAP] [Info] <== {"seq":10,"type":"event","body":{"category":"console","output":"Launching lib\\main.dart on sdk gphone x86 64 in debug mode...\n"},"event":"output"}
+[10:46:35 AM] [DAP] [Info] <== {"seq":11,"type":"event","body":{"category":"console","output":"√  Built build\\app\\outputs\\flutter-apk\\app-debug.apk.\n"},"event":"output"}
+[10:46:37 AM] [DAP] [Info] <== {"seq":12,"type":"event","body":{"progressId":"launch_1"},"event":"dart.progressEnd"}
+[10:46:37 AM] [DAP] [Info] <== {"seq":13,"type":"event","body":{"output":"Connecting to VM Service at ws://127.0.0.1:57927/JkS3mKfhknc=/ws\n"},"event":"output"}
+[10:46:37 AM] [DAP] [Info] <== {"seq":14,"type":"event","body":{"vmServiceUri":"ws://127.0.0.1:57927/JkS3mKfhknc=/ws"},"event":"dart.debuggerUris"}
+[10:46:37 AM] [DAP] [Info] <== {"seq":15,"type":"event","body":{"reason":"started","threadId":1},"event":"thread"}
+[10:46:37 AM] [DAP] [Info] <== {"seq":16,"type":"event","body":{"category":"stdout","output":"I/.example.tintuc(10075): Compiler allocated 4533KB to compile void android.view.ViewRootImpl.performTraversals()\n"},"event":"output"}
+[10:46:38 AM] [DAP] [Info] ==> {"command":"threads","type":"request","seq":6}
+[10:46:38 AM] [DAP] [Info] <== {"seq":17,"type":"response","body":{"threads":[{"id":1,"name":"main"}]},"command":"threads","request_seq":6,"success":true}
+[10:46:38 AM] [DAP] [Info] <== {"seq":18,"type":"event","body":{},"event":"flutter.appStarted"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":19,"type":"event","body":{"service":"reloadSources","method":"s0.reloadSources"},"event":"dart.serviceRegistered"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":20,"type":"event","body":{"service":"hotRestart","method":"s0.hotRestart"},"event":"dart.serviceRegistered"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":21,"type":"event","body":{"service":"flutterVersion","method":"s0.flutterVersion"},"event":"dart.serviceRegistered"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":22,"type":"event","body":{"service":"compileExpression","method":"s0.compileExpression"},"event":"dart.serviceRegistered"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":23,"type":"event","body":{"service":"flutterMemoryInfo","method":"s0.flutterMemoryInfo"},"event":"dart.serviceRegistered"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":24,"type":"event","body":{"service":"flutterGetSkSL","method":"s0.flutterGetSkSL"},"event":"dart.serviceRegistered"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":25,"type":"event","body":{"service":"flutterGetIOSBuildOptions","method":"s0.flutterGetIOSBuildOptions"},"event":"dart.serviceRegistered"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":26,"type":"event","body":{"service":"flutterGetAndroidBuildVariants","method":"s0.flutterGetAndroidBuildVariants"},"event":"dart.serviceRegistered"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":27,"type":"event","body":{"service":"flutterGetIOSUniversalLinkSettings","method":"s0.flutterGetIOSUniversalLinkSettings"},"event":"dart.serviceRegistered"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":28,"type":"event","body":{"service":"flutterGetAndroidAppLinkSettings","method":"s0.flutterGetAndroidAppLinkSettings"},"event":"dart.serviceRegistered"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":29,"type":"event","body":{"service":"launchDevTools","method":"s2.launchDevTools"},"event":"dart.serviceRegistered"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":30,"type":"event","body":{"extensionRPC":"ext.flutter.reassemble","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":31,"type":"event","body":{"extensionRPC":"ext.flutter.exit","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":32,"type":"event","body":{"extensionRPC":"ext.flutter.connectedVmServiceUri","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":33,"type":"event","body":{"extensionRPC":"ext.flutter.activeDevToolsServerAddress","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":34,"type":"event","body":{"extensionRPC":"ext.flutter.platformOverride","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":35,"type":"event","body":{"extensionRPC":"ext.flutter.brightnessOverride","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":36,"type":"event","body":{"extensionRPC":"ext.flutter.timeDilation","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":37,"type":"event","body":{"extensionRPC":"ext.flutter.evict","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":38,"type":"event","body":{"extensionRPC":"ext.flutter.invertOversizedImages","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":39,"type":"event","body":{"extensionRPC":"ext.flutter.debugPaint","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":40,"type":"event","body":{"extensionRPC":"ext.flutter.debugPaintBaselinesEnabled","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":41,"type":"event","body":{"extensionRPC":"ext.flutter.repaintRainbow","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":42,"type":"event","body":{"extensionRPC":"ext.flutter.debugDumpLayerTree","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":43,"type":"event","body":{"extensionRPC":"ext.flutter.debugDisableClipLayers","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":44,"type":"event","body":{"extensionRPC":"ext.flutter.debugDisablePhysicalShapeLayers","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":45,"type":"event","body":{"extensionRPC":"ext.flutter.debugDisableOpacityLayers","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":46,"type":"event","body":{"extensionRPC":"ext.flutter.debugDumpRenderTree","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":47,"type":"event","body":{"extensionRPC":"ext.flutter.debugDumpSemanticsTreeInTraversalOrder","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":48,"type":"event","body":{"extensionRPC":"ext.flutter.debugDumpSemanticsTreeInInverseHitTestOrder","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":49,"type":"event","body":{"extensionRPC":"ext.flutter.profileRenderObjectPaints","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":50,"type":"event","body":{"extensionRPC":"ext.flutter.profileRenderObjectLayouts","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":51,"type":"event","body":{"extensionRPC":"ext.flutter.debugDumpApp","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":52,"type":"event","body":{"extensionRPC":"ext.flutter.debugDumpFocusTree","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":53,"type":"event","body":{"extensionRPC":"ext.flutter.showPerformanceOverlay","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":54,"type":"event","body":{"extensionRPC":"ext.flutter.didSendFirstFrameEvent","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":55,"type":"event","body":{"extensionRPC":"ext.flutter.didSendFirstFrameRasterizedEvent","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":56,"type":"event","body":{"extensionRPC":"ext.flutter.fastReassemble","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":57,"type":"event","body":{"extensionRPC":"ext.flutter.profileWidgetBuilds","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":58,"type":"event","body":{"extensionRPC":"ext.flutter.profileUserWidgetBuilds","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":59,"type":"event","body":{"extensionRPC":"ext.flutter.debugAllowBanner","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":60,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.structuredErrors","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":61,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.show","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":62,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.trackRebuildDirtyWidgets","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":63,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.trackRepaintWidgets","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":64,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.disposeAllGroups","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":65,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.disposeGroup","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":66,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.isWidgetTreeReady","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":67,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.disposeId","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":68,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.setPubRootDirectories","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":69,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.addPubRootDirectories","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":70,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.removePubRootDirectories","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":71,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getPubRootDirectories","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":72,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.setSelectionById","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":73,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getParentChain","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":74,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getProperties","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":75,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getChildren","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":76,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getChildrenSummaryTree","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":77,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getChildrenDetailsSubtree","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":78,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getRootWidget","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":79,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getRootWidgetSummaryTree","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":80,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getRootWidgetSummaryTreeWithPreviews","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":81,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getDetailsSubtree","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":82,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getSelectedWidget","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":83,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getSelectedSummaryWidget","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":84,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.isWidgetCreationTracked","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":85,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.screenshot","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":86,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getLayoutExplorerNode","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":87,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.setFlexFit","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":88,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.setFlexFactor","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:38 AM] [DAP] [Info] <== {"seq":89,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.setFlexProperties","isolateId":"isolates/3734124609852639"},"event":"dart.serviceExtensionAdded"}
+[10:46:39 AM] [DAP] [Info] ==> {"command":"callService","arguments":{"method":"ext.flutter.inspector.setPubRootDirectories","params":{"isolateId":"isolates/3734124609852639","arg0":"file:///D:/Flutter/tintuc"}},"type":"request","seq":7}
+[10:46:40 AM] [DAP] [Info] <== {"seq":90,"type":"event","body":{"extension":"ext.flutter.activeDevToolsServerAddress","value":"http://127.0.0.1:9100"},"event":"flutter.serviceExtensionStateChanged"}
+[10:46:40 AM] [DAP] [Info] <== {"seq":91,"type":"event","body":{"extension":"ext.flutter.connectedVmServiceUri","value":"http://127.0.0.1:57927/JkS3mKfhknc=/"},"event":"flutter.serviceExtensionStateChanged"}
+[10:46:40 AM] [DAP] [Info] <== {"seq":92,"type":"response","body":{"result":null,"type":"_extensionType","method":"ext.flutter.inspector.setPubRootDirectories"},"command":"callService","request_seq":7,"success":true}
+[10:46:40 AM] [DAP] [Info] <== {"seq":93,"type":"event","body":{"extension":"ext.flutter.inspector.structuredErrors","value":true},"event":"flutter.serviceExtensionStateChanged"}
+[10:46:40 AM] [DAP] [Info] <== {"seq":94,"type":"event","body":{"category":"stdout","output":"W/Parcel  (10075): Expecting binder but got null!\n"},"event":"output"}
+[10:46:41 AM] [DAP] [Info] <== {"seq":95,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation(10075): app_time_stats: avg=36.60ms min=4.48ms max=231.82ms count=25\n"},"event":"output"}
+[10:46:42 AM] [DAP] [Info] <== {"seq":96,"type":"event","body":{"reason":"started","threadId":2},"event":"thread"}
+[10:46:42 AM] [DAP] [Info] <== {"seq":97,"type":"event","body":{"reason":"started","threadId":3},"event":"thread"}
+[10:46:42 AM] [DAP] [Info] <== {"seq":98,"type":"event","body":{"reason":"started","threadId":4},"event":"thread"}
+[10:46:42 AM] [DAP] [Info] ==> {"command":"threads","type":"request","seq":8}
+[10:46:42 AM] [DAP] [Info] <== {"seq":99,"type":"response","body":{"threads":[{"id":1,"name":"main"},{"id":2,"name":"Closure: (String, {((Object?, Object?) => Object?)? reviver}) => dynamic from Function 'jsonDecode': static."},{"id":3,"name":"Closure: (String, {((Object?, Object?) => Object?)? reviver}) => dynamic from Function 'jsonDecode': static."},{"id":4,"name":"Closure: (String, {((Object?, Object?) => Object?)? reviver}) => dynamic from Function 'jsonDecode': static."}]},"command":"threads","request_seq":8,"success":true}
+[10:46:42 AM] [DAP] [Info] <== {"seq":100,"type":"event","body":{"reason":"started","threadId":5},"event":"thread"}
+[10:46:42 AM] [DAP] [Info] ==> {"command":"threads","type":"request","seq":9}
+[10:46:42 AM] [DAP] [Info] <== {"seq":101,"type":"response","body":{"threads":[{"id":1,"name":"main"},{"id":2,"name":"Closure: (String, {((Object?, Object?) => Object?)? reviver}) => dynamic from Function 'jsonDecode': static."},{"id":3,"name":"Closure: (String, {((Object?, Object?) => Object?)? reviver}) => dynamic from Function 'jsonDecode': static."},{"id":4,"name":"Closure: (String, {((Object?, Object?) => Object?)? reviver}) => dynamic from Function 'jsonDecode': static."},{"id":5,"name":"Closure: (String, {((Object?, Object?) => Object?)? reviver}) => dynamic from Function 'jsonDecode': static."}]},"command":"threads","request_seq":9,"success":true}
+[10:46:42 AM] [DAP] [Info] <== {"seq":102,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation(10075): app_time_stats: avg=21.48ms min=3.21ms max=68.13ms count=28\n"},"event":"output"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":103,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpEnableTimelineLogging","isolateId":"isolates/1652468069276815"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":104,"type":"event","body":{"extensionRPC":"ext.dart.io.setHttpEnableTimelineLogging","isolateId":"isolates/1652468069276815"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":105,"type":"event","body":{"extensionRPC":"ext.dart.io.httpEnableTimelineLogging","isolateId":"isolates/1652468069276815"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":106,"type":"event","body":{"extensionRPC":"ext.dart.io.getSocketProfile","isolateId":"isolates/1652468069276815"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":107,"type":"event","body":{"extensionRPC":"ext.dart.io.startSocketProfiling","isolateId":"isolates/1652468069276815"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":108,"type":"event","body":{"extensionRPC":"ext.dart.io.pauseSocketProfiling","isolateId":"isolates/1652468069276815"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":109,"type":"event","body":{"extensionRPC":"ext.dart.io.socketProfilingEnabled","isolateId":"isolates/1652468069276815"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":110,"type":"event","body":{"extensionRPC":"ext.dart.io.clearSocketProfile","isolateId":"isolates/1652468069276815"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":111,"type":"event","body":{"extensionRPC":"ext.dart.io.getVersion","isolateId":"isolates/1652468069276815"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":112,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfile","isolateId":"isolates/1652468069276815"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":113,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfileRequest","isolateId":"isolates/1652468069276815"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":114,"type":"event","body":{"extensionRPC":"ext.dart.io.clearHttpProfile","isolateId":"isolates/1652468069276815"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":115,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpEnableTimelineLogging","isolateId":"isolates/3483233624779375"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":116,"type":"event","body":{"extensionRPC":"ext.dart.io.setHttpEnableTimelineLogging","isolateId":"isolates/3483233624779375"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":117,"type":"event","body":{"extensionRPC":"ext.dart.io.httpEnableTimelineLogging","isolateId":"isolates/3483233624779375"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":118,"type":"event","body":{"extensionRPC":"ext.dart.io.getSocketProfile","isolateId":"isolates/3483233624779375"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":119,"type":"event","body":{"extensionRPC":"ext.dart.io.startSocketProfiling","isolateId":"isolates/3483233624779375"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":120,"type":"event","body":{"extensionRPC":"ext.dart.io.pauseSocketProfiling","isolateId":"isolates/3483233624779375"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":121,"type":"event","body":{"extensionRPC":"ext.dart.io.socketProfilingEnabled","isolateId":"isolates/3483233624779375"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":122,"type":"event","body":{"extensionRPC":"ext.dart.io.clearSocketProfile","isolateId":"isolates/3483233624779375"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":123,"type":"event","body":{"extensionRPC":"ext.dart.io.getVersion","isolateId":"isolates/3483233624779375"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":124,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfile","isolateId":"isolates/3483233624779375"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":125,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfileRequest","isolateId":"isolates/3483233624779375"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":126,"type":"event","body":{"extensionRPC":"ext.dart.io.clearHttpProfile","isolateId":"isolates/3483233624779375"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":127,"type":"event","body":{"reason":"exited","threadId":2},"event":"thread"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":128,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpEnableTimelineLogging","isolateId":"isolates/1895211502228779"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":129,"type":"event","body":{"extensionRPC":"ext.dart.io.setHttpEnableTimelineLogging","isolateId":"isolates/1895211502228779"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":130,"type":"event","body":{"extensionRPC":"ext.dart.io.httpEnableTimelineLogging","isolateId":"isolates/1895211502228779"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":131,"type":"event","body":{"extensionRPC":"ext.dart.io.getSocketProfile","isolateId":"isolates/1895211502228779"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":132,"type":"event","body":{"extensionRPC":"ext.dart.io.startSocketProfiling","isolateId":"isolates/1895211502228779"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":133,"type":"event","body":{"extensionRPC":"ext.dart.io.pauseSocketProfiling","isolateId":"isolates/1895211502228779"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":134,"type":"event","body":{"extensionRPC":"ext.dart.io.socketProfilingEnabled","isolateId":"isolates/1895211502228779"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":135,"type":"event","body":{"extensionRPC":"ext.dart.io.clearSocketProfile","isolateId":"isolates/1895211502228779"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":136,"type":"event","body":{"extensionRPC":"ext.dart.io.getVersion","isolateId":"isolates/1895211502228779"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":137,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfile","isolateId":"isolates/1895211502228779"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":138,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfileRequest","isolateId":"isolates/1895211502228779"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":139,"type":"event","body":{"extensionRPC":"ext.dart.io.clearHttpProfile","isolateId":"isolates/1895211502228779"},"event":"dart.serviceExtensionAdded"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":140,"type":"event","body":{"reason":"exited","threadId":3},"event":"thread"}
+[10:46:43 AM] [DAP] [Info] <== {"seq":141,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation(10075): app_time_stats: avg=33.66ms min=3.39ms max=423.19ms count=24\n"},"event":"output"}
+[10:46:44 AM] [DAP] [Info] <== {"seq":142,"type":"event","body":{"reason":"exited","threadId":4},"event":"thread"}
+[10:46:44 AM] [DAP] [Info] <== {"seq":143,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpEnableTimelineLogging","isolateId":"isolates/1294862077926479"},"event":"dart.serviceExtensionAdded"}
+[10:46:44 AM] [DAP] [Info] <== {"seq":144,"type":"event","body":{"extensionRPC":"ext.dart.io.setHttpEnableTimelineLogging","isolateId":"isolates/1294862077926479"},"event":"dart.serviceExtensionAdded"}
+[10:46:44 AM] [DAP] [Info] <== {"seq":145,"type":"event","body":{"extensionRPC":"ext.dart.io.httpEnableTimelineLogging","isolateId":"isolates/1294862077926479"},"event":"dart.serviceExtensionAdded"}
+[10:46:44 AM] [DAP] [Info] <== {"seq":146,"type":"event","body":{"extensionRPC":"ext.dart.io.getSocketProfile","isolateId":"isolates/1294862077926479"},"event":"dart.serviceExtensionAdded"}
+[10:46:44 AM] [DAP] [Info] <== {"seq":147,"type":"event","body":{"extensionRPC":"ext.dart.io.startSocketProfiling","isolateId":"isolates/1294862077926479"},"event":"dart.serviceExtensionAdded"}
+[10:46:44 AM] [DAP] [Info] <== {"seq":148,"type":"event","body":{"extensionRPC":"ext.dart.io.pauseSocketProfiling","isolateId":"isolates/1294862077926479"},"event":"dart.serviceExtensionAdded"}
+[10:46:44 AM] [DAP] [Info] <== {"seq":149,"type":"event","body":{"extensionRPC":"ext.dart.io.socketProfilingEnabled","isolateId":"isolates/1294862077926479"},"event":"dart.serviceExtensionAdded"}
+[10:46:44 AM] [DAP] [Info] <== {"seq":150,"type":"event","body":{"extensionRPC":"ext.dart.io.clearSocketProfile","isolateId":"isolates/1294862077926479"},"event":"dart.serviceExtensionAdded"}
+[10:46:44 AM] [DAP] [Info] <== {"seq":151,"type":"event","body":{"extensionRPC":"ext.dart.io.getVersion","isolateId":"isolates/1294862077926479"},"event":"dart.serviceExtensionAdded"}
+[10:46:44 AM] [DAP] [Info] <== {"seq":152,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfile","isolateId":"isolates/1294862077926479"},"event":"dart.serviceExtensionAdded"}
+[10:46:44 AM] [DAP] [Info] <== {"seq":153,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfileRequest","isolateId":"isolates/1294862077926479"},"event":"dart.serviceExtensionAdded"}
+[10:46:44 AM] [DAP] [Info] <== {"seq":154,"type":"event","body":{"extensionRPC":"ext.dart.io.clearHttpProfile","isolateId":"isolates/1294862077926479"},"event":"dart.serviceExtensionAdded"}
+[10:46:44 AM] [DAP] [Info] <== {"seq":155,"type":"event","body":{"reason":"exited","threadId":5},"event":"thread"}
+[10:46:45 AM] [DAP] [Info] <== {"seq":156,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation(10075): app_time_stats: avg=344.30ms min=114.28ms max=946.70ms count=4\n"},"event":"output"}
+[10:46:46 AM] [DAP] [Info] <== {"seq":157,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation(10075): app_time_stats: avg=282.83ms min=121.73ms max=432.64ms count=4\n"},"event":"output"}
+[10:46:47 AM] [DAP] [Info] <== {"seq":158,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation(10075): app_time_stats: avg=381.97ms min=234.23ms max=650.76ms count=3\n"},"event":"output"}
+[11:28:18 AM] [DAP] [Info] <== {"seq":159,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation(10075): app_time_stats: avg=830388.31ms min=281.76ms max=2490600.25ms count=3\n"},"event":"output"}
+[11:28:19 AM] [DAP] [Info] <== {"seq":160,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation(10075): app_time_stats: avg=9.77ms min=1.66ms max=164.65ms count=42\n"},"event":"output"}
+[11:28:20 AM] [DAP] [Info] <== {"seq":161,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation(10075): app_time_stats: avg=10.63ms min=1.49ms max=34.73ms count=40\n"},"event":"output"}
+[11:28:21 AM] [DAP] [Info] <== {"seq":162,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation(10075): app_time_stats: avg=67.41ms min=1.73ms max=646.46ms count=13\n"},"event":"output"}
+[11:28:22 AM] [DAP] [Info] <== {"seq":163,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation(10075): app_time_stats: avg=37.29ms min=1.47ms max=547.00ms count=19\n"},"event":"output"}
+[11:28:23 AM] [DAP] [Info] <== {"seq":164,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation(10075): app_time_stats: avg=119.29ms min=1.79ms max=853.75ms count=8\n"},"event":"output"}
+[11:28:24 AM] [DAP] [Info] <== {"seq":165,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation(10075): app_time_stats: avg=8.17ms min=1.73ms max=146.16ms count=37\n"},"event":"output"}

@@ -66,7 +66,7 @@ class _ThoiSuState extends State<ThoiSu> {
 }
 
 // ignore: constant_identifier_names
-enum SampleItem { itemOne, itemTwo }
+enum SampleItem { Luu, Xem }
 
 class Container1 extends StatefulWidget {
   final ModelNews news;
@@ -156,37 +156,52 @@ class _Container1State extends State<Container1> {
                     onPressed: () {},
                     child: Text(widget.news.loaitinbai ?? ''),
                   ),
-                  // IconButton(
-                  //   onPressed: () {},
-                  //   icon: const Icon(Icons.bookmark_border_outlined),
-                  // ),
-                  MenuAnchor(
-                    builder: (BuildContext context, MenuController controller,
-                        Widget? child) {
-                      return IconButton(
-                        onPressed: () {
-                          if (controller.isOpen) {
-                            controller.close();
-                          } else {
-                            controller.open();
-                          }
+                  Row(
+                    children: [
+                      IconButton(
+                          onPressed: () {},
+                          icon: const Row(
+                            children: [
+                              Icon(Icons.comment_outlined),
+                              Text(
+                                '22',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          )),
+                      MenuAnchor(
+                        builder: (BuildContext context,
+                            MenuController controller, Widget? child) {
+                          return IconButton(
+                            onPressed: () {
+                              if (controller.isOpen) {
+                                controller.close();
+                              } else {
+                                controller.open();
+                              }
+                            },
+                            icon: const Icon(Icons.bookmark_border_outlined),
+                            tooltip: 'Show menu',
+                          );
                         },
-                        icon: const Icon(Icons.bookmark_border_outlined),
-                        tooltip: 'Show menu',
-                      );
-                    },
-                    menuChildren: List<MenuItemButton>.generate(
-                      2,
-                      (int index) => MenuItemButton(
-                        onPressed: () => setState(
-                            () => selectedMenu = SampleItem.values[index]),
-                        child: Row(
-                          children: [
-                            Text('Item ${index == 0}'),
-                          ],
+                        menuChildren: List<MenuItemButton>.generate(
+                          2,
+                          (int index) => MenuItemButton(
+                            onPressed: () => setState(
+                                () => selectedMenu = SampleItem.values[index]),
+                            child: Row(
+                              children: [
+                                Text('Lưu ${index == 0}'),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
                 ],
               ),
@@ -199,14 +214,29 @@ class _Container1State extends State<Container1> {
   }
 }
 
-class Container2 extends StatelessWidget {
+class Container2 extends StatefulWidget {
   final ModelNews news;
 
   const Container2({required this.news, Key? key}) : super(key: key);
 
   @override
+  State<Container2> createState() => _Container2State();
+}
+
+class _Container2State extends State<Container2> {
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ChiTietThoiSu(
+              news: widget.news,
+            ),
+          ),
+        );
+      },
       child: Container(
         margin: const EdgeInsets.only(right: 10, left: 10),
         height: 450,
@@ -218,7 +248,7 @@ class Container2 extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                    news.tieude ?? '',
+                    widget.news.tieude ?? '',
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
@@ -230,7 +260,7 @@ class Container2 extends StatelessWidget {
             ),
             const Padding(padding: EdgeInsets.only(top: 5)),
             Text(
-              news.ngaytao?.toString() ?? '',
+              widget.news.ngaytao?.toString() ?? '',
               style: const TextStyle(fontSize: 12),
             ),
             const Padding(padding: EdgeInsets.only(top: 5)),
@@ -238,15 +268,15 @@ class Container2 extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                    news.noidung ?? '',
+                    widget.news.noidung ?? '',
                     maxLines: 3,
                   ),
                 ),
               ],
             ),
             const Padding(padding: EdgeInsets.only(top: 5)),
-            if (news.imagetieude != null &&
-                news.imagetieude!.isNotEmpty) // Sửa thành articles
+            if (widget.news.imagetieude != null &&
+                widget.news.imagetieude!.isNotEmpty) // Sửa thành articles
               Expanded(
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width - 20,
@@ -254,8 +284,8 @@ class Container2 extends StatelessWidget {
                     child: AspectRatio(
                       aspectRatio: 16 / 9,
                       child: Image(
-                        image: NetworkImage(
-                            news.imagetieude ?? ''), // Sửa thành articles
+                        image: NetworkImage(widget.news.imagetieude ??
+                            ''), // Sửa thành articles
                         fit: BoxFit.cover,
                         width: MediaQuery.of(context).size.width - 20,
                       ),
@@ -268,11 +298,43 @@ class Container2 extends StatelessWidget {
               children: [
                 TextButton(
                   onPressed: () {},
-                  child: Text(news.loaitinbai ?? ''),
+                  child: Text(widget.news.loaitinbai ?? ''),
                 ),
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.bookmark_border_outlined),
+                Row(
+                  children: [
+                    IconButton(
+                        onPressed: () {},
+                        icon: const Row(
+                          children: [
+                            Icon(Icons.comment_outlined),
+                            Text(
+                              '22',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        )),
+                    MenuAnchor(
+                      builder: (BuildContext context, MenuController controller,
+                          Widget? child) {
+                        return IconButton(
+                          onPressed: () {
+                            if (controller.isOpen) {
+                              controller.close();
+                            } else {
+                              controller.open();
+                            }
+                          },
+                          icon: const Icon(Icons.bookmark_border_outlined),
+                          tooltip: 'Show menu',
+                        );
+                      },
+                      menuChildren: const [],
+                    ),
+                  ],
                 ),
               ],
             ),

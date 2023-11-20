@@ -1,12 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:tintuc/tinchinh/manhinh/thoisu/thoisu.dart';
 import 'package:tintuc/tinchinh/networking/models/model_news.dart';
 
 class ChiTietThoiSu extends StatelessWidget {
   final ModelNews news;
 
-  Widget buildNewsImage(BuildContext context, ModelNews news) {
+  Widget buildNewsImage1(BuildContext context, ModelNews news) {
     if (news.imagetieude != null && news.imagetieude!.isNotEmpty) {
       String? imageUrl = news.imagetieude;
+      if (!imageUrl!.startsWith('http:') && !imageUrl.startsWith('https:')) {
+        imageUrl = 'https:$imageUrl';
+      }
+      return ClipRect(
+        child: AspectRatio(
+          aspectRatio: 16 / 9,
+          child: Image(
+            image: NetworkImage(imageUrl),
+            fit: BoxFit.cover,
+            width: MediaQuery.of(context).size.width - 20,
+          ),
+        ),
+      );
+    } else {
+      // Trong trường hợp không có ảnh, bạn có thể trả về một widget khác hoặc null tùy theo yêu cầu của bạn.
+      return const Text(''); // Ví dụ trả về một Container trống.
+    }
+  }
+
+  Widget buildNewsImage2(BuildContext context, ModelNews news) {
+    if (news.imagechitiet1 != null && news.imagechitiet1!.isNotEmpty) {
+      String? imageUrl = news.imagechitiet1;
       if (!imageUrl!.startsWith('http:') && !imageUrl.startsWith('https:')) {
         imageUrl = 'https:$imageUrl';
       }
@@ -70,7 +93,7 @@ class ChiTietThoiSu extends StatelessWidget {
                   ),
                 ],
               ),
-              buildNewsImage(context, news),
+              buildNewsImage1(context, news),
               const SizedBox(height: 10),
               Text(
                 news.noidung ?? 'No Description',
@@ -91,11 +114,17 @@ class ChiTietThoiSu extends StatelessWidget {
                   ),
                 ],
               ),
+              buildNewsImage2(context, news),
               const Padding(padding: EdgeInsets.only(top: 40)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(' ${news.tacgia ?? ''}'),
+                  Text(
+                    ' ${news.tacgia ?? ''}',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ],
               ),
               Row(
@@ -133,13 +162,8 @@ class ChiTietThoiSu extends StatelessWidget {
                 decoration: const InputDecoration(
                   contentPadding: EdgeInsets.symmetric(vertical: 10.0),
                   filled: true,
-                  // fillColor: Colors.grey,
+                  fillColor: Colors.grey,
                   hintText: 'Your idea...',
-                  // prefixIcon: Icon(Icons.voice_chat_sharp),
-
-                  // border: OutlineInputBorder(
-                  //   borderRadius: BorderRadius.circular(10),
-                  // ),
                 ),
                 onChanged: (text) {},
               ),
@@ -147,33 +171,68 @@ class ChiTietThoiSu extends StatelessWidget {
           ),
         ),
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   items: [
-      //     BottomNavigationBarItem(
-      //         icon: IconButton(
-      //             onPressed: () {}, icon: const Icon(Icons.arrow_back)),
-      //         label: ''),
-      //     // icon: Expanded(child: Icon(Icons.arrow_back)), label: ''),
-      //     BottomNavigationBarItem(
-      //         icon: Expanded(
-      //           child: Row(
-      //             children: [
-      //               TextButton(
-      //                 onPressed: () {},
-      //                 child: const Text('Aa'),
-      //               ),
-      //               IconButton(
-      //                   onPressed: () {},
-      //                   icon: const Icon(Icons.chat_bubble_outline_outlined)),
-      //               IconButton(
-      //                   onPressed: () {},
-      //                   icon: const Icon(Icons.watch_later_outlined))
-      //             ],
-      //           ),
-      //         ),
-      //         label: ''),
-      //   ],
-      // ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+              icon: Expanded(
+                child: Row(
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        Navigator.pop(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ThoiSu(),
+                          ),
+                        );
+                      },
+                      icon: const Icon(Icons.arrow_back),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.arrow_back,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              label: ''),
+          BottomNavigationBarItem(
+              icon: Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text('Aa'),
+                    ),
+                    IconButton(
+                        onPressed: () {
+                          // showBottomSheet(
+                          // context: context,
+                          // builder: (BuildContext (context) {
+                          //   return Container(
+                          //     child: Column(
+                          //       children: [
+
+                          //       ],
+                          //     ),
+                          //   );
+                          // }),
+                          // );
+                        },
+                        icon: const Icon(Icons.chat_bubble_outline_outlined)),
+                    IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.watch_later_outlined))
+                  ],
+                ),
+              ),
+              label: ''),
+        ],
+      ),
     );
   }
 }

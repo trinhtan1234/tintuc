@@ -78,21 +78,11 @@ class Container1 extends StatefulWidget {
 }
 
 class _Container1State extends State<Container1> {
-  SampleItem? selectedMenu;
-
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
+    SampleItem? selectedMenu;
     return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ChiTietThoiSu(
-              news: widget.news,
-            ),
-          ),
-        );
-      },
       child: Container(
         margin: const EdgeInsets.only(right: 10, left: 10),
         height: 450,
@@ -102,16 +92,18 @@ class _Container1State extends State<Container1> {
             const Padding(padding: EdgeInsets.only(top: 5)),
             if (widget.news.imagetieude != null &&
                 widget.news.imagetieude!.isNotEmpty) // Sửa thành articles
-              SizedBox(
-                width: MediaQuery.of(context).size.width - 20,
-                child: ClipRect(
-                  child: AspectRatio(
-                    aspectRatio: 16 / 9,
-                    child: Image(
-                      image: NetworkImage(
-                          widget.news.imagetieude ?? ''), // Sửa thành articles
-                      fit: BoxFit.cover,
-                      width: MediaQuery.of(context).size.width - 20,
+              Expanded(
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width - 20,
+                  child: ClipRect(
+                    child: AspectRatio(
+                      aspectRatio: 16 / 9,
+                      child: Image(
+                        image: NetworkImage(widget.news.imagetieude ??
+                            ''), // Sửa thành articles
+                        fit: BoxFit.cover,
+                        width: MediaQuery.of(context).size.width - 20,
+                      ),
                     ),
                   ),
                 ),
@@ -148,63 +140,61 @@ class _Container1State extends State<Container1> {
               ],
             ),
             const Padding(padding: EdgeInsets.only(top: 5)),
-            Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(widget.news.loaitinbai ?? ''),
-                  ),
-                  Row(
-                    children: [
-                      IconButton(
-                          onPressed: () {},
-                          icon: const Row(
-                            children: [
-                              Icon(Icons.comment_outlined),
-                              Text(
-                                '22',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.red,
-                                  fontWeight: FontWeight.bold,
-                                ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Text(widget.news.loaitinbai ?? ''),
+                ),
+                Row(
+                  children: [
+                    IconButton(
+                        onPressed: () {},
+                        icon: const Row(
+                          children: [
+                            Icon(Icons.comment_outlined),
+                            Text(
+                              '22',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
                               ),
-                            ],
-                          )),
-                      MenuAnchor(
-                        builder: (BuildContext context,
-                            MenuController controller, Widget? child) {
-                          return IconButton(
-                            onPressed: () {
-                              if (controller.isOpen) {
-                                controller.close();
-                              } else {
-                                controller.open();
-                              }
-                            },
-                            icon: const Icon(Icons.bookmark_border_outlined),
-                            tooltip: 'Show menu',
-                          );
-                        },
-                        menuChildren: List<MenuItemButton>.generate(
-                          2,
-                          (int index) => MenuItemButton(
-                            onPressed: () => setState(
-                                () => selectedMenu = SampleItem.values[index]),
-                            child: Row(
-                              children: [
-                                Text('Lưu ${index == 0}'),
-                              ],
                             ),
+                          ],
+                        )),
+                    MenuAnchor(
+                      builder: (BuildContext context, MenuController controller,
+                          Widget? child) {
+                        return IconButton(
+                          onPressed: () {
+                            if (controller.isOpen) {
+                              controller.close();
+                            } else {
+                              controller.open();
+                            }
+                          },
+                          icon: const Icon(Icons.bookmark_border_outlined),
+                          tooltip: 'Show menu',
+                        );
+                      },
+                      menuChildren: List<MenuItemButton>.generate(
+                        2,
+                        (int index) => MenuItemButton(
+                          onPressed: () => setState(
+                              () => selectedMenu = SampleItem.values[index]),
+                          child: Row(
+                            children: [
+                              Text('Lưu ${index == 0}'),
+                            ],
                           ),
                         ),
                       ),
-                    ],
-                  ),
-                ],
-              ),
+                    ),
+                  ],
+                ),
+              ],
             ),
             const Divider()
           ],
@@ -226,6 +216,8 @@ class Container2 extends StatefulWidget {
 class _Container2State extends State<Container2> {
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
+    SampleItem? selectedMenu;
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -332,7 +324,18 @@ class _Container2State extends State<Container2> {
                           tooltip: 'Show menu',
                         );
                       },
-                      menuChildren: const [],
+                      menuChildren: List<MenuItemButton>.generate(
+                        2,
+                        (int index) => MenuItemButton(
+                          onPressed: () => setState(
+                              () => selectedMenu = SampleItem.values[index]),
+                          child: Row(
+                            children: [
+                              Text('Lưu ${index == 0}'),
+                            ],
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),

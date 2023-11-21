@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "386891168137",
+    "project_id": "tintuc-a0ba2",
+    "storage_bucket": "tintuc-a0ba2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:386891168137:android:e7cc0da67a08f809314958",
+        "android_client_info": {
+          "package_name": "com.example.tintuc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "386891168137-h4is2gass8ifbarq6b6c6v73a1dc4dgf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdhuGKCVaGv6r27AjSmpT2Bl43E5qzkJs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "386891168137-h4is2gass8ifbarq6b6c6v73a1dc4dgf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "386891168137-1ffkad4cfq38sp1dhu8parsnl63t763o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tintuc.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

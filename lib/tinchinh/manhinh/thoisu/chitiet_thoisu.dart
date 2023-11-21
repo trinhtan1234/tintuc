@@ -127,6 +127,7 @@ class ChiTietThoiSu extends StatelessWidget {
                   ),
                 ],
               ),
+              const Padding(padding: EdgeInsets.only(bottom: 10)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 mainAxisSize: MainAxisSize.max,

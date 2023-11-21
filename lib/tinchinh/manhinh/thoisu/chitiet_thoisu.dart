@@ -213,8 +213,17 @@ class ChiTietThoiSu extends StatelessWidget {
                         showModalBottomSheet(
                           context: context,
                           builder: (BuildContext context) {
-                            return SizedBox(
+                            return const SizedBox(
                               height: 200,
+                              child: Center(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: <Widget>[
+                                    Text('Modal BottomSheet'),
+                                  ],
+                                ),
+                              ),
                             );
                           },
                         );

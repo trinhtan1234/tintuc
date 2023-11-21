@@ -209,21 +209,23 @@ class ChiTietThoiSu extends StatelessWidget {
                       child: const Text('Aa'),
                     ),
                     IconButton(
-                        onPressed: () {
-                          // showBottomSheet(
-                          // context: context,
-                          // builder: (BuildContext (context) {
-                          //   return Container(
-                          //     child: Column(
-                          //       children: [
-
-                          //       ],
-                          //     ),
-                          //   );
-                          // }),
-                          // );
-                        },
-                        icon: const Icon(Icons.chat_bubble_outline_outlined)),
+                      onPressed: () {
+                        showModalBottomSheet(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return SizedBox(
+                              height: 200,
+                            );
+                          },
+                        );
+                      },
+                      icon: const Row(
+                        children: [
+                          Icon(Icons.chat_bubble_outline_outlined),
+                          Text('22'),
+                        ],
+                      ),
+                    ),
                     IconButton(
                         onPressed: () {},
                         icon: const Icon(Icons.watch_later_outlined))

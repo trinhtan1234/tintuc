@@ -153,7 +153,10 @@ class _Container1State extends State<Container1> {
                         onPressed: () {},
                         icon: const Row(
                           children: [
-                            Icon(Icons.comment_outlined),
+                            Icon(
+                              Icons.comment_outlined,
+                              color: Colors.red,
+                            ),
                             Text(
                               '22',
                               style: TextStyle(
@@ -298,7 +301,10 @@ class _Container2State extends State<Container2> {
                         onPressed: () {},
                         icon: const Row(
                           children: [
-                            Icon(Icons.comment_outlined),
+                            Icon(
+                              Icons.comment_outlined,
+                              color: Colors.red,
+                            ),
                             Text(
                               '22',
                               style: TextStyle(

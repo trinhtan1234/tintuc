@@ -210,23 +210,7 @@ class ChiTietThoiSu extends StatelessWidget {
                     ),
                     IconButton(
                       onPressed: () {
-                        showModalBottomSheet(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return const SizedBox(
-                              height: 200,
-                              child: Center(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: <Widget>[
-                                    Text('Modal BottomSheet'),
-                                  ],
-                                ),
-                              ),
-                            );
-                          },
-                        );
+                        showModeBottomSheet(context);
                       },
                       icon: const Row(
                         children: [
@@ -244,6 +228,82 @@ class ChiTietThoiSu extends StatelessWidget {
               label: ''),
         ],
       ),
+    );
+  }
+
+  Future<dynamic> showModeBottomSheet(BuildContext context) {
+    return showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      builder: (BuildContext context) {
+        return Container(
+          margin: const EdgeInsets.all(10),
+          height: MediaQuery.of(context).size.height * 0.8,
+          child: Scaffold(
+            appBar: AppBar(
+              title: Text(
+                news.tieude ?? '',
+              ),
+            ),
+            body: const SingleChildScrollView(
+              child: Column(
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Divider(),
+                      Row(
+                        children: [
+                          Flexible(
+                            child: Text(
+                                'Không ai rảnh đi sát hạch 50cc lúc 16 tuổi rồi đến 18 tuổi lại đi sát hạch >50cc. Nếu thay đổi thì Cho phép sát hạch A1 lúc 16 tuổi nhưng chỉ được phép điều khiển xe 50cc, không nên "đẻ" ra thêm một loại sát hạch không cần thiết, hiện nay các em đều được tiếp cận văn hoá giao thông, luật giao thông từ trong trường học.'),
+                          ),
+                        ],
+                      ),
+                      Divider(),
+                      Row(
+                        children: [
+                          Flexible(
+                            child: Text(
+                                'Không ai rảnh đi sát hạch 50cc lúc 16 tuổi rồi đến 18 tuổi lại đi sát hạch >50cc. Nếu thay đổi thì Cho phép sát hạch A1 lúc 16 tuổi nhưng chỉ được phép điều khiển xe 50cc, không nên "đẻ" ra thêm một loại sát hạch không cần thiết, hiện nay các em đều được tiếp cận văn hoá giao thông, luật giao thông từ trong trường học.'),
+                          ),
+                        ],
+                      ),
+                      Divider(),
+                      Row(
+                        children: [
+                          Flexible(
+                            child: Text(
+                                'Không ai rảnh đi sát hạch 50cc lúc 16 tuổi rồi đến 18 tuổi lại đi sát hạch >50cc. Nếu thay đổi thì Cho phép sát hạch A1 lúc 16 tuổi nhưng chỉ được phép điều khiển xe 50cc, không nên "đẻ" ra thêm một loại sát hạch không cần thiết, hiện nay các em đều được tiếp cận văn hoá giao thông, luật giao thông từ trong trường học.'),
+                          ),
+                        ],
+                      ),
+                      Divider(),
+                      Row(
+                        children: [
+                          Flexible(
+                            child: Text(
+                                'Không ai rảnh đi sát hạch 50cc lúc 16 tuổi rồi đến 18 tuổi lại đi sát hạch >50cc. Nếu thay đổi thì Cho phép sát hạch A1 lúc 16 tuổi nhưng chỉ được phép điều khiển xe 50cc, không nên "đẻ" ra thêm một loại sát hạch không cần thiết, hiện nay các em đều được tiếp cận văn hoá giao thông, luật giao thông từ trong trường học.'),
+                          ),
+                        ],
+                      ),
+                      Divider(),
+                      Row(
+                        children: [
+                          Flexible(
+                            child: Text(
+                                'Không ai rảnh đi sát hạch 50cc lúc 16 tuổi rồi đến 18 tuổi lại đi sát hạch >50cc. Nếu thay đổi thì Cho phép sát hạch A1 lúc 16 tuổi nhưng chỉ được phép điều khiển xe 50cc, không nên "đẻ" ra thêm một loại sát hạch không cần thiết, hiện nay các em đều được tiếp cận văn hoá giao thông, luật giao thông từ trong trường học.'),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }

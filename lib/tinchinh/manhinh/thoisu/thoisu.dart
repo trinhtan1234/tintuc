@@ -83,6 +83,16 @@ class _Container1State extends State<Container1> {
     // ignore: unused_local_variable
     SampleItem? selectedMenu;
     return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ChiTietThoiSu(
+              news: widget.news,
+            ),
+          ),
+        );
+      },
       child: Container(
         margin: const EdgeInsets.only(right: 10, left: 10),
         height: 450,

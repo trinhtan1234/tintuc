@@ -97,7 +97,7 @@ class ScreenSign extends StatelessWidget {
                       return TextButton(
                         onPressed: () {
                           auth.createUserWithEmailAndPassword(
-                              email: 'trinhtan1703@gmail.com',
+                              email: 'trinhtan2805@gmail.com',
                               password: '123456');
                         },
                         child: const Center(
@@ -115,13 +115,14 @@ class ScreenSign extends StatelessWidget {
                     }
                     return Column(
                       children: [
-                        Text('Đã có user: ${snapshot.data?.email}'),
+                        Flexible(
+                            child: Text('Đã có user: ${snapshot.data?.email}')),
                         TextButton(
                           onPressed: () async {
                             try {
                               final credential =
                                   await auth.signInWithEmailAndPassword(
-                                      email: 'trinhtan1703@gmail.com',
+                                      email: 'trinhtan2805@gmail.com',
                                       password: '123456');
                               print(
                                   'Sign-in successful! User ID: ${credential.user?.uid}');

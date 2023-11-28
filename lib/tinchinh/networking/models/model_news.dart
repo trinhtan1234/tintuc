@@ -97,4 +97,6 @@ class ModelNews {
         "binhluan4": binhluan4,
         "binhluan5": binhluan5,
       };
+
+  where(bool Function(dynamic news) param0) {}
 }

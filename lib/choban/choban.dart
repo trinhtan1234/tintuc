@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:tintuc/tinchinh/bloc/news_bloc.dart';
 import 'package:tintuc/tinchinh/manhinh/thoisu/chitiet_thoisu.dart';
-import 'package:tintuc/tinchinh/networking/models/model_news.dart';
+
+import '../tinchinh/networking/models/model_news.dart';
 
 class ChoBan extends StatefulWidget {
-  const ChoBan({Key? key}) : super(key: key);
+  const ChoBan({super.key});
 
   @override
   State<ChoBan> createState() => _ChoBanState();
@@ -32,50 +33,52 @@ class _ChoBanState extends State<ChoBan> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Tin của bạn',
+          style: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+            color: Colors.red,
+          ),
+        ),
+        leading: const Icon(
+          Icons.newspaper,
+          color: Colors.red,
+        ),
+        actions: [
+          Container(
+            margin: const EdgeInsets.only(right: 10),
+            child: IconButton(
+              onPressed: () {},
+              icon: ClipOval(
+                child: Image.asset(
+                  'assets/images/tantv.jpg',
+                  width: 30,
+                  height: 30,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
       body: Center(
-        child: StreamBuilder<List<ModelNews>?>(
+        child: StreamBuilder(
           stream: _newsbloc.newsStream,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               final news = snapshot.data!;
-              final thoiSuNewsList =
-                  news.where((news) => news.loaitinbai == 'Thời sự').toList();
-              final vietnamNewsList =
-                  news.where((news) => news.loaitinbai == 'Việt Nam').toList();
-              final thegioiNewsList =
-                  news.where((news) => news.loaitinbai == 'Thế giới').toList();
-              final giaitriNewsList =
-                  news.where((news) => news.loaitinbai == 'Giải trí').toList();
-
+              // final tintucTheGioi =
+              // news.where((news) => news.diadiem == 'Thời sự').toList();
               return ListView.builder(
-                itemCount: thoiSuNewsList.length +
-                    vietnamNewsList.length +
-                    thegioiNewsList.length +
-                    giaitriNewsList.length,
+                itemCount: news.length,
                 itemBuilder: (context, index) {
-                  if (index < thoiSuNewsList.length) {
-                    return Container1(
-                      news: thoiSuNewsList[index],
-                      index: index,
-                    );
-                  } else if (index <
-                      thoiSuNewsList.length + vietnamNewsList.length) {
-                    return Container2(
-                        news: vietnamNewsList[index - thoiSuNewsList.length]);
-                  } else if (index <
-                      thoiSuNewsList.length +
-                          vietnamNewsList.length +
-                          thegioiNewsList.length) {
-                    return Container3(
-                        news: thegioiNewsList[index -
-                            thoiSuNewsList.length -
-                            vietnamNewsList.length]);
+                  if (snapshot.hasData) {
+                    final List<ModelNews> news = snapshot.data!;
+                    return Man1(news: news[index]);
                   } else {
-                    return Container4(
-                        news: giaitriNewsList[index -
-                            thoiSuNewsList.length -
-                            vietnamNewsList.length -
-                            thegioiNewsList.length]);
+                    return Man1(news: news[index]);
                   }
                 },
               );
@@ -91,22 +94,9 @@ class _ChoBanState extends State<ChoBan> {
   }
 }
 
-// ignore: constant_identifier_names
-enum SampleItem { Luu, Xem }
-
-class Container1 extends StatefulWidget {
+class Man1 extends StatelessWidget {
   final ModelNews news;
-  final int index;
-
-  const Container1({required this.news, required this.index, Key? key})
-      : super(key: key);
-
-  @override
-  State<Container1> createState() => _Container1State();
-}
-
-class _Container1State extends State<Container1> {
-  SampleItem? selectedMenu;
+  const Man1({super.key, required this.news});
 
   @override
   Widget build(BuildContext context) {
@@ -116,185 +106,95 @@ class _Container1State extends State<Container1> {
           context,
           MaterialPageRoute(
             builder: (context) => ChiTietThoiSu(
-              news: widget.news,
+              news: news,
             ),
           ),
         );
       },
-      child: widget.index == 0
-          ? Container(
-              margin: const EdgeInsets.only(right: 10, left: 10),
-              height: 550,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Padding(padding: EdgeInsets.only(top: 5)),
-                  if (widget.news.imagetieude != null &&
-                      widget.news.imagetieude!.isNotEmpty)
-                    Expanded(
-                      child: SizedBox(
+      child: Container(
+        margin: const EdgeInsets.only(right: 10, left: 10),
+        height: 450,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Padding(padding: EdgeInsets.only(top: 5)),
+            if (news.imagetieude != null &&
+                news.imagetieude!.isNotEmpty) // Sửa thành articles
+              Expanded(
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width - 20,
+                  child: ClipRect(
+                    child: AspectRatio(
+                      aspectRatio: 16 / 9,
+                      child: Image(
+                        image: NetworkImage(
+                            news.imagetieude ?? ''), // Sửa thành articles
+                        fit: BoxFit.cover,
                         width: MediaQuery.of(context).size.width - 20,
-                        child: ClipRect(
-                          child: AspectRatio(
-                            aspectRatio: 16 / 9,
-                            child: Image(
-                              image:
-                                  NetworkImage(widget.news.imagetieude ?? ''),
-                              fit: BoxFit.cover,
-                              width: MediaQuery.of(context).size.width - 20,
-                            ),
-                          ),
-                        ),
                       ),
                     ),
-                  const Padding(padding: EdgeInsets.only(top: 5)),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          widget.news.tieude ?? '',
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                          ),
-                          maxLines: 3,
-                        ),
-                      ),
-                    ],
                   ),
-                  const Padding(padding: EdgeInsets.only(top: 5)),
-                  Text(
-                    widget.news.ngaytao?.toString() ?? '',
-                    style: const TextStyle(fontSize: 12),
-                  ),
-                  const Padding(padding: EdgeInsets.only(top: 5)),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          widget.news.noidung ?? '',
-                          maxLines: 3,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const Padding(padding: EdgeInsets.only(top: 0)),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      TextButton(
-                        onPressed: () {},
-                        child: Text(widget.news.loaitinbai ?? ''),
-                      ),
-                      Row(
-                        children: [
-                          IconButton(
-                              onPressed: () {},
-                              icon: const Row(
-                                children: [
-                                  Icon(
-                                    Icons.comment_outlined,
-                                    color: Colors.red,
-                                  ),
-                                  Text(
-                                    '22',
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      color: Colors.red,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ],
-                              )),
-                        ],
-                      ),
-                    ],
-                  ),
-                  const Divider(),
-                  Container(
-  height: 100,
-  color: Colors.white30,
-  child: ListView.separated(
-    scrollDirection: Axis.horizontal,
-    itemCount: loaiTinBai.length,
-    separatorBuilder: (context, index) => const SizedBox(width: 8),
-    itemBuilder: (context, loaiIndex) {
-      final currentLoaiTinBai = loaiTinBai[loaiIndex];
-      final filteredNews = widget.news.where((news) => news.loaitinbai == currentLoaiTinBai).toList();
-
-      return Container(
-        height: 80,
-        width: 230,
-        color: const Color.fromARGB(255, 243, 239, 239),
-        child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: filteredNews.length,
-          itemBuilder: (context, newsIndex) {
-            return Row(
+                ),
+              ),
+            const Padding(padding: EdgeInsets.only(top: 5)),
+            Row(
               children: [
-                Title(
-                  color: Colors.black,
-                  child: Expanded(
-                    child: Text(filteredNews[newsIndex].tieude ?? ''),
+                Expanded(
+                  child: Text(
+                    news.tieude ?? '',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                    maxLines: 3,
                   ),
                 ),
               ],
-            );
-          },
+            ),
+            const Padding(padding: EdgeInsets.only(top: 5)),
+            Text(
+              news.ngaytao?.toString() ?? '',
+              style: const TextStyle(fontSize: 12),
+            ),
+            const Padding(padding: EdgeInsets.only(top: 5)),
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    news.noidung ?? '',
+                    maxLines: 3,
+                  ),
+                ),
+              ],
+            ),
+            const Padding(padding: EdgeInsets.only(top: 5)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Text(news.loaitinbai ?? ''),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.bookmark_border_outlined),
+                ),
+              ],
+            ),
+            const Divider()
+          ],
         ),
-      );
-    },
-  ),
-)
-
-                  const Divider(),
-                ],
-              ),
-            )
-          : Container(),
+      ),
     );
   }
 }
 
-class Container2 extends StatelessWidget {
-  final ModelNews? news;
-  const Container2({Key? key, this.news}) : super(key: key);
+class Man2 extends StatelessWidget {
+  final ModelNews news;
+  const Man2({super.key, required this.news});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 400,
-      color: Colors.yellow,
-      // ignore: prefer_const_constructors
-      child: Text('data2'),
-    );
-  }
-}
-
-class Container3 extends StatelessWidget {
-  final ModelNews? news;
-  const Container3({Key? key, this.news}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 400,
-      color: Colors.green,
-      child: const Text('data2'),
-    );
-  }
-}
-
-class Container4 extends StatelessWidget {
-  final ModelNews? news;
-  const Container4({Key? key, this.news}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 400,
-      color: Colors.brown,
-      child: const Text('data2'),
-    );
+    return const Placeholder();
   }
 }

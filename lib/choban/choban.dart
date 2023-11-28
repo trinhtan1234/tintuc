@@ -91,6 +91,7 @@ class _ChoBanState extends State<ChoBan> {
   }
 }
 
+// ignore: constant_identifier_names
 enum SampleItem { Luu, Xem }
 
 class Container1 extends StatefulWidget {
@@ -123,7 +124,7 @@ class _Container1State extends State<Container1> {
       child: widget.index == 0
           ? Container(
               margin: const EdgeInsets.only(right: 10, left: 10),
-              height: 450,
+              height: 550,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -177,7 +178,7 @@ class _Container1State extends State<Container1> {
                       ),
                     ],
                   ),
-                  const Padding(padding: EdgeInsets.only(top: 5)),
+                  const Padding(padding: EdgeInsets.only(top: 0)),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -209,7 +210,42 @@ class _Container1State extends State<Container1> {
                       ),
                     ],
                   ),
-                  const Divider()
+                  const Divider(),
+                  Container(
+                    height: 100,
+                    color: Colors.white30,
+                    child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: (widget.news.tieude ?? '').length,
+                      separatorBuilder: (context, index) =>
+                          const SizedBox(width: 8),
+                      itemBuilder: (context, index) {
+                        // Kiểm tra nếu index lớn hơn hoặc bằng 1
+                        return Container(
+                          height: 80,
+                          width: 230,
+                          color: const Color.fromARGB(255, 243, 239, 239),
+                          child: Center(
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Title(
+                                      color: Colors.black,
+                                      child: Expanded(
+                                        child: Text(widget.news.tieude ?? ''),
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  const Divider(),
                 ],
               ),
             )
@@ -224,7 +260,12 @@ class Container2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      height: 400,
+      color: Colors.yellow,
+      // ignore: prefer_const_constructors
+      child: Text('data2'),
+    );
   }
 }
 
@@ -234,7 +275,11 @@ class Container3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      height: 400,
+      color: Colors.green,
+      child: const Text('data2'),
+    );
   }
 }
 
@@ -244,6 +289,10 @@ class Container4 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      height: 400,
+      color: Colors.brown,
+      child: const Text('data2'),
+    );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tintuc/caidat/screen_menu.dart';
+import 'package:tintuc/choban/choban.dart';
 import 'package:tintuc/theodoi/theodoi.dart';
 import 'package:tintuc/thongbao/thongbao.dart';
 import 'package:tintuc/tinchinh/manhinh/menutinchinh.dart';
@@ -25,6 +26,7 @@ class _ScreenNavigationBottomState extends State<ScreenNavigationBottom> {
     super.initState();
 
     _pages = [
+      const ChoBan(),
       const MenuTinChinh(),
       const TheoDoi(),
       const ThongBao(),
@@ -42,6 +44,7 @@ class _ScreenNavigationBottomState extends State<ScreenNavigationBottom> {
         onTap: _navigateBottomBar,
         type: BottomNavigationBarType.fixed,
         items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Cho bạn'),
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Tin chính'),
           BottomNavigationBarItem(
               icon: Icon(Icons.newspaper), label: 'Theo dõi'),

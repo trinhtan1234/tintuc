@@ -229,3 +229,4 @@ Flutter (3.13.9): C:\src\flutter (No device)
 [8:28:34 AM] [General] [Info] Version last used for Pub is 3.1.5 (3.1.0), current is 3.1.5 (3.1.0)
 [8:28:34 AM] [General] [Info] Found 1 folders requiring "pub get" or "pub upgrade":
     D:\Flutter\tintuc (get: true, upgrade: false, reason: pubspec.yaml was modified (Tue Nov 28 2023 08:28:33 GMT+0700 (Indochina Time)) more recently than pubspec.lock (Tue Nov 28 2023 08:28:27 GMT+0700 (Indochina Time)))
+[8:29:12 AM] [General] [Info] Returning cached results for project search

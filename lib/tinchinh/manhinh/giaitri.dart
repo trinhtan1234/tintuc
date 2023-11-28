@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tintuc/tinchinh/bloc/news_bloc.dart';
+import 'package:tintuc/tinchinh/manhinh/thoisu/chitiet_thoisu.dart';
 import 'package:tintuc/tinchinh/networking/models/model_news.dart';
 
 class GiaiTri extends StatefulWidget {
@@ -73,6 +74,16 @@ class Container1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ChiTietThoiSu(
+              news: news,
+            ),
+          ),
+        );
+      },
       child: Container(
         margin: const EdgeInsets.only(right: 10, left: 10),
         height: 450,
@@ -159,6 +170,16 @@ class Container2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ChiTietThoiSu(
+              news: news,
+            ),
+          ),
+        );
+      },
       child: Container(
         margin: const EdgeInsets.only(right: 10, left: 10),
         height: 450,

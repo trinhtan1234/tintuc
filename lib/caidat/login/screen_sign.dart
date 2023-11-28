@@ -95,10 +95,27 @@ class ScreenSign extends StatelessWidget {
                   builder: (context, snapshot) {
                     if (!snapshot.hasData) {
                       return TextButton(
-                        onPressed: () {
-                          auth.createUserWithEmailAndPassword(
-                              email: 'trinhtan2805@gmail.com',
-                              password: '123456');
+                        onPressed: () async {
+                          // Kiểm tra định dạng email trước khi đăng nhập
+                          String email =
+                              "user@example.com"; // Thay đổi giá trị này thành giá trị từ TextField
+// Thay đổi giá trị này thành giá trị từ TextField
+
+                          if (!RegExp(r"^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                              .hasMatch(email)) {
+                            print('Lỗi: Địa chỉ email không đúng định dạng.');
+                            return;
+                          }
+
+                          try {
+                            // Đăng nhập thành công
+                          } on FirebaseAuthException catch (e) {
+                            if (e.code == 'invalid-email') {
+                              print('Lỗi: Địa chỉ email không đúng định dạng.');
+                            } else {
+                              print('Lỗi không xác định: $e');
+                            }
+                          }
                         },
                         child: const Center(
                           child: Center(
@@ -120,12 +137,13 @@ class ScreenSign extends StatelessWidget {
                         TextButton(
                           onPressed: () async {
                             try {
-                              final credential =
+                              final userCredential =
                                   await auth.signInWithEmailAndPassword(
-                                      email: 'trinhtan2805@gmail.com',
-                                      password: '123456');
+                                email: "",
+                                password: "",
+                              );
                               print(
-                                  'Sign-in successful! User ID: ${credential.user?.uid}');
+                                  'Sign-in successful! User ID: ${userCredential.user?.uid}');
                             } catch (e) {
                               print('Error signing in: $e');
                             }

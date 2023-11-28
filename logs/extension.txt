@@ -319,3 +319,34 @@ Flutter (3.13.9): C:\src\flutter (No device)
 [8:46:54 AM] [General] [Info] Returning cached results for project search
 [8:47:45 AM] [General] [Info] Returning cached results for project search
 [8:47:49 AM] [General] [Info] Returning cached results for project search
+[8:56:48 AM] [General] [Info] Took 46ms to search for projects (5 levels)
+[8:56:48 AM] [General] [Info] Took 2ms to filter out excluded projects (0 exclusion rules)
+[8:57:14 AM] [General] [Info] Returning cached results for project search
+[10:30:51 AM] [General] [Info] Took 46ms to search for projects (5 levels)
+[10:30:51 AM] [General] [Info] Took 9ms to filter out excluded projects (0 exclusion rules)
+[10:32:11 AM] [General] [Info] Using only available debug session
+[10:32:11 AM] [General] [Info] Exposing URL: ws://127.0.0.1:51133/SPIsbQX-nms%3D/ws
+[10:32:11 AM] [General] [Info] Mapping URI: http://127.0.0.1:51133/SPIsbQX-nms%3D/ws
+[10:32:11 AM] [General] [Info] Mapped URI: http://127.0.0.1:51133/SPIsbQX-nms%3D/ws
+[10:32:11 AM] [General] [Info] Mapped URL: http://127.0.0.1:51133/SPIsbQX-nms%3D/ws
+[10:32:11 AM] [General] [Info] Final URL: ws://127.0.0.1:51133/SPIsbQX-nms=/ws
+[10:32:54 AM] [General] [Info] Returning cached results for project search
+[10:32:54 AM] [General] [Info] Checking 1 projects for supported platforms
+[10:32:54 AM] [General] [Info] Supported platforms for the workspace are linux, macos, windows, ios, android, web
+[10:33:16 AM] [General] [Info] Saving chrome as preferred device
+[11:05:16 AM] [General] [Info] Took 34ms to search for projects (5 levels)
+[11:05:16 AM] [General] [Info] Took 2ms to filter out excluded projects (0 exclusion rules)
+[11:14:17 AM] [General] [Info] Took 32ms to search for projects (5 levels)
+[11:14:17 AM] [General] [Info] Took 3ms to filter out excluded projects (0 exclusion rules)
+[11:14:59 AM] [General] [Info] Returning cached results for project search
+[11:30:52 AM] [General] [Info] Took 46ms to search for projects (5 levels)
+[11:30:52 AM] [General] [Info] Took 4ms to filter out excluded projects (0 exclusion rules)
+[11:30:58 AM] [General] [Info] Returning cached results for project search
+[11:31:03 AM] [General] [Info] Returning cached results for project search
+[11:32:14 AM] [General] [Info] Returning cached results for project search
+[11:33:19 AM] [General] [Info] Returning cached results for project search
+[11:33:23 AM] [General] [Info] Returning cached results for project search
+[11:33:45 AM] [General] [Info] Returning cached results for project search
+[11:59:34 AM] [General] [Info] Took 66ms to search for projects (5 levels)
+[11:59:34 AM] [General] [Info] Took 3ms to filter out excluded projects (0 exclusion rules)
+[12:01:11 PM] [General] [Info] Returning cached results for project search

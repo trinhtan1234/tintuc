@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tintuc/tinchinh/bloc/news_bloc.dart';
+import 'package:tintuc/tinchinh/manhinh/thoisu/chitiet_thoisu.dart';
 import 'package:tintuc/tinchinh/networking/models/model_news.dart';
 
 class ChoBan extends StatefulWidget {
-  const ChoBan({super.key});
+  const ChoBan({Key? key}) : super(key: key);
 
   @override
   State<ChoBan> createState() => _ChoBanState();
@@ -53,7 +54,10 @@ class _ChoBanState extends State<ChoBan> {
                     giaitriNewsList.length,
                 itemBuilder: (context, index) {
                   if (index < thoiSuNewsList.length) {
-                    return Container1(news: thoiSuNewsList[index]);
+                    return Container1(
+                      news: thoiSuNewsList[index],
+                      index: index,
+                    );
                   } else if (index <
                       thoiSuNewsList.length + vietnamNewsList.length) {
                     return Container2(
@@ -87,19 +91,136 @@ class _ChoBanState extends State<ChoBan> {
   }
 }
 
-class Container1 extends StatelessWidget {
-  final ModelNews? news;
-  const Container1({super.key, this.news});
+enum SampleItem { Luu, Xem }
+
+class Container1 extends StatefulWidget {
+  final ModelNews news;
+  final int index;
+
+  const Container1({required this.news, required this.index, Key? key})
+      : super(key: key);
+
+  @override
+  State<Container1> createState() => _Container1State();
+}
+
+class _Container1State extends State<Container1> {
+  SampleItem? selectedMenu;
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ChiTietThoiSu(
+              news: widget.news,
+            ),
+          ),
+        );
+      },
+      child: widget.index == 0
+          ? Container(
+              margin: const EdgeInsets.only(right: 10, left: 10),
+              height: 450,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Padding(padding: EdgeInsets.only(top: 5)),
+                  if (widget.news.imagetieude != null &&
+                      widget.news.imagetieude!.isNotEmpty)
+                    Expanded(
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width - 20,
+                        child: ClipRect(
+                          child: AspectRatio(
+                            aspectRatio: 16 / 9,
+                            child: Image(
+                              image:
+                                  NetworkImage(widget.news.imagetieude ?? ''),
+                              fit: BoxFit.cover,
+                              width: MediaQuery.of(context).size.width - 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  const Padding(padding: EdgeInsets.only(top: 5)),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          widget.news.tieude ?? '',
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                          maxLines: 3,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Padding(padding: EdgeInsets.only(top: 5)),
+                  Text(
+                    widget.news.ngaytao?.toString() ?? '',
+                    style: const TextStyle(fontSize: 12),
+                  ),
+                  const Padding(padding: EdgeInsets.only(top: 5)),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          widget.news.noidung ?? '',
+                          maxLines: 3,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Padding(padding: EdgeInsets.only(top: 5)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(widget.news.loaitinbai ?? ''),
+                      ),
+                      Row(
+                        children: [
+                          IconButton(
+                              onPressed: () {},
+                              icon: const Row(
+                                children: [
+                                  Icon(
+                                    Icons.comment_outlined,
+                                    color: Colors.red,
+                                  ),
+                                  Text(
+                                    '22',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      color: Colors.red,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              )),
+                        ],
+                      ),
+                    ],
+                  ),
+                  const Divider()
+                ],
+              ),
+            )
+          : Container(),
+    );
   }
 }
 
 class Container2 extends StatelessWidget {
   final ModelNews? news;
-  const Container2({super.key, this.news});
+  const Container2({Key? key, this.news}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -109,7 +230,7 @@ class Container2 extends StatelessWidget {
 
 class Container3 extends StatelessWidget {
   final ModelNews? news;
-  const Container3({super.key, this.news});
+  const Container3({Key? key, this.news}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -119,7 +240,7 @@ class Container3 extends StatelessWidget {
 
 class Container4 extends StatelessWidget {
   final ModelNews? news;
-  const Container4({super.key, this.news});
+  const Container4({Key? key, this.news}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -44,7 +44,8 @@ class _ScreenNavigationBottomState extends State<ScreenNavigationBottom> {
         onTap: _navigateBottomBar,
         type: BottomNavigationBarType.fixed,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Cho bạn'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person_2_outlined), label: 'Cho bạn'),
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Tin chính'),
           BottomNavigationBarItem(
               icon: Icon(Icons.newspaper), label: 'Theo dõi'),

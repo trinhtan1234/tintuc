@@ -230,3 +230,92 @@ Flutter (3.13.9): C:\src\flutter (No device)
 [8:28:34 AM] [General] [Info] Found 1 folders requiring "pub get" or "pub upgrade":
     D:\Flutter\tintuc (get: true, upgrade: false, reason: pubspec.yaml was modified (Tue Nov 28 2023 08:28:33 GMT+0700 (Indochina Time)) more recently than pubspec.lock (Tue Nov 28 2023 08:28:27 GMT+0700 (Indochina Time)))
 [8:29:12 AM] [General] [Info] Returning cached results for project search
+[8:31:02 AM] [General] [Info] Took 25ms to search for projects (5 levels)
+[8:31:02 AM] [General] [Info] Took 2ms to filter out excluded projects (0 exclusion rules)
+[8:34:35 AM] [General] [Info] Pubspec D:\Flutter\tintuc\pubspec.yaml was modified
+[8:34:36 AM] [General] [Info] Returning cached results for project search
+[8:34:36 AM] [General] [Info] Version last used for Pub is 3.1.5 (3.1.0), current is 3.1.5 (3.1.0)
+[8:34:36 AM] [General] [Info] Found 1 folders requiring "pub get" or "pub upgrade":
+    D:\Flutter\tintuc (get: true, upgrade: false, reason: pubspec.yaml was modified (Tue Nov 28 2023 08:34:35 GMT+0700 (Indochina Time)) more recently than pubspec.lock (Tue Nov 28 2023 08:30:57 GMT+0700 (Indochina Time)))
+[8:34:38 AM] [General] [Info] Returning cached results for project search
+[8:34:41 AM] [General] [Info] Returning cached results for project search
+[8:35:48 AM] [General] [Info] Returning cached results for project search
+[8:35:48 AM] [General] [Info] Checking 1 projects for supported platforms
+[8:35:48 AM] [General] [Info] Supported platforms for the workspace are linux, macos, windows, ios, android, web
+[8:35:49 AM] [General] [Info] Saving chrome as preferred device
+[8:35:51 AM] [General] [Info] Returning cached results for project search
+[8:35:51 AM] [General] [Info] Starting debug session...
+[8:35:51 AM] [General] [Info]     workspace: D:\Flutter\tintuc
+[8:35:51 AM] [General] [Info]     program  : lib/main.dart
+[8:35:51 AM] [General] [Info] Setting cwd based on active workspace folder: D:\Flutter\tintuc
+[8:35:51 AM] [General] [Info] Converted program to absolute path: D:\Flutter\tintuc\lib\main.dart
+[8:35:51 AM] [General] [Info] Using workspace as cwd: D:\Flutter\tintuc
+[8:35:51 AM] [General] [Info] Detected launch project as Flutter
+[8:35:51 AM] [General] [Info] Using Flutter debug adapter for this session
+[8:35:51 AM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[8:35:51 AM] [General] [Info] Checking for errors before launching
+[8:35:51 AM] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Chrome)",
+        "program": "D:\\Flutter\\tintuc\\lib\\main.dart",
+        "request": "launch",
+        "type": "dart",
+        "dartCodeDebugSessionID": "session-f5d76",
+        "cwd": "D:\\Flutter\\tintuc",
+        "deviceId": "chrome",
+        "deviceName": "Chrome (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\src\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "D:\\Flutter\\tintuc"
+        ],
+        "args": [],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "chrome",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\src\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "D:\\Flutter\\tintuc\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "dartTestLogFile": "D:\\Flutter\\tintuc\\logs\\dart_test.txt",
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\src\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "D:\\Flutter\\tintuc\\logs\\flutter_run.txt",
+        "flutterTestLogFile": "D:\\Flutter\\tintuc\\logs\\flutter_test.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[8:35:51 AM] [General] [Info] Using flutter debugger for Flutter
+[8:35:51 AM] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[8:35:51 AM] [General] [Info] Running SDK DAP Dart VM in undefined: C:\src\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\src\\flutter"}}
+[8:35:51 AM] [General] [Info] Did not find session 2cf1f86f-f4c3-46e9-8c59-e4297a10b2ac to handle dart.progressStart. There were 0 sessions:
+[8:35:51 AM] [General] [Info] Event will be queued and processed when the session start event fires
+[8:35:51 AM] [General] [Info] Processing delayed event dart.progressStart for session 2cf1f86f-f4c3-46e9-8c59-e4297a10b2ac
+[8:36:18 AM] [General] [Info] Exposing URL: ws://127.0.0.1:51133/SPIsbQX-nms%3D/ws
+[8:36:18 AM] [General] [Info] Mapping URI: http://127.0.0.1:51133/SPIsbQX-nms%3D/ws
+[8:36:18 AM] [General] [Info] Mapped URI: http://127.0.0.1:51133/SPIsbQX-nms%3D/ws
+[8:36:18 AM] [General] [Info] Mapped URL: http://127.0.0.1:51133/SPIsbQX-nms%3D/ws
+[8:36:18 AM] [General] [Info] Final URL: ws://127.0.0.1:51133/SPIsbQX-nms=/ws
+[8:36:18 AM] [General] [Info] Took 34ms to search for projects (5 levels)
+[8:36:18 AM] [General] [Info] Took 2ms to filter out excluded projects (0 exclusion rules)
+[8:39:44 AM] [General] [Info] Returning cached results for project search
+[8:46:30 AM] [General] [Info] Took 41ms to search for projects (5 levels)
+[8:46:30 AM] [General] [Info] Took 4ms to filter out excluded projects (0 exclusion rules)
+[8:46:54 AM] [General] [Info] Returning cached results for project search
+[8:47:45 AM] [General] [Info] Returning cached results for project search
+[8:47:49 AM] [General] [Info] Returning cached results for project search

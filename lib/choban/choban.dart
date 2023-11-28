@@ -212,39 +212,41 @@ class _Container1State extends State<Container1> {
                   ),
                   const Divider(),
                   Container(
-                    height: 100,
-                    color: Colors.white30,
-                    child: ListView.separated(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: (widget.news.tieude ?? '').length,
-                      separatorBuilder: (context, index) =>
-                          const SizedBox(width: 8),
-                      itemBuilder: (context, index) {
-                        // Kiểm tra nếu index lớn hơn hoặc bằng 1
-                        return Container(
-                          height: 80,
-                          width: 230,
-                          color: const Color.fromARGB(255, 243, 239, 239),
-                          child: Center(
-                            child: Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    Title(
-                                      color: Colors.black,
-                                      child: Expanded(
-                                        child: Text(widget.news.tieude ?? ''),
-                                      ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        );
-                      },
-                    ),
+  height: 100,
+  color: Colors.white30,
+  child: ListView.separated(
+    scrollDirection: Axis.horizontal,
+    itemCount: loaiTinBai.length,
+    separatorBuilder: (context, index) => const SizedBox(width: 8),
+    itemBuilder: (context, loaiIndex) {
+      final currentLoaiTinBai = loaiTinBai[loaiIndex];
+      final filteredNews = widget.news.where((news) => news.loaitinbai == currentLoaiTinBai).toList();
+
+      return Container(
+        height: 80,
+        width: 230,
+        color: const Color.fromARGB(255, 243, 239, 239),
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: filteredNews.length,
+          itemBuilder: (context, newsIndex) {
+            return Row(
+              children: [
+                Title(
+                  color: Colors.black,
+                  child: Expanded(
+                    child: Text(filteredNews[newsIndex].tieude ?? ''),
                   ),
+                ),
+              ],
+            );
+          },
+        ),
+      );
+    },
+  ),
+)
+
                   const Divider(),
                 ],
               ),

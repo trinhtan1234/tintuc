@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tintuc/theodoi/theodoi.dart';
 import 'package:tintuc/tinchinh/bloc/news_bloc.dart';
 import 'package:tintuc/tinchinh/manhinh/thoisu/chitiet_thoisu.dart';
 
@@ -47,6 +48,17 @@ class _ChoBanState extends State<ChoBan> {
           color: Colors.red,
         ),
         actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const TheoDoi(),
+                ),
+              );
+            },
+            icon: const Icon(Icons.follow_the_signs_rounded),
+          ),
           Container(
             margin: const EdgeInsets.only(right: 10),
             child: IconButton(

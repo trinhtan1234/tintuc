@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tintuc/screen_nav_bottom.dart';
 
 class TheoDoi extends StatefulWidget {
   const TheoDoi({super.key});
@@ -12,7 +13,16 @@ class _TheoDoiState extends State<TheoDoi> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ScreenNavigationBottom(),
+                ),
+              );
+            },
+            icon: const Icon(Icons.arrow_back)),
         actions: [
           Container(
             margin: const EdgeInsets.only(right: 10),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+
 import 'package:tintuc/theodoi/theodoi.dart';
 import 'package:tintuc/tinchinh/bloc/news_bloc.dart';
 import 'package:tintuc/tinchinh/manhinh/thoisu/chitiet_thoisu.dart';
+import 'package:tintuc/tinchinh/manhinh/thoisu/thoisu.dart';
 
 import '../tinchinh/networking/models/model_news.dart';
 
@@ -13,7 +15,7 @@ class ChoBan extends StatefulWidget {
 }
 
 class _ChoBanState extends State<ChoBan> {
-  final NewsBloc _newsbloc = NewsBloc();
+  final NewsBloc newsbloc = NewsBloc();
 
   @override
   void initState() {
@@ -22,12 +24,12 @@ class _ChoBanState extends State<ChoBan> {
   }
 
   void loadData() async {
-    _newsbloc.getNews();
+    newsbloc.getNews();
   }
 
   @override
   void dispose() {
-    _newsbloc.dispose();
+    newsbloc.dispose();
     super.dispose();
   }
 
@@ -57,7 +59,10 @@ class _ChoBanState extends State<ChoBan> {
                 ),
               );
             },
-            icon: const Icon(Icons.follow_the_signs_rounded),
+            icon: const Icon(
+              Icons.library_add,
+              color: Colors.red,
+            ),
           ),
           Container(
             margin: const EdgeInsets.only(right: 10),
@@ -77,7 +82,7 @@ class _ChoBanState extends State<ChoBan> {
       ),
       body: Center(
         child: StreamBuilder(
-          stream: _newsbloc.newsStream,
+          stream: newsbloc.newsStream,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               final news = snapshot.data!;
@@ -90,7 +95,7 @@ class _ChoBanState extends State<ChoBan> {
                     final List<ModelNews> news = snapshot.data!;
                     return Man1(news: news[index]);
                   } else {
-                    return Man1(news: news[index]);
+                    return Man2(news: news[index]);
                   }
                 },
               );
@@ -129,6 +134,7 @@ class Man1 extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const Divider(),
             // const Padding(padding: EdgeInsets.only(top: 5)),
             if (news.imagetieude != null &&
                 news.imagetieude!.isNotEmpty) // Sửa thành articles
@@ -193,39 +199,6 @@ class Man1 extends StatelessWidget {
                 ),
               ],
             ),
-            // const Divider(),
-            Container(
-              height: 80,
-              color: Colors.blue,
-              child: ListView(
-                // This next line does the trick.
-                scrollDirection: Axis.horizontal,
-                children: <Widget>[
-                  Container(
-                    width: 160,
-                    color: Colors.red,
-                  ),
-                  Container(
-                    width: 160,
-                    color: Colors.blue,
-                  ),
-                  Container(
-                    width: 160,
-                    color: Colors.green,
-                  ),
-                  Container(
-                    width: 160,
-                    color: Colors.yellow,
-                  ),
-                  Container(
-                    width: 160,
-                    color: Colors.orange,
-                  ),
-                ],
-              ),
-            ),
-            const Divider(),
-            const Padding(padding: EdgeInsets.only(top: 5)),
           ],
         ),
       ),
@@ -233,12 +206,150 @@ class Man1 extends StatelessWidget {
   }
 }
 
-class Man2 extends StatelessWidget {
+class Man2 extends StatefulWidget {
   final ModelNews news;
-  const Man2({super.key, required this.news});
+
+  const Man2({required this.news, Key? key}) : super(key: key);
 
   @override
+  State<Man2> createState() => _Man2State();
+}
+
+class _Man2State extends State<Man2> {
+  @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    // ignore: unused_local_variable
+    SampleItem? selectedMenu;
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ChiTietThoiSu(
+              news: widget.news,
+            ),
+          ),
+        );
+      },
+      child: Container(
+        margin: const EdgeInsets.only(right: 10, left: 10),
+        height: 450,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Padding(padding: EdgeInsets.only(top: 5)),
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    widget.news.tieude ?? '',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                    maxLines: 3,
+                  ),
+                ),
+              ],
+            ),
+            const Padding(padding: EdgeInsets.only(top: 5)),
+            Text(
+              widget.news.ngaytao?.toString() ?? '',
+              style: const TextStyle(fontSize: 12),
+            ),
+            const Padding(padding: EdgeInsets.only(top: 5)),
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    widget.news.noidung ?? '',
+                    maxLines: 3,
+                  ),
+                ),
+              ],
+            ),
+            const Padding(padding: EdgeInsets.only(top: 5)),
+            if (widget.news.imagetieude != null &&
+                widget.news.imagetieude!.isNotEmpty) // Sửa thành articles
+              Expanded(
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width - 20,
+                  child: ClipRect(
+                    child: AspectRatio(
+                      aspectRatio: 16 / 9,
+                      child: Image(
+                        image: NetworkImage(widget.news.imagetieude ??
+                            ''), // Sửa thành articles
+                        fit: BoxFit.cover,
+                        width: MediaQuery.of(context).size.width - 20,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Text(widget.news.loaitinbai ?? ''),
+                ),
+                Row(
+                  children: [
+                    IconButton(
+                        onPressed: () {},
+                        icon: const Row(
+                          children: [
+                            Icon(
+                              Icons.comment_outlined,
+                              color: Colors.red,
+                            ),
+                            Text(
+                              '22',
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        )),
+                    MenuAnchor(
+                      builder: (BuildContext context, MenuController controller,
+                          Widget? child) {
+                        return IconButton(
+                          onPressed: () {
+                            if (controller.isOpen) {
+                              controller.close();
+                            } else {
+                              controller.open();
+                            }
+                          },
+                          icon: const Icon(Icons.bookmark_border_outlined),
+                          tooltip: 'Show menu',
+                        );
+                      },
+                      menuChildren: List<MenuItemButton>.generate(
+                        2,
+                        (int index) => MenuItemButton(
+                          onPressed: () => setState(
+                              () => selectedMenu = SampleItem.values[index]),
+                          child: Row(
+                            children: [
+                              Text('Lưu ${index == 0}'),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            const Divider()
+          ],
+        ),
+      ),
+    );
   }
 }

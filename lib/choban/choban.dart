@@ -129,7 +129,7 @@ class Man1 extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(padding: EdgeInsets.only(top: 5)),
+            // const Padding(padding: EdgeInsets.only(top: 5)),
             if (news.imagetieude != null &&
                 news.imagetieude!.isNotEmpty) // Sửa thành articles
               Expanded(
@@ -148,7 +148,7 @@ class Man1 extends StatelessWidget {
                   ),
                 ),
               ),
-            const Padding(padding: EdgeInsets.only(top: 5)),
+            // const Padding(padding: EdgeInsets.only(top: 5)),
             Row(
               children: [
                 Expanded(
@@ -163,7 +163,7 @@ class Man1 extends StatelessWidget {
                 ),
               ],
             ),
-            const Padding(padding: EdgeInsets.only(top: 5)),
+            // const Padding(padding: EdgeInsets.only(top: 5)),
             Text(
               news.ngaytao?.toString() ?? '',
               style: const TextStyle(fontSize: 12),
@@ -179,7 +179,7 @@ class Man1 extends StatelessWidget {
                 ),
               ],
             ),
-            const Padding(padding: EdgeInsets.only(top: 5)),
+            // const Padding(padding: EdgeInsets.only(top: 5)),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -193,7 +193,39 @@ class Man1 extends StatelessWidget {
                 ),
               ],
             ),
-            const Divider()
+            // const Divider(),
+            Container(
+              height: 80,
+              color: Colors.blue,
+              child: ListView(
+                // This next line does the trick.
+                scrollDirection: Axis.horizontal,
+                children: <Widget>[
+                  Container(
+                    width: 160,
+                    color: Colors.red,
+                  ),
+                  Container(
+                    width: 160,
+                    color: Colors.blue,
+                  ),
+                  Container(
+                    width: 160,
+                    color: Colors.green,
+                  ),
+                  Container(
+                    width: 160,
+                    color: Colors.yellow,
+                  ),
+                  Container(
+                    width: 160,
+                    color: Colors.orange,
+                  ),
+                ],
+              ),
+            ),
+            const Divider(),
+            const Padding(padding: EdgeInsets.only(top: 5)),
           ],
         ),
       ),

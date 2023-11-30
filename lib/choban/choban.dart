@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tintuc/theodoi/theodoi.dart';
+import 'package:tintuc/choban/theodoi/theodoi.dart';
+import 'package:tintuc/choban/thongbao/thongbao.dart';
 import 'package:tintuc/tinchinh/bloc/news_bloc.dart';
 import 'package:tintuc/tinchinh/manhinh/thoisu/chitiet_thoisu.dart';
 
@@ -35,17 +36,26 @@ class _ChoBanState extends State<ChoBan> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Tin của bạn',
-          style: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.bold,
-            color: Colors.red,
+        title: TextButton(
+          onPressed: () {},
+          child: const Row(
+            children: [
+              Icon(
+                Icons.newspaper,
+                color: Colors.red,
+              ),
+              Expanded(
+                child: Text(
+                  'Tin của bạn',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.red,
+                  ),
+                ),
+              ),
+            ],
           ),
-        ),
-        leading: const Icon(
-          Icons.newspaper,
-          color: Colors.red,
         ),
         actions: [
           IconButton(
@@ -57,7 +67,23 @@ class _ChoBanState extends State<ChoBan> {
                 ),
               );
             },
-            icon: const Icon(Icons.follow_the_signs_rounded),
+            icon: const Row(
+              children: [
+                Icon(Icons.add),
+                Text('Theo dõi'),
+              ],
+            ),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ThongBao(),
+                ),
+              );
+            },
+            icon: const Icon(Icons.notifications_none_sharp),
           ),
           Container(
             margin: const EdgeInsets.only(right: 10),
@@ -81,13 +107,14 @@ class _ChoBanState extends State<ChoBan> {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               final news = snapshot.data!;
+
               // final tintucTheGioi =
               // news.where((news) => news.diadiem == 'Thời sự').toList();
               return ListView.builder(
                 itemCount: news.length,
                 itemBuilder: (context, index) {
-                  if (snapshot.hasData) {
-                    final List<ModelNews> news = snapshot.data!;
+                  if (news.isNotEmpty) {
+                    // final List<ModelNews> news = snapshot.data!;
                     return Man1(news: news[index]);
                   } else {
                     return Man1(news: news[index]);
@@ -125,7 +152,7 @@ class Man1 extends StatelessWidget {
       },
       child: Container(
         margin: const EdgeInsets.only(right: 10, left: 10),
-        height: 450,
+        height: 550,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -193,39 +220,7 @@ class Man1 extends StatelessWidget {
                 ),
               ],
             ),
-            // const Divider(),
-            Container(
-              height: 80,
-              color: Colors.blue,
-              child: ListView(
-                // This next line does the trick.
-                scrollDirection: Axis.horizontal,
-                children: <Widget>[
-                  Container(
-                    width: 160,
-                    color: Colors.red,
-                  ),
-                  Container(
-                    width: 160,
-                    color: Colors.blue,
-                  ),
-                  Container(
-                    width: 160,
-                    color: Colors.green,
-                  ),
-                  Container(
-                    width: 160,
-                    color: Colors.yellow,
-                  ),
-                  Container(
-                    width: 160,
-                    color: Colors.orange,
-                  ),
-                ],
-              ),
-            ),
             const Divider(),
-            const Padding(padding: EdgeInsets.only(top: 5)),
           ],
         ),
       ),

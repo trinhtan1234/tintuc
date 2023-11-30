@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tintuc/caidat/screen_menu.dart';
 import 'package:tintuc/choban/choban.dart';
-import 'package:tintuc/thongbao/thongbao.dart';
 import 'package:tintuc/tinchinh/manhinh/menutinchinh.dart';
+import 'package:tintuc/postcasts/tinvideo.dart';
 
 class ScreenNavigationBottom extends StatefulWidget {
   const ScreenNavigationBottom({super.key});
@@ -27,7 +27,7 @@ class _ScreenNavigationBottomState extends State<ScreenNavigationBottom> {
     _pages = [
       const ChoBan(),
       const MenuTinChinh(),
-      const ThongBao(),
+      const Postcasts(),
       const CaiDat(),
     ];
   }
@@ -46,7 +46,7 @@ class _ScreenNavigationBottomState extends State<ScreenNavigationBottom> {
               icon: Icon(Icons.person_2_outlined), label: 'Cho bạn'),
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Tin chính'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.notifications), label: 'Thông báo'),
+              icon: Icon(Icons.headset_outlined), label: 'Postcasts'),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Cài đặt'),
         ],
       ),

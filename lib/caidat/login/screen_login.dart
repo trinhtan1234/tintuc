@@ -15,9 +15,19 @@ class _ScreenLoginState extends State<ScreenLogin> {
 
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
+  final scopes = [
+    'email',
+    'https://www.googleapis.com/auth/contacts.readonly',
+  ];
+  final _googleSignIn = GoogleSignIn(
+    scopes: [
+      'email',
+      'https://www.googleapis.com/auth/contacts.readonly',
+    ],
+  );
 
   Future<UserCredential> signInWithGoogle() async {
-    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+    final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
 
     final GoogleSignInAuthentication? googleAuth =
         await googleUser?.authentication;
@@ -105,8 +115,18 @@ class _ScreenLoginState extends State<ScreenLogin> {
                 ),
               ),
               TextButton(
-                onPressed: () {
-                  signInWithGoogle();
+                onPressed: () async {
+                  final data = await signInWithGoogle();
+                  print(data.user.toString());
+                  final user = data.user;
+                  if (user != null) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ScreenSign(),
+                      ),
+                    );
+                  } else {}
                 },
                 child: Center(
                   child: Container(

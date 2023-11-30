@@ -1,0 +1,300 @@
+!! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
+Dart Code extension: 3.78.0
+Flutter extension: 3.79.20231130 (not activated)
+
+App: Visual Studio Code
+App Host: desktop
+Version: win 1.84.2
+
+
+Logging Categories:
+    Analyzer
+
+Thu Nov 30 2023 [21:00:21 GMT+0700 (Indochina Time)] Log file started
+[9:00:21 PM] [Analyzer] [Info] Spawning C:\src\flutter\bin\cache\dart-sdk\bin\dart.exe with args ["language-server","--protocol=lsp","--client-id=VS-Code","--client-version=3.78.0"]
+[9:00:21 PM] [Analyzer] [Info]     PID: 17900
+[9:00:21 PM] [Analyzer] [Info] ==> Content-Length: 6376
+[9:00:21 PM] [Analyzer] [Info] ==> {"jsonrpc":"2.0","id":0,"method":"initialize","params":{"processId":21384,"clientInfo":{"name":"Visual Studio Code","version":"1.84.2"},"locale":"en","rootPath":"d:\\Flutter\\tintuc","rootUri":"file:///D%3A/Flutter/tintuc","capabilities":{"workspace":{"applyEdit":true,"workspaceEdit":{"documentChanges":true,"resourceOperations":["create","rename","delete"],"failureHandling":"textOnlyTransactional","normalizesLineEndings":true,"changeAnnotationSupport":{"groupsOnLabel":true}},"configuration":true,"didChangeWatchedFiles":{"dynamicRegistration":true,"relativePatternSupport":true},"symbol":{"dynamicRegistration":true,"symbolKind":{"valueSet":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]},"tagSupport":{"valueSet":[1]},"resolveSupport":{"properties":["location.range"]}},"codeLens":{"refreshSupport":true},"executeCommand":{"dynamicRegistration":true},"didChangeConfiguration":{"dynamicRegistration":true},"workspaceFolders":true,"semanticTokens":{"refreshSupport":true},"fileOperations":{"dynamicRegistration":true,"didCreate":true,"didRename":true,"didDelete":true,"willCreate":true,"willRename":true,"willDelete":true},"inlineValue":{"refreshSupport":true},"inlayHint":{"refreshSupport":true},"diagnostics":{"refreshSupport":true}},"textDocument":{"publishDiagnostics":{"relatedInformation":true,"versionSupport":false,"tagSupport":{"valueSet":[1,2]},"codeDescriptionSupport":true,"dataSupport":true},"synchronization":{"dynamicRegistration":true,"willSave":true,"willSaveWaitUntil":true,"didSave":true},"completion":{"dynamicRegistration":true,"contextSupport":true,"completionItem":{"snippetSupport":true,"commitCharactersSupport":true,"documentationFormat":["markdown","plaintext"],"deprecatedSupport":true,"preselectSupport":true,"tagSupport":{"valueSet":[1]},"insertReplaceSupport":true,"resolveSupport":{"properties":["documentation","detail","additionalTextEdits"]},"insertTextModeSupport":{"valueSet":[1,2]},"labelDetailsSupport":true},"insertTextMode":2,"…
+[9:00:24 PM] [Analyzer] [Info] <== Content-Length: 641
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"id":0,"jsonrpc":"2.0","result":{"capabilities":{"executeCommandProvider":{"commands":["edit.sortMembers","edit.organizeImports","edit.fixAll","edit.sendWorkspaceEdit","refactor.perform","refactor.validate","dart.logAction","dart.refactor.convert_all_formal_parameters_to_named","dart.refactor.convert_selected_formal_parameters_to_named","dart.refactor.move_selected_formal_parameters_left","dart.refactor.move_top_level_to_file"],"workDoneProgress":true},"workspace":{"workspaceFolders":{"changeNotifications":true,"supported":true}},"workspaceSymbolProvider":true},"serverInfo":{"name":"Dart SDK LSP Analysis Server","version":"3.2.1"}}}
+[9:00:25 PM] [Analyzer] [Info] ==> Content-Length: 86
+[9:00:25 PM] [Analyzer] [Info] ==> {"jsonrpc":"2.0","method":"initialized","params":{},"clientRequestTime":1701352825576}
+[9:00:25 PM] [Analyzer] [Info] <== Content-Length: 157
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"id":1,"jsonrpc":"2.0","method":"workspace/configuration","params":{"items":[{"scopeUri":"file:///D:/Flutter/tintuc","section":"dart"},{"section":"dart"}]}}
+[9:00:26 PM] [Analyzer] [Info] ==> Content-Length: 7569
+[9:00:26 PM] [Analyzer] [Info] ==> {"jsonrpc":"2.0","id":1,"result":[{"additionalAnalyzerFileExtensions":[],"analysisExcludedFolders":[],"analyzeAngularTemplates":true,"analyzerAdditionalArgs":[],"analyzerVmAdditionalArgs":[],"analyzerDiagnosticsPort":null,"analyzerPath":null,"analyzerSshHost":null,"analyzerVmServicePort":null,"includeDependenciesInWorkspaceSymbols":true,"notifyAnalyzerErrors":true,"onlyAnalyzeProjectsWithOpenFiles":false,"showTodos":true,"useLegacyAnalyzerProtocol":false,"updateDevTools":true,"devToolsBrowser":"chrome","devToolsPort":null,"devToolsReuseWindows":true,"devToolsTheme":"dark","devToolsLocation":"beside","openDevTools":"flutter","shareDevToolsWithFlutter":true,"showInspectorNotificationsForWidgetErrors":true,"customDevTools":{},"analysisServerFolding":true,"autoImportCompletions":true,"automaticCommentSlashes":"tripleSlash","closingLabels":true,"completeFunctionCalls":true,"documentation":"full","doNotFormat":[],"enableCompletionCommitCharacters":false,"enableSdkFormatter":true,"enableSnippets":true,"insertArgumentPlaceholders":true,"lineLength":80,"lspSnippetTextEdits":true,"renameFilesWithClasses":"never","showDartPadSampleCodeLens":true,"showMainCodeLens":true,"showTestCodeLens":true,"updateImportsOnRename":true,"warnWhenEditingFilesOutsideWorkspace":true,"warnWhenEditingFilesInPubCache":true,"flutterAdbConnectOnChromeOs":false,"flutterAdditionalArgs":[],"flutterAttachAdditionalArgs":[],"flutterCreateAndroidLanguage":"kotlin","flutterCreateIOSLanguage":"swift","flutterCreatePlatforms":null,"offline":false,"flutterCreateOrganization":null,"flutterCustomEmulators":[],"flutterGutterIcons":true,"flutterHotReloadOnSave":"manual","hotReloadOnSave":"never","flutterGenerateLocalizationsOnSave":"never","flutterOutline":true,"flutterRunAdditionalArgs":[],"flutterScreenshotPath":null,"flutterRememberSelectedDevice":true,"flutterSelectDeviceWhenConnected":true,"flutterShowEmulators":"local","flutterShowWebServerDevice":"remote","flutterTestAdditionalArgs":[],"flutterTrackWidg…
+[9:00:26 PM] [Analyzer] [Info] <== Content-Length: 5204
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"id":2,"jsonrpc":"2.0","method":"client/registerCapability","params":{"registrations":[{"id":"0","method":"textDocument/prepareCallHierarchy","registerOptions":{"documentSelector":[{"language":"dart","scheme":"file"}]}},{"id":"1","method":"textDocument/codeAction","registerOptions":{"codeActionKinds":["source","source.organizeImports","source.fixAll","source.sortMembers","quickfix","refactor"],"documentSelector":[{"language":"dart","scheme":"file"}]}},{"id":"2","method":"textDocument/completion","registerOptions":{"completionItem":{"labelDetailsSupport":true},"documentSelector":[{"language":"dart","scheme":"file"}],"resolveProvider":true,"triggerCharacters":[".","=","(","$","\"","'","{","/",":"]}},{"id":"3","method":"textDocument/completion","registerOptions":{"documentSelector":[{"language":"yaml","pattern":"**/pubspec.yaml","scheme":"file"},{"language":"yaml","pattern":"**/analysis_options.yaml","scheme":"file"},{"language":"yaml","pattern":"**/lib/{fix_data.yaml,fix_data/**.yaml}","scheme":"file"}],"resolveProvider":true}},{"id":"4","method":"textDocument/definition","registerOptions":{"documentSelector":[{"language":"dart","scheme":"file"}]}},{"id":"5","method":"textDocument/documentColor","registerOptions":{"documentSelector":[{"language":"dart","scheme":"file"}]}},{"id":"6","method":"textDocument/documentHighlight","registerOptions":{"documentSelector":[{"language":"dart","scheme":"file"}]}},{"id":"7","method":"textDocument/documentSymbol","registerOptions":{"documentSelector":[{"language":"dart","scheme":"file"}]}},{"id":"8","method":"textDocument/foldingRange","registerOptions":{"documentSelector":[{"language":"dart","scheme":"file"}]}},{"id":"9","method":"textDocument/onTypeFormatting","registerOptions":{"documentSelector":[{"language":"dart","scheme":"file"}],"firstTriggerCharacter":"}","moreTriggerCharacter":[";"]}},{"id":"10","method":"textDocument/rangeFormatting","reg…
+[9:00:26 PM] [Analyzer] [Info] ==> Content-Length: 72
+[9:00:26 PM] [Analyzer] [Info] ==> {"jsonrpc":"2.0","id":2,"result":null,"clientRequestTime":1701352826448}
+[9:00:26 PM] [Analyzer] [Info] ==> Content-Length: 1179
+[9:00:26 PM] [Analyzer] [Info] ==> {"jsonrpc":"2.0","method":"textDocument/didOpen","params":{"textDocument":{"uri":"file:///D%3A/Flutter/tintuc/lib/main.dart","languageId":"dart","version":1,"text":"import 'package:firebase_core/firebase_core.dart';\r\nimport 'package:flutter/material.dart';\r\nimport 'package:tintuc/firebase_options.dart';\r\nimport 'package:tintuc/screen_nav_bottom.dart';\r\n\r\n// late FirebaseApp app;\r\n// late FirebaseAuth auth;\r\n\r\nvoid main() async {\r\n  WidgetsFlutterBinding.ensureInitialized();\r\n  await Firebase.initializeApp(\r\n    options: DefaultFirebaseOptions.currentPlatform,\r\n  );\r\n\r\n  runApp(const MyApp());\r\n}\r\n\r\nclass MyApp extends StatelessWidget {\r\n  const MyApp({super.key});\r\n  // This widget is the root of your application.\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return MaterialApp(\r\n      debugShowCheckedModeBanner: false,\r\n      title: 'App tin tức',\r\n      theme: ThemeData(\r\n        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),\r\n        useMaterial3: true,\r\n      ),\r\n      home: const ScreenNavigationBottom(),\r\n    );\r\n  }\r\n}\r\n"}},"clientRequestTime":1701352826449}
+[9:00:26 PM] [Analyzer] [Info] ==> Content-Length: 292
+[9:00:26 PM] [Analyzer] [Info] ==> {"jsonrpc":"2.0","id":1,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///D%3A/Flutter/tintuc/lib/main.dart"},"range":{"start":{"line":12,"character":4},"end":{"line":12,"character":4}},"context":{"diagnostics":[],"triggerKind":2}},"clientRequestTime":1701352826470}
+[9:00:26 PM] [Analyzer] [Info] ==> Content-Length: 174
+[9:00:26 PM] [Analyzer] [Info] ==> {"jsonrpc":"2.0","id":2,"method":"textDocument/documentColor","params":{"textDocument":{"uri":"file:///D%3A/Flutter/tintuc/lib/main.dart"}},"clientRequestTime":1701352826470}
+[9:00:26 PM] [Analyzer] [Info] ==> Content-Length: 175
+[9:00:26 PM] [Analyzer] [Info] ==> {"jsonrpc":"2.0","id":3,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///D%3A/Flutter/tintuc/lib/main.dart"}},"clientRequestTime":1701352826470}
+[9:00:26 PM] [Analyzer] [Info] ==> Content-Length: 245
+[9:00:26 PM] [Analyzer] [Info] ==> {"jsonrpc":"2.0","id":4,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///D%3A/Flutter/tintuc/lib/main.dart"},"range":{"start":{"line":0,"character":0},"end":{"line":33,"character":0}}},"clientRequestTime":1701352826491}
+[9:00:26 PM] [Analyzer] [Info] <== Content-Length: 36
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:26 PM] [Analyzer] [Info] <== {"id":1,"jsonrpc":"2.0","result":[]}
+[9:00:26 PM] [Analyzer] [Info] <== Content-Length: 132
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"id":2,"jsonrpc":"2.0","error":{"code":-32007,"data":"D:\\Flutter\\tintuc\\lib\\main.dart","message":"File is not being analyzed"}}Content-Length: 132
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"id":3,"jsonrpc":"2.0","error":{"code":-32007,"data":"D:\\Flutter\\tintuc\\lib\\main.dart","message":"File is not being analyzed"}}
+[9:00:26 PM] [Analyzer] [Info] <== Content-Length: 132
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"id":4,"jsonrpc":"2.0","error":{"code":-32007,"data":"D:\\Flutter\\tintuc\\lib\\main.dart","message":"File is not being analyzed"}}
+[9:00:26 PM] [Analyzer] [Info] ==> Content-Length: 256
+[9:00:26 PM] [Analyzer] [Info] ==> {"jsonrpc":"2.0","id":5,"method":"textDocument/semanticTokens/range","params":{"textDocument":{"uri":"file:///D%3A/Flutter/tintuc/lib/main.dart"},"range":{"start":{"line":0,"character":0},"end":{"line":33,"character":0}}},"clientRequestTime":1701352826794}
+[9:00:26 PM] [Analyzer] [Info] ==> Content-Length: 173
+[9:00:26 PM] [Analyzer] [Info] ==> {"jsonrpc":"2.0","id":6,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///D%3A/Flutter/tintuc/lib/main.dart"}},"clientRequestTime":1701352826794}
+[9:00:26 PM] [Analyzer] [Info] ==> Content-Length: 292
+[9:00:26 PM] [Analyzer] [Info] ==> {"jsonrpc":"2.0","id":7,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///D%3A/Flutter/tintuc/lib/main.dart"},"range":{"start":{"line":12,"character":4},"end":{"line":12,"character":4}},"context":{"diagnostics":[],"triggerKind":2}},"clientRequestTime":1701352826802}
+[9:00:26 PM] [Analyzer] [Info] ==> Content-Length: 174
+[9:00:26 PM] [Analyzer] [Info] ==> {"jsonrpc":"2.0","id":8,"method":"textDocument/documentColor","params":{"textDocument":{"uri":"file:///D%3A/Flutter/tintuc/lib/main.dart"}},"clientRequestTime":1701352826803}
+[9:00:26 PM] [Analyzer] [Info] ==> Content-Length: 96
+[9:00:26 PM] [Analyzer] [Info] ==> {"jsonrpc":"2.0","method":"$/cancelRequest","params":{"id":6},"clientRequestTime":1701352826803}
+[9:00:27 PM] [Analyzer] [Info] <== Content-Length: 164
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:27 PM] [Analyzer] [Info] ==> Content-Length: 180
+[9:00:27 PM] [Analyzer] [Info] ==> {"jsonrpc":"2.0","id":9,"method":"textDocument/semanticTokens/full","params":{"textDocument":{"uri":"file:///D%3A/Flutter/tintuc/lib/main.dart"}},"clientRequestTime":1701352827945}
+[9:00:27 PM] [Analyzer] [Info] ==> Content-Length: 174
+[9:00:27 PM] [Analyzer] [Info] ==> {"jsonrpc":"2.0","id":10,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///D%3A/Flutter/tintuc/lib/main.dart"}},"clientRequestTime":1701352827945}
+[9:00:42 PM] [Analyzer] [Info] <== {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/android/app/src/debug/AndroidManifest.xml"}}
+[9:00:42 PM] [Analyzer] [Info] <== Content-Length: 163
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:42 PM] [Analyzer] [Info] <== {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/android/app/src/main/AndroidManifest.xml"}}
+[9:00:42 PM] [Analyzer] [Info] <== Content-Length: 166
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:42 PM] [Analyzer] [Info] <== {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/android/app/src/profile/AndroidManifest.xml"}}
+[9:00:42 PM] [Analyzer] [Info] <== Content-Length: 188
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:42 PM] [Analyzer] [Info] <== {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/build/app/intermediates/merged_manifest/debug/AndroidManifest.xml"}}
+[9:00:42 PM] [Analyzer] [Info] <== Content-Length: 189
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:42 PM] [Analyzer] [Info] <== {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/build/app/intermediates/merged_manifests/debug/AndroidManifest.xml"}}
+[9:00:42 PM] [Analyzer] [Info] <== Content-Length: 191
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/build/app/intermediates/packaged_manifests/debug/AndroidManifest.xml"}}Content-Length: 218
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:42 PM] [Analyzer] [Info] <== {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/build/firebase_auth/intermediates/aapt_friendly_merged_manifests/debug/aapt/AndroidManifest.xml"}}Content-Length: 198
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml"}}
+[9:00:42 PM] [Analyzer] [Info] <== Content-Length: 218
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/build/firebase_core/intermediates/aapt_friendly_merged_manifests/debug/aapt/AndroidManifest.xml"}}Content-Length: 198
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:42 PM] [Analyzer] [Info] <== {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml"}}Content-Length: 225
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/build/flutter_inappwebview/intermediates/aapt_friendly_merged_manifests/debug/aapt/AndroidManifest.xml"}}Content-Length: 205
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/build/flutter_inappwebview/intermediates/merged_manifest/debug/AndroidManifest.xml"}}
+[9:00:42 PM] [Analyzer] [Info] <== Content-Length: 226
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/build/flutter_native_splash/intermediates/aapt_friendly_merged_manifests/debug/aapt/AndroidManifest.xml"}}Content-Length: 206
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:42 PM] [Analyzer] [Info] <== {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/build/flutter_native_splash/intermediates/merged_manifest/debug/AndroidManifest.xml"}}Content-Length: 227
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/build/google_sign_in_android/intermediates/aapt_friendly_merged_manifests/debug/aapt/AndroidManifest.xml"}}Content-Length: 207
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/build/google_sign_in_android/intermediates/merged_manifest/debug/AndroidManifest.xml"}}Content-Length: 225
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/build/video_player_android/intermediates/aapt_friendly_merged_manifests/debug/aapt/AndroidManifest.xml"}}Content-Length: 205
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/build/video_player_android/intermediates/merged_manifest/debug/AndroidManifest.xml"}}Content-Length: 144
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:42 PM] [Analyzer] [Info] <== {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/analysis_options.yaml"}}
+[9:00:42 PM] [Analyzer] [Info] <== Content-Length: 135
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:42 PM] [Analyzer] [Info] <== {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/pubspec.yaml"}}
+[9:00:42 PM] [Analyzer] [Info] <== Content-Length: 97
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"id":3,"jsonrpc":"2.0","method":"window/workDoneProgress/create","params":{"token":"ANALYZING"}}Content-Length: 136
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/main.dart"}}Content-Length: 337
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:42 PM] [Analyzer] [Info] <== {"jsonrpc":"2.0","method":"dart/textDocument/publishClosingLabels","params":{"labels":[{"label":"MaterialApp","range":{"end":{"character":5,"line":30},"start":{"character":11,"line":22}}},{"label":"ThemeData","range":{"end":{"character":7,"line":28},"start":{"character":13,"line":25}}}],"uri":"file:///D:/Flutter/tintuc/lib/main.dart"}}Content-Length: 2635
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"dart/textDocument/publishOutline","params":{"outline":{"children":[{"children":[{"codeRange":{"end":{"character":22,"line":14},"start":{"character":9,"line":14}},"element":{"kind":"CONSTRUCTOR_INVOCATION","name":"MyApp","range":{"end":{"character":9,"line":14},"start":{"character":9,"line":14}}},"range":{"end":{"character":22,"line":14},"start":{"character":9,"line":14}}}],"codeRange":{"end":{"character":1,"line":15},"start":{"character":0,"line":8}},"element":{"kind":"FUNCTION","name":"main","parameters":"()","range":{"end":{"character":9,"line":8},"start":{"character":5,"line":8}},"returnType":"void"},"range":{"end":{"character":1,"line":15},"start":{"character":0,"line":8}}},{"children":[{"codeRange":{"end":{"character":27,"line":18},"start":{"character":2,"line":18}},"element":{"kind":"CONSTRUCTOR","name":"MyApp","parameters":"({super.key})","range":{"end":{"character":13,"line":18},"start":{"character":8,"line":18}}},"range":{"end":{"character":27,"line":18},"start":{"character":2,"line":18}}},{"children":[{"children":[{"codeRange":{"end":{"character":42,"line":29},"start":{"character":12,"line":29}},"element":{"kind":"CONSTRUCTOR_INVOCATION","name":"ScreenNavigationBottom","range":{"end":{"character":12,"line":29},"start":{"character":12,"line":29}}},"range":{"end":{"character":42,"line":29},"start":{"character":12,"line":29}}}],"codeRange":{"end":{"character":5,"line":30},"start":{"character":11,"line":22}},"element":{"kind":"CONSTRUCTOR_INVOCATION","name":"MaterialApp","range":{"end":{"character":11,"line":22},"start"…
+[9:00:42 PM] [Analyzer] [Info] <== {"id":8,"jsonrpc":"2.0","result":[{"color":{"alpha":1.0,"blue":0.7176470588235294,"green":0.22745098039215686,"red":0.403921568627451},"range":{"end":{"character":70,"line":26},"start":{"character":53,"line":26}}}]}Content-Length: 699
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"id":9,"jsonrpc":"2.0","result":{"data":[0,0,6,1,0,0,7,42,15,0,1,0,6,1,0,0,7,31,15,0,1,0,6,1,0,0,7,38,15,0,1,0,6,1,0,0,7,39,15,0,2,0,24,3,0,1,0,26,3,0,2,0,4,1,2048,0,5,4,16,36,0,7,5,1,256,1,2,21,2,0,0,22,17,4,32,1,2,5,1,256,0,6,8,2,0,0,9,13,4,32,1,4,7,6,512,0,9,22,2,0,0,23,15,11,32,3,2,6,16,0,0,7,5,1,0,0,6,5,2,2,3,0,5,1,0,0,6,5,2,4,0,6,7,1,0,0,8,15,2,0,1,2,5,1,0,0,6,5,2,6,0,7,5,1,0,0,6,3,6,4,1,2,47,3,0,1,2,1,0,0,0,1,8,11,128,1,2,6,2,0,0,7,5,4,20,0,6,12,2,0,0,13,7,6,4,1,4,6,1,256,0,7,11,2,2,1,6,26,6,512,0,28,5,13,0,1,6,5,6,512,0,7,13,15,0,1,6,5,6,512,0,7,9,2,2,1,8,11,6,512,0,13,11,2,2,0,12,8,4,2,0,9,9,6,512,0,11,6,2,0,0,7,10,11,32,1,8,12,6,512,0,14,4,13,0,2,6,4,6,512,0,6,5,1,0,0,6,22,2,2]}}
+[9:00:42 PM] [Analyzer] [Info] ==> Content-Length: 72
+[9:00:42 PM] [Analyzer] [Info] ==> {"jsonrpc":"2.0","id":3,"result":null,"clientRequestTime":1701352842977}
+[9:00:42 PM] [Analyzer] [Info] <== Content-Length: 305
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:42 PM] [Analyzer] [Info] <== {"id":10,"jsonrpc":"2.0","result":[{"endLine":3,"kind":"imports","startLine":0},{"endLine":6,"kind":"comment","startLine":5},{"endLine":15,"startLine":8},{"endLine":12,"startLine":10},{"endLine":32,"startLine":17},{"endLine":31,"startLine":21},{"endLine":30,"startLine":22},{"endLine":28,"startLine":25}]}
+[9:00:42 PM] [Analyzer] [Info] <== Content-Length: 1101
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:42 PM] [Analyzer] [Info] <== {"id":7,"jsonrpc":"2.0","result":[{"command":{"arguments":[{"path":"D:\\Flutter\\tintuc\\lib\\main.dart","autoTriggered":true}],"command":"edit.sortMembers","title":"Sort Members"},"kind":"source.sortMembers","title":"Sort Members"},{"command":{"arguments":[{"path":"D:\\Flutter\\tintuc\\lib\\main.dart","autoTriggered":true}],"command":"edit.organizeImports","title":"Organize Imports"},"kind":"source.organizeImports","title":"Organize Imports"},{"command":{"arguments":[{"path":"D:\\Flutter\\tintuc\\lib\\main.dart","autoTriggered":true}],"command":"edit.fixAll","title":"Fix All"},"kind":"source.fixAll","title":"Fix All"},{"command":{"arguments":[{"action":"dart.assist.assignToVariable"}],"command":"dart.logAction","title":"Log Action"},"diagnostics":[],"edit":{"documentChanges":[{"edits":[{"insertTextFormat":2,"newText":"var ${1|firebaseApp,app|} = ","range":{"end":{"character":2,"line":10},"start":{"character":2,"line":10}}}],"textDocument":{"uri":"file:///D:/Flutter/tintuc/lib/main.dart","version":1}}]},"kind":"refactor.assignToVariable","title":"Assign value to new local variable"}]}
+[9:00:42 PM] [Analyzer] [Info] <== Content-Length: 118
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"$/progress","params":{"token":"ANALYZING","value":{"kind":"begin","title":"Analyzing…"}}}
+[9:00:43 PM] [Analyzer] [Info] ==> Content-Length: 246
+[9:00:43 PM] [Analyzer] [Info] ==> {"jsonrpc":"2.0","id":11,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///D%3A/Flutter/tintuc/lib/main.dart"},"range":{"start":{"line":0,"character":0},"end":{"line":33,"character":0}}},"clientRequestTime":1701352843408}
+[9:00:43 PM] [Analyzer] [Info] <== Content-Length: 303
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:43 PM] [Analyzer] [Info] <== {"id":11,"jsonrpc":"2.0","result":[{"kind":2,"label":[{"location":{"range":{"end":{"character":22,"line":1189},"start":{"character":19,"line":1189}},"uri":"file:///C:/src/flutter/packages/flutter/lib/src/widgets/binding.dart"},"value":"app:"}],"paddingRight":true,"position":{"character":9,"line":14}}]}
+[9:00:51 PM] [Analyzer] [Info] <== Content-Length: 154
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:51 PM] [Analyzer] [Info] <== {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/caidat/login/constants.dart"}}
+[9:00:51 PM] [Analyzer] [Info] <== Content-Length: 1147
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[{"code":"avoid_print","codeDescription":{"href":"https://dart.dev/lints/avoid_print"},"message":"Don't invoke 'print' in production code.\nTry using a logging framework.","range":{"end":{"character":23,"line":119},"start":{"character":18,"line":119}},"severity":3,"source":"dart"},{"code":"use_build_context_synchronously","codeDescription":{"href":"https://dart.dev/lints/use_build_context_synchronously"},"message":"Don't use 'BuildContext's across async gaps.\nTry rewriting the code to not reference the 'BuildContext'.","range":{"end":{"character":21,"line":127},"start":{"character":20,"line":122}},"severity":3,"source":"dart"},{"code":"prefer_const_constructors","codeDescription":{"href":"https://dart.dev/lints/prefer_const_constructors"},"message":"Use 'const' with the constructor to improve performance.\nTry adding the 'const' keyword to the constructor invocation.","range":{"end":{"character":58,"line":125},"start":{"character":46,"line":125}},"severity":3,"source":"dart"}],"uri":"file:///D:/Flutter/tintuc/lib/caidat/login/screen_login.dart"}}Content-Length: 1560
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[{"code":"avoid_print","codeDescription":{"href":"https://dart.dev/lints/avoid_print"},"message":"Don't invoke 'print' in production code.\nTry using a logging framework.","range":{"end":{"character":33,"line":105},"start":{"character":28,"line":105}},"severity":3,"source":"dart"},{"code":"avoid_print","codeDescription":{"href":"https://dart.dev/lints/avoid_print"},"message":"Don't invoke 'print' in production code.\nTry using a logging framework.","range":{"end":{"character":35,"line":113},"start":{"character":30,"line":113}},"severity":3,"source":"dart"},{"code":"avoid_print","codeDescription":…
+[9:00:51 PM] [Analyzer] [Info] <== Content-Length: 150
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:51 PM] [Analyzer] [Info] <== {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/caidat/screen_menu.dart"}}
+[9:00:51 PM] [Analyzer] [Info] <== Content-Length: 145
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/choban/choban.dart"}}Content-Length: 154
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/choban/theodoi/theodoi.dart"}}Content-Length: 156
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/choban/thongbao/thongbao.dart"}}Content-Length: 149
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/components/button.dart"}}
+[9:00:51 PM] [Analyzer] [Info] <== Content-Length: 159
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:51 PM] [Analyzer] [Info] <== {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/components/custom_container.dart"}}
+[9:00:51 PM] [Analyzer] [Info] <== Content-Length: 147
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/components/text.dart"}}Content-Length: 153
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/components/textbuttom.dart"}}Content-Length: 152
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/components/textfield.dart"}}
+[9:00:51 PM] [Analyzer] [Info] <== Content-Length: 148
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/firebase_options.dart"}}Content-Length: 150
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/postcasts/tinvideo.dart"}}Content-Length: 149
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/screen_nav_bottom.dart"}}Content-Length: 155
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/tinchinh/bloc/news_bloc.dart"}}Content-Length: 156
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:51 PM] [Analyzer] [Info] <== {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/tinchinh/manhinh/giaitri.dart"}}
+[9:00:51 PM] [Analyzer] [Info] <== Content-Length: 161
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/tinchinh/manhinh/menutinchinh.dart"}}
+[9:00:51 PM] [Analyzer] [Info] <== Content-Length: 156
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/tinchinh/manhinh/thegioi.dart"}}Content-Length: 170
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/tinchinh/manhinh/thoisu/chitiet_thoisu.dart"}}Content-Length: 162
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/tinchinh/manhinh/thoisu/thoisu.dart"}}Content-Length: 156
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/tinchinh/manhinh/vietnam.dart"}}
+[9:00:51 PM] [Analyzer] [Info] <== Content-Length: 163
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/tinchinh/networking/api_url/url.dart"}}Content-Length: 169
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/tinchinh/networking/models/model_news.dart"}}
+[9:00:51 PM] [Analyzer] [Info] <== Content-Length: 178
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:51 PM] [Analyzer] [Info] <== {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/tinchinh/networking/responsitories/http_client.dart"}}Content-Length: 179
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/tinchinh/networking/responsitories/http_service.dart"}}
+[9:00:51 PM] [Analyzer] [Info] <== Content-Length: 184
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/tinchinh/networking/responsitories/news_responsitory.dart"}}Content-Length: 144
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:51 PM] [Analyzer] [Info] <== {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/test/widget_test.dart"}}Content-Length: 93
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"$/progress","params":{"token":"ANALYZING","value":{"kind":"end"}}}
+[9:00:58 PM] [Analyzer] [Info] <== Content-Length: 97
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:58 PM] [Analyzer] [Info] <== {"id":4,"jsonrpc":"2.0","method":"window/workDoneProgress/create","params":{"token":"ANALYZING"}}
+[9:00:58 PM] [Analyzer] [Info] <== Content-Length: 136
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/main.dart"}}
+[9:00:58 PM] [Analyzer] [Info] <== Content-Length: 337
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:58 PM] [Analyzer] [Info] ==> Content-Length: 72
+[9:00:58 PM] [Analyzer] [Info] ==> {"jsonrpc":"2.0","id":4,"result":null,"clientRequestTime":1701352858209}
+[9:00:58 PM] [Analyzer] [Info] <== {"jsonrpc":"2.0","method":"dart/textDocument/publishClosingLabels","params":{"labels":[{"label":"MaterialApp","range":{"end":{"character":5,"line":30},"start":{"character":11,"line":22}}},{"label":"ThemeData","range":{"end":{"character":7,"line":28},"start":{"character":13,"line":25}}}],"uri":"file:///D:/Flutter/tintuc/lib/main.dart"}}Content-Length: 2635
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"dart/textDocument/publishOutline","params":{"outline":{"children":[{"children":[{"codeRange":{"end":{"character":22,"line":14},"start":{"character":9,"line":14}},"element":{"kind":"CONSTRUCTOR_INVOCATION","name":"MyApp","range":{"end":{"character":9,"line":14},"start":{"character":9,"line":14}}},"range":{"end":{"character":22,"line":14},"start":{"character":9,"line":14}}}],"codeRange":{"end":{"character":1,"line":15},"start":{"character":0,"line":8}},"element":{"kind":"FUNCTION","name":"main","parameters":"()","range":{"end":{"character":9,"line":8},"start":{"character":5,"line":8}},"returnType":"void"},"range":{"end":{"character":1,"line":15},"start":{"character":0,"line":8}}},{"children":[{"codeRange":{"end":{"character":27,"line":18},"start":{"character":2,"line":18}},"element":{"kind":"CONSTRUCTOR","name":"MyApp","parameters":"({super.key})","range":{"end":{"character":13,"line":18},"start":{"character":8,"line":18}}},"range":{"end":{"character":27,"line":18},"start":{"character":2,"line":18}}},{"children":[{"children":[{"codeRange":{"end":{"character":42,"line":29},"start":{"character":12,"line":29}},"element":{"kind":"CONSTRUCTOR_INVOCATION","name":"ScreenNavigationBottom","range":{"end":{"character":12,"line":29},"start":{"character":12,"line":29}}},"range":{"end":{"character":42,"line":29},"start":{"character":12,"line":29}}}],"codeRange":{"end":{"character":5,"line":30},"start":{"character":11,"line":22}},"element":{"kind":"CONSTRUCTOR_INVOCATION","name":"MaterialApp","range":{"end":{"character":11,"line":22},"start"…
+[9:00:58 PM] [Analyzer] [Info] <== Content-Length: 2940
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"dart/textDocument/publishFlutterOutline","params":{"outline":{"children":[{"children":[{"attributes":[],"children":[],"className":"MyApp","codeRange":{"end":{"character":22,"line":14},"start":{"character":9,"line":14}},"kind":"NEW_INSTANCE","range":{"end":{"character":22,"line":14},"start":{"character":9,"line":14}}}],"codeRange":{"end":{"character":1,"line":15},"start":{"character":0,"line":8}},"dartElement":{"kind":"FUNCTION","name":"main","parameters":"()","range":{"end":{"character":9,"line":8},"start":{"character":5,"line":8}},"returnType":"void"},"kind":"DART_ELEMENT","range":{"end":{"character":1,"line":15},"start":{"character":0,"line":8}}},{"children":[{"codeRange":{"end":{"character":27,"line":18},"start":{"character":2,"line":18}},"dartElement":{"kind":"CONSTRUCTOR","name":"MyApp","parameters":"({super.key})","range":{"end":{"character":13,"line":18},"start":{"character":8,"line":18}}},"kind":"DART_ELEMENT","range":{"end":{"character":27,"line":18},"start":{"character":2,"line":18}}},{"children":[{"attributes":[{"label":"false","name":"debugShowCheckedModeBanner","valueRange":{"end":{"character":39,"line":23},"start":{"character":34,"line":23}}},{"label":"'App tin tức'","name":"title","valueRange":{"end":{"character":26,"line":24},"start":{"character":13,"line":24}}},{"label":"…","name":"theme","valueRange":{"end":{"character":7,"line":28},"start":{"character":13,"line":25}}}],"children":[{"attributes":[],"children":[],"className":"ScreenNavigationBottom","codeRange":{"end":{"character":42,"line":29},"start":{"character":12,"line":29}},"kind":"NEW_INSTANCE","range":{"end":{"character":42,"line":29},"start":{"character":12,"line":29}}}],"className":"MaterialApp","codeRange":{"end":{"character":5,"line":30},"start":{"character":11,"line":22}},"kind":"NEW_INSTANCE","range":{"end":{"character":5,"line":30},"start":{"character":11,"line":22}}}],"code…
+[9:00:58 PM] [Analyzer] [Info] <== Content-Length: 118
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"$/progress","params":{"token":"ANALYZING","value":{"kind":"begin","title":"Analyzing…"}}}
+[9:00:58 PM] [Analyzer] [Info] <== Content-Length: 14206
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:58 PM] [Analyzer] [Info] <== {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[{"code":"expected_executable","message":"Expected a method, getter, setter or operator declaration.\nThis appears to be incomplete code. Try removing it or completing it.","range":{"end":{"character":2,"line":1},"start":{"character":0,"line":1}},"severity":1,"source":"dart"},{"code":"expected_executable","message":"Expected a method, getter, setter or operator declaration.\nThis appears to be incomplete code. Try removing it or completing it.","range":{"end":{"character":4,"line":1},"start":{"character":2,"line":1}},"severity":1,"source":"dart"},{"code":"expected_executable","message":"Expected a method, getter, setter or operator declaration.\nThis appears to be incomplete code. Try removing it or completing it.","range":{"end":{"character":6,"line":1},"start":{"character":4,"line":1}},"severity":1,"source":"dart"},{"code":"expected_executable","message":"Expected a method, getter, setter or operator declaration.\nThis appears to be incomplete code. Try removing it or completing it.","range":{"end":{"character":7,"line":1},"start":{"character":6,"line":1}},"severity":1,"source":"dart"},{"code":"missing_identifier","message":"Expected an identifier.","range":{"end":{"character":6,"line":2},"start":{"character":0,"line":2}},"severity":1,"source":"dart"},{"code":"expected_token","message":"Expected to find ';'.","range":{"end":{"character":12,"line":1},"start":{"character":8,"line":1}},"severity":1,"source":"dart"},{"code":"directive_after_declaration","message":"Directives must appear before any declarations.\nTry moving the directive before any declarations.","range":{"end":{"character":6,"line":2},"start":{"character":0,"line":2}},"severity":1,"source":"dart"},{"code":"directive_after_declaration","message":"Directives must appear before any declarations.\nTry moving the directive before any declarations.","range":{"end":{"character":6,"line":3},"start":{"character":0,"line":3}…
+[9:00:58 PM] [Analyzer] [Info] <== Content-Length: 149
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:58 PM] [Analyzer] [Info] <== {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/screen_nav_bottom.dart"}}
+[9:00:58 PM] [Analyzer] [Info] <== Content-Length: 154
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:58 PM] [Analyzer] [Info] <== {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/choban/theodoi/theodoi.dart"}}
+[9:00:58 PM] [Analyzer] [Info] <== Content-Length: 150
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:58 PM] [Analyzer] [Info] <== {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/lib/postcasts/tinvideo.dart"}}
+[9:00:58 PM] [Analyzer] [Info] <== Content-Length: 144
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+[9:00:58 PM] [Analyzer] [Info] <== {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"diagnostics":[],"uri":"file:///D:/Flutter/tintuc/test/widget_test.dart"}}
+[9:00:58 PM] [Analyzer] [Info] <== Content-Length: 93
+Content-Type: application/vscode-jsonrpc; charset=utf-8
+
+{"jsonrpc":"2.0","method":"$/progress","params":{"token":"ANALYZING","value":{"kind":"end"}}}

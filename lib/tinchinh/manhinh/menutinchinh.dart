@@ -64,6 +64,17 @@ class _MenuTinChinhState extends State<MenuTinChinh>
                 ),
               );
             },
+            icon: const Icon(Icons.add),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ThongBao(),
+                ),
+              );
+            },
             icon: const Icon(Icons.notifications_none_sharp),
           ),
           TextButton(

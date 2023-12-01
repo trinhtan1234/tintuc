@@ -103,7 +103,7 @@ class ScreenSign extends StatelessWidget {
 
                           if (!RegExp(r"^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
                               .hasMatch(email)) {
-                            print('Lỗi: Địa chỉ email không đúng định dạng.');
+                            // print('Lỗi: Địa chỉ email không đúng định dạng.');
                             return;
                           }
 
@@ -111,9 +111,9 @@ class ScreenSign extends StatelessWidget {
                             // Đăng nhập thành công
                           } on FirebaseAuthException catch (e) {
                             if (e.code == 'invalid-email') {
-                              print('Lỗi: Địa chỉ email không đúng định dạng.');
+                              // print('Lỗi: Địa chỉ email không đúng định dạng.');
                             } else {
-                              print('Lỗi không xác định: $e');
+                              // print('Lỗi không xác định: $e');
                             }
                           }
                         },
@@ -137,15 +137,10 @@ class ScreenSign extends StatelessWidget {
                         TextButton(
                           onPressed: () async {
                             try {
-                              final userCredential =
-                                  await auth.signInWithEmailAndPassword(
-                                email: "",
-                                password: "",
-                              );
-                              print(
-                                  'Sign-in successful! User ID: ${userCredential.user?.uid}');
+                              // print(
+                              //     'Sign-in successful! User ID: ${userCredential.user?.uid}');
                             } catch (e) {
-                              print('Error signing in: $e');
+                              // print('Error signing in: $e');
                             }
                           },
                           child: const Text('Đăng nhập'),

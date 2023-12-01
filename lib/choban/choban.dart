@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:tintuc/choban/theodoi/theodoi.dart';
 import 'package:tintuc/choban/thongbao/thongbao.dart';
-=======
-
-import 'package:tintuc/theodoi/theodoi.dart';
->>>>>>> 740dd6fcd672b35ac05155396a22a2567dc3da34
 import 'package:tintuc/tinchinh/bloc/news_bloc.dart';
 import 'package:tintuc/tinchinh/manhinh/thoisu/chitiet_thoisu.dart';
 import 'package:tintuc/tinchinh/manhinh/thoisu/thoisu.dart';
@@ -73,7 +68,6 @@ class _ChoBanState extends State<ChoBan> {
                 ),
               );
             },
-<<<<<<< HEAD
             icon: const Row(
               children: [
                 Icon(Icons.add),
@@ -91,12 +85,6 @@ class _ChoBanState extends State<ChoBan> {
               );
             },
             icon: const Icon(Icons.notifications_none_sharp),
-=======
-            icon: const Icon(
-              Icons.library_add,
-              color: Colors.red,
-            ),
->>>>>>> 740dd6fcd672b35ac05155396a22a2567dc3da34
           ),
           Container(
             margin: const EdgeInsets.only(right: 10),
@@ -234,10 +222,8 @@ class Man1 extends StatelessWidget {
                 ),
               ],
             ),
-<<<<<<< HEAD
+
             const Divider(),
-=======
->>>>>>> 740dd6fcd672b35ac05155396a22a2567dc3da34
           ],
         ),
       ),

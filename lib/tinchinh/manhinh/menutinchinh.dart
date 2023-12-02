@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tintuc/choban/thongbao/thongbao.dart';
-import 'package:tintuc/tinchinh/manhinh/giaitri.dart';
+import 'package:tintuc/tinchinh/manhinh/kinhdoanh.dart';
 import 'package:tintuc/tinchinh/manhinh/thegioi.dart';
 import 'package:tintuc/tinchinh/manhinh/thoisu/thoisu.dart';
 import 'package:tintuc/tinchinh/manhinh/vietnam.dart';
@@ -110,7 +110,7 @@ class _MenuTinChinhState extends State<MenuTinChinh>
               // icon: Icon(Icons.beach_access_sharp),
             ),
             Tab(
-              text: 'Giải trí',
+              text: 'Kinh doanh',
               // icon: Icon(Icons.beach_access_sharp),
             ),
           ],
@@ -128,7 +128,7 @@ class _MenuTinChinhState extends State<MenuTinChinh>
                     tabData[index] = const Center(child: TheGioi());
                     break;
                   case 3:
-                    tabData[index] = const Center(child: GiaiTri());
+                    tabData[index] = const Center(child: Kinhdoanh());
                     break;
                 }
               }
@@ -150,7 +150,7 @@ class _MenuTinChinhState extends State<MenuTinChinh>
             child: TheGioi(),
           ),
           Center(
-            child: GiaiTri(),
+            child: Kinhdoanh(),
           ),
         ],
       ),

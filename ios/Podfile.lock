@@ -10,12 +10,19 @@ PODS:
     - FirebaseAuth (~> 10.18.0)
   - Firebase/CoreOnly (10.18.0):
     - FirebaseCore (= 10.18.0)
-  - firebase_auth (4.14.1):
+  - Firebase/Storage (10.18.0):
+    - Firebase/CoreOnly
+    - FirebaseStorage (~> 10.18.0)
+  - firebase_auth (4.15.0):
     - Firebase/Auth (= 10.18.0)
     - firebase_core
     - Flutter
-  - firebase_core (2.23.0):
+  - firebase_core (2.24.0):
     - Firebase/CoreOnly (= 10.18.0)
+    - Flutter
+  - firebase_storage (11.5.3):
+    - Firebase/Storage (= 10.18.0)
+    - firebase_core
     - Flutter
   - FirebaseAppCheckInterop (10.18.0)
   - FirebaseAuth (10.18.0):
@@ -25,12 +32,21 @@ PODS:
     - GoogleUtilities/Environment (~> 7.8)
     - GTMSessionFetcher/Core (< 4.0, >= 2.1)
     - RecaptchaInterop (~> 100.0)
+  - FirebaseAuthInterop (10.18.0)
   - FirebaseCore (10.18.0):
     - FirebaseCoreInternal (~> 10.0)
     - GoogleUtilities/Environment (~> 7.12)
     - GoogleUtilities/Logger (~> 7.12)
+  - FirebaseCoreExtension (10.18.0):
+    - FirebaseCore (~> 10.0)
   - FirebaseCoreInternal (10.18.0):
     - "GoogleUtilities/NSData+zlib (~> 7.8)"
+  - FirebaseStorage (10.18.0):
+    - FirebaseAppCheckInterop (~> 10.0)
+    - FirebaseAuthInterop (~> 10.0)
+    - FirebaseCore (~> 10.0)
+    - FirebaseCoreExtension (~> 10.0)
+    - GTMSessionFetcher/Core (< 4.0, >= 2.1)
   - Flutter (1.0.0)
   - flutter_inappwebview (0.0.1):
     - Flutter
@@ -67,17 +83,25 @@ PODS:
     - AppAuth/Core (~> 1.6)
     - GTMSessionFetcher/Core (< 4.0, >= 1.5)
   - GTMSessionFetcher/Core (3.1.1)
+  - image_picker_ios (0.0.1):
+    - Flutter
   - OrderedSet (5.0.0)
   - PromisesObjC (2.3.1)
   - RecaptchaInterop (100.0.0)
+  - video_player_avfoundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
 
 DEPENDENCIES:
   - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
+  - firebase_storage (from `.symlinks/plugins/firebase_storage/ios`)
   - Flutter (from `Flutter`)
   - flutter_inappwebview (from `.symlinks/plugins/flutter_inappwebview/ios`)
   - flutter_native_splash (from `.symlinks/plugins/flutter_native_splash/ios`)
   - google_sign_in_ios (from `.symlinks/plugins/google_sign_in_ios/ios`)
+  - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
+  - video_player_avfoundation (from `.symlinks/plugins/video_player_avfoundation/darwin`)
 
 SPEC REPOS:
   trunk:
@@ -85,8 +109,11 @@ SPEC REPOS:
     - Firebase
     - FirebaseAppCheckInterop
     - FirebaseAuth
+    - FirebaseAuthInterop
     - FirebaseCore
+    - FirebaseCoreExtension
     - FirebaseCoreInternal
+    - FirebaseStorage
     - GoogleSignIn
     - GoogleUtilities
     - GTMAppAuth
@@ -100,6 +127,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/firebase_auth/ios"
   firebase_core:
     :path: ".symlinks/plugins/firebase_core/ios"
+  firebase_storage:
+    :path: ".symlinks/plugins/firebase_storage/ios"
   Flutter:
     :path: Flutter
   flutter_inappwebview:
@@ -108,16 +137,24 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/flutter_native_splash/ios"
   google_sign_in_ios:
     :path: ".symlinks/plugins/google_sign_in_ios/ios"
+  image_picker_ios:
+    :path: ".symlinks/plugins/image_picker_ios/ios"
+  video_player_avfoundation:
+    :path: ".symlinks/plugins/video_player_avfoundation/darwin"
 
 SPEC CHECKSUMS:
   AppAuth: 3bb1d1cd9340bd09f5ed189fb00b1cc28e1e8570
   Firebase: 414ad272f8d02dfbf12662a9d43f4bba9bec2a06
-  firebase_auth: 88053a759923970e580789d167a43b6031568ef5
-  firebase_core: 29d66baf806970cda37c93621b27cd369b27db1b
+  firebase_auth: 02d1a6340f81020cc302fb8fea8518908c546cec
+  firebase_core: f802c5c1f6caff9b8d38b591a36e7b25f8878936
+  firebase_storage: 95b470ab32351049dfd3d97b595460ce7a189971
   FirebaseAppCheckInterop: 3cd914842ba46f4304050874cd284de82f154ffd
   FirebaseAuth: 12314b438fa76048540c8fb86d6cfc9e08595176
+  FirebaseAuthInterop: 5818713dcd7239beb96c1125e4b14d6a5a910e5f
   FirebaseCore: 2322423314d92f946219c8791674d2f3345b598f
+  FirebaseCoreExtension: 62b201498aa10535801cdf3448c7f4db5e24ed80
   FirebaseCoreInternal: 8eb002e564b533bdcf1ba011f33f2b5c10e2ed4a
+  FirebaseStorage: 8333c4b183764cdd170d9539a61322b71c23adff
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   flutter_inappwebview: 3d32228f1304635e7c028b0d4252937730bbc6cf
   flutter_native_splash: 52501b97d1c0a5f898d687f1646226c1f93c56ef
@@ -126,9 +163,11 @@ SPEC CHECKSUMS:
   GoogleUtilities: 0759d1a57ebb953965c2dfe0ba4c82e95ccc2e34
   GTMAppAuth: 99fb010047ba3973b7026e45393f51f27ab965ae
   GTMSessionFetcher: e8647203b65cee28c5f73d0f473d096653945e72
+  image_picker_ios: 4a8aadfbb6dc30ad5141a2ce3832af9214a705b5
   OrderedSet: aaeb196f7fef5a9edf55d89760da9176ad40b93c
   PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
+  video_player_avfoundation: e9e6f9cae7d7a6d9b43519b0aab382bca60fcfd1
 
 PODFILE CHECKSUM: 70d9d25280d0dd177a5f637cdb0f0b0b12c6a189
 

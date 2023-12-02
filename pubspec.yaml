@@ -43,6 +43,8 @@ dependencies:
   firebase_auth: ^4.14.1
   google_sign_in: ^6.1.6
   video_player: ^2.8.1
+  firebase_storage: ^11.5.3
+  image_picker: ^1.0.4
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +70,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/media/video/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

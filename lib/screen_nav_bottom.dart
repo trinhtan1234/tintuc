@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tintuc/caidat/screen_menu.dart';
+import 'package:tintuc/media/menu_media.dart';
 import 'package:tintuc/tinchinh/manhinh/menutinchinh.dart';
-import 'package:tintuc/postcasts/tinvideo.dart';
 
 class ScreenNavigationBottom extends StatefulWidget {
   const ScreenNavigationBottom({super.key});
@@ -25,7 +25,7 @@ class _ScreenNavigationBottomState extends State<ScreenNavigationBottom> {
 
     _pages = [
       const MenuTinChinh(),
-      const Postcasts(),
+      const TinTucMedia(),
       const CaiDat(),
     ];
   }
@@ -42,7 +42,7 @@ class _ScreenNavigationBottomState extends State<ScreenNavigationBottom> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Tin chính'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.headset_outlined), label: 'Postcasts'),
+              icon: Icon(Icons.headset_outlined), label: 'Media'),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Cài đặt'),
         ],
       ),

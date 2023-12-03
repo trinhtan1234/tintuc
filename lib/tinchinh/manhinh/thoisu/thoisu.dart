@@ -165,12 +165,12 @@ class _Container1State extends State<Container1> {
                           children: [
                             Icon(
                               Icons.comment_outlined,
-                              color: Colors.red,
+                              // color: Colors.red,
                             ),
                             Text(
                               '22',
                               style: TextStyle(
-                                fontSize: 18,
+                                // fontSize: 14,
                                 color: Colors.red,
                                 fontWeight: FontWeight.bold,
                               ),

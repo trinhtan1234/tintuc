@@ -87,7 +87,7 @@ class _VideoState extends State<Video> {
                 },
                 icon: Icon(
                   _isPlaying ? Icons.pause : Icons.play_arrow,
-                  color: Colors.white,
+                  color: Colors.green,
                   size: 30.0,
                 ),
               ),

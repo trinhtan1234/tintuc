@@ -49,6 +49,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '386891168137',
     projectId: 'tintuc-a0ba2',
     authDomain: 'tintuc-a0ba2.firebaseapp.com',
+    databaseURL: 'https://tintuc-a0ba2-default-rtdb.firebaseio.com',
     storageBucket: 'tintuc-a0ba2.appspot.com',
     measurementId: 'G-EZB2449TGD',
   );
@@ -58,6 +59,7 @@ class DefaultFirebaseOptions {
     appId: '1:386891168137:android:e7cc0da67a08f809314958',
     messagingSenderId: '386891168137',
     projectId: 'tintuc-a0ba2',
+    databaseURL: 'https://tintuc-a0ba2-default-rtdb.firebaseio.com',
     storageBucket: 'tintuc-a0ba2.appspot.com',
   );
 
@@ -66,7 +68,9 @@ class DefaultFirebaseOptions {
     appId: '1:386891168137:ios:978ff18ddfc067d0314958',
     messagingSenderId: '386891168137',
     projectId: 'tintuc-a0ba2',
+    databaseURL: 'https://tintuc-a0ba2-default-rtdb.firebaseio.com',
     storageBucket: 'tintuc-a0ba2.appspot.com',
+    androidClientId: '386891168137-bv01gm6mag4ou5q342ga9pj5e489j19e.apps.googleusercontent.com',
     iosClientId: '386891168137-6fs0g2u4anrt6sm089t6k1pmqitc69ca.apps.googleusercontent.com',
     iosBundleId: 'com.example.tintuc',
   );
@@ -76,7 +80,9 @@ class DefaultFirebaseOptions {
     appId: '1:386891168137:ios:9afbed10ca39ab33314958',
     messagingSenderId: '386891168137',
     projectId: 'tintuc-a0ba2',
+    databaseURL: 'https://tintuc-a0ba2-default-rtdb.firebaseio.com',
     storageBucket: 'tintuc-a0ba2.appspot.com',
+    androidClientId: '386891168137-bv01gm6mag4ou5q342ga9pj5e489j19e.apps.googleusercontent.com',
     iosClientId: '386891168137-1ffkad4cfq38sp1dhu8parsnl63t763o.apps.googleusercontent.com',
     iosBundleId: 'com.example.tintuc.RunnerTests',
   );

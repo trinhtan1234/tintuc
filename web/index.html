@@ -55,5 +55,23 @@
       });
     });
   </script>
+   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+   <script src="main.dart.js" type="application/javascript"></script>
+   <script>
+    var firebaseConfig = {
+      apiKey: "...",
+      authDomain: "tintuc.firebaseapp.com",
+      databaseURL: "https://tintuc.firebaseio.com",
+      projectId: "tintuc",
+      storageBucket: "tintuc.appspot.com",
+      messagingSenderId: "...",
+      appId: "1:...:web:...",
+      measurementId: "G-...",
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
 </body>
 </html>

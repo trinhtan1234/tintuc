@@ -1,9 +1,19 @@
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:js';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 // late FirebaseApp app;
 late FirebaseAuth auth;
+TextEditingController _emailController = TextEditingController();
+TextEditingController _passordController = TextEditingController();
+TextEditingController _nameController = TextEditingController();
+TextEditingController _birthdayController = TextEditingController();
+TextEditingController _genderController = TextEditingController();
+TextEditingController _phoneController = TextEditingController();
 
 class ScreenSign extends StatelessWidget {
   const ScreenSign({super.key});
@@ -12,6 +22,14 @@ class ScreenSign extends StatelessWidget {
   Widget build(BuildContext context) {
     auth = FirebaseAuth.instance;
 
+    // Khởi tạo Firebase và kết nối với cơ sở dữ liệu
+    Firebase.initializeApp();
+    final database = FirebaseFirestore.instance;
+
+    // Đọc dữ liệu từ cơ sở dữ liệu
+    readData();
+    // Ghi dữ liệu vào cơ sở dữ liệu
+    writeData();
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -117,11 +135,14 @@ class ScreenSign extends StatelessWidget {
                             }
                           }
                         },
-                        child: const Center(
-                          child: Center(
-                            child: Text(
+                        child: Center(
+                          child: TextButton(
+                            onPressed: () {
+                              register();
+                            },
+                            child: const Text(
                               'Đăng ký',
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 15,
                               ),
@@ -149,20 +170,6 @@ class ScreenSign extends StatelessWidget {
                     );
                   },
                 ),
-
-                // child: TextButton(
-                //   onPressed: () {},
-                //   child: const Center(
-                //     child: Center(
-                //         child: Text(
-                //       'Đăng nhập',
-                //       style: TextStyle(
-                //         fontWeight: FontWeight.bold,
-                //         fontSize: 15,
-                //       ),
-                //     )),
-                //   ),
-                // ),
               ),
 
               TextButton(
@@ -191,6 +198,67 @@ class ScreenSign extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+// Dang ky tai khoan
+Future<void> register() async {
+  //Lay du lieu tu cac textfield
+
+  String email = _emailController.text;
+  String password = _passordController.text;
+
+  if (!RegExp(r"^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(email)) {
+    // hien thi thong bao loi
+    ScaffoldMessenger.of(context as BuildContext).showSnackBar(
+      const SnackBar(
+        content: Text('Dia chi email khong dung dinh dang'),
+      ),
+    );
+    return;
+  }
+  // kiem tra do dai mat khau
+  if (password.length < 6) {
+    // hien thi thong bao loi
+    ScaffoldMessenger.of(context as BuildContext).showSnackBar(
+      const SnackBar(
+        content: Text('Mat khau phai co it nhat 6 ky tu'),
+      ),
+    );
+    return;
+  }
+  //tao tai khoan
+  try {
+    await auth.createUserWithEmailAndPassword(email: email, password: password);
+    // gui email xac nhan
+    await auth.currentUser!.sendEmailVerification();
+    // Luu thong tin nguoi dung vao firebase database
+    final user = await auth.currentUser!;
+    final collectionRef = FirebaseFirestore.instance.collection('users');
+    final userRef = collectionRef.doc(user.uid);
+
+    userRef.set({
+      'name': _nameController.text,
+      'email': email,
+      'birthday': _birthdayController.value,
+      'gender': _genderController.value,
+      'phone': _phoneController.text,
+    });
+
+    // hien thi thong bao thanh cong
+    ScaffoldMessenger.of(context as BuildContext).showSnackBar(
+      const SnackBar(
+        content: Text(
+            'Dang ky thanh cong. VUi long kiem tra email de xac nhan tai khoan'),
+      ),
+    );
+  } on FirebaseAuthException catch (e) {
+    //hien thi thong bao loi
+    ScaffoldMessenger.of(context as BuildContext).showSnackBar(
+      SnackBar(
+        content: Text(e.message!),
       ),
     );
   }

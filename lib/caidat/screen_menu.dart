@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tintuc/caidat/login/screen_login.dart';
+import 'package:tintuc/caidat/thietlapungdung.dart';
 import 'package:tintuc/components/textbuttom.dart';
 
 class CaiDat extends StatelessWidget {
@@ -14,7 +15,7 @@ class CaiDat extends StatelessWidget {
           size: 40,
         ),
         title: const Text(
-          'Menu',
+          'Cài đặt',
           style: TextStyle(
             fontWeight: FontWeight.bold,
           ),
@@ -57,7 +58,14 @@ class CaiDat extends StatelessWidget {
               iconLeft: const Icon(Icons.settings),
               iconRight: const Icon(Icons.arrow_forward_ios),
               labelTitle: 'Cài đặt',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ThietLapUngDung(),
+                  ),
+                );
+              },
             ),
             const Divider(),
             AppTextButtom(

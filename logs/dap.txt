@@ -1,0 +1,812 @@
+!! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
+Dart Code extension: 3.78.0
+Flutter extension: 3.79.20231130 (not activated)
+
+App: Visual Studio Code
+App Host: desktop
+Version: win 1.84.2
+
+
+Logging Categories:
+    DAP
+
+Tue Dec 05 2023 [12:19:55 GMT+0700 (Indochina Time)] Log file started
+[12:25:22 PM] [DAP] [Info] Starting debug session 6a883bd8-8099-45c5-86ba-9cf5a344990e
+[12:25:22 PM] [DAP] [Info] ==> {"command":"initialize","arguments":{"clientID":"vscode","clientName":"Visual Studio Code","adapterID":"dart","pathFormat":"path","linesStartAt1":true,"columnsStartAt1":true,"supportsVariableType":true,"supportsVariablePaging":true,"supportsRunInTerminalRequest":true,"locale":"en","supportsProgressReporting":true,"supportsInvalidatedEvent":true,"supportsMemoryReferences":true,"supportsArgsCanBeInterpretedByShell":true,"supportsMemoryEvent":true,"supportsStartDebuggingRequest":true},"type":"request","seq":1}
+[12:25:23 PM] [DAP] [Info] <== {"seq":1,"type":"response","body":{"exceptionBreakpointFilters":[{"default":false,"filter":"All","label":"All Exceptions"},{"default":true,"filter":"Unhandled","label":"Uncaught Exceptions"}],"supportsClipboardContext":true,"supportsConditionalBreakpoints":true,"supportsConfigurationDoneRequest":true,"supportsDelayedStackTraceLoading":true,"supportsEvaluateForHovers":true,"supportsLogPoints":true,"supportsRestartRequest":false,"supportsTerminateRequest":true,"supportsValueFormattingOptions":true},"command":"initialize","request_seq":1,"success":true}
+[12:25:23 PM] [DAP] [Info] <== {"seq":2,"type":"event","body":{},"event":"initialized"}
+[12:25:23 PM] [DAP] [Info] ==> {"command":"launch","arguments":{"dartCodeDebugSessionID":"session-a2f05","type":"dart","request":"launch","program":"D:\\Flutter\\tintuc\\lib\\main.dart","projectRootPath":"D:\\Flutter\\tintuc","cwd":"D:\\Flutter\\tintuc","name":"Flutter (Pixel 6 Pro API 33)","deviceId":"emulator-5554","deviceName":"Pixel 6 Pro API 33 (android-x64)","toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\src\\flutter"},"sendLogsToClient":false,"sendCustomProgressEvents":true,"allowAnsiColorOutput":true,"additionalProjectPaths":["D:\\Flutter\\tintuc"],"args":[],"vmAdditionalArgs":[],"toolArgs":["-d","emulator-5554","--devtools-server-address","http://127.0.0.1:9100/"],"vmServicePort":0,"dartSdkPath":"C:\\src\\flutter\\bin\\cache\\dart-sdk","vmServiceLogFile":"D:\\Flutter\\tintuc\\logs\\observatory.txt","maxLogLineLength":2000,"dartTestLogFile":"D:\\Flutter\\tintuc\\logs\\dart_test.txt","debugSdkLibraries":true,"debugExternalPackageLibraries":true,"showDartDeveloperLogs":true,"evaluateGettersInDebugViews":true,"showGettersInDebugViews":true,"evaluateToStringInDebugViews":true,"flutterSdkPath":"C:\\src\\flutter","useInspectorNotificationsForWidgetErrors":true,"flutterRunLogFile":"D:\\Flutter\\tintuc\\logs\\flutter_run.txt","flutterTestLogFile":"D:\\Flutter\\tintuc\\logs\\flutter_test.txt","showMemoryUsage":false,"debuggerType":2,"__sessionId":"6a883bd8-8099-45c5-86ba-9cf5a344990e"},"type":"request","seq":2}
+[12:25:23 PM] [DAP] [Info] ==> {"command":"setBreakpoints","arguments":{"source":{"name":"postcats.dart","path":"d:\\Flutter\\tintuc\\lib\\media\\postcats.dart"},"lines":[86],"breakpoints":[{"line":86}],"sourceModified":false},"type":"request","seq":3}
+[12:25:23 PM] [DAP] [Info] ==> {"command":"setExceptionBreakpoints","arguments":{"filters":["Unhandled"]},"type":"request","seq":4}
+[12:25:23 PM] [DAP] [Info] <== {"seq":3,"type":"response","body":{"breakpoints":[{"id":100000,"verified":false}]},"command":"setBreakpoints","request_seq":3,"success":true}
+[12:25:23 PM] [DAP] [Info] <== {"seq":4,"type":"response","body":{},"command":"setExceptionBreakpoints","request_seq":4,"success":true}
+[12:25:23 PM] [DAP] [Info] ==> {"command":"configurationDone","type":"request","seq":5}
+[12:25:23 PM] [DAP] [Info] <== {"seq":5,"type":"response","command":"configurationDone","request_seq":5,"success":true}
+[12:25:23 PM] [DAP] [Info] ==> {"command":"threads","type":"request","seq":6}
+[12:25:23 PM] [DAP] [Info] <== {"seq":6,"type":"event","body":{"message":"Launching…","progressId":"launch_1","title":"Flutter"},"event":"dart.progressStart"}
+[12:25:23 PM] [DAP] [Info] <== {"seq":7,"type":"response","command":"launch","request_seq":2,"success":true}
+[12:25:23 PM] [DAP] [Info] <== {"seq":8,"type":"response","body":{"threads":[]},"command":"threads","request_seq":6,"success":true}
+[12:25:25 PM] [DAP] [Info] <== {"seq":9,"type":"event","body":{"capabilities":{"supportsRestartRequest":true}},"event":"capabilities"}
+[12:25:25 PM] [DAP] [Info] <== {"seq":10,"type":"event","body":{"appId":"00ae9516-e19d-41ab-bb1f-232e8770d6d7","deviceId":"emulator-5554","directory":"D:\\Flutter\\tintuc","supportsRestart":true,"launchMode":"run","mode":"debug"},"event":"flutter.appStart"}
+[12:25:25 PM] [DAP] [Info] <== {"seq":11,"type":"event","body":{"category":"console","output":"Launching lib\\main.dart on sdk gphone x86 64 in debug mode...\n"},"event":"output"}
+[12:25:26 PM] [DAP] [Info] <== {"seq":12,"type":"event","body":{"category":"console","output":"Building with Flutter multidex support enabled.\n"},"event":"output"}
+[12:26:05 PM] [DAP] [Info] <== {"seq":13,"type":"event","body":{"category":"stderr","output":"Note: C:\\Users\\tantv\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\cloud_firestore-4.13.3\\android\\src\\main\\java\\io\\flutter\\plugins\\firebase\\firestore\\FlutterFirebaseFirestorePlugin.java uses or overrides a deprecated API.\n"},"event":"output"}
+[12:26:05 PM] [DAP] [Info] <== {"seq":14,"type":"event","body":{"category":"stderr","output":""},"event":"output"}
+[12:26:05 PM] [DAP] [Info] <== {"seq":15,"type":"event","body":{"category":"stderr","output":"Note: Recompile with -Xlint:deprecation for details.\n"},"event":"output"}
+[12:26:05 PM] [DAP] [Info] <== {"seq":16,"type":"event","body":{"category":"stderr","output":""},"event":"output"}
+[12:26:05 PM] [DAP] [Info] <== {"seq":17,"type":"event","body":{"category":"stderr","output":"Note: Some input files use unchecked or unsafe operations.\n"},"event":"output"}
+[12:26:05 PM] [DAP] [Info] <== {"seq":18,"type":"event","body":{"category":"stderr","output":"Note: Recompile with -Xlint:unchecked for details.\n"},"event":"output"}
+[12:26:05 PM] [DAP] [Info] <== {"seq":19,"type":"event","body":{"category":"stderr","output":""},"event":"output"}
+[12:26:07 PM] [DAP] [Info] <== {"seq":20,"type":"event","body":{"category":"stderr","output":"Note: C:\\Users\\tantv\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\firebase_dynamic_links-5.4.6\\android\\src\\main\\java\\io\\flutter\\plugins\\firebase\\dynamiclinks\\Utils.java uses or overrides a deprecated API.\n"},"event":"output"}
+[12:26:07 PM] [DAP] [Info] <== {"seq":21,"type":"event","body":{"category":"stderr","output":""},"event":"output"}
+[12:26:07 PM] [DAP] [Info] <== {"seq":22,"type":"event","body":{"category":"stderr","output":"Note: Recompile with -Xlint:deprecation for details.\n"},"event":"output"}
+[12:26:07 PM] [DAP] [Info] <== {"seq":23,"type":"event","body":{"category":"stderr","output":""},"event":"output"}
+[12:26:38 PM] [DAP] [Info] <== {"seq":24,"type":"event","body":{"category":"console","output":"√  Built build\\app\\outputs\\flutter-apk\\app-debug.apk.\n"},"event":"output"}
+[12:26:44 PM] [DAP] [Info] <== {"seq":25,"type":"event","body":{"progressId":"launch_1"},"event":"dart.progressEnd"}
+[12:26:44 PM] [DAP] [Info] <== {"seq":26,"type":"event","body":{"output":"Connecting to VM Service at ws://127.0.0.1:61779/YPnr0lcDlVc=/ws\n"},"event":"output"}
+[12:26:44 PM] [DAP] [Info] <== {"seq":27,"type":"event","body":{"vmServiceUri":"ws://127.0.0.1:61779/YPnr0lcDlVc=/ws"},"event":"dart.debuggerUris"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":28,"type":"event","body":{"reason":"started","threadId":5735165900966419},"event":"thread"}
+[12:26:45 PM] [DAP] [Info] ==> {"command":"threads","type":"request","seq":7}
+[12:26:45 PM] [DAP] [Info] <== {"seq":29,"type":"response","body":{"threads":[{"id":5735165900966419,"name":"main"}]},"command":"threads","request_seq":7,"success":true}
+[12:26:45 PM] [DAP] [Info] <== {"seq":30,"type":"event","body":{"category":"stdout","output":"I/.example.tintuc( 5051): Compiler allocated 4533KB to compile void android.view.ViewRootImpl.performTraversals()\n"},"event":"output"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":31,"type":"event","body":{},"event":"flutter.appStarted"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":32,"type":"event","body":{"service":"reloadSources","method":"s0.reloadSources"},"event":"dart.serviceRegistered"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":33,"type":"event","body":{"service":"hotRestart","method":"s0.hotRestart"},"event":"dart.serviceRegistered"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":34,"type":"event","body":{"service":"flutterVersion","method":"s0.flutterVersion"},"event":"dart.serviceRegistered"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":35,"type":"event","body":{"service":"compileExpression","method":"s0.compileExpression"},"event":"dart.serviceRegistered"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":36,"type":"event","body":{"service":"flutterMemoryInfo","method":"s0.flutterMemoryInfo"},"event":"dart.serviceRegistered"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":37,"type":"event","body":{"service":"flutterGetSkSL","method":"s0.flutterGetSkSL"},"event":"dart.serviceRegistered"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":38,"type":"event","body":{"service":"launchDevTools","method":"s2.launchDevTools"},"event":"dart.serviceRegistered"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":39,"type":"event","body":{"extensionRPC":"ext.flutter.reassemble","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":40,"type":"event","body":{"extensionRPC":"ext.flutter.exit","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":41,"type":"event","body":{"extensionRPC":"ext.flutter.connectedVmServiceUri","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":42,"type":"event","body":{"extensionRPC":"ext.flutter.activeDevToolsServerAddress","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":43,"type":"event","body":{"extensionRPC":"ext.flutter.platformOverride","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":44,"type":"event","body":{"extensionRPC":"ext.flutter.brightnessOverride","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":45,"type":"event","body":{"extensionRPC":"ext.flutter.timeDilation","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":46,"type":"event","body":{"extensionRPC":"ext.flutter.evict","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":47,"type":"event","body":{"extensionRPC":"ext.flutter.invertOversizedImages","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":48,"type":"event","body":{"extensionRPC":"ext.flutter.debugPaint","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":49,"type":"event","body":{"extensionRPC":"ext.flutter.debugPaintBaselinesEnabled","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":50,"type":"event","body":{"extensionRPC":"ext.flutter.repaintRainbow","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":51,"type":"event","body":{"extensionRPC":"ext.flutter.debugDumpLayerTree","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":52,"type":"event","body":{"extensionRPC":"ext.flutter.debugDisableClipLayers","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":53,"type":"event","body":{"extensionRPC":"ext.flutter.debugDisablePhysicalShapeLayers","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":54,"type":"event","body":{"extensionRPC":"ext.flutter.debugDisableOpacityLayers","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":55,"type":"event","body":{"extensionRPC":"ext.flutter.debugDumpRenderTree","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":56,"type":"event","body":{"extensionRPC":"ext.flutter.debugDumpSemanticsTreeInTraversalOrder","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":57,"type":"event","body":{"extensionRPC":"ext.flutter.debugDumpSemanticsTreeInInverseHitTestOrder","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":58,"type":"event","body":{"extensionRPC":"ext.flutter.profileRenderObjectPaints","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":59,"type":"event","body":{"extensionRPC":"ext.flutter.profileRenderObjectLayouts","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":60,"type":"event","body":{"extensionRPC":"ext.flutter.debugDumpApp","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":61,"type":"event","body":{"extensionRPC":"ext.flutter.debugDumpFocusTree","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":62,"type":"event","body":{"extensionRPC":"ext.flutter.showPerformanceOverlay","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":63,"type":"event","body":{"extensionRPC":"ext.flutter.didSendFirstFrameEvent","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":64,"type":"event","body":{"extensionRPC":"ext.flutter.didSendFirstFrameRasterizedEvent","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":65,"type":"event","body":{"extensionRPC":"ext.flutter.profileWidgetBuilds","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":66,"type":"event","body":{"extensionRPC":"ext.flutter.profileUserWidgetBuilds","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":67,"type":"event","body":{"extensionRPC":"ext.flutter.debugAllowBanner","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":68,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.structuredErrors","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":69,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.show","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":70,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.trackRebuildDirtyWidgets","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":71,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.trackRepaintWidgets","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":72,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.disposeAllGroups","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":73,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.disposeGroup","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":74,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.isWidgetTreeReady","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":75,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.disposeId","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":76,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.setPubRootDirectories","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":77,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.addPubRootDirectories","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":78,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.removePubRootDirectories","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":79,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getPubRootDirectories","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":80,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.setSelectionById","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":81,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getParentChain","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":82,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getProperties","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":83,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getChildren","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":84,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getChildrenSummaryTree","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":85,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getChildrenDetailsSubtree","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":86,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getRootWidget","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":87,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getRootWidgetSummaryTree","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":88,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getRootWidgetSummaryTreeWithPreviews","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":89,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getDetailsSubtree","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":90,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getSelectedWidget","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":91,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getSelectedSummaryWidget","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":92,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.isWidgetCreationTracked","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":93,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.screenshot","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":94,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.getLayoutExplorerNode","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":95,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.setFlexFit","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":96,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.setFlexFactor","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":97,"type":"event","body":{"extensionRPC":"ext.flutter.inspector.setFlexProperties","isolateId":"isolates/5735165900966419"},"event":"dart.serviceExtensionAdded"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":98,"type":"event","body":{"extension":"ext.flutter.activeDevToolsServerAddress","value":"http://127.0.0.1:9100"},"event":"flutter.serviceExtensionStateChanged"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":99,"type":"event","body":{"extension":"ext.flutter.connectedVmServiceUri","value":"http://127.0.0.1:61779/YPnr0lcDlVc=/"},"event":"flutter.serviceExtensionStateChanged"}
+[12:26:45 PM] [DAP] [Info] ==> {"command":"callService","arguments":{"method":"ext.flutter.inspector.setPubRootDirectories","params":{"isolateId":"isolates/5735165900966419","arg0":"file:///D:/Flutter/tintuc"}},"type":"request","seq":8}
+[12:26:45 PM] [DAP] [Info] <== {"seq":100,"type":"response","body":{"result":null,"type":"_extensionType","method":"ext.flutter.inspector.setPubRootDirectories"},"command":"callService","request_seq":8,"success":true}
+[12:26:45 PM] [DAP] [Info] <== {"seq":101,"type":"event","body":{"category":"stdout","output":"D/CompatibilityChangeReporter( 5051): Compat change id reported: 183155436; UID 10172; state: ENABLED\n"},"event":"output"}
+[12:26:45 PM] [DAP] [Info] <== {"seq":102,"type":"event","body":{"category":"stdout","output":"I/FirebaseApp( 5051): Device unlocked: initializing all Firebase APIs for app [DEFAULT]\n"},"event":"output"}
+[12:26:46 PM] [DAP] [Info] <== {"seq":103,"type":"event","body":{"category":"stdout","output":"D/FirebaseAuth( 5051): Notifying id token listeners about user ( dlQUShZwTNauBaiAC73oiPtacgZ2 ).\n"},"event":"output"}
+[12:26:47 PM] [DAP] [Info] <== {"seq":104,"type":"event","body":{"category":"stdout","output":"I/ExoPlayerImpl( 5051): Init d9e3594 [ExoPlayerLib/2.18.7] [emu64xa, sdk_gphone_x86_64, Google, 33]\n"},"event":"output"}
+[12:26:47 PM] [DAP] [Info] <== {"seq":105,"type":"event","body":{"category":"stdout","output":"W/.example.tintuc( 5051): Accessing hidden method Landroid/media/AudioTrack;->getLatency()I (unsupported, reflection, allowed)\n"},"event":"output"}
+[12:26:47 PM] [DAP] [Info] <== {"seq":106,"type":"event","body":{"category":"stdout","output":"W/System  ( 5051): Ignoring header X-Firebase-Locale because its value was null.\n"},"event":"output"}
+[12:26:47 PM] [DAP] [Info] <== {"seq":107,"type":"event","body":{"category":"stdout","output":"W/LocalRequestInterceptor( 5051): Error getting App Check token; using placeholder token instead. Error: com.google.firebase.FirebaseException: No AppCheckProvider installed.\n"},"event":"output"}
+[12:26:47 PM] [DAP] [Info] <== {"seq":108,"type":"event","body":{"category":"stdout","output":"W/DynamiteModule( 5051): Local module descriptor class for com.google.android.gms.providerinstaller.dynamite not found.\n"},"event":"output"}
+[12:26:48 PM] [DAP] [Info] <== {"seq":109,"type":"event","body":{"category":"stdout","output":"I/DynamiteModule( 5051): Considering local module com.google.android.gms.providerinstaller.dynamite:0 and remote module com.google.android.gms.providerinstaller.dynamite:0\n"},"event":"output"}
+[12:26:48 PM] [DAP] [Info] <== {"seq":110,"type":"event","body":{"category":"stdout","output":"W/ProviderInstaller( 5051): Failed to load providerinstaller module: No acceptable module com.google.android.gms.providerinstaller.dynamite found. Local version is 0 and remote version is 0.\n"},"event":"output"}
+[12:26:48 PM] [DAP] [Info] <== {"seq":111,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(131) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[12:26:48 PM] [DAP] [Info] <== {"seq":112,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(132) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[12:26:48 PM] [DAP] [Info] <== {"seq":113,"type":"event","body":{"category":"stdout","output":"D/nativeloader( 5051): Configuring classloader-namespace for other apk /system/framework/org.apache.http.legacy.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/product/priv-app/PrebuiltGmsCore/lib/x86_64:/product/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms\n"},"event":"output"}
+[12:26:48 PM] [DAP] [Info] <== {"seq":114,"type":"event","body":{"category":"stdout","output":"D/nativeloader( 5051): Configuring classloader-namespace for other apk /system/framework/com.android.media.remotedisplay.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/product/priv-app/PrebuiltGmsCore/lib/x86_64:/product/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms\n"},"event":"output"}
+[12:26:48 PM] [DAP] [Info] <== {"seq":115,"type":"event","body":{"category":"stdout","output":"D/nativeloader( 5051): Configuring classloader-namespace for other apk /system/framework/com.android.location.provider.jar. target_sdk_version=33, uses_libraries=ALL, library_path=/product/priv-app/PrebuiltGmsCore/lib/x86_64:/product/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk!/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms\n"},"event":"output"}
+[12:26:48 PM] [DAP] [Info] <== {"seq":116,"type":"event","body":{"category":"stdout","output":"D/nativeloader( 5051): Configuring vendor-classloader-namespace for unbundled product apk /product/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk. target_sdk_version=33, uses_libraries=, library_path=/product/priv-app/PrebuiltGmsCore/lib/x86_64:/product/priv-app/PrebuiltGmsCore/PrebuiltGmsCore.apk!/lib/x86_64:/product/lib64:/system/product/lib64, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms:/product/lib64:/system/product/lib64\n"},"event":"output"}
+[12:26:48 PM] [DAP] [Info] <== {"seq":117,"type":"event","body":{"category":"stdout","output":"V/NativeCrypto( 5051): Registering com/google/android/gms/org/conscrypt/NativeCrypto's 295 native methods...\n"},"event":"output"}
+[12:26:48 PM] [DAP] [Info] <== {"seq":118,"type":"event","body":{"category":"stdout","output":"W/.example.tintuc( 5051): Accessing hidden method Ljava/security/spec/ECParameterSpec;->getCurveName()Ljava/lang/String; (unsupported, reflection, allowed)\n"},"event":"output"}
+[12:26:48 PM] [DAP] [Info] <== {"seq":119,"type":"event","body":{"category":"stdout","output":"I/ProviderInstaller( 5051): Installed default security provider GmsCore_OpenSSL\n"},"event":"output"}
+[12:26:48 PM] [DAP] [Info] <== {"seq":120,"type":"event","body":{"category":"stdout","output":"D/FirebaseAuth( 5051): Notifying id token listeners about user ( dlQUShZwTNauBaiAC73oiPtacgZ2 ).\n"},"event":"output"}
+[12:26:48 PM] [DAP] [Info] <== {"seq":121,"type":"event","body":{"extension":"ext.flutter.inspector.structuredErrors","value":true},"event":"flutter.serviceExtensionStateChanged"}
+[12:26:48 PM] [DAP] [Info] <== {"seq":122,"type":"event","body":{"category":"stdout","output":"D/ProfileInstaller( 5051): Installing profile for com.example.tintuc\n"},"event":"output"}
+[12:26:49 PM] [DAP] [Info] <== {"seq":123,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(156) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[12:26:49 PM] [DAP] [Info] <== {"seq":124,"type":"event","body":{"category":"stdout","output":"W/Parcel  ( 5051): Expecting binder but got null!\n"},"event":"output"}
+[12:26:49 PM] [DAP] [Info] <== {"seq":125,"type":"event","body":{"category":"stdout","output":"W/.example.tintuc( 5051): Accessing hidden field Ljava/net/Socket;->impl:Ljava/net/SocketImpl; (unsupported, reflection, allowed)\n"},"event":"output"}
+[12:26:49 PM] [DAP] [Info] <== {"seq":126,"type":"event","body":{"category":"stdout","output":"W/.example.tintuc( 5051): Accessing hidden method Ljava/security/spec/ECParameterSpec;->setCurveName(Ljava/lang/String;)V (unsupported, reflection, allowed)\n"},"event":"output"}
+[12:26:49 PM] [DAP] [Info] <== {"seq":127,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(131) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[12:26:49 PM] [DAP] [Info] <== {"seq":128,"type":"event","body":{"category":"stdout","output":"W/Firestore( 5051): (24.9.1) [Firestore]: Listen for Query(target=Query(dataMedia order by __name__);limitType=LIMIT_TO_FIRST) failed: Status{code=PERMISSION_DENIED, description=Missing or insufficient permissions., cause=null}\n"},"event":"output"}
+[12:26:50 PM] [DAP] [Info] <== {"seq":129,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation( 5051): app_time_stats: avg=28.83ms min=3.13ms max=165.60ms count=25\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":130,"type":"event","body":{"category":"stdout","output":"I/DMCodecAdapterFactory( 5051): Creating an asynchronous MediaCodec adapter for track type video\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":131,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): allocate(c2.goldfish.h264.decoder)\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":132,"type":"event","body":{"category":"stdout","output":"I/Codec2Client( 5051): Available Codec2 services: \"default\" \"software\"\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":133,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation( 5051): app_time_stats: avg=14.63ms min=4.67ms max=54.18ms count=30\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":134,"type":"event","body":{"category":"stdout","output":"I/CCodec  ( 5051): setting up 'default' as default (vendor) store\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":135,"type":"event","body":{"reason":"started","threadId":4725186732692115},"event":"thread"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":136,"type":"event","body":{"category":"stdout","output":"I/CCodec  ( 5051): Created component [c2.goldfish.h264.decoder]\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":137,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): read media type: video/avc\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":138,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: algo.buffers.max-count.values\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":139,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: output.subscribed-indices.values\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":140,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: input.buffers.allocator-ids.values\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":141,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: output.buffers.allocator-ids.values\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":142,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: algo.buffers.allocator-ids.values\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":143,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: output.buffers.pool-ids.values\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":144,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: algo.buffers.pool-ids.values\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":145,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): ignored struct field coded.color-format.locations\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":146,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): ignoring local param raw.size (0xd2001800) as it is already supported\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":147,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): ignoring local param default.color (0x5200180b) as it is already supported\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":148,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): ignored struct field raw.hdr-static-info.mastering\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":149,"type":"event","body":{"category":"stdout","output":"I/CCodecConfig( 5051): query failed after returning 12 values (BAD_INDEX)\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":150,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): c2 config diff is Dict {\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":151,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 coded.pl.level = 20496\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":152,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 coded.pl.profile = 20481\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":153,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 coded.vui.color.matrix = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":154,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 coded.vui.color.primaries = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":155,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 coded.vui.color.range = 2\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":156,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 coded.vui.color.transfer = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":157,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 default.color.matrix = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":158,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 default.color.primaries = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":159,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 default.color.range = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":160,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 default.color.transfer = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":161,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 input.buffers.max-size.value = 6291456\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":162,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 input.delay.value = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":163,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   string input.media-type.value = \"video/avc\"\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":164,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 output.delay.value = 8\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":165,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   string output.media-type.value = \"video/raw\"\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":166,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.color.matrix = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":167,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.color.primaries = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":168,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.color.range = 2\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":169,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.color.transfer = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":170,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.max-size.height = 240\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":171,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.max-size.width = 320\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":172,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.pixel-format.value = 35\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":173,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::i32 raw.rotation.flip = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":174,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::i32 raw.rotation.value = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":175,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.sar.height = 1\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":176,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.sar.width = 1\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":177,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.size.height = 240\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":178,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.size.width = 320\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":179,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2:\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":180,"type":"event","body":{"category":"stdout","output":"W/ColorUtils( 5051): expected specified color aspects (2:0:0:0)\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":181,"type":"event","body":{"category":"stdout","output":"I/MediaCodec( 5051): MediaCodec will operate in async mode\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":182,"type":"event","body":{"category":"stdout","output":"D/SurfaceUtils( 5051): connecting to surface 0x7bbcd048b7c0, reason connectToSurface\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":183,"type":"event","body":{"category":"stdout","output":"I/MediaCodec( 5051): [c2.goldfish.h264.decoder] setting surface generation to 5172225\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":184,"type":"event","body":{"category":"stdout","output":"D/SurfaceUtils( 5051): disconnecting from surface 0x7bbcd048b7c0, reason connectToSurface(reconnect)\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":185,"type":"event","body":{"category":"stdout","output":"D/SurfaceUtils( 5051): connecting to surface 0x7bbcd048b7c0, reason connectToSurface(reconnect)\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":186,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): [c2.goldfish.h264.decoder] buffers are bound to CCodec for this session\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":187,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): no c2 equivalents for csd-1\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":188,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): no c2 equivalents for log-session-id\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":189,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): no c2 equivalents for native-window\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":190,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): no c2 equivalents for flags\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":191,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): config failed => CORRUPTED\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":192,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): c2 config diff is   c2::u32 raw.max-size.height = 720\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":193,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.max-size.width = 1280\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":194,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.size.height = 720\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":195,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.size.width = 1280\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":196,"type":"event","body":{"category":"stdout","output":"W/Codec2Client( 5051): query -- param skipped: index = 1107298332.\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":197,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): client requested max input size 219813, which is smaller than what component recommended (6291456); overriding with component recommendation.\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":198,"type":"event","body":{"category":"stdout","output":"W/CCodec  ( 5051): This behavior is subject to change. It is recommended that app developers double check whether the requested max input size is in reasonable range.\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":199,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): encoding statistics level = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":200,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): setup formats input: AMessage(what = 0x00000000) = {\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":201,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t height = 720\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":202,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t level = 65536\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":203,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t max-input-size = 6291456\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":204,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   string mime = \"video/avc\"\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":205,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t profile = 65536\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":206,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t width = 1280\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":207,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   Rect crop(0, 0, 1279, 719)\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":208,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): }\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":209,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): setup formats output: AMessage(what = 0x00000000) = {\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":210,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t android._color-format = 2135033992\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":211,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t android._video-scaling = 1\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":212,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t rotation-degrees = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":213,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t color-standard = 1\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":214,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t color-range = 2\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":215,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t color-transfer = 3\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":216,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t sar-height = 1\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":217,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t sar-width = 1\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":218,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   Rect crop(0, 0, 1279, 719)\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":219,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t width = 1280\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":220,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t height = 720\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":221,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t max-height = 720\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":222,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t max-width = 1280\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":223,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   string mime = \"video/raw\"\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":224,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t android._dataspace = 260\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":225,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t color-format = 2130708361\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":226,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): }\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":227,"type":"event","body":{"category":"stdout","output":"I/CCodecConfig( 5051): query failed after returning 12 values (BAD_INDEX)\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":228,"type":"event","body":{"category":"stdout","output":"D/MediaCodec( 5051): keep callback message for reclaim\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":229,"type":"event","body":{"category":"stdout","output":"W/Codec2Client( 5051): query -- param skipped: index = 1342179345.\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] ==> {"command":"threads","type":"request","seq":9}
+[12:26:51 PM] [DAP] [Info] <== {"seq":230,"type":"event","body":{"category":"stdout","output":"W/Codec2Client( 5051): query -- param skipped: index = 2415921170.\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":231,"type":"event","body":{"category":"stdout","output":"W/Codec2Client( 5051): query -- param skipped: index = 1610614798.\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":232,"type":"event","body":{"category":"stdout","output":"W/Codec2Client( 5051): query -- param skipped: index = 2684356609.\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":233,"type":"event","body":{"category":"stdout","output":"D/C2Store ( 5051): Using DMABUF Heaps\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":234,"type":"event","body":{"category":"stdout","output":"D/CCodecBufferChannel( 5051): [c2.goldfish.h264.decoder#487] Created input block pool with allocatorID 16 => poolID 17 - OK (0)\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":235,"type":"event","body":{"category":"stdout","output":"D/CCodecBufferChannel( 5051): [c2.goldfish.h264.decoder#487] Query output surface allocator returned 0 params => BAD_INDEX (6)\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":236,"type":"event","body":{"category":"stdout","output":"I/CCodecBufferChannel( 5051): [c2.goldfish.h264.decoder#487] Created output block pool with allocatorID 18 => poolID 17 - OK\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":237,"type":"event","body":{"category":"stdout","output":"D/CCodecBufferChannel( 5051): [c2.goldfish.h264.decoder#487] Configured output block pool ids 17 => OK\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":238,"type":"event","body":{"category":"stdout","output":"D/Codec2-OutputBufferQueue( 5051): remote graphic buffer migration 0/0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":239,"type":"event","body":{"category":"stdout","output":"D/Codec2Client( 5051): setOutputSurface -- failed to set consumer usage (6/BAD_INDEX)\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":240,"type":"event","body":{"category":"stdout","output":"D/Codec2Client( 5051): setOutputSurface -- generation=5172225 consumer usage=0x900\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":241,"type":"response","body":{"threads":[{"id":5735165900966419,"name":"main"},{"id":4725186732692115,"name":"Closure: (String, {((Object?, Object?) => Object?)? reviver}) => dynamic from Function 'jsonDecode': static."}]},"command":"threads","request_seq":9,"success":true}
+[12:26:51 PM] [DAP] [Info] <== {"seq":242,"type":"event","body":{"reason":"started","threadId":7715136744584967},"event":"thread"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":243,"type":"event","body":{"reason":"started","threadId":7718946091905399},"event":"thread"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":244,"type":"event","body":{"reason":"started","threadId":8200287490706895},"event":"thread"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":245,"type":"event","body":{"category":"stdout","output":"D/Codec2Client( 5051): Surface configure completed\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":246,"type":"event","body":{"category":"stdout","output":"I/DMABUFHEAPS( 5051): Using DMA-BUF heap named: system\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] ==> {"command":"threads","type":"request","seq":10}
+[12:26:51 PM] [DAP] [Info] <== {"seq":247,"type":"response","body":{"threads":[{"id":5735165900966419,"name":"main"},{"id":4725186732692115,"name":"Closure: (String, {((Object?, Object?) => Object?)? reviver}) => dynamic from Function 'jsonDecode': static."},{"id":7715136744584967,"name":"Closure: (String, {((Object?, Object?) => Object?)? reviver}) => dynamic from Function 'jsonDecode': static."},{"id":7718946091905399,"name":"Closure: (String, {((Object?, Object?) => Object?)? reviver}) => dynamic from Function 'jsonDecode': static."},{"id":8200287490706895,"name":"Closure: (String, {((Object?, Object?) => Object?)? reviver}) => dynamic from Function 'jsonDecode': static."}]},"command":"threads","request_seq":10,"success":true}
+[12:26:51 PM] [DAP] [Info] <== {"seq":248,"type":"event","body":{"category":"stdout","output":"I/DMCodecAdapterFactory( 5051): Creating an asynchronous MediaCodec adapter for track type audio\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":249,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): allocate(c2.android.aac.decoder)\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":250,"type":"event","body":{"category":"stdout","output":"I/CCodec  ( 5051): setting up 'default' as default (vendor) store\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":251,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpEnableTimelineLogging","isolateId":"isolates/4725186732692115"},"event":"dart.serviceExtensionAdded"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":252,"type":"event","body":{"extensionRPC":"ext.dart.io.setHttpEnableTimelineLogging","isolateId":"isolates/4725186732692115"},"event":"dart.serviceExtensionAdded"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":253,"type":"event","body":{"extensionRPC":"ext.dart.io.httpEnableTimelineLogging","isolateId":"isolates/4725186732692115"},"event":"dart.serviceExtensionAdded"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":254,"type":"event","body":{"extensionRPC":"ext.dart.io.getSocketProfile","isolateId":"isolates/4725186732692115"},"event":"dart.serviceExtensionAdded"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":255,"type":"event","body":{"extensionRPC":"ext.dart.io.startSocketProfiling","isolateId":"isolates/4725186732692115"},"event":"dart.serviceExtensionAdded"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":256,"type":"event","body":{"extensionRPC":"ext.dart.io.pauseSocketProfiling","isolateId":"isolates/4725186732692115"},"event":"dart.serviceExtensionAdded"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":257,"type":"event","body":{"extensionRPC":"ext.dart.io.socketProfilingEnabled","isolateId":"isolates/4725186732692115"},"event":"dart.serviceExtensionAdded"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":258,"type":"event","body":{"extensionRPC":"ext.dart.io.clearSocketProfile","isolateId":"isolates/4725186732692115"},"event":"dart.serviceExtensionAdded"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":259,"type":"event","body":{"extensionRPC":"ext.dart.io.getVersion","isolateId":"isolates/4725186732692115"},"event":"dart.serviceExtensionAdded"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":260,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfile","isolateId":"isolates/4725186732692115"},"event":"dart.serviceExtensionAdded"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":261,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfileRequest","isolateId":"isolates/4725186732692115"},"event":"dart.serviceExtensionAdded"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":262,"type":"event","body":{"extensionRPC":"ext.dart.io.clearHttpProfile","isolateId":"isolates/4725186732692115"},"event":"dart.serviceExtensionAdded"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":263,"type":"event","body":{"category":"stdout","output":"I/CCodec  ( 5051): Created component [c2.android.aac.decoder]\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":264,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): read media type: audio/mp4a-latm\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":265,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: algo.buffers.max-count.values\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":266,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: output.subscribed-indices.values\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":267,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: input.buffers.allocator-ids.values\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":268,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: output.buffers.allocator-ids.values\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":269,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: algo.buffers.allocator-ids.values\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":270,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: output.buffers.pool-ids.values\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":271,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: algo.buffers.pool-ids.values\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":272,"type":"event","body":{"category":"stdout","output":"I/CCodecConfig( 5051): query failed after returning 20 values (BAD_INDEX)\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":273,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): c2 config diff is Dict {\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":274,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 coded.aac-packaging.value = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":275,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 coded.bitrate.value = 64000\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":276,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 coded.pl.level = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":277,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 coded.pl.profile = 8192\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":278,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::i32 coding.drc.album-mode.value = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":279,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::float coding.drc.attenuation-factor.value = 1\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":280,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::float coding.drc.boost-factor.value = 1\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":281,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::i32 coding.drc.compression-mode.value = 3\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":282,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::i32 coding.drc.effect-type.value = 3\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":283,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::float coding.drc.encoded-level.value = 0.25\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":284,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::float coding.drc.reference-level.value = -16\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":285,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 input.buffers.max-size.value = 8192\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":286,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 input.delay.value = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":287,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   string input.media-type.value = \"audio/mp4a-latm\"\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":288,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 output.delay.value = 2\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":289,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::float output.drc.output-loudness.value = 0.25\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":290,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   string output.media-type.value = \"audio/raw\"\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":291,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.channel-count.value = 1\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":292,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.channel-mask.value = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":293,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.max-channel-count.value = 8\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":294,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.sample-rate.value = 44100\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":295,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): }\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":296,"type":"event","body":{"category":"stdout","output":"I/.example.tintuc( 5051): Background concurrent copying GC freed 118449(7607KB) AllocSpace objects, 37(1540KB) LOS objects, 49% free, 6844KB/13MB, paused 3.221ms,61us total 132.737ms\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":297,"type":"event","body":{"category":"stdout","output":"I/MediaCodec( 5051): MediaCodec will operate in async mode\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":298,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): [c2.android.aac.decoder] buffers are bound to CCodec for this session\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":299,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): no c2 equivalents for log-session-id\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":300,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): no c2 equivalents for flags\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":301,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): config failed => CORRUPTED\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":302,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): c2 config diff is   c2::u32 raw.channel-count.value = 2\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":303,"type":"event","body":{"category":"stdout","output":"W/Codec2Client( 5051): query -- param skipped: index = 1107298332.\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":304,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): client requested max input size 623, which is smaller than what component recommended (8192); overriding with component recommendation.\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":305,"type":"event","body":{"category":"stdout","output":"W/CCodec  ( 5051): This behavior is subject to change. It is recommended that app developers double check whether the requested max input size is in reasonable range.\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":306,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): encoding statistics level = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":307,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): setup formats input: AMessage(what = 0x00000000) = {\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":308,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-drc-album-mode = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":309,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-drc-boost-level = 127\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":310,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-drc-cut-level = 127\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":311,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-drc-effect-type = 3\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":312,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-encoded-target-level = -1\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":313,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-max-output-channel_count = 8\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":314,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-target-ref-level = 64\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":315,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t bitrate = 64000\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":316,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t channel-count = 2\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":317,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t channel-mask = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":318,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t level = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":319,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t max-input-size = 8192\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":320,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t max-output-channel-count = 8\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":321,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   string mime = \"audio/mp4a-latm\"\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":322,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t profile = 2\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":323,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t sample-rate = 44100\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":324,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): }\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":325,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): setup formats output: AMessage(what = 0x00000000) = {\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":326,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-drc-album-mode = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":327,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-drc-boost-level = 127\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":328,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-drc-cut-level = 127\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":329,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-drc-effect-type = 3\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":330,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-drc-output-loudness = -1\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":331,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-encoded-target-level = -1\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":332,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-max-output-channel_count = 8\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":333,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-target-ref-level = 64\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":334,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t channel-count = 2\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":335,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t channel-mask = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":336,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t max-output-channel-count = 8\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":337,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   string mime = \"audio/raw\"\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":338,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t sample-rate = 44100\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":339,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t android._config-pcm-encoding = 2\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":340,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): }\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":341,"type":"event","body":{"category":"stdout","output":"I/CCodecConfig( 5051): query failed after returning 20 values (BAD_INDEX)\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":342,"type":"event","body":{"category":"stdout","output":"D/MediaCodec( 5051): keep callback message for reclaim\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":343,"type":"event","body":{"category":"stdout","output":"W/Codec2Client( 5051): query -- param skipped: index = 1342179345.\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":344,"type":"event","body":{"category":"stdout","output":"W/Codec2Client( 5051): query -- param skipped: index = 2415921170.\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":345,"type":"event","body":{"category":"stdout","output":"W/Codec2Client( 5051): query -- param skipped: index = 1610614798.\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":346,"type":"event","body":{"category":"stdout","output":"D/CCodecBufferChannel( 5051): [c2.android.aac.decoder#542] Created input block pool with allocatorID 16 => poolID 18 - OK (0)\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":347,"type":"event","body":{"reason":"exited","threadId":4725186732692115},"event":"thread"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":348,"type":"event","body":{"category":"stdout","output":"I/CCodecBufferChannel( 5051): [c2.android.aac.decoder#542] Created output block pool with allocatorID 16 => poolID 26 - OK\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":349,"type":"event","body":{"category":"stdout","output":"D/CCodecBufferChannel( 5051): [c2.android.aac.decoder#542] Configured output block pool ids 26 => OK\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":350,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): c2 config diff is   c2::u32 raw.channel-mask.value = 12\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":351,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051): [c2.android.aac.decoder#542:Output[N]] popFromStashAndRegister: at 1000000000000us, output format changed to AMessage(what = 0x00000000) = {\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":352,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t aac-drc-album-mode = 0\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":353,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t aac-drc-boost-level = 127\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":354,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t aac-drc-cut-level = 127\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":355,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t aac-drc-effect-type = 3\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":356,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t aac-drc-output-loudness = -1\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":357,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t aac-encoded-target-level = -1\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":358,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t aac-max-output-channel_count = 8\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":359,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t aac-target-ref-level = 64\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":360,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t channel-count = 2\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":361,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t channel-mask = 12\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":362,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t max-output-channel-count = 8\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":363,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   string mime = \"audio/raw\"\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":364,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t sample-rate = 44100\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":365,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t android._config-pcm-encoding = 2\n"},"event":"output"}
+[12:26:51 PM] [DAP] [Info] <== {"seq":366,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051): }\n"},"event":"output"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":367,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpEnableTimelineLogging","isolateId":"isolates/7715136744584967"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":368,"type":"event","body":{"extensionRPC":"ext.dart.io.setHttpEnableTimelineLogging","isolateId":"isolates/7715136744584967"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":369,"type":"event","body":{"extensionRPC":"ext.dart.io.httpEnableTimelineLogging","isolateId":"isolates/7715136744584967"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":370,"type":"event","body":{"extensionRPC":"ext.dart.io.getSocketProfile","isolateId":"isolates/7715136744584967"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":371,"type":"event","body":{"extensionRPC":"ext.dart.io.startSocketProfiling","isolateId":"isolates/7715136744584967"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":372,"type":"event","body":{"extensionRPC":"ext.dart.io.pauseSocketProfiling","isolateId":"isolates/7715136744584967"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":373,"type":"event","body":{"extensionRPC":"ext.dart.io.socketProfilingEnabled","isolateId":"isolates/7715136744584967"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":374,"type":"event","body":{"extensionRPC":"ext.dart.io.clearSocketProfile","isolateId":"isolates/7715136744584967"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":375,"type":"event","body":{"extensionRPC":"ext.dart.io.getVersion","isolateId":"isolates/7715136744584967"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":376,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfile","isolateId":"isolates/7715136744584967"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":377,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfileRequest","isolateId":"isolates/7715136744584967"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":378,"type":"event","body":{"extensionRPC":"ext.dart.io.clearHttpProfile","isolateId":"isolates/7715136744584967"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":379,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpEnableTimelineLogging","isolateId":"isolates/8200287490706895"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":380,"type":"event","body":{"extensionRPC":"ext.dart.io.setHttpEnableTimelineLogging","isolateId":"isolates/8200287490706895"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":381,"type":"event","body":{"extensionRPC":"ext.dart.io.httpEnableTimelineLogging","isolateId":"isolates/8200287490706895"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":382,"type":"event","body":{"extensionRPC":"ext.dart.io.getSocketProfile","isolateId":"isolates/8200287490706895"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":383,"type":"event","body":{"extensionRPC":"ext.dart.io.startSocketProfiling","isolateId":"isolates/8200287490706895"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":384,"type":"event","body":{"extensionRPC":"ext.dart.io.pauseSocketProfiling","isolateId":"isolates/8200287490706895"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":385,"type":"event","body":{"extensionRPC":"ext.dart.io.socketProfilingEnabled","isolateId":"isolates/8200287490706895"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":386,"type":"event","body":{"extensionRPC":"ext.dart.io.clearSocketProfile","isolateId":"isolates/8200287490706895"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":387,"type":"event","body":{"extensionRPC":"ext.dart.io.getVersion","isolateId":"isolates/8200287490706895"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":388,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfile","isolateId":"isolates/8200287490706895"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":389,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfileRequest","isolateId":"isolates/8200287490706895"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":390,"type":"event","body":{"extensionRPC":"ext.dart.io.clearHttpProfile","isolateId":"isolates/8200287490706895"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":391,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpEnableTimelineLogging","isolateId":"isolates/7718946091905399"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":392,"type":"event","body":{"extensionRPC":"ext.dart.io.setHttpEnableTimelineLogging","isolateId":"isolates/7718946091905399"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":393,"type":"event","body":{"extensionRPC":"ext.dart.io.httpEnableTimelineLogging","isolateId":"isolates/7718946091905399"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":394,"type":"event","body":{"extensionRPC":"ext.dart.io.getSocketProfile","isolateId":"isolates/7718946091905399"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":395,"type":"event","body":{"extensionRPC":"ext.dart.io.startSocketProfiling","isolateId":"isolates/7718946091905399"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":396,"type":"event","body":{"extensionRPC":"ext.dart.io.pauseSocketProfiling","isolateId":"isolates/7718946091905399"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":397,"type":"event","body":{"extensionRPC":"ext.dart.io.socketProfilingEnabled","isolateId":"isolates/7718946091905399"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":398,"type":"event","body":{"extensionRPC":"ext.dart.io.clearSocketProfile","isolateId":"isolates/7718946091905399"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":399,"type":"event","body":{"extensionRPC":"ext.dart.io.getVersion","isolateId":"isolates/7718946091905399"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":400,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfile","isolateId":"isolates/7718946091905399"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":401,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfileRequest","isolateId":"isolates/7718946091905399"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":402,"type":"event","body":{"extensionRPC":"ext.dart.io.clearHttpProfile","isolateId":"isolates/7718946091905399"},"event":"dart.serviceExtensionAdded"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":403,"type":"event","body":{"reason":"exited","threadId":7718946091905399},"event":"thread"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":404,"type":"event","body":{"reason":"exited","threadId":7715136744584967},"event":"thread"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":405,"type":"event","body":{"reason":"exited","threadId":8200287490706895},"event":"thread"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":406,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): c2 config diff is   c2::u32 raw.color.matrix = 1\n"},"event":"output"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":407,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.color.primaries = 1\n"},"event":"output"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":408,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.color.transfer = 3\n"},"event":"output"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":409,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.crop.height = 720\n"},"event":"output"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":410,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.crop.left = 0\n"},"event":"output"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":411,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.crop.top = 0\n"},"event":"output"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":412,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.crop.width = 1280\n"},"event":"output"}
+[12:26:52 PM] [DAP] [Info] <== {"seq":413,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation( 5051): app_time_stats: avg=157.49ms min=32.38ms max=538.87ms count=8\n"},"event":"output"}
+[12:26:53 PM] [DAP] [Info] <== {"seq":414,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation( 5051): app_time_stats: avg=335.91ms min=34.79ms max=933.60ms count=4\n"},"event":"output"}
+[12:26:54 PM] [DAP] [Info] <== {"seq":415,"type":"event","body":{"category":"stdout","output":"I/.example.tintuc( 5051): Background concurrent copying GC freed 1500(73KB) AllocSpace objects, 8(352KB) LOS objects, 49% free, 13MB/27MB, paused 6.642ms,99us total 89.207ms\n"},"event":"output"}
+[12:26:55 PM] [DAP] [Info] <== {"seq":416,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation( 5051): app_time_stats: avg=274.67ms min=38.49ms max=535.61ms count=5\n"},"event":"output"}
+[12:26:57 PM] [DAP] [Info] <== {"seq":417,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation( 5051): app_time_stats: avg=1006.60ms min=50.39ms max=1962.81ms count=2\n"},"event":"output"}
+[12:26:57 PM] [DAP] [Info] <== {"seq":418,"type":"event","body":{"category":"stdout","output":"D/BufferPoolAccessor2.0( 5051): bufferpool2 0x7bbc304a6658 : 5(40960 size) total buffers - 0(0 size) used buffers - 20/25 (recycle/alloc) - 5/25 (fetch/transfer)\n"},"event":"output"}
+[12:26:57 PM] [DAP] [Info] <== {"seq":419,"type":"event","body":{"category":"stdout","output":"D/BufferPoolAccessor2.0( 5051): bufferpool2 0x7bbc304a2a38 : 5(31457280 size) total buffers - 0(0 size) used buffers - 14/19 (recycle/alloc) - 5/19 (fetch/transfer)\n"},"event":"output"}
+[12:26:57 PM] [DAP] [Info] <== {"seq":420,"type":"event","body":{"category":"stdout","output":"D/BufferPoolAccessor2.0( 5051): evictor expired: 2, evicted: 2\n"},"event":"output"}
+[12:26:58 PM] [DAP] [Info] <== {"seq":421,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation( 5051): app_time_stats: avg=1550.94ms min=1550.94ms max=1550.94ms count=1\n"},"event":"output"}
+[12:27:04 PM] [DAP] [Info] <== {"seq":422,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation( 5051): app_time_stats: avg=6141.16ms min=6141.16ms max=6141.16ms count=1\n"},"event":"output"}
+[12:28:19 PM] [DAP] [Info] <== {"seq":423,"type":"event","body":{"category":"stdout","output":"W/Firestore( 5051): (24.9.1) [WatchStream]: (b064e22) Stream closed with status: Status{code=CANCELLED, description=Disconnecting idle stream. Timed out waiting for new targets., cause=null}.\n"},"event":"output"}
+[12:32:19 PM] [DAP] [Info] <== {"seq":424,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(132) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[12:32:20 PM] [DAP] [Info] <== {"seq":425,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(138) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[12:36:20 PM] [DAP] [Info] <== {"seq":426,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(149) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[12:36:20 PM] [DAP] [Info] <== {"seq":427,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(139) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[12:40:20 PM] [DAP] [Info] <== {"seq":428,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(132) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[12:40:20 PM] [DAP] [Info] <== {"seq":429,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(148) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[12:41:47 PM] [DAP] [Info] ==> {"command":"hotReload","arguments":{"debounce":true,"onlyFlutter":true,"reason":"save"},"type":"request","seq":11}
+[12:41:47 PM] [DAP] [Info] <== {"seq":430,"type":"event","body":{"message":"Hot reloading…","progressId":"hotReload_2","title":"Flutter"},"event":"dart.progressStart"}
+[12:41:48 PM] [DAP] [Info] <== {"seq":431,"type":"event","body":{"category":"stdout","output":"Reloaded 1 of 1164 libraries in 1.104ms (compile: 30 ms, reload: 272 ms, reassemble: 520 ms).\n"},"event":"output"}
+[12:41:48 PM] [DAP] [Info] <== {"seq":432,"type":"event","body":{"progressId":"hotReload_2"},"event":"dart.progressEnd"}
+[12:41:48 PM] [DAP] [Info] <== {"seq":433,"type":"response","command":"hotReload","request_seq":11,"success":true}
+[12:41:48 PM] [DAP] [Info] <== {"seq":434,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation( 5051): app_time_stats: avg=46483.57ms min=1.85ms max=883111.44ms count=19\n"},"event":"output"}
+[12:41:48 PM] [DAP] [Info] <== {"seq":435,"type":"event","body":{"category":"stdout","output":"W/Firestore( 5051): (24.9.1) [Firestore]: Listen for Query(target=Query(dataMedia order by __name__);limitType=LIMIT_TO_FIRST) failed: Status{code=PERMISSION_DENIED, description=Missing or insufficient permissions., cause=null}\n"},"event":"output"}
+[12:42:37 PM] [DAP] [Info] ==> {"command":"hotReload","arguments":{"debounce":true,"onlyFlutter":true,"reason":"save"},"type":"request","seq":12}
+[12:42:37 PM] [DAP] [Info] <== {"seq":436,"type":"event","body":{"message":"Hot reloading…","progressId":"hotReload_3","title":"Flutter"},"event":"dart.progressStart"}
+[12:42:37 PM] [DAP] [Info] <== {"seq":437,"type":"event","body":{"category":"stdout","output":"Reloaded 0 libraries in 275ms (compile: 17 ms, reload: 0 ms, reassemble: 190 ms).\n"},"event":"output"}
+[12:42:37 PM] [DAP] [Info] <== {"seq":438,"type":"event","body":{"progressId":"hotReload_3"},"event":"dart.progressEnd"}
+[12:42:37 PM] [DAP] [Info] <== {"seq":439,"type":"response","command":"hotReload","request_seq":12,"success":true}
+[12:42:37 PM] [DAP] [Info] <== {"seq":440,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation( 5051): app_time_stats: avg=24640.98ms min=398.55ms max=48883.41ms count=2\n"},"event":"output"}
+[12:42:38 PM] [DAP] [Info] <== {"seq":441,"type":"event","body":{"category":"stdout","output":"W/Firestore( 5051): (24.9.1) [Firestore]: Listen for Query(target=Query(dataMedia order by __name__);limitType=LIMIT_TO_FIRST) failed: Status{code=PERMISSION_DENIED, description=Missing or insufficient permissions., cause=null}\n"},"event":"output"}
+[12:44:08 PM] [DAP] [Info] <== {"seq":442,"type":"event","body":{"category":"stdout","output":"W/Firestore( 5051): (24.9.1) [WatchStream]: (b064e22) Stream closed with status: Status{code=CANCELLED, description=Disconnecting idle stream. Timed out waiting for new targets., cause=null}.\n"},"event":"output"}
+[12:44:38 PM] [DAP] [Info] ==> {"command":"hotReload","arguments":{"debounce":true,"onlyFlutter":true,"reason":"save"},"type":"request","seq":13}
+[12:44:38 PM] [DAP] [Info] <== {"seq":443,"type":"event","body":{"message":"Hot reloading…","progressId":"hotReload_4","title":"Flutter"},"event":"dart.progressStart"}
+[12:44:38 PM] [DAP] [Info] <== {"seq":444,"type":"event","body":{"category":"stdout","output":"Reloaded 0 libraries in 266ms (compile: 19 ms, reload: 0 ms, reassemble: 191 ms).\n"},"event":"output"}
+[12:44:38 PM] [DAP] [Info] <== {"seq":445,"type":"event","body":{"progressId":"hotReload_4"},"event":"dart.progressEnd"}
+[12:44:38 PM] [DAP] [Info] <== {"seq":446,"type":"response","command":"hotReload","request_seq":13,"success":true}
+[12:44:38 PM] [DAP] [Info] <== {"seq":447,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation( 5051): app_time_stats: avg=60558.20ms min=317.46ms max=120798.93ms count=2\n"},"event":"output"}
+[12:44:39 PM] [DAP] [Info] <== {"seq":448,"type":"event","body":{"category":"stdout","output":"W/Firestore( 5051): (24.9.1) [Firestore]: Listen for Query(target=Query(dataMedia order by __name__);limitType=LIMIT_TO_FIRST) failed: Status{code=PERMISSION_DENIED, description=Missing or insufficient permissions., cause=null}\n"},"event":"output"}
+[12:46:09 PM] [DAP] [Info] <== {"seq":449,"type":"event","body":{"category":"stdout","output":"W/Firestore( 5051): (24.9.1) [WatchStream]: (b064e22) Stream closed with status: Status{code=CANCELLED, description=Disconnecting idle stream. Timed out waiting for new targets., cause=null}.\n"},"event":"output"}
+[12:50:09 PM] [DAP] [Info] <== {"seq":450,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(153) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[12:54:09 PM] [DAP] [Info] <== {"seq":451,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(148) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[12:58:09 PM] [DAP] [Info] <== {"seq":452,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(132) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[12:58:09 PM] [DAP] [Info] <== {"seq":453,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(139) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[12:59:17 PM] [DAP] [Info] <== {"seq":454,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation( 5051): app_time_stats: avg=439272.28ms min=383.60ms max=878160.88ms count=2\n"},"event":"output"}
+[12:59:19 PM] [DAP] [Info] <== {"seq":455,"type":"event","body":{"category":"stdout","output":"W/OnBackInvokedCallback( 5051): OnBackInvokedCallback is not enabled for the application.\n"},"event":"output"}
+[12:59:19 PM] [DAP] [Info] <== {"seq":456,"type":"event","body":{"category":"stdout","output":"W/OnBackInvokedCallback( 5051): Set 'android:enableOnBackInvokedCallback=\"true\"' in the application manifest.\n"},"event":"output"}
+[12:59:19 PM] [DAP] [Info] <== {"seq":457,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation( 5051): app_time_stats: avg=34.81ms min=1.63ms max=1150.47ms count=36\n"},"event":"output"}
+[12:59:21 PM] [DAP] [Info] <== {"seq":458,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation( 5051): app_time_stats: avg=149.10ms min=1.33ms max=1655.80ms count=12\n"},"event":"output"}
+[12:59:21 PM] [DAP] [Info] <== {"seq":459,"type":"event","body":{"category":"stdout","output":"W/Parcel  ( 5051): Expecting binder but got null!\n"},"event":"output"}
+[12:59:22 PM] [DAP] [Info] <== {"seq":460,"type":"event","body":{"category":"stdout","output":"D/CompatibilityChangeReporter( 5051): Compat change id reported: 78294732; UID 10172; state: ENABLED\n"},"event":"output"}
+[12:59:22 PM] [DAP] [Info] <== {"seq":461,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation( 5051): app_time_stats: avg=30.89ms min=1.68ms max=833.77ms count=36\n"},"event":"output"}
+[12:59:22 PM] [DAP] [Info] <== {"seq":462,"type":"event","body":{"category":"stdout","output":"W/System  ( 5051): Ignoring header X-Firebase-Locale because its value was null.\n"},"event":"output"}
+[12:59:22 PM] [DAP] [Info] <== {"seq":463,"type":"event","body":{"category":"stdout","output":"W/LocalRequestInterceptor( 5051): Error getting App Check token; using placeholder token instead. Error: com.google.firebase.FirebaseException: No AppCheckProvider installed.\n"},"event":"output"}
+[12:59:22 PM] [DAP] [Info] <== {"seq":464,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(150) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[12:59:23 PM] [DAP] [Info] <== {"seq":465,"type":"event","body":{"category":"stdout","output":"W/System  ( 5051): Ignoring header X-Firebase-Locale because its value was null.\n"},"event":"output"}
+[12:59:23 PM] [DAP] [Info] <== {"seq":466,"type":"event","body":{"category":"stdout","output":"W/LocalRequestInterceptor( 5051): Error getting App Check token; using placeholder token instead. Error: com.google.firebase.FirebaseException: No AppCheckProvider installed.\n"},"event":"output"}
+[12:59:24 PM] [DAP] [Info] <== {"seq":467,"type":"event","body":{"category":"stdout","output":"D/FirebaseAuth( 5051): Notifying id token listeners about user ( dlQUShZwTNauBaiAC73oiPtacgZ2 ).\n"},"event":"output"}
+[12:59:24 PM] [DAP] [Info] <== {"seq":468,"type":"event","body":{"category":"stdout","output":"I/ExoPlayerImpl( 5051): Init c3e239d [ExoPlayerLib/2.18.7] [emu64xa, sdk_gphone_x86_64, Google, 33]\n"},"event":"output"}
+[12:59:24 PM] [DAP] [Info] <== {"seq":469,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(187) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[12:59:24 PM] [DAP] [Info] <== {"seq":470,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation( 5051): app_time_stats: avg=805.71ms min=30.54ms max=1580.89ms count=2\n"},"event":"output"}
+[12:59:24 PM] [DAP] [Info] <== {"seq":471,"type":"event","body":{"category":"stdout","output":"W/Firestore( 5051): (24.9.1) [Firestore]: Listen for Query(target=Query(dataMedia order by __name__);limitType=LIMIT_TO_FIRST) failed: Status{code=PERMISSION_DENIED, description=Missing or insufficient permissions., cause=null}\n"},"event":"output"}
+[12:59:25 PM] [DAP] [Info] <== {"seq":472,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation( 5051): app_time_stats: avg=11.63ms min=3.16ms max=52.31ms count=53\n"},"event":"output"}
+[12:59:25 PM] [DAP] [Info] <== {"seq":473,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(185) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[12:59:25 PM] [DAP] [Info] <== {"seq":474,"type":"event","body":{"reason":"started","threadId":7499444670208499},"event":"thread"}
+[12:59:25 PM] [DAP] [Info] <== {"seq":475,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpEnableTimelineLogging","isolateId":"isolates/7499444670208499"},"event":"dart.serviceExtensionAdded"}
+[12:59:25 PM] [DAP] [Info] <== {"seq":476,"type":"event","body":{"extensionRPC":"ext.dart.io.setHttpEnableTimelineLogging","isolateId":"isolates/7499444670208499"},"event":"dart.serviceExtensionAdded"}
+[12:59:25 PM] [DAP] [Info] <== {"seq":477,"type":"event","body":{"extensionRPC":"ext.dart.io.httpEnableTimelineLogging","isolateId":"isolates/7499444670208499"},"event":"dart.serviceExtensionAdded"}
+[12:59:25 PM] [DAP] [Info] <== {"seq":478,"type":"event","body":{"extensionRPC":"ext.dart.io.getSocketProfile","isolateId":"isolates/7499444670208499"},"event":"dart.serviceExtensionAdded"}
+[12:59:25 PM] [DAP] [Info] <== {"seq":479,"type":"event","body":{"extensionRPC":"ext.dart.io.startSocketProfiling","isolateId":"isolates/7499444670208499"},"event":"dart.serviceExtensionAdded"}
+[12:59:25 PM] [DAP] [Info] <== {"seq":480,"type":"event","body":{"extensionRPC":"ext.dart.io.pauseSocketProfiling","isolateId":"isolates/7499444670208499"},"event":"dart.serviceExtensionAdded"}
+[12:59:25 PM] [DAP] [Info] <== {"seq":481,"type":"event","body":{"extensionRPC":"ext.dart.io.socketProfilingEnabled","isolateId":"isolates/7499444670208499"},"event":"dart.serviceExtensionAdded"}
+[12:59:25 PM] [DAP] [Info] <== {"seq":482,"type":"event","body":{"extensionRPC":"ext.dart.io.clearSocketProfile","isolateId":"isolates/7499444670208499"},"event":"dart.serviceExtensionAdded"}
+[12:59:25 PM] [DAP] [Info] <== {"seq":483,"type":"event","body":{"extensionRPC":"ext.dart.io.getVersion","isolateId":"isolates/7499444670208499"},"event":"dart.serviceExtensionAdded"}
+[12:59:25 PM] [DAP] [Info] <== {"seq":484,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfile","isolateId":"isolates/7499444670208499"},"event":"dart.serviceExtensionAdded"}
+[12:59:25 PM] [DAP] [Info] <== {"seq":485,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfileRequest","isolateId":"isolates/7499444670208499"},"event":"dart.serviceExtensionAdded"}
+[12:59:25 PM] [DAP] [Info] <== {"seq":486,"type":"event","body":{"extensionRPC":"ext.dart.io.clearHttpProfile","isolateId":"isolates/7499444670208499"},"event":"dart.serviceExtensionAdded"}
+[12:59:25 PM] [DAP] [Info] <== {"seq":487,"type":"event","body":{"reason":"exited","threadId":7499444670208499},"event":"thread"}
+[12:59:25 PM] [DAP] [Info] ==> {"command":"threads","type":"request","seq":14}
+[12:59:25 PM] [DAP] [Info] <== {"seq":488,"type":"response","body":{"threads":[{"id":5735165900966419,"name":"main"}]},"command":"threads","request_seq":14,"success":true}
+[12:59:26 PM] [DAP] [Info] <== {"seq":489,"type":"event","body":{"reason":"started","threadId":5929671546598063},"event":"thread"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":490,"type":"event","body":{"reason":"started","threadId":626167522179895},"event":"thread"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":491,"type":"event","body":{"reason":"started","threadId":447966887491507},"event":"thread"}
+[12:59:26 PM] [DAP] [Info] ==> {"command":"threads","type":"request","seq":15}
+[12:59:26 PM] [DAP] [Info] <== {"seq":492,"type":"response","body":{"threads":[{"id":5735165900966419,"name":"main"},{"id":5929671546598063,"name":"Closure: (String, {((Object?, Object?) => Object?)? reviver}) => dynamic from Function 'jsonDecode': static."},{"id":626167522179895,"name":"Closure: (String, {((Object?, Object?) => Object?)? reviver}) => dynamic from Function 'jsonDecode': static."},{"id":447966887491507,"name":"Closure: (String, {((Object?, Object?) => Object?)? reviver}) => dynamic from Function 'jsonDecode': static."}]},"command":"threads","request_seq":15,"success":true}
+[12:59:26 PM] [DAP] [Info] <== {"seq":493,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpEnableTimelineLogging","isolateId":"isolates/5929671546598063"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":494,"type":"event","body":{"extensionRPC":"ext.dart.io.setHttpEnableTimelineLogging","isolateId":"isolates/5929671546598063"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":495,"type":"event","body":{"extensionRPC":"ext.dart.io.httpEnableTimelineLogging","isolateId":"isolates/5929671546598063"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":496,"type":"event","body":{"extensionRPC":"ext.dart.io.getSocketProfile","isolateId":"isolates/5929671546598063"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":497,"type":"event","body":{"extensionRPC":"ext.dart.io.startSocketProfiling","isolateId":"isolates/5929671546598063"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":498,"type":"event","body":{"extensionRPC":"ext.dart.io.pauseSocketProfiling","isolateId":"isolates/5929671546598063"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":499,"type":"event","body":{"extensionRPC":"ext.dart.io.socketProfilingEnabled","isolateId":"isolates/5929671546598063"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":500,"type":"event","body":{"extensionRPC":"ext.dart.io.clearSocketProfile","isolateId":"isolates/5929671546598063"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":501,"type":"event","body":{"extensionRPC":"ext.dart.io.getVersion","isolateId":"isolates/5929671546598063"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":502,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfile","isolateId":"isolates/5929671546598063"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":503,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfileRequest","isolateId":"isolates/5929671546598063"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":504,"type":"event","body":{"extensionRPC":"ext.dart.io.clearHttpProfile","isolateId":"isolates/5929671546598063"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":505,"type":"event","body":{"reason":"exited","threadId":5929671546598063},"event":"thread"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":506,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpEnableTimelineLogging","isolateId":"isolates/626167522179895"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":507,"type":"event","body":{"extensionRPC":"ext.dart.io.setHttpEnableTimelineLogging","isolateId":"isolates/626167522179895"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":508,"type":"event","body":{"extensionRPC":"ext.dart.io.httpEnableTimelineLogging","isolateId":"isolates/626167522179895"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":509,"type":"event","body":{"extensionRPC":"ext.dart.io.getSocketProfile","isolateId":"isolates/626167522179895"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":510,"type":"event","body":{"extensionRPC":"ext.dart.io.startSocketProfiling","isolateId":"isolates/626167522179895"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":511,"type":"event","body":{"extensionRPC":"ext.dart.io.pauseSocketProfiling","isolateId":"isolates/626167522179895"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":512,"type":"event","body":{"extensionRPC":"ext.dart.io.socketProfilingEnabled","isolateId":"isolates/626167522179895"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":513,"type":"event","body":{"extensionRPC":"ext.dart.io.clearSocketProfile","isolateId":"isolates/626167522179895"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":514,"type":"event","body":{"extensionRPC":"ext.dart.io.getVersion","isolateId":"isolates/626167522179895"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":515,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfile","isolateId":"isolates/626167522179895"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":516,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfileRequest","isolateId":"isolates/626167522179895"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":517,"type":"event","body":{"extensionRPC":"ext.dart.io.clearHttpProfile","isolateId":"isolates/626167522179895"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":518,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpEnableTimelineLogging","isolateId":"isolates/447966887491507"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":519,"type":"event","body":{"extensionRPC":"ext.dart.io.setHttpEnableTimelineLogging","isolateId":"isolates/447966887491507"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":520,"type":"event","body":{"extensionRPC":"ext.dart.io.httpEnableTimelineLogging","isolateId":"isolates/447966887491507"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":521,"type":"event","body":{"extensionRPC":"ext.dart.io.getSocketProfile","isolateId":"isolates/447966887491507"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":522,"type":"event","body":{"extensionRPC":"ext.dart.io.startSocketProfiling","isolateId":"isolates/447966887491507"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":523,"type":"event","body":{"extensionRPC":"ext.dart.io.pauseSocketProfiling","isolateId":"isolates/447966887491507"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":524,"type":"event","body":{"extensionRPC":"ext.dart.io.socketProfilingEnabled","isolateId":"isolates/447966887491507"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":525,"type":"event","body":{"extensionRPC":"ext.dart.io.clearSocketProfile","isolateId":"isolates/447966887491507"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":526,"type":"event","body":{"extensionRPC":"ext.dart.io.getVersion","isolateId":"isolates/447966887491507"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":527,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfile","isolateId":"isolates/447966887491507"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":528,"type":"event","body":{"extensionRPC":"ext.dart.io.getHttpProfileRequest","isolateId":"isolates/447966887491507"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":529,"type":"event","body":{"extensionRPC":"ext.dart.io.clearHttpProfile","isolateId":"isolates/447966887491507"},"event":"dart.serviceExtensionAdded"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":530,"type":"event","body":{"reason":"exited","threadId":626167522179895},"event":"thread"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":531,"type":"event","body":{"reason":"exited","threadId":447966887491507},"event":"thread"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":532,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation( 5051): app_time_stats: avg=15.89ms min=2.84ms max=92.98ms count=47\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":533,"type":"event","body":{"category":"stdout","output":"I/DMCodecAdapterFactory( 5051): Creating an asynchronous MediaCodec adapter for track type video\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":534,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): allocate(c2.goldfish.h264.decoder)\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":535,"type":"event","body":{"category":"stdout","output":"I/CCodec  ( 5051): setting up 'default' as default (vendor) store\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":536,"type":"event","body":{"category":"stdout","output":"I/CCodec  ( 5051): Created component [c2.goldfish.h264.decoder]\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":537,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): read media type: video/avc\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":538,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: algo.buffers.max-count.values\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":539,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: output.subscribed-indices.values\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":540,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: input.buffers.allocator-ids.values\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":541,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: output.buffers.allocator-ids.values\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":542,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: algo.buffers.allocator-ids.values\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":543,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: output.buffers.pool-ids.values\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":544,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: algo.buffers.pool-ids.values\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":545,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): ignored struct field coded.color-format.locations\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":546,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): ignoring local param raw.size (0xd2001800) as it is already supported\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":547,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): ignoring local param default.color (0x5200180b) as it is already supported\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":548,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): ignored struct field raw.hdr-static-info.mastering\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":549,"type":"event","body":{"category":"stdout","output":"I/CCodecConfig( 5051): query failed after returning 12 values (BAD_INDEX)\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":550,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): c2 config diff is Dict {\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":551,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 coded.pl.level = 20496\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":552,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 coded.pl.profile = 20481\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":553,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 coded.vui.color.matrix = 0\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":554,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 coded.vui.color.primaries = 0\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":555,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 coded.vui.color.range = 2\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":556,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 coded.vui.color.transfer = 0\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":557,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 default.color.matrix = 0\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":558,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 default.color.primaries = 0\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":559,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 default.color.range = 0\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":560,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 default.color.transfer = 0\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":561,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 input.buffers.max-size.value = 6291456\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":562,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 input.delay.value = 0\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":563,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   string input.media-type.value = \"video/avc\"\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":564,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 output.delay.value = 8\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":565,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   string output.media-type.value = \"video/raw\"\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":566,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.color.matrix = 0\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":567,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.color.primaries = 0\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":568,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.color.range = 2\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":569,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.color.transfer = 0\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":570,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.max-size.height = 240\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":571,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.max-size.width = 320\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":572,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.pixel-format.value = 35\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":573,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::i32 raw.rotation.flip = 0\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":574,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::i32 raw.rotation.value = 0\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":575,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.sar.height = 1\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":576,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.sar.width = 1\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":577,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.size.height = 240\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":578,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.size.width = 320\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":579,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2:\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":580,"type":"event","body":{"category":"stdout","output":"W/ColorUtils( 5051): expected specified color aspects (2:0:0:0)\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":581,"type":"event","body":{"category":"stdout","output":"I/MediaCodec( 5051): MediaCodec will operate in async mode\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":582,"type":"event","body":{"category":"stdout","output":"D/SurfaceUtils( 5051): connecting to surface 0x7bbcd0513bc0, reason connectToSurface\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":583,"type":"event","body":{"category":"stdout","output":"I/MediaCodec( 5051): [c2.goldfish.h264.decoder] setting surface generation to 5172226\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":584,"type":"event","body":{"category":"stdout","output":"D/SurfaceUtils( 5051): disconnecting from surface 0x7bbcd0513bc0, reason connectToSurface(reconnect)\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":585,"type":"event","body":{"category":"stdout","output":"D/SurfaceUtils( 5051): connecting to surface 0x7bbcd0513bc0, reason connectToSurface(reconnect)\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":586,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): [c2.goldfish.h264.decoder] buffers are bound to CCodec for this session\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":587,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): no c2 equivalents for csd-1\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":588,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): no c2 equivalents for log-session-id\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":589,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): no c2 equivalents for native-window\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":590,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): no c2 equivalents for flags\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":591,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): config failed => CORRUPTED\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":592,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): c2 config diff is   c2::u32 raw.max-size.height = 720\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":593,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.max-size.width = 1280\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":594,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.size.height = 720\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":595,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.size.width = 1280\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":596,"type":"event","body":{"category":"stdout","output":"W/Codec2Client( 5051): query -- param skipped: index = 1107298332.\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":597,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): client requested max input size 219813, which is smaller than what component recommended (6291456); overriding with component recommendation.\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":598,"type":"event","body":{"category":"stdout","output":"W/CCodec  ( 5051): This behavior is subject to change. It is recommended that app developers double check whether the requested max input size is in reasonable range.\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":599,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): encoding statistics level = 0\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":600,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): setup formats input: AMessage(what = 0x00000000) = {\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":601,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t height = 720\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":602,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t level = 65536\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":603,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t max-input-size = 6291456\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":604,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   string mime = \"video/avc\"\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":605,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t profile = 65536\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":606,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t width = 1280\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":607,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   Rect crop(0, 0, 1279, 719)\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":608,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): }\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":609,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): setup formats output: AMessage(what = 0x00000000) = {\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":610,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t android._color-format = 2135033992\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":611,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t android._video-scaling = 1\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":612,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t rotation-degrees = 0\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":613,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t color-standard = 1\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":614,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t color-range = 2\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":615,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t color-transfer = 3\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":616,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t sar-height = 1\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":617,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t sar-width = 1\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":618,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   Rect crop(0, 0, 1279, 719)\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":619,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t width = 1280\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":620,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t height = 720\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":621,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t max-height = 720\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":622,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t max-width = 1280\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":623,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   string mime = \"video/raw\"\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":624,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t android._dataspace = 260\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":625,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t color-format = 2130708361\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":626,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): }\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":627,"type":"event","body":{"category":"stdout","output":"I/CCodecConfig( 5051): query failed after returning 12 values (BAD_INDEX)\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":628,"type":"event","body":{"category":"stdout","output":"D/MediaCodec( 5051): keep callback message for reclaim\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":629,"type":"event","body":{"category":"stdout","output":"W/Codec2Client( 5051): query -- param skipped: index = 1342179345.\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":630,"type":"event","body":{"category":"stdout","output":"W/Codec2Client( 5051): query -- param skipped: index = 2415921170.\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":631,"type":"event","body":{"category":"stdout","output":"W/Codec2Client( 5051): query -- param skipped: index = 1610614798.\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":632,"type":"event","body":{"category":"stdout","output":"W/Codec2Client( 5051): query -- param skipped: index = 2684356609.\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":633,"type":"event","body":{"category":"stdout","output":"D/BufferPoolAccessor2.0( 5051): bufferpool2 0x7bbc304a2a38 : 0(0 size) total buffers - 0(0 size) used buffers - 14/19 (recycle/alloc) - 5/19 (fetch/transfer)\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":634,"type":"event","body":{"category":"stdout","output":"D/BufferPoolAccessor2.0( 5051): bufferpool2 0x7bbc304a6658 : 0(0 size) total buffers - 0(0 size) used buffers - 20/25 (recycle/alloc) - 5/25 (fetch/transfer)\n"},"event":"output"}
+[12:59:26 PM] [DAP] [Info] <== {"seq":635,"type":"event","body":{"category":"stdout","output":"D/CCodecBufferChannel( 5051): [c2.goldfish.h264.decoder#516] Created input block pool with allocatorID 16 => poolID 19 - OK (0)\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":636,"type":"event","body":{"category":"stdout","output":"D/CCodecBufferChannel( 5051): [c2.goldfish.h264.decoder#516] Query output surface allocator returned 0 params => BAD_INDEX (6)\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":637,"type":"event","body":{"category":"stdout","output":"I/CCodecBufferChannel( 5051): [c2.goldfish.h264.decoder#516] Created output block pool with allocatorID 18 => poolID 18 - OK\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":638,"type":"event","body":{"category":"stdout","output":"D/CCodecBufferChannel( 5051): [c2.goldfish.h264.decoder#516] Configured output block pool ids 18 => OK\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":639,"type":"event","body":{"category":"stdout","output":"D/Codec2-OutputBufferQueue( 5051): remote graphic buffer migration 0/0\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":640,"type":"event","body":{"category":"stdout","output":"D/Codec2Client( 5051): setOutputSurface -- failed to set consumer usage (6/BAD_INDEX)\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":641,"type":"event","body":{"category":"stdout","output":"D/Codec2Client( 5051): setOutputSurface -- generation=5172226 consumer usage=0x900\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":642,"type":"event","body":{"category":"stdout","output":"D/Codec2Client( 5051): Surface configure completed\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":643,"type":"event","body":{"category":"stdout","output":"I/DMCodecAdapterFactory( 5051): Creating an asynchronous MediaCodec adapter for track type audio\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":644,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): allocate(c2.android.aac.decoder)\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":645,"type":"event","body":{"category":"stdout","output":"I/CCodec  ( 5051): setting up 'default' as default (vendor) store\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":646,"type":"event","body":{"category":"stdout","output":"I/CCodec  ( 5051): Created component [c2.android.aac.decoder]\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":647,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): read media type: audio/mp4a-latm\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":648,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: algo.buffers.max-count.values\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":649,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: output.subscribed-indices.values\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":650,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: input.buffers.allocator-ids.values\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":651,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: output.buffers.allocator-ids.values\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":652,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: algo.buffers.allocator-ids.values\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":653,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: output.buffers.pool-ids.values\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":654,"type":"event","body":{"category":"stdout","output":"D/ReflectedParamUpdater( 5051): extent() != 1 for single value type: algo.buffers.pool-ids.values\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":655,"type":"event","body":{"category":"stdout","output":"I/CCodecConfig( 5051): query failed after returning 20 values (BAD_INDEX)\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":656,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): c2 config diff is Dict {\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":657,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 coded.aac-packaging.value = 0\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":658,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 coded.bitrate.value = 64000\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":659,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 coded.pl.level = 0\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":660,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 coded.pl.profile = 8192\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":661,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::i32 coding.drc.album-mode.value = 0\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":662,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::float coding.drc.attenuation-factor.value = 1\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":663,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::float coding.drc.boost-factor.value = 1\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":664,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::i32 coding.drc.compression-mode.value = 3\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":665,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::i32 coding.drc.effect-type.value = 3\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":666,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::float coding.drc.encoded-level.value = 0.25\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":667,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::float coding.drc.reference-level.value = -16\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":668,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 input.buffers.max-size.value = 8192\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":669,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 input.delay.value = 0\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":670,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   string input.media-type.value = \"audio/mp4a-latm\"\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":671,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 output.delay.value = 2\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":672,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::float output.drc.output-loudness.value = 0.25\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":673,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   string output.media-type.value = \"audio/raw\"\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":674,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.channel-count.value = 1\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":675,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.channel-mask.value = 0\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":676,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.max-channel-count.value = 8\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":677,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.sample-rate.value = 44100\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":678,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): }\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":679,"type":"event","body":{"category":"stdout","output":"I/MediaCodec( 5051): MediaCodec will operate in async mode\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":680,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): [c2.android.aac.decoder] buffers are bound to CCodec for this session\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":681,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): no c2 equivalents for log-session-id\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":682,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): no c2 equivalents for flags\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":683,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): config failed => CORRUPTED\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":684,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): c2 config diff is   c2::u32 raw.channel-count.value = 2\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":685,"type":"event","body":{"category":"stdout","output":"W/Codec2Client( 5051): query -- param skipped: index = 1107298332.\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":686,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): client requested max input size 623, which is smaller than what component recommended (8192); overriding with component recommendation.\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":687,"type":"event","body":{"category":"stdout","output":"W/CCodec  ( 5051): This behavior is subject to change. It is recommended that app developers double check whether the requested max input size is in reasonable range.\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":688,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): encoding statistics level = 0\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":689,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): setup formats input: AMessage(what = 0x00000000) = {\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":690,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-drc-album-mode = 0\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":691,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-drc-boost-level = 127\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":692,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-drc-cut-level = 127\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":693,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-drc-effect-type = 3\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":694,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-encoded-target-level = -1\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":695,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-max-output-channel_count = 8\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":696,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-target-ref-level = 64\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":697,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t bitrate = 64000\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":698,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t channel-count = 2\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":699,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t channel-mask = 0\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":700,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t level = 0\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":701,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t max-input-size = 8192\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":702,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t max-output-channel-count = 8\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":703,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   string mime = \"audio/mp4a-latm\"\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":704,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t profile = 2\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":705,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t sample-rate = 44100\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":706,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): }\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":707,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): setup formats output: AMessage(what = 0x00000000) = {\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":708,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-drc-album-mode = 0\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":709,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-drc-boost-level = 127\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":710,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-drc-cut-level = 127\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":711,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-drc-effect-type = 3\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":712,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-drc-output-loudness = -1\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":713,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-encoded-target-level = -1\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":714,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-max-output-channel_count = 8\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":715,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t aac-target-ref-level = 64\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":716,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t channel-count = 2\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":717,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t channel-mask = 0\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":718,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t max-output-channel-count = 8\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":719,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   string mime = \"audio/raw\"\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":720,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t sample-rate = 44100\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":721,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051):   int32_t android._config-pcm-encoding = 2\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":722,"type":"event","body":{"category":"stdout","output":"D/CCodec  ( 5051): }\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":723,"type":"event","body":{"category":"stdout","output":"I/CCodecConfig( 5051): query failed after returning 20 values (BAD_INDEX)\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":724,"type":"event","body":{"category":"stdout","output":"D/MediaCodec( 5051): keep callback message for reclaim\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":725,"type":"event","body":{"category":"stdout","output":"W/Codec2Client( 5051): query -- param skipped: index = 1342179345.\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":726,"type":"event","body":{"category":"stdout","output":"W/Codec2Client( 5051): query -- param skipped: index = 2415921170.\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":727,"type":"event","body":{"category":"stdout","output":"W/Codec2Client( 5051): query -- param skipped: index = 1610614798.\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":728,"type":"event","body":{"category":"stdout","output":"D/CCodecBufferChannel( 5051): [c2.android.aac.decoder#283] Created input block pool with allocatorID 16 => poolID 20 - OK (0)\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":729,"type":"event","body":{"category":"stdout","output":"I/CCodecBufferChannel( 5051): [c2.android.aac.decoder#283] Created output block pool with allocatorID 16 => poolID 27 - OK\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":730,"type":"event","body":{"category":"stdout","output":"D/CCodecBufferChannel( 5051): [c2.android.aac.decoder#283] Configured output block pool ids 27 => OK\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":731,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): c2 config diff is   c2::u32 raw.channel-mask.value = 12\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":732,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051): [c2.android.aac.decoder#283:Output[N]] popFromStashAndRegister: at 1000000000000us, output format changed to AMessage(what = 0x00000000) = {\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":733,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t aac-drc-album-mode = 0\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":734,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t aac-drc-boost-level = 127\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":735,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t aac-drc-cut-level = 127\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":736,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t aac-drc-effect-type = 3\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":737,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t aac-drc-output-loudness = -1\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":738,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t aac-encoded-target-level = -1\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":739,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t aac-max-output-channel_count = 8\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":740,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t aac-target-ref-level = 64\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":741,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t channel-count = 2\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":742,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t channel-mask = 12\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":743,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t max-output-channel-count = 8\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":744,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   string mime = \"audio/raw\"\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":745,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t sample-rate = 44100\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":746,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051):   int32_t android._config-pcm-encoding = 2\n"},"event":"output"}
+[12:59:27 PM] [DAP] [Info] <== {"seq":747,"type":"event","body":{"category":"stdout","output":"D/CCodecBuffers( 5051): }\n"},"event":"output"}
+[12:59:28 PM] [DAP] [Info] <== {"seq":748,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051): c2 config diff is   c2::u32 raw.color.matrix = 1\n"},"event":"output"}
+[12:59:28 PM] [DAP] [Info] <== {"seq":749,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.color.primaries = 1\n"},"event":"output"}
+[12:59:28 PM] [DAP] [Info] <== {"seq":750,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.color.transfer = 3\n"},"event":"output"}
+[12:59:28 PM] [DAP] [Info] <== {"seq":751,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.crop.height = 720\n"},"event":"output"}
+[12:59:28 PM] [DAP] [Info] <== {"seq":752,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.crop.left = 0\n"},"event":"output"}
+[12:59:28 PM] [DAP] [Info] <== {"seq":753,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.crop.top = 0\n"},"event":"output"}
+[12:59:28 PM] [DAP] [Info] <== {"seq":754,"type":"event","body":{"category":"stdout","output":"D/CCodecConfig( 5051):   c2::u32 raw.crop.width = 1280\n"},"event":"output"}
+[12:59:28 PM] [DAP] [Info] <== {"seq":755,"type":"event","body":{"category":"stdout","output":"D/EGL_emulation( 5051): app_time_stats: avg=905.25ms min=23.20ms max=1787.30ms count=2\n"},"event":"output"}
+[12:59:33 PM] [DAP] [Info] <== {"seq":756,"type":"event","body":{"category":"stdout","output":"D/BufferPoolAccessor2.0( 5051): bufferpool2 0x7bbc3054adf8 : 5(40960 size) total buffers - 0(0 size) used buffers - 21/26 (recycle/alloc) - 5/26 (fetch/transfer)\n"},"event":"output"}
+[12:59:33 PM] [DAP] [Info] <== {"seq":757,"type":"event","body":{"category":"stdout","output":"D/BufferPoolAccessor2.0( 5051): evictor expired: 1, evicted: 1\n"},"event":"output"}
+[12:59:34 PM] [DAP] [Info] <== {"seq":758,"type":"event","body":{"category":"stdout","output":"D/BufferPoolAccessor2.0( 5051): bufferpool2 0x7bbc30497a78 : 5(31457280 size) total buffers - 0(0 size) used buffers - 14/19 (recycle/alloc) - 5/19 (fetch/transfer)\n"},"event":"output"}
+[12:59:34 PM] [DAP] [Info] <== {"seq":759,"type":"event","body":{"category":"stdout","output":"D/BufferPoolAccessor2.0( 5051): evictor expired: 1, evicted: 1\n"},"event":"output"}
+[1:00:54 PM] [DAP] [Info] <== {"seq":760,"type":"event","body":{"category":"stdout","output":"W/Firestore( 5051): (24.9.1) [WatchStream]: (b064e22) Stream closed with status: Status{code=CANCELLED, description=Disconnecting idle stream. Timed out waiting for new targets., cause=null}.\n"},"event":"output"}
+[1:04:54 PM] [DAP] [Info] <== {"seq":761,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(132) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[1:04:54 PM] [DAP] [Info] <== {"seq":762,"type":"event","body":{"category":"stdout","output":"W/.example.tintuc( 5051): Cleared Reference was only reachable from finalizer (only reported once)\n"},"event":"output"}
+[1:04:54 PM] [DAP] [Info] <== {"seq":763,"type":"event","body":{"category":"stdout","output":"W/.example.tintuc( 5051): Reducing the number of considered missed Gc histogram windows from 228 to 100\n"},"event":"output"}
+[1:04:54 PM] [DAP] [Info] <== {"seq":764,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(150) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[1:08:54 PM] [DAP] [Info] <== {"seq":765,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(138) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[1:08:55 PM] [DAP] [Info] <== {"seq":766,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(132) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[1:12:55 PM] [DAP] [Info] <== {"seq":767,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(139) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[1:12:55 PM] [DAP] [Info] <== {"seq":768,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(138) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[1:16:55 PM] [DAP] [Info] <== {"seq":769,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(138) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[1:20:55 PM] [DAP] [Info] <== {"seq":770,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(153) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[1:24:55 PM] [DAP] [Info] <== {"seq":771,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(150) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[1:24:56 PM] [DAP] [Info] <== {"seq":772,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(132) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[1:28:56 PM] [DAP] [Info] <== {"seq":773,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(150) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[1:28:56 PM] [DAP] [Info] <== {"seq":774,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(132) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[1:32:56 PM] [DAP] [Info] <== {"seq":775,"type":"event","body":{"category":"stdout","output":"D/TrafficStats( 5051): tagSocket(139) with statsTag=0xffffffff, statsUid=-1\n"},"event":"output"}
+[1:33:05 PM] [DAP] [Info] <== {"seq":776,"type":"event","body":{"category":"stdout","output":"Lost connection to device.\n"},"event":"output"}
+[1:33:05 PM] [DAP] [Info] <== {"seq":777,"type":"event","body":{"output":"\nExited.\n"},"event":"output"}
+[1:33:05 PM] [DAP] [Info] <== {"seq":778,"type":"event","body":{},"event":"terminated"}
+[1:33:05 PM] [DAP] [Info] ==> {"command":"disconnect","arguments":{"restart":false},"type":"request","seq":16}
+[1:33:05 PM] [DAP] [Info] <== {"seq":779,"type":"response","command":"disconnect","request_seq":16,"success":true}
+[1:33:05 PM] [DAP] [Info] Stopping debug session 6a883bd8-8099-45c5-86ba-9cf5a344990e
+[1:33:06 PM] [DAP] [Info] Debug session 6a883bd8-8099-45c5-86ba-9cf5a344990e errored: {}
+[1:33:06 PM] [DAP] [Info] Debug session 6a883bd8-8099-45c5-86ba-9cf5a344990e exit: code: 1, signal: undefined

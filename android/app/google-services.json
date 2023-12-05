@@ -1,7 +1,6 @@
 {
   "project_info": {
     "project_number": "386891168137",
-    "firebase_url": "https://tintuc-a0ba2-default-rtdb.firebaseio.com",
     "project_id": "tintuc-a0ba2",
     "storage_bucket": "tintuc-a0ba2.appspot.com"
   },
@@ -14,14 +13,6 @@
         }
       },
       "oauth_client": [
-        {
-          "client_id": "386891168137-bv01gm6mag4ou5q342ga9pj5e489j19e.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.tintuc",
-            "certificate_hash": "8477f5b2f649af9af21eadad15c9f1e44ed03d40"
-          }
-        },
         {
           "client_id": "386891168137-h4is2gass8ifbarq6b6c6v73a1dc4dgf.apps.googleusercontent.com",
           "client_type": 3

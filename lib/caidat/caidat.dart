@@ -25,12 +25,16 @@ class CaiDat extends StatelessWidget {
             appBar: AppBar(
               leading: const Icon(
                 Icons.fiber_new,
+                color: Colors.deepPurple,
                 size: 40,
               ),
-              title: const Text(
-                'Cài đặt',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
+              title: const Center(
+                child: Text(
+                  'Cài đặt',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.deepPurple,
+                  ),
                 ),
               ),
               actions: [
@@ -53,6 +57,7 @@ class CaiDat extends StatelessWidget {
             body: SingleChildScrollView(
               child: Column(
                 children: [
+                  const Divider(),
                   AppTextButtom(
                     iconLeft: const Icon(Icons.person),
                     iconRight: const Icon(Icons.arrow_forward_ios),
@@ -221,7 +226,7 @@ class CaiDat extends StatelessWidget {
           );
         } else {
           // Trường hợp không có dữ liệu, bạn có thể trả về một widget trống hoặc loading tùy thuộc vào yêu cầu của bạn.
-          return CircularProgressIndicator();
+          return const CircularProgressIndicator();
         }
       },
     );

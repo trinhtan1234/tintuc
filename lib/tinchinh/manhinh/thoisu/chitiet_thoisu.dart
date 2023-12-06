@@ -261,42 +261,6 @@ class ChiTietThoiSu extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Divider(),
-                      Row(
-                        children: [
-                          Flexible(
-                            child: Text(
-                                'Không ai rảnh đi sát hạch 50cc lúc 16 tuổi rồi đến 18 tuổi lại đi sát hạch >50cc. Nếu thay đổi thì Cho phép sát hạch A1 lúc 16 tuổi nhưng chỉ được phép điều khiển xe 50cc, không nên "đẻ" ra thêm một loại sát hạch không cần thiết, hiện nay các em đều được tiếp cận văn hoá giao thông, luật giao thông từ trong trường học.'),
-                          ),
-                        ],
-                      ),
-                      Divider(),
-                      Row(
-                        children: [
-                          Flexible(
-                            child: Text(
-                                'Không ai rảnh đi sát hạch 50cc lúc 16 tuổi rồi đến 18 tuổi lại đi sát hạch >50cc. Nếu thay đổi thì Cho phép sát hạch A1 lúc 16 tuổi nhưng chỉ được phép điều khiển xe 50cc, không nên "đẻ" ra thêm một loại sát hạch không cần thiết, hiện nay các em đều được tiếp cận văn hoá giao thông, luật giao thông từ trong trường học.'),
-                          ),
-                        ],
-                      ),
-                      Divider(),
-                      Row(
-                        children: [
-                          Flexible(
-                            child: Text(
-                                'Không ai rảnh đi sát hạch 50cc lúc 16 tuổi rồi đến 18 tuổi lại đi sát hạch >50cc. Nếu thay đổi thì Cho phép sát hạch A1 lúc 16 tuổi nhưng chỉ được phép điều khiển xe 50cc, không nên "đẻ" ra thêm một loại sát hạch không cần thiết, hiện nay các em đều được tiếp cận văn hoá giao thông, luật giao thông từ trong trường học.'),
-                          ),
-                        ],
-                      ),
-                      Divider(),
-                      Row(
-                        children: [
-                          Flexible(
-                            child: Text(
-                                'Không ai rảnh đi sát hạch 50cc lúc 16 tuổi rồi đến 18 tuổi lại đi sát hạch >50cc. Nếu thay đổi thì Cho phép sát hạch A1 lúc 16 tuổi nhưng chỉ được phép điều khiển xe 50cc, không nên "đẻ" ra thêm một loại sát hạch không cần thiết, hiện nay các em đều được tiếp cận văn hoá giao thông, luật giao thông từ trong trường học.'),
-                          ),
-                        ],
-                      ),
                     ],
                   ),
                 ],

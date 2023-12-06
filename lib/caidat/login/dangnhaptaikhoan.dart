@@ -1,21 +1,20 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:tintuc/caidat/login/dangkytaikhoan.dart';
+import 'package:tintuc/caidat/login/thongtintaikhoan.dart';
+
 import 'package:tintuc/screen_nav_bottom.dart';
 
-class ScreenLogin extends StatefulWidget {
-  const ScreenLogin({super.key});
+class ManHinhDangNhap extends StatefulWidget {
+  const ManHinhDangNhap({super.key});
 
   @override
-  State<ScreenLogin> createState() => _ScreenLoginState();
+  State<ManHinhDangNhap> createState() => _ManHinhDangNhapState();
 }
 
-class _ScreenLoginState extends State<ScreenLogin> {
+class _ManHinhDangNhapState extends State<ManHinhDangNhap> {
   GlobalKey<FormState> fromKey = GlobalKey<FormState>();
 
-  TextEditingController email = TextEditingController();
-  TextEditingController password = TextEditingController();
   final scopes = [
     'email',
     'https://www.googleapis.com/auth/contacts.readonly',
@@ -40,6 +39,11 @@ class _ScreenLoginState extends State<ScreenLogin> {
 
     return await FirebaseAuth.instance.signInWithCredential(credential);
   }
+
+  TextEditingController _userNameController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
+  FirebaseAuth _auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -168,7 +172,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                 width: 300,
                 height: 50,
                 child: TextField(
-                  controller: email,
+                  controller: _userNameController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -183,12 +187,12 @@ class _ScreenLoginState extends State<ScreenLogin> {
                 width: 300,
                 height: 50,
                 child: TextField(
-                  controller: password,
+                  controller: _passwordController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    hintText: 'Password',
+                    hintText: 'Mật khẩu',
                     prefixIcon: const Icon(Icons.password),
                   ),
                 ),
@@ -208,7 +212,26 @@ class _ScreenLoginState extends State<ScreenLogin> {
                     ),
                     child: Center(
                       child: TextButton(
-                        onPressed: () async {},
+                        onPressed: () async {
+                          print('Dang nhap');
+                          try {
+                            final email = _userNameController.text;
+                            final res = await _auth.signInWithEmailAndPassword(
+                                email: email,
+                                password: _passwordController.text);
+                            print(res);
+                            Navigator.of(context).push(
+                              MaterialPageRoute<void>(
+                                builder: (BuildContext context) =>
+                                    const ThongTinTaiKhoan(),
+                              ),
+                            );
+                          } on FirebaseAuthException catch (e) {
+                            print(e.message);
+                          } catch (error) {
+                            print(error);
+                          }
+                        },
                         child: const Text(
                           'Đăng nhập',
                           style: TextStyle(
@@ -256,7 +279,9 @@ class _ScreenLoginState extends State<ScreenLogin> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => ScreenSign()),
+                          MaterialPageRoute(
+                            builder: (context) => const ThongTinTaiKhoan(),
+                          ),
                         );
                       },
                       child: const Text('Create acount'))

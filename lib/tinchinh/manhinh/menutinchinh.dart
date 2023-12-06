@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tintuc/caidat/login/thongtintaikhoan.dart';
 import 'package:tintuc/choban/thongbao/thongbao.dart';
 import 'package:tintuc/tinchinh/manhinh/kinhdoanh.dart';
 import 'package:tintuc/tinchinh/manhinh/thegioi.dart';
@@ -78,7 +79,14 @@ class _MenuTinChinhState extends State<MenuTinChinh>
             icon: const Icon(Icons.notifications_none_sharp),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ThongTinTaiKhoan(),
+                ),
+              );
+            },
             child: ClipOval(
               child: Image.asset(
                 'assets/images/tantv.jpg',

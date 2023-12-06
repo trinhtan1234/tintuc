@@ -3,9 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:tintuc/firebase_options.dart';
 import 'package:tintuc/screen_nav_bottom.dart';
 
-// late FirebaseApp app;
-// late FirebaseAuth auth;
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(

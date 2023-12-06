@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:tintuc/caidat/login/thongtintaikhoan.dart';
+import 'package:tintuc/caidat/login/dangkytaikhoan.dart';
 
 import 'package:tintuc/screen_nav_bottom.dart';
 
@@ -40,17 +40,17 @@ class _ManHinhDangNhapState extends State<ManHinhDangNhap> {
     return await FirebaseAuth.instance.signInWithCredential(credential);
   }
 
-  TextEditingController _userNameController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _userNameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
-  FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'LOGIN',
+          'Đăng nhập',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 20,
@@ -85,7 +85,7 @@ class _ManHinhDangNhapState extends State<ManHinhDangNhap> {
                         Padding(
                           padding: EdgeInsets.only(right: 50),
                         ),
-                        Text('Login with Apple'),
+                        Text('Đăng nhập với Apple'),
                       ],
                     ),
                   ),
@@ -113,7 +113,7 @@ class _ManHinhDangNhapState extends State<ManHinhDangNhap> {
                         Padding(
                           padding: EdgeInsets.only(right: 50),
                         ),
-                        Text('Login with Facebook'),
+                        Text('Đăng nhập với Facebook'),
                       ],
                     ),
                   ),
@@ -153,7 +153,7 @@ class _ManHinhDangNhapState extends State<ManHinhDangNhap> {
                         Padding(
                           padding: EdgeInsets.only(right: 50),
                         ),
-                        Text('Login with Google'),
+                        Text('Đăng nhập với Google'),
                       ],
                     ),
                   ),
@@ -178,7 +178,7 @@ class _ManHinhDangNhapState extends State<ManHinhDangNhap> {
                       borderRadius: BorderRadius.circular(12),
                     ),
                     hintText: 'Email',
-                    prefixIcon: const Icon(Icons.search),
+                    prefixIcon: const Icon(Icons.mail),
                   ),
                 ),
               ),
@@ -188,6 +188,7 @@ class _ManHinhDangNhapState extends State<ManHinhDangNhap> {
                 height: 50,
                 child: TextField(
                   controller: _passwordController,
+                  obscureText: true,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -213,17 +214,18 @@ class _ManHinhDangNhapState extends State<ManHinhDangNhap> {
                     child: Center(
                       child: TextButton(
                         onPressed: () async {
-                          print('Dang nhap');
+                          print('Đăng nhập');
                           try {
                             final email = _userNameController.text;
                             final res = await _auth.signInWithEmailAndPassword(
                                 email: email,
                                 password: _passwordController.text);
                             print(res);
+                            // ignore: use_build_context_synchronously
                             Navigator.of(context).push(
                               MaterialPageRoute<void>(
                                 builder: (BuildContext context) =>
-                                    const ThongTinTaiKhoan(),
+                                    const ScreenNavigationBottom(),
                               ),
                             );
                           } on FirebaseAuthException catch (e) {
@@ -258,7 +260,7 @@ class _ManHinhDangNhapState extends State<ManHinhDangNhap> {
                     ),
                     child: const Center(
                         child: Text(
-                      'Forgot password',
+                      'Quên mật khẩu',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 15,
@@ -273,18 +275,18 @@ class _ManHinhDangNhapState extends State<ManHinhDangNhap> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    'Do not have an account ?',
+                    'Bạn chưa có tài khoản ?',
                   ),
                   TextButton(
                       onPressed: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const ThongTinTaiKhoan(),
+                            builder: (context) => const ManHinhDangKy(),
                           ),
                         );
                       },
-                      child: const Text('Create acount'))
+                      child: const Text('Tạo tài khoản'))
                 ],
               )
             ],

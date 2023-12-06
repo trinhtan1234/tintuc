@@ -15,6 +15,7 @@ class _VideoState extends State<Video> {
   @override
   void initState() {
     super.initState();
+    // ignore: deprecated_member_use
     _controller = VideoPlayerController.network(
       'https://firebasestorage.googleapis.com/v0/b/tintuc-a0ba2.appspot.com/o/video%2Fa.mp4?alt=media&token=94e8e2d1-edda-4db6-8dfd-30c18c76b795',
     );

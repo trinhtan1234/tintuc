@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:tintuc/caidat/login/dangkytaikhoan.dart';
 
 class ThongTinTaiKhoan extends StatefulWidget {
   const ThongTinTaiKhoan({super.key});
@@ -9,6 +10,7 @@ class ThongTinTaiKhoan extends StatefulWidget {
 }
 
 class _ThongTinTaiKhoanState extends State<ThongTinTaiKhoan> {
+  final _auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     final myUser = FirebaseAuth.instance.currentUser;
@@ -31,6 +33,17 @@ class _ThongTinTaiKhoanState extends State<ThongTinTaiKhoan> {
                   },
                   child: const Text('Cập nhật tài khoản'),
                 ),
+                TextButton(
+                    onPressed: () {
+                      _auth.signOut();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ManHinhDangKy(),
+                        ),
+                      );
+                    },
+                    child: const Text('Đăng xuất'))
               ],
             ),
     );

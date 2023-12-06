@@ -27,7 +27,7 @@ class _ScreenNavigationBottomState extends State<ScreenNavigationBottom> {
     _pages = [
       const MenuTinChinh(),
       const TinTucMedia(),
-      TaoBaiViet(),
+      const TaoBaiViet(),
       const CaiDat(),
     ];
   }

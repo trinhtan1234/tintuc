@@ -214,13 +214,14 @@ class _ManHinhDangNhapState extends State<ManHinhDangNhap> {
                     child: Center(
                       child: TextButton(
                         onPressed: () async {
-                          print('Đăng nhập');
+                          // print('Đăng nhập');
                           try {
                             final email = _userNameController.text;
-                            final res = await _auth.signInWithEmailAndPassword(
-                                email: email,
-                                password: _passwordController.text);
-                            print(res);
+                            final userCredential =
+                                await _auth.signInWithEmailAndPassword(
+                                    email: email,
+                                    password: _passwordController.text);
+                            print(userCredential);
                             // ignore: use_build_context_synchronously
                             Navigator.of(context).push(
                               MaterialPageRoute<void>(

@@ -10,36 +10,30 @@ Version: win 1.84.2
 Logging Categories:
     FlutterDaemon
 
-Wed Dec 06 2023 [13:58:51 GMT+0700 (Indochina Time)] Log file started
-[1:58:51 PM] [FlutterDaemon] [Info] Spawning C:\src\flutter\bin\flutter.bat with args ["daemon"]
-[1:58:51 PM] [FlutterDaemon] [Info] ..  in C:\src\flutter
-[1:58:51 PM] [FlutterDaemon] [Info] ..  with {"toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\src\\flutter"}}
-[1:58:51 PM] [FlutterDaemon] [Info]     PID: 13336
-[1:58:51 PM] [FlutterDaemon] [Info] ==> [{"id":"1","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"D:\\Flutter\\tintuc"}}]
-[1:58:53 PM] [FlutterDaemon] [Info] <== [{"event":"daemon.connected","params":{"version":"0.6.1","pid":14028}}]
-[1:58:53 PM] [FlutterDaemon] [Info] ==> [{"id":"2","method":"device.enable"}]
-[1:58:53 PM] [FlutterDaemon] [Info] ==> [{"id":"3","method":"emulator.getEmulators"}]
-[1:58:53 PM] [FlutterDaemon] [Info] <== [{"event":"daemon.logMessage","params":{"level":"status","message":"Starting device daemon..."}}]
-[1:58:53 PM] [FlutterDaemon] [Info] <== [{"id":"1","result":{"platforms":["linux","macos","windows","ios","android","web"]}}]
-[1:58:53 PM] [FlutterDaemon] [Info] <== [{"id":"2"}]
-[1:58:53 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"windows","name":"Windows","platform":"windows-x64","emulator":false,"category":"desktop","platformType":"windows","ephemeral":false,"emulatorId":null,"sdk":"Microsoft Windows [Version 10.0.22631.2792]","capabilities":{"hotReload":true,"hotRestart":true,"screenshot":false,"fastStart":false,"flutterExit":true,"hardwareRendering":true,"startPaused":true}}}]
-[1:58:53 PM] [FlutterDaemon] [Info] <== [{"id":"3","result":[{"id":"Pixel_3a_API_34_extension_level_7_x86_64","name":"Pixel_3a_API_34_extension_level_7_x86_64","category":"mobile","platformType":"android"},{"id":"Pixel_6_Pro_API_33","name":"Pixel 6 Pro API 33","category":"mobile","platformType":"android"}]}]
-[1:58:53 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"chrome","name":"Chrome","platform":"web-javascript","emulator":false,"category":"web","platformType":"web","ephemeral":false,"emulatorId":null,"sdk":"Google Chrome 119.0.6045.200","capabilities":{"hotReload":true,"hotRestart":true,"screenshot":false,"fastStart":false,"flutterExit":false,"hardwareRendering":true,"startPaused":true}}}]
-[1:58:53 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"edge","name":"Edge","platform":"web-javascript","emulator":false,"category":"web","platformType":"web","ephemeral":false,"emulatorId":null,"sdk":"Microsoft Edge 119.0.2151.97","capabilities":{"hotReload":true,"hotRestart":true,"screenshot":false,"fastStart":false,"flutterExit":false,"hardwareRendering":true,"startPaused":true}}}]
-[2:19:17 PM] [FlutterDaemon] [Info] ==> [{"id":"4","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"D:\\Flutter\\tintuc"}}]
-[2:19:17 PM] [FlutterDaemon] [Info] <== [{"id":"4","result":{"platforms":["linux","macos","windows","ios","android","web"]}}]
-[2:19:17 PM] [FlutterDaemon] [Info] ==> [{"id":"5","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"D:\\Flutter\\tintuc"}}]
-[2:19:17 PM] [FlutterDaemon] [Info] <== [{"id":"5","result":{"platforms":["linux","macos","windows","ios","android","web"]}}]
-[2:19:32 PM] [FlutterDaemon] [Info] ==> [{"id":"6","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"D:\\Flutter\\tintuc"}}]
-[2:19:32 PM] [FlutterDaemon] [Info] <== [{"id":"6","result":{"platforms":["linux","macos","windows","ios","android","web"]}}]
-[2:19:32 PM] [FlutterDaemon] [Info] ==> [{"id":"7","method":"emulator.getEmulators"}]
-[2:19:32 PM] [FlutterDaemon] [Info] <== [{"id":"7","result":[{"id":"Pixel_3a_API_34_extension_level_7_x86_64","name":"Pixel_3a_API_34_extension_level_7_x86_64","category":"mobile","platformType":"android"},{"id":"Pixel_6_Pro_API_33","name":"Pixel 6 Pro API 33","category":"mobile","platformType":"android"}]}]
-[2:19:35 PM] [FlutterDaemon] [Info] ==> [{"id":"8","method":"emulator.launch","params":{"emulatorId":"Pixel_6_Pro_API_33","coldBoot":false}}]
-[2:19:38 PM] [FlutterDaemon] [Info] <== [{"id":"8"}]
-[2:19:49 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"emulator-5554","name":"sdk gphone x86 64","platform":"android-x64","emulator":true,"category":"mobile","platformType":"android","ephemeral":true,"emulatorId":"Pixel_6_Pro_API_33","sdk":"Android 13 (API 33)","capabilities":{"hotReload":true,"hotRestart":true,"screenshot":true,"fastStart":true,"flutterExit":true,"hardwareRendering":true,"startPaused":true}}}]
-[2:19:49 PM] [FlutterDaemon] [Info] ==> [{"id":"9","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"D:\\Flutter\\tintuc"}}]
-[2:19:49 PM] [FlutterDaemon] [Info] <== [{"id":"9","result":{"platforms":["linux","macos","windows","ios","android","web"]}}]
-[2:20:01 PM] [FlutterDaemon] [Info] ==> [{"id":"10","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"D:\\Flutter\\tintuc"}}]
-[2:20:01 PM] [FlutterDaemon] [Info] <== [{"id":"10","result":{"platforms":["linux","macos","windows","ios","android","web"]}}]
-[2:20:01 PM] [FlutterDaemon] [Info] ==> [{"id":"11","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"D:\\Flutter\\tintuc"}}]
-[2:20:01 PM] [FlutterDaemon] [Info] <== [{"id":"11","result":{"platforms":["linux","macos","windows","ios","android","web"]}}]
+Wed Dec 06 2023 [19:08:11 GMT+0700 (Indochina Time)] Log file started
+[7:08:11 PM] [FlutterDaemon] [Info] Spawning C:\src\flutter\bin\flutter.bat with args ["daemon"]
+[7:08:11 PM] [FlutterDaemon] [Info] ..  in C:\src\flutter
+[7:08:11 PM] [FlutterDaemon] [Info] ..  with {"toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\src\\flutter"}}
+[7:08:11 PM] [FlutterDaemon] [Info]     PID: 15852
+[7:08:11 PM] [FlutterDaemon] [Info] ==> [{"id":"1","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"D:\\Flutter\\tintuc"}}]
+[7:08:12 PM] [FlutterDaemon] [Info] <== [{"event":"daemon.connected","params":{"version":"0.6.1","pid":3124}}]
+[7:08:12 PM] [FlutterDaemon] [Info] ==> [{"id":"2","method":"device.enable"}]
+[7:08:12 PM] [FlutterDaemon] [Info] ==> [{"id":"3","method":"emulator.getEmulators"}]
+[7:08:12 PM] [FlutterDaemon] [Info] <== [{"event":"daemon.logMessage","params":{"level":"status","message":"Starting device daemon..."}}]
+[7:08:12 PM] [FlutterDaemon] [Info] <== [{"id":"1","result":{"platforms":["linux","macos","windows","ios","android","web"]}}]
+[7:08:12 PM] [FlutterDaemon] [Info] <== [{"id":"2"}]
+[7:08:12 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"windows","name":"Windows","platform":"windows-x64","emulator":false,"category":"desktop","platformType":"windows","ephemeral":false,"emulatorId":null,"sdk":"Microsoft Windows [Version 10.0.22631.2792]","capabilities":{"hotReload":true,"hotRestart":true,"screenshot":false,"fastStart":false,"flutterExit":true,"hardwareRendering":true,"startPaused":true}}}]
+[7:08:13 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"chrome","name":"Chrome","platform":"web-javascript","emulator":false,"category":"web","platformType":"web","ephemeral":false,"emulatorId":null,"sdk":"Google Chrome 119.0.6045.200","capabilities":{"hotReload":true,"hotRestart":true,"screenshot":false,"fastStart":false,"flutterExit":false,"hardwareRendering":true,"startPaused":true}}}]
+[7:08:13 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"edge","name":"Edge","platform":"web-javascript","emulator":false,"category":"web","platformType":"web","ephemeral":false,"emulatorId":null,"sdk":"Microsoft Edge 119.0.2151.97","capabilities":{"hotReload":true,"hotRestart":true,"screenshot":false,"fastStart":false,"flutterExit":false,"hardwareRendering":true,"startPaused":true}}}]
+[7:08:13 PM] [FlutterDaemon] [Info] <== [{"id":"3","result":[{"id":"Pixel_3a_API_34_extension_level_7_x86_64","name":"Pixel_3a_API_34_extension_level_7_x86_64","category":"mobile","platformType":"android"},{"id":"Pixel_6_Pro_API_33","name":"Pixel 6 Pro API 33","category":"mobile","platformType":"android"}]}]
+[7:08:15 PM] [FlutterDaemon] [Info] ==> [{"id":"4","method":"emulator.getEmulators"}]
+[7:08:15 PM] [FlutterDaemon] [Info] <== [{"id":"4","result":[{"id":"Pixel_3a_API_34_extension_level_7_x86_64","name":"Pixel_3a_API_34_extension_level_7_x86_64","category":"mobile","platformType":"android"},{"id":"Pixel_6_Pro_API_33","name":"Pixel 6 Pro API 33","category":"mobile","platformType":"android"}]}]
+[7:08:17 PM] [FlutterDaemon] [Info] ==> [{"id":"5","method":"emulator.launch","params":{"emulatorId":"Pixel_3a_API_34_extension_level_7_x86_64","coldBoot":false}}]
+[7:08:20 PM] [FlutterDaemon] [Info] <== [{"id":"5"}]
+[7:08:35 PM] [FlutterDaemon] [Info] <== [{"event":"device.added","params":{"id":"emulator-5554","name":"sdk gphone64 x86 64","platform":"android-x64","emulator":true,"category":"mobile","platformType":"android","ephemeral":true,"emulatorId":"Pixel_3a_API_34_extension_level_7_x86_64","sdk":"Android 14 (API 34)","capabilities":{"hotReload":true,"hotRestart":true,"screenshot":true,"fastStart":true,"flutterExit":true,"hardwareRendering":true,"startPaused":true}}}]
+[7:08:35 PM] [FlutterDaemon] [Info] ==> [{"id":"6","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"D:\\Flutter\\tintuc"}}]
+[7:08:35 PM] [FlutterDaemon] [Info] <== [{"id":"6","result":{"platforms":["linux","macos","windows","ios","android","web"]}}]
+[7:09:40 PM] [FlutterDaemon] [Info] ==> [{"id":"7","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"D:\\Flutter\\tintuc"}}]
+[7:09:40 PM] [FlutterDaemon] [Info] <== [{"id":"7","result":{"platforms":["linux","macos","windows","ios","android","web"]}}]
+[7:09:40 PM] [FlutterDaemon] [Info] ==> [{"id":"8","method":"daemon.getSupportedPlatforms","params":{"projectRoot":"D:\\Flutter\\tintuc"}}]
+[7:09:40 PM] [FlutterDaemon] [Info] <== [{"id":"8","result":{"platforms":["linux","macos","windows","ios","android","web"]}}]

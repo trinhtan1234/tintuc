@@ -1,18 +1,19 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tintuc/caidat/login/dangnhaptaikhoan.dart';
+import 'package:tintuc/caidat/login/thongtintaikhoan.dart';
 import 'package:tintuc/caidat/thietlapungdung.dart';
 import 'package:tintuc/components/textbuttom.dart';
 
 class CaiDat extends StatelessWidget {
-  const CaiDat({Key? key});
+  const CaiDat({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final _auth = FirebaseAuth.instance;
+    final auth = FirebaseAuth.instance;
 
     Future<String> getUser() async {
-      final currentUser = await _auth.currentUser;
+      final currentUser = auth.currentUser;
       return currentUser?.displayName ?? "Chưa đăng nhập";
     }
 
@@ -28,12 +29,23 @@ class CaiDat extends StatelessWidget {
                 color: Colors.deepPurple,
                 size: 40,
               ),
-              title: const Center(
-                child: Text(
-                  'Cài đặt',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple,
+              title: Center(
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ThongTinTaiKhoan(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    'Cài đặt',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.deepPurple,
+                      fontSize: 20,
+                    ),
                   ),
                 ),
               ),
@@ -41,7 +53,14 @@ class CaiDat extends StatelessWidget {
                 Container(
                   margin: const EdgeInsets.only(right: 20),
                   child: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ThongTinTaiKhoan(),
+                        ),
+                      );
+                    },
                     icon: ClipOval(
                       child: Image.asset(
                         'assets/images/tantv.jpg',
@@ -64,7 +83,7 @@ class CaiDat extends StatelessWidget {
                     labelTitle: userName,
                     onPressed: () {
                       if (userName != "Chưa đăng nhập") {
-                        _auth.signOut();
+                        auth.signOut();
                       } else {
                         Navigator.push(
                           context,

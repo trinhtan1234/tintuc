@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:tintuc/caidat/login/screen_sign.dart';
+import 'package:tintuc/caidat/login/dangkytaikhoan.dart';
 import 'package:tintuc/screen_nav_bottom.dart';
 
 class ScreenLogin extends StatefulWidget {
@@ -159,7 +159,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
               const Divider(),
               const Center(
                 child: Text(
-                  'Login with email',
+                  'Đăng nhập tài khoản',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                 ),
               ),
@@ -168,6 +168,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                 width: 300,
                 height: 50,
                 child: TextField(
+                  controller: email,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -182,6 +183,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                 width: 300,
                 height: 50,
                 child: TextField(
+                  controller: password,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -204,14 +206,18 @@ class _ScreenLoginState extends State<ScreenLogin> {
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(color: Colors.black),
                     ),
-                    child: const Center(
-                        child: Text(
-                      'Đăng nhập',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
+                    child: Center(
+                      child: TextButton(
+                        onPressed: () async {},
+                        child: const Text(
+                          'Đăng nhập',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                          ),
+                        ),
                       ),
-                    )),
+                    ),
                   ),
                 ),
               ),

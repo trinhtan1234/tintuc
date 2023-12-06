@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tintuc/caidat/login/screen_login.dart';
+import 'package:tintuc/caidat/login/dangnhaptaikhoan.dart';
 import 'package:tintuc/caidat/thietlapungdung.dart';
 import 'package:tintuc/components/textbuttom.dart';
 

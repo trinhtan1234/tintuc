@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:tintuc/caidat/login/thongtintaikhoan.dart';
 
 class ScreenSign extends StatelessWidget {
   ScreenSign({super.key});
@@ -107,7 +107,7 @@ class ScreenSign extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const ThongTinTaiKhoan()),
+                                builder: (context) => SignInScreen()),
                           );
                         } catch (error) {
                           print(error);

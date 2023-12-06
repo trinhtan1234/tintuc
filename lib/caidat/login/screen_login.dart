@@ -164,8 +164,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                 ),
               ),
               const Padding(padding: EdgeInsets.only(top: 20)),
-              // ignore: sized_box_for_whitespace
-              Container(
+              SizedBox(
                 width: 300,
                 height: 50,
                 child: TextField(
@@ -179,8 +178,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                 ),
               ),
               const Padding(padding: EdgeInsets.only(top: 10)),
-              // ignore: sized_box_for_whitespace
-              Container(
+              SizedBox(
                 width: 300,
                 height: 50,
                 child: TextField(
@@ -202,13 +200,13 @@ class _ScreenLoginState extends State<ScreenLogin> {
                     height: 50,
                     width: 300,
                     decoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: Colors.white,
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(color: Colors.black),
                     ),
                     child: const Center(
                         child: Text(
-                      'Login',
+                      'Đăng nhập',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 15,
@@ -251,9 +249,9 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   TextButton(
                       onPressed: () {
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const ScreenSign()));
+                          context,
+                          MaterialPageRoute(builder: (context) => ScreenSign()),
+                        );
                       },
                       child: const Text('Create acount'))
                 ],

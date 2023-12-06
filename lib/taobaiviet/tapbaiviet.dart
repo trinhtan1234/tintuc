@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 
 class TaoBaiViet extends StatefulWidget {
   const TaoBaiViet({Key? key}) : super(key: key);
@@ -15,9 +14,16 @@ class _TaoBaiVietState extends State<TaoBaiViet> {
   final TextEditingController _summaryController = TextEditingController();
   final TextEditingController _contentController = TextEditingController();
   // late String _imagePath;
+
   final FocusNode _textFocusNode = FocusNode();
-  bool _isSubmitSuccessful = false;
+
   void _dangBai() async {
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
+    CollectionReference<Map<String, dynamic>> doc =
+        firestore.collection('tintuc');
+    doc.get({
+      'name': _titleController.text,
+    } as GetOptions?);
     try {
       if (_formKey.currentState!.validate()) {
         String title = _titleController.text;
@@ -31,9 +37,8 @@ class _TaoBaiVietState extends State<TaoBaiViet> {
         });
         _formKey.currentState!.reset();
 
-        setState(() {
-          _isSubmitSuccessful = true;
-        });
+        setState(() {});
+        // ignore: use_build_context_synchronously
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text('Đã gửi thành công!'),
@@ -46,15 +51,15 @@ class _TaoBaiVietState extends State<TaoBaiViet> {
     }
   }
 
-  Future<void> _pickImage() async {
-    final pickedFile =
-        await ImagePicker().pickImage(source: ImageSource.gallery);
-    if (pickedFile != null) {
-      setState(() {
-        // _imagePath = pickedFile.path;
-      });
-    }
-  }
+  // Future<void> _pickImage() async {
+  //   final pickedFile =
+  //       await ImagePicker().pickImage(source: ImageSource.gallery);
+  //   if (pickedFile != null) {
+  //     setState(() {
+  //       // _imagePath = pickedFile.path;
+  //     });
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -102,7 +107,7 @@ class _TaoBaiVietState extends State<TaoBaiViet> {
                 },
               ),
               ElevatedButton(
-                onPressed: _pickImage,
+                onPressed: () {},
                 child: const Text('Chọn Ảnh'),
               ),
 

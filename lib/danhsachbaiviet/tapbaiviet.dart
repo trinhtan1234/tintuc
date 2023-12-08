@@ -18,19 +18,13 @@ class _TaoBaiVietState extends State<TaoBaiViet> {
   final FocusNode _textFocusNode = FocusNode();
 
   void _dangBai() async {
-    FirebaseFirestore firestore = FirebaseFirestore.instance;
-    CollectionReference<Map<String, dynamic>> doc =
-        firestore.collection('tintuc');
-    doc.get({
-      'name': _titleController.text,
-    } as GetOptions?);
     try {
       if (_formKey.currentState!.validate()) {
         String title = _titleController.text;
         String summary = _summaryController.text;
         String content = _contentController.text;
 
-        await FirebaseFirestore.instance.collection('articles').add({
+        await FirebaseFirestore.instance.collection('tintuc').add({
           'title': title,
           'summary': summary,
           'content': content,

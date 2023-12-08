@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tintuc/caidat/caidat.dart';
+import 'package:tintuc/danhsachbaiviet/danhsach.dart';
 import 'package:tintuc/media/menu_media.dart';
-import 'package:tintuc/taobaiviet/tapbaiviet.dart';
 import 'package:tintuc/tinchinh/manhinh/menutinchinh.dart';
 
 class ScreenNavigationBottom extends StatefulWidget {
@@ -27,7 +27,7 @@ class _ScreenNavigationBottomState extends State<ScreenNavigationBottom> {
     _pages = [
       const MenuTinChinh(),
       const TinTucMedia(),
-      const TaoBaiViet(),
+      const DanhSachBaiViet(),
       const CaiDat(),
     ];
   }

@@ -6,6 +6,8 @@
 	<string>386891168137-6fs0g2u4anrt6sm089t6k1pmqitc69ca.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
 	<string>com.googleusercontent.apps.386891168137-6fs0g2u4anrt6sm089t6k1pmqitc69ca</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>386891168137-bv01gm6mag4ou5q342ga9pj5e489j19e.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCamUAnoUFhE_8fOjtN5rHdaDkCgfjZY5A</string>
 	<key>GCM_SENDER_ID</key>
@@ -30,5 +32,7 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:386891168137:ios:978ff18ddfc067d0314958</string>
+	<key>DATABASE_URL</key>
+	<string>https://tintuc-a0ba2-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

@@ -9,52 +9,75 @@ class TaoBaiViet extends StatefulWidget {
 }
 
 class _TaoBaiVietState extends State<TaoBaiViet> {
-  final _firestore = FirebaseFirestore.instance;
-
-  String _title = '';
-  String _content = '';
-
+  final firestore = FirebaseFirestore.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Center(
-          child: Text(
-            'Tạo mới bài viết',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Colors.deepPurple,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            FloatingActionButton(
+              child: const Text('Thêm tài liệu'),
+              onPressed: () {
+                final documentReference =
+                    firestore.collection('baiviet').doc('NguyenVanA');
+
+                documentReference.set({
+                  'name': 'John Doe12',
+                  'email': 'johndoe12@example.com',
+                });
+              },
             ),
-          ),
+            FloatingActionButton(
+              child: const Text('Đọc tài liệu'),
+              onPressed: () async {
+                final documentReference =
+                    firestore.collection('users').doc('johndoe');
+
+                // Đọc tài liệu
+                final documentSnapshot = await documentReference.get();
+
+                // Kiểm tra xem data không phải là null trước khi truy cập
+                if (documentSnapshot.data() != null) {
+                  // Lấy dữ liệu từ tài liệu
+                  final name = documentSnapshot.data()!['name'];
+                  final email = documentSnapshot.data()!['email'];
+
+                  // Hiển thị dữ liệu
+                  // ignore: use_build_context_synchronously
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Tên: $name, Email: $email'),
+                    ),
+                  );
+                }
+              },
+            ),
+            FloatingActionButton(
+              child: const Text('Cập nhật tài liệu'),
+              onPressed: () async {
+                // Tạo tham chiếu đến tài liệu
+                final documentReference =
+                    firestore.collection('users').doc('johndoe');
+
+                // Cập nhật dữ liệu trên tài liệu
+                documentReference.update({
+                  'name': 'Jane Doe',
+                });
+              },
+            ),
+            FloatingActionButton(
+              child: const Text('Xóa tài liệu'),
+              onPressed: () async {
+                final documentReference =
+                    firestore.collection('users').doc('johndoe');
+                // Xóa tài liệu
+                documentReference.delete();
+              },
+            ),
+          ],
         ),
-      ),
-      body: Column(
-        children: [
-          TextField(
-            decoration: const InputDecoration(labelText: 'Tiêu đề'),
-            onChanged: (value) {
-              _title = value;
-            },
-          ),
-          TextField(
-            decoration: const InputDecoration(labelText: 'Nội dung'),
-            minLines: 5,
-            maxLines: 10,
-            onChanged: (value) {
-              _content = value;
-            },
-          ),
-          FloatingActionButton(
-            onPressed: () {
-              _firestore.collection('bai_viet').add({
-                'title': _title,
-                'content': _content,
-                'createdAt': DateTime.now(),
-              });
-            },
-            child: const Text('Thêm'),
-          ),
-        ],
       ),
     );
   }

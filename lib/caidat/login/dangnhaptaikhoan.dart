@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:tintuc/caidat/login/dangkytaikhoan.dart';
-
 import 'package:tintuc/screen_nav_bottom.dart';
 
 class ManHinhDangNhap extends StatefulWidget {
@@ -217,11 +216,12 @@ class _ManHinhDangNhapState extends State<ManHinhDangNhap> {
                           // print('Đăng nhập');
                           try {
                             final email = _userNameController.text;
+                            // ignore: unused_local_variable
                             final userCredential =
                                 await _auth.signInWithEmailAndPassword(
                                     email: email,
                                     password: _passwordController.text);
-                            print(userCredential);
+                            // print(userCredential);
                             // ignore: use_build_context_synchronously
                             Navigator.of(context).push(
                               MaterialPageRoute<void>(
@@ -229,10 +229,11 @@ class _ManHinhDangNhapState extends State<ManHinhDangNhap> {
                                     const ScreenNavigationBottom(),
                               ),
                             );
+                            // ignore: unused_catch_clause
                           } on FirebaseAuthException catch (e) {
-                            print(e.message);
+                            // print(e.message);
                           } catch (error) {
-                            print(error);
+                            // print(error);
                           }
                         },
                         child: const Text(

@@ -126,14 +126,15 @@ class _ManHinhDangKyState extends State<ManHinhDangKy> {
                       child: Center(
                           child: TextButton(
                         onPressed: () async {
-                          print('Đăng ký');
+                          // print('Đăng ký');
 
                           try {
+                            // ignore: unused_local_variable
                             final res =
                                 await _auth.createUserWithEmailAndPassword(
                                     email: _userNameController.text,
                                     password: _passwordController.text);
-                            print(res);
+                            // print(res);
                             // ignore: use_build_context_synchronously
                             Navigator.push(
                               context,
@@ -142,7 +143,7 @@ class _ManHinhDangKyState extends State<ManHinhDangKy> {
                                       const ManHinhDangNhap()),
                             );
                           } catch (error) {
-                            print(error);
+                            // print(error);
                           }
                         },
                         child: const Text(

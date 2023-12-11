@@ -39,7 +39,6 @@ class _TaoBaiVietState extends State<TaoBaiViet> {
                         const InputDecoration(labelText: 'Tên bài viết'),
                   ),
                   const Padding(padding: EdgeInsets.only(top: 10)),
-
                   TextField(
                     controller: _tieuDeController,
                     decoration: const InputDecoration(labelText: 'Tiêu đề'),
@@ -53,7 +52,6 @@ class _TaoBaiVietState extends State<TaoBaiViet> {
                       decoration: const InputDecoration(labelText: 'Nội dung '),
                     ),
                   ),
-
                   const SizedBox(height: 16),
                   ElevatedButton(
                     onPressed: () {

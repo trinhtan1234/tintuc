@@ -52,9 +52,30 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
               // Hiển thị thông tin từ document trong ListTile hoặc widget tương tự
               final tieuDe = document.get('tieuDe');
               final noiDung = document.get('noiDung');
-              return ListTile(
-                title: Text(tieuDe),
-                subtitle: Text(noiDung),
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const TaoBaiViet(),
+                    ),
+                  );
+                },
+                child: Container(
+                  margin: const EdgeInsets.all(10),
+                  height: 100,
+                  color: const Color.fromARGB(255, 241, 239, 239),
+                  child: ListTile(
+                    title: Text(
+                      tieuDe,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                    subtitle: Text(noiDung),
+                  ),
+                ),
               );
             },
           );

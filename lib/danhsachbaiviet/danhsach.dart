@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:tintuc/danhsachbaiviet/tapbaiviet.dart';
+import 'package:tintuc/danhsachbaiviet/taobaiviet.dart';
 
 class DanhSachBaiViet extends StatefulWidget {
   const DanhSachBaiViet({super.key});

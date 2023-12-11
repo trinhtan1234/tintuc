@@ -13,6 +13,7 @@ class _TaoBaiVietState extends State<TaoBaiViet> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _tieuDeController = TextEditingController();
   final TextEditingController _noiDungController = TextEditingController();
+
   final TextEditingController _tenTaiLieuController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -32,51 +33,27 @@ class _TaoBaiVietState extends State<TaoBaiViet> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   const Padding(padding: EdgeInsets.only(top: 20)),
-                  TextFormField(
+                  TextField(
                     controller: _tenTaiLieuController,
-                    decoration: const InputDecoration(
-                      labelText: 'Tên bài viết',
-                      border: OutlineInputBorder(),
-                    ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Vui lòng nhập thông tin';
-                      }
-                      return null;
-                    },
+                    decoration:
+                        const InputDecoration(labelText: 'Tên bài viết'),
                   ),
-
                   const Padding(padding: EdgeInsets.only(top: 10)),
 
-                  TextFormField(
+                  TextField(
                     controller: _tieuDeController,
-                    decoration: const InputDecoration(
-                      labelText: 'Tên bài viết',
-                      border: OutlineInputBorder(),
-                    ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Vui lòng nhập thông tin';
-                      }
-                      return null;
-                    },
+                    decoration: const InputDecoration(labelText: 'Tiêu đề'),
                   ),
                   const Padding(padding: EdgeInsets.only(top: 10)),
-                  TextFormField(
-                    controller: _noiDungController,
-                    maxLines: null,
-                    maxLength: 9999,
-                    decoration: const InputDecoration(
-                      labelText: 'Nội dung',
-                      border: OutlineInputBorder(),
+                  Expanded(
+                    child: TextField(
+                      controller: _noiDungController,
+                      maxLength: 999,
+                      maxLines: 17,
+                      decoration: const InputDecoration(labelText: 'Nội dung '),
                     ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Vui lòng nhập tiêu đề';
-                      }
-                      return null;
-                    },
                   ),
+
                   const SizedBox(height: 16),
                   ElevatedButton(
                     onPressed: () {

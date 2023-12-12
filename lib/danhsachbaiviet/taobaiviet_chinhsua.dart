@@ -13,90 +13,59 @@ class TaoBaiVietCopy extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final formKey = GlobalKey<FormState>();
+    final formKeyTaoTin = GlobalKey<FormState>();
     final firestore = FirebaseFirestore.instance;
+    final TextEditingController tieuDeController = TextEditingController();
+    final TextEditingController noiDungController = TextEditingController();
+    final TextEditingController noiDungChiTietController =
+        TextEditingController();
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Soạn tin bài'),
-        actions: [
-          IconButton(
-            onPressed: () async {
-              final confirm = await showDialog(
-                context: context,
-                builder: (context) => AlertDialog(
-                  title: const Text('Xac nhan them moi'),
-                  content:
-                      const Text('Ban chac chan muon them moi bai viet moi'),
-                  actions: [
-                    TextButton(
-                      onPressed: () => Navigator.pop(context, false),
-                      child: const Text('Huy'),
-                    ),
-                    TextButton(
-                      onPressed: () => Navigator.pop(context, true),
-                      child: const Text('Xac nhan'),
-                    ),
-                  ],
-                ),
-              );
-              if (confirm) {
-                formKey.currentState!.reset();
-                // ignore: use_build_context_synchronously
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Them moi bai viet thanh cong'),
-                  ),
-                );
-              }
-            },
-            icon: const Icon(Icons.add),
-          ),
-        ],
       ),
       body: Form(
-        key: formKey,
+        key: formKeyTaoTin,
         child: Column(
           children: [
             TextField(
-              controller: TextEditingController(text: tieuDe),
+              controller: tieuDeController,
               decoration: const InputDecoration(labelText: 'Tên bài viết'),
             ),
             TextField(
-              controller: TextEditingController(text: noiDung),
+              controller: noiDungController,
               decoration: const InputDecoration(labelText: 'Tiêu đề'),
             ),
             Expanded(
               child: TextField(
-                controller: TextEditingController(text: noiDungChiTiet),
+                controller: noiDungChiTietController,
                 maxLength: null,
                 maxLines: null,
                 decoration: const InputDecoration(labelText: 'Nội dung '),
               ),
             ),
-            TextButton(
+            ElevatedButton(
               onPressed: () {
-                if (formKey.currentState!.validate()) {
-                  //Luu vao firestore
-                  firestore.collection('bai_viet').add({
-                    'tieuDe': tieuDe,
-                    'noiDung': noiDung,
-                    'noiDungChiTiet': noiDungChiTiet,
+                if (formKeyTaoTin.currentState!.validate()) {
+                  // final tenTaiLieu = _tenTaiLieuController.text;
+                  final documentReference =
+                      firestore.collection('bai_viet').doc();
+                  documentReference.set({
+                    'tieuDe': tieuDeController.text,
+                    'noiDung': noiDungController.text,
+                    'noiDungChiTiet': noiDungChiTietController.text,
                   });
+                  // Hiển thị thông báo sau khi thêm tài liệu thành công
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
-                      content: Text('Lưu thông tin bài viết thành công'),
+                      content: Text('Đã thêm tài liệu thành công'),
                     ),
                   );
-                } else {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Vui lòng nhập thông tin'),
-                    ),
-                  );
+                  // Quay lại màn hình trước đó
+                  // Navigator.pop(context);
                 }
               },
-              child: const Text('Cập nhật tin bài'),
+              child: const Text('Thêm mới tài liệu'),
             ),
           ],
         ),

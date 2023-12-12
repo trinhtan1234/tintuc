@@ -4,13 +4,14 @@ import 'package:tintuc/danhsachbaiviet/taobaiviet_chinhsua.dart';
 
 class DanhSachBaiViet extends StatefulWidget {
   const DanhSachBaiViet({super.key});
+
   @override
   State<DanhSachBaiViet> createState() => _DanhSachBaiVietState();
 }
 
 class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
-  final _formKey = GlobalKey<FormState>();
-  final firestore = FirebaseFirestore.instance;
+  final FirebaseFirestore firestore = FirebaseFirestore.instance;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,52 +26,40 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
           ),
         ),
       ),
-      body: StreamBuilder(
-        key: _formKey,
+      body: StreamBuilder<QuerySnapshot>(
         stream: firestore.collection('bai_viet').snapshots(),
-        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        builder: (context, snapshot) {
           if (snapshot.hasError) {
-            return const Center(
-              child: Text('Đã xảy ra lỗi'),
-            );
+            return const Center(child: Text('Đã xảy ra lỗi'));
           }
+
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
+            return const Center(child: CircularProgressIndicator());
           }
-          // Kiểm tra nếu không có dữ liệu
+
           if (snapshot.data!.docs.isEmpty) {
-            return const Center(
-              child: Text('Không có bài viết nào'),
-            );
+            return const Center(child: Text('Không có bài viết nào'));
           }
-          // Hiển thị danh sách bài viết từ snapshot
-          // final List<DocumentSnapshot> documents = snapshot.data!.docs;
           return ListView.builder(
             itemCount: snapshot.data!.docs.length,
-            itemBuilder: (BuildContext context, int index) {
+            itemBuilder: (context, index) {
               final document = snapshot.data!.docs[index];
               final tieuDe = document.get('tieuDe');
               final noiDung = document.get('noiDung');
               final noiDungChiTiet = document.get('noiDungChiTiet');
-              final uniqueTag = document.id;
               return GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => TaoBaiVietCopy(
-                        tieuDe: tieuDe,
-                        noiDung: noiDung,
-                        noiDungChiTiet: noiDungChiTiet,
-                      ),
-                      settings: RouteSettings(name: uniqueTag),
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => TaoBaiVietCopy(
+                      tieuDe: tieuDe,
+                      noiDung: noiDung,
+                      noiDungChiTiet: noiDungChiTiet,
                     ),
-                  );
-                },
+                  ),
+                ),
                 child: Hero(
-                  tag: uniqueTag,
+                  tag: document.id,
                   child: Container(
                     margin: const EdgeInsets.all(10),
                     height: 150,
@@ -96,6 +85,21 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
             },
           );
         },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          final route = MaterialPageRoute(
+            builder: (context) => const TaoBaiVietCopy(
+              tieuDe: '',
+              noiDung: '',
+              noiDungChiTiet: '',
+            ),
+          );
+          Navigator.push(context, route);
+        },
+        child: const Icon(
+          Icons.add,
+        ),
       ),
     );
   }

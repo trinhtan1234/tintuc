@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:tintuc/danhsachbaiviet/taobaiviet.dart';
+import 'package:tintuc/danhsachbaiviet/taobaiviet_chinhsua.dart';
 
 class DanhSachBaiViet extends StatefulWidget {
   const DanhSachBaiViet({super.key});
@@ -9,6 +9,7 @@ class DanhSachBaiViet extends StatefulWidget {
 }
 
 class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
+  final _formKey = GlobalKey<FormState>();
   final firestore = FirebaseFirestore.instance;
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,8 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
         ),
       ),
       body: StreamBuilder(
-        stream: firestore.collection('danhSachBaiViet').snapshots(),
+        key: _formKey,
+        stream: firestore.collection('bai_viet').snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasError) {
             return const Center(
@@ -49,49 +51,46 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
             itemCount: snapshot.data!.docs.length,
             itemBuilder: (BuildContext context, int index) {
               final document = snapshot.data!.docs[index];
-              // Hiển thị thông tin từ document trong ListTile hoặc widget tương tự
               final tieuDe = document.get('tieuDe');
               final noiDung = document.get('noiDung');
+              final noiDungChiTiet = document.get('noiDungChiTiet');
+              final uniqueTag = document.id;
               return GestureDetector(
                 onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const TaoBaiViet(),
+                      builder: (context) => TaoBaiVietCopy(
+                        tieuDe: tieuDe,
+                        noiDung: noiDung,
+                        noiDungChiTiet: noiDungChiTiet,
+                      ),
+                      settings: RouteSettings(name: uniqueTag),
                     ),
                   );
                 },
-                child: Container(
-                  margin: const EdgeInsets.all(10),
-                  height: 100,
-                  color: const Color.fromARGB(255, 241, 239, 239),
-                  child: ListTile(
-                    title: Text(
-                      tieuDe,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                child: Hero(
+                  tag: uniqueTag,
+                  child: Container(
+                    margin: const EdgeInsets.all(10),
+                    height: 100,
+                    color: const Color.fromARGB(255, 241, 239, 239),
+                    child: ListTile(
+                      title: Text(
+                        tieuDe,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
                       ),
+                      subtitle: Text(noiDung),
                     ),
-                    subtitle: Text(noiDung),
                   ),
                 ),
               );
             },
           );
         },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const TaoBaiViet(),
-            ),
-          );
-        },
-        tooltip: 'Tạo bài viết',
-        child: const Icon(Icons.add),
       ),
     );
   }

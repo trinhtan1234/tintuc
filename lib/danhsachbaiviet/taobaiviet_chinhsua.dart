@@ -19,7 +19,40 @@ class TaoBaiVietCopy extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Soạn tin bài'),
-        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.add))],
+        actions: [
+          IconButton(
+            onPressed: () async {
+              final confirm = await showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: const Text('Xac nhan them moi'),
+                  content:
+                      const Text('Ban chac chan muon them moi bai viet moi'),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(context, false),
+                      child: const Text('Huy'),
+                    ),
+                    TextButton(
+                      onPressed: () => Navigator.pop(context, true),
+                      child: const Text('Xac nhan'),
+                    ),
+                  ],
+                ),
+              );
+              if (confirm) {
+                formKey.currentState!.reset();
+                // ignore: use_build_context_synchronously
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('Them moi bai viet thanh cong'),
+                  ),
+                );
+              }
+            },
+            icon: const Icon(Icons.add),
+          ),
+        ],
       ),
       body: Form(
         key: formKey,
@@ -36,8 +69,8 @@ class TaoBaiVietCopy extends StatelessWidget {
             Expanded(
               child: TextField(
                 controller: TextEditingController(text: noiDungChiTiet),
-                maxLength: 999,
-                maxLines: 17,
+                maxLength: null,
+                maxLines: null,
                 decoration: const InputDecoration(labelText: 'Nội dung '),
               ),
             ),
@@ -52,18 +85,18 @@ class TaoBaiVietCopy extends StatelessWidget {
                   });
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
-                      content: Text('Luu bai viet thanh cong'),
+                      content: Text('Lưu thông tin bài viết thành công'),
                     ),
                   );
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
-                      content: Text('Vui long nhap day du thong tin'),
+                      content: Text('Vui lòng nhập thông tin'),
                     ),
                   );
                 }
               },
-              child: const Text('Thêm mới tài liệu'),
+              child: const Text('Cập nhật tin bài'),
             ),
           ],
         ),

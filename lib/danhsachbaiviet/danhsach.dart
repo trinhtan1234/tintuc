@@ -73,17 +73,22 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
                   tag: uniqueTag,
                   child: Container(
                     margin: const EdgeInsets.all(10),
-                    height: 100,
+                    height: 150,
                     color: const Color.fromARGB(255, 241, 239, 239),
-                    child: ListTile(
-                      title: Text(
-                        tieuDe,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        ListTile(
+                          title: Text(
+                            tieuDe,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                          ),
+                          subtitle: Text(noiDung),
                         ),
-                      ),
-                      subtitle: Text(noiDung),
+                      ],
                     ),
                   ),
                 ),

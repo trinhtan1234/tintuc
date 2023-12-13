@@ -9,5 +9,6 @@
         "pointycastle",
         "Schyler",
         "tintuc"
-    ]
+    ],
+    "dotnet.defaultSolution": "build/windows/x64/tintuc.sln"
 }

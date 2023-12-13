@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:tintuc/danhsachbaiviet/service/taobaivieta.dart';
 import 'package:tintuc/danhsachbaiviet/taobaiviet_chinhsua.dart';
 
 class DanhSachBaiViet extends StatefulWidget {
@@ -96,6 +97,17 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
             },
           );
         },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const TaoBaiVieta(),
+            ),
+          );
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }

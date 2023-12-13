@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:tintuc/danhsachbaiviet/service/taobaivieta.dart';
-import 'package:tintuc/danhsachbaiviet/taobaiviet_chinhsua.dart';
+import 'package:tintuc/danhsachbaiviet/taobaivieta.dart';
+import 'package:tintuc/danhsachbaiviet/capnhapbaiviet.dart';
 
 class DanhSachBaiViet extends StatefulWidget {
   const DanhSachBaiViet({super.key});
@@ -46,8 +46,6 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
               child: Text('Không có bài viết nào'),
             );
           }
-          // Hiển thị danh sách bài viết từ snapshot
-          // final List<DocumentSnapshot> documents = snapshot.data!.docs;
           return ListView.builder(
             itemCount: snapshot.data!.docs.length,
             itemBuilder: (BuildContext context, int index) {
@@ -61,10 +59,11 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => TaoBaiVietCopy(
+                      builder: (context) => CapNhatBaiViet(
                         tieuDe: tieuDe,
                         noiDung: noiDung,
                         noiDungChiTiet: noiDungChiTiet,
+                        documentId: uniqueTag,
                       ),
                       settings: RouteSettings(name: uniqueTag),
                     ),

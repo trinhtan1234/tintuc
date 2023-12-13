@@ -81,12 +81,16 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
                         ListTile(
                           title: Text(
                             tieuDe,
+                            maxLines: 2,
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 18,
                             ),
                           ),
-                          subtitle: Text(noiDung),
+                          subtitle: Text(
+                            noiDung,
+                            maxLines: 3,
+                          ),
                         ),
                       ],
                     ),

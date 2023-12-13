@@ -84,7 +84,11 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
                         ),
                         TextButton(
                           onPressed: () {
-                            Navigator.of(context).pop(); // đóng dialog
+                            Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                builder: (context) => const DanhSachBaiViet(),
+                              ),
+                            );
                           },
                           child: const Text('Huỷ'),
                         ),
@@ -127,7 +131,7 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
             ),
             TextFormField(
               controller: noiDungController,
-              decoration: const InputDecoration(labelText: 'Tiêu đề'),
+              decoration: const InputDecoration(labelText: 'Nội dung tóm tắt'),
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Vui lòng nhập tiêu đề';
@@ -139,7 +143,8 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
               child: TextFormField(
                 controller: noiDungChiTietController,
                 maxLines: null,
-                decoration: const InputDecoration(labelText: 'Nội dung'),
+                decoration:
+                    const InputDecoration(labelText: 'Nội dung chi tiết'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Vui lòng nhập nội dung';

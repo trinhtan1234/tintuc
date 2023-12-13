@@ -60,7 +60,7 @@ class _TaoBaiVietaState extends State<TaoBaiVieta> {
                     child: TextField(
                       controller: noiDungChiTiet,
                       maxLength: 999,
-                      // maxLines: 15,
+                      maxLines: 15,
                       decoration: const InputDecoration(labelText: 'Nội dung '),
                     ),
                   ),

@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:tintuc/danhsachbaiviet/danhsach.dart';
 
 class TaoBaiVieta extends StatefulWidget {
   const TaoBaiVieta({super.key});
@@ -75,14 +76,19 @@ class _TaoBaiVietaState extends State<TaoBaiVieta> {
                           'noiDung': noiDung.text,
                           'noiDungChiTiet': noiDungChiTiet.text,
                         });
+
                         // Hiển thị thông báo sau khi thêm tài liệu thành công
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
                             content: Text('Đã thêm tài liệu thành công'),
                           ),
                         );
-                        // Quay lại màn hình trước đó
-                        // Navigator.pop(context);
+                        // Quay lại màn hình Danh sách bài viết
+                        Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(
+                            builder: (context) => const DanhSachBaiViet(),
+                          ),
+                        );
                       }
                     },
                     child: const Text('Thêm mới tài liệu'),

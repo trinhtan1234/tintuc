@@ -1,41 +1,88 @@
+import 'dart:io';
 import 'dart:typed_data';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:tintuc/danhsachbaiviet/danhsach.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:video_player/video_player.dart';
+import 'danhsach.dart';
 
-class TaoBaiVieta extends StatefulWidget {
-  const TaoBaiVieta({super.key});
+class TaoBaiViet extends StatefulWidget {
+  const TaoBaiViet({Key? key}) : super(key: key);
 
   @override
-  State<TaoBaiVieta> createState() => _TaoBaiVietaState();
+  State<TaoBaiViet> createState() => _TaoBaiVietState();
 }
 
-class _TaoBaiVietaState extends State<TaoBaiVieta> {
+class _TaoBaiVietState extends State<TaoBaiViet> {
   final firestore = FirebaseFirestore.instance;
-  final _formKeyTaoBaiVietaa = GlobalKey<FormState>();
+  final _formKeyTaoBaiViet = GlobalKey<FormState>();
 
   final TextEditingController tieuDe = TextEditingController();
   final TextEditingController noiDung = TextEditingController();
   final TextEditingController noiDungChiTiet = TextEditingController();
-  final TextEditingController hinhanh = TextEditingController();
 
-  String selectedFile = '';
   List<Uint8List> pickedImagesInBytes = [];
   int imageCounts = 0;
-  String defaultImageUrl =
+  List<String> imageUrls = [];
+  static const String defaultImageUrl =
       'https://cdn.pixabay.com/photo/2016/03/23/15/00/ice-cream-1274894_1280.jpg';
 
-  List<String> imageUrls = [];
+  File? _imageFile;
+  File? _videoFile;
+  final ImagePicker _imagePicker = ImagePicker();
 
-  @override
-  void initState() {
-    super.initState();
+  final FirebaseStorage _storage =
+      FirebaseStorage.instanceFor(bucket: 'gs://tintuc-a0ba2.appspot.com');
+
+  Future<void> _pickImage() async {
+    final pickedFile =
+        await _imagePicker.pickImage(source: ImageSource.gallery);
+    if (pickedFile != null) {
+      setState(() {
+        _imageFile = File(pickedFile.path);
+      });
+    }
+  }
+
+  Future<void> _pickVideo() async {
+    final pickedFile =
+        await _imagePicker.pickVideo(source: ImageSource.gallery);
+
+    if (pickedFile != null) {
+      setState(() {
+        _videoFile = File(pickedFile.path);
+      });
+    }
+  }
+
+  Future<void> _uploadFile(File? file) async {
+    if (file == null) return;
+
+    try {
+      final fileName = file.path.split('/').last;
+      final ref = _storage.ref().child(fileName);
+      await ref.putFile(file);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('File uploaded successfully'),
+        ),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Failed to upload file'),
+        ),
+      );
+    }
   }
 
   @override
   void dispose() {
+    tieuDe.dispose();
+    noiDung.dispose();
+    noiDungChiTiet.dispose();
     super.dispose();
   }
 
@@ -44,42 +91,79 @@ class _TaoBaiVietaState extends State<TaoBaiVieta> {
     return Scaffold(
       appBar: AppBar(
         title: const Center(
-          child: Text('Soạn tin tức'),
+          child: Text('Create News'),
         ),
       ),
       body: Center(
         child: Container(
           child: Form(
-            key: _formKeyTaoBaiVietaa,
+            key: _formKeyTaoBaiViet,
             child: Container(
               margin: const EdgeInsets.only(right: 10, left: 10),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   const Padding(padding: EdgeInsets.only(top: 0)),
-                  TextField(
+                  TextFormField(
                     controller: tieuDe,
-                    decoration: const InputDecoration(labelText: 'Tiêu đề'),
+                    decoration: const InputDecoration(labelText: 'Title'),
+                    validator: (value) {
+                      if (value?.isEmpty ?? true) {
+                        return 'Please enter a title';
+                      }
+                      return null;
+                    },
                   ),
                   const Padding(padding: EdgeInsets.only(top: 5)),
-                  TextField(
+                  TextFormField(
                     controller: noiDung,
-                    decoration: const InputDecoration(labelText: 'Nội dung '),
+                    decoration:
+                        const InputDecoration(labelText: 'Summary Content'),
+                    validator: (value) {
+                      if (value?.isEmpty ?? true) {
+                        return 'Please enter summary content';
+                      }
+                      return null;
+                    },
                   ),
                   Expanded(
-                    child: TextField(
+                    child: TextFormField(
                       controller: noiDungChiTiet,
                       maxLength: 999,
                       maxLines: 15,
-                      decoration: const InputDecoration(labelText: 'Nội dung '),
+                      decoration:
+                          const InputDecoration(labelText: 'Detailed Content'),
                     ),
-                  ),
-                  TextField(
-                    controller: hinhanh,
-                    decoration: const InputDecoration(labelText: 'Link ảnh '),
                   ),
                   const SizedBox(height: 16),
                   Expanded(child: _buildImageCarousel()),
+                  if (_imageFile != null)
+                    Image.file(
+                      _imageFile!,
+                      height: 150,
+                    ),
+                  if (_videoFile != null)
+                    VideoPlayer(
+                      _videoFile != null
+                          ? VideoPlayerController.file(_videoFile!)
+                          : VideoPlayerController.network(''),
+                    ),
+                  ElevatedButton(
+                    onPressed: _pickImage,
+                    child: const Text('Choose Image'),
+                  ),
+                  ElevatedButton(
+                    onPressed: _pickVideo,
+                    child: const Text('Choose Video'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () => _uploadFile(_imageFile),
+                    child: const Text('Upload Image'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () => _uploadFile(_videoFile),
+                    child: const Text('Upload Video'),
+                  ),
                   Expanded(
                     child: Row(
                       children: [
@@ -89,7 +173,7 @@ class _TaoBaiVietaState extends State<TaoBaiVieta> {
                           },
                           child: const Row(
                             children: [
-                              Text('Thêm ảnh'),
+                              Text('Add Image'),
                               Padding(padding: EdgeInsets.only(right: 5)),
                               Icon(Icons.photo_camera),
                             ],
@@ -97,19 +181,18 @@ class _TaoBaiVietaState extends State<TaoBaiVieta> {
                         ),
                         ElevatedButton(
                           onPressed: () async {
-                            if (_formKeyTaoBaiVietaa.currentState!.validate()) {
-                              await _uploadImages(); // upload images to firebase storage
+                            if (_formKeyTaoBaiViet.currentState!.validate()) {
+                              await _uploadImages();
                               final documentReference =
                                   firestore.collection('bai_viet').doc();
                               documentReference.set({
                                 'tieuDe': tieuDe.text,
                                 'noiDung': noiDung.text,
                                 'noiDungChiTiet': noiDungChiTiet.text,
-                                'hinhanh': hinhanh.text,
                               });
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
-                                  content: Text('Đã thêm tài liệu thành công'),
+                                  content: Text('Document added successfully'),
                                 ),
                               );
                               Navigator.of(context).pushReplacement(
@@ -119,7 +202,7 @@ class _TaoBaiVietaState extends State<TaoBaiVieta> {
                               );
                             }
                           },
-                          child: const Text('Thêm mới tài liệu'),
+                          child: const Text('Add New Document'),
                         ),
                       ],
                     ),
@@ -138,21 +221,21 @@ class _TaoBaiVietaState extends State<TaoBaiVieta> {
         await FilePicker.platform.pickFiles(allowMultiple: true);
 
     if (fileResult != null) {
-      selectedFile = fileResult.files.first.name;
       for (var element in fileResult.files) {
-        setState(() {
-          pickedImagesInBytes.add(element.bytes!);
-          imageCounts += 1;
-        });
+        if (element.bytes != null) {
+          setState(() {
+            pickedImagesInBytes.add(element.bytes!);
+            imageCounts += 1;
+          });
+        }
       }
     }
-    if (pickedImagesInBytes.isNotEmpty) {}
   }
 
   Widget _buildImageCarousel() {
-    return Container(
+    return SizedBox(
       height: 100,
-      child: selectedFile.isEmpty
+      child: pickedImagesInBytes.isEmpty
           ? Image.network(
               defaultImageUrl,
               height: 100,

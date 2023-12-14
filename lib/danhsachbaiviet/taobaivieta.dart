@@ -66,13 +66,13 @@ class _TaoTinBaiState extends State<TaoTinBai> {
       await ref.putFile(file);
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('File uploaded successfully'),
+          content: Text('File upload thành công'),
         ),
       );
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Failed to upload file'),
+          content: Text('Lỗi tải file'),
         ),
       );
     }
@@ -91,7 +91,7 @@ class _TaoTinBaiState extends State<TaoTinBai> {
     return Scaffold(
       appBar: AppBar(
         title: const Center(
-          child: Text('Create News'),
+          child: Text('Soạn tin bài'),
         ),
       ),
       body: Center(
@@ -106,10 +106,10 @@ class _TaoTinBaiState extends State<TaoTinBai> {
                   const Padding(padding: EdgeInsets.only(top: 0)),
                   TextFormField(
                     controller: tieuDe,
-                    decoration: const InputDecoration(labelText: 'Title'),
+                    decoration: const InputDecoration(labelText: 'Tiêu đề'),
                     validator: (value) {
                       if (value?.isEmpty ?? true) {
-                        return 'Please enter a title';
+                        return 'Nhập thông tin tiêu đề';
                       }
                       return null;
                     },
@@ -118,10 +118,10 @@ class _TaoTinBaiState extends State<TaoTinBai> {
                   TextFormField(
                     controller: noiDung,
                     decoration:
-                        const InputDecoration(labelText: 'Summary Content'),
+                        const InputDecoration(labelText: 'Tóm tắt nội dung'),
                     validator: (value) {
                       if (value?.isEmpty ?? true) {
-                        return 'Please enter summary content';
+                        return 'Nhập tóm tắt nội dung';
                       }
                       return null;
                     },
@@ -132,7 +132,13 @@ class _TaoTinBaiState extends State<TaoTinBai> {
                       maxLength: 999,
                       maxLines: 15,
                       decoration:
-                          const InputDecoration(labelText: 'Detailed Content'),
+                          const InputDecoration(labelText: 'Nội dung chi tiết'),
+                      validator: (value) {
+                        if (value?.isEmpty ?? true) {
+                          return 'Nhập tóm tắt nội dung';
+                        }
+                        return null;
+                      },
                     ),
                   ),
                   const SizedBox(height: 16),
@@ -148,64 +154,54 @@ class _TaoTinBaiState extends State<TaoTinBai> {
                           ? VideoPlayerController.file(_videoFile!)
                           : VideoPlayerController.network(''),
                     ),
-                  ElevatedButton(
-                    onPressed: _pickImage,
-                    child: const Text('Choose Image'),
+                  Row(
+                    children: [
+                      ElevatedButton(
+                        onPressed: _pickImage,
+                        child: const Text('Chọn ảnh'),
+                      ),
+                      ElevatedButton(
+                        onPressed: _pickVideo,
+                        child: const Text('Chọn video'),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      ElevatedButton(
+                        onPressed: () => _uploadFile(_imageFile),
+                        child: const Text('Tải ảnh'),
+                      ),
+                      ElevatedButton(
+                        onPressed: () => _uploadFile(_videoFile),
+                        child: const Text('Tải Video'),
+                      ),
+                    ],
                   ),
                   ElevatedButton(
-                    onPressed: _pickVideo,
-                    child: const Text('Choose Video'),
-                  ),
-                  ElevatedButton(
-                    onPressed: () => _uploadFile(_imageFile),
-                    child: const Text('Upload Image'),
-                  ),
-                  ElevatedButton(
-                    onPressed: () => _uploadFile(_videoFile),
-                    child: const Text('Upload Video'),
-                  ),
-                  Expanded(
-                    child: Row(
-                      children: [
-                        TextButton(
-                          onPressed: () {
-                            _selectFile(true);
-                          },
-                          child: const Row(
-                            children: [
-                              Text('Add Image'),
-                              Padding(padding: EdgeInsets.only(right: 5)),
-                              Icon(Icons.photo_camera),
-                            ],
+                    onPressed: () async {
+                      if (_formKeyTaoTinBai.currentState!.validate()) {
+                        // await _uploadImages();
+                        final documentReference =
+                            firestore.collection('bai_viet').doc();
+                        documentReference.set({
+                          'tieuDe': tieuDe.text,
+                          'noiDung': noiDung.text,
+                          'noiDungChiTiet': noiDungChiTiet.text,
+                        });
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Thêm tin bài thành công'),
                           ),
-                        ),
-                        ElevatedButton(
-                          onPressed: () async {
-                            if (_formKeyTaoTinBai.currentState!.validate()) {
-                              await _uploadImages();
-                              final documentReference =
-                                  firestore.collection('bai_viet').doc();
-                              documentReference.set({
-                                'tieuDe': tieuDe.text,
-                                'noiDung': noiDung.text,
-                                'noiDungChiTiet': noiDungChiTiet.text,
-                              });
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text('Document added successfully'),
-                                ),
-                              );
-                              Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(
-                                  builder: (context) => const DanhSachBaiViet(),
-                                ),
-                              );
-                            }
-                          },
-                          child: const Text('Add New Document'),
-                        ),
-                      ],
-                    ),
+                        );
+                        Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(
+                            builder: (context) => const DanhSachBaiViet(),
+                          ),
+                        );
+                      }
+                    },
+                    child: const Text('Thêm tin bài'),
                   ),
                 ],
               ),

@@ -56,7 +56,7 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
               final uniqueTag = document.id;
               return GestureDetector(
                 onTap: () {
-                  Navigator.push(
+                  Navigator.pop(
                     context,
                     MaterialPageRoute(
                       builder: (context) => CapNhatBaiViet(

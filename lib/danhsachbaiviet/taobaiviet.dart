@@ -1,52 +1,42 @@
-import 'dart:io';
+import 'dart:typed_data';
 
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:tintuc/danhsachbaiviet/danhsach.dart';
 
-class TaoBaiViet extends StatefulWidget {
-  const TaoBaiViet({super.key, required tieuDe, required noiDung});
+class TaoBaiVieta extends StatefulWidget {
+  const TaoBaiVieta({Key? key}) : super(key: key);
 
   @override
-  State<TaoBaiViet> createState() => _TaoBaiVietState();
+  State<TaoBaiVieta> createState() => _TaoBaiVietaState();
 }
 
-class _TaoBaiVietState extends State<TaoBaiViet> {
-  final firestore = FirebaseFirestore.instance;
+class _TaoBaiVietaState extends State<TaoBaiVieta> {
   final _formKey = GlobalKey<FormState>();
-  final TextEditingController _tieuDeController = TextEditingController();
-  final TextEditingController _noiDungController = TextEditingController();
-  final TextEditingController _tenTaiLieuController = TextEditingController();
+  final TextEditingController tieuDe = TextEditingController();
+  final TextEditingController noiDung = TextEditingController();
+  final TextEditingController noiDungChiTiet = TextEditingController();
+  final TextEditingController _itemNameController = TextEditingController();
+  final TextEditingController _itemPriceController = TextEditingController();
 
-  final ImagePicker _picker =
-      ImagePicker(); // Create an instance of ImagePicker
-  List<XFile>? _images;
+  String selectedFile = '';
+  String defaultImageUrl =
+      'https://cdn.pixabay.com/photo/2016/03/23/15/00/ice-cream-1274894_1280.jpg';
+
+  List<Uint8List> pickedImagesInBytes = [];
+  Uint8List? selectedImageInBytes;
+  int imageCounts = 0;
+  List<String> imageUrls = [];
+  bool isItemSaved = false;
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  // ignore: unused_element
-  void _pickImages() async {
-    _images = await _picker.pickMultiImage();
-    setState(() {});
-  }
-
-  void _uploadImages() async {
-    if (_images == null || _images!.isEmpty) {
-      return;
-    }
-    for (final XFile image in _images!) {
-      final Reference storageRef = FirebaseStorage.instance
-          .ref()
-          .child('images/gallery/${image.path.split('/').last}');
-      await storageRef.putFile(File(image.path));
-    }
-    // ignore: use_build_context_synchronously
-    ScaffoldMessenger.of(context)
-        .showSnackBar(const SnackBar(content: Text('Tải ảnh thành công')));
+  void dispose() {
+    tieuDe.dispose();
+    noiDung.dispose();
+    noiDungChiTiet.dispose();
+    super.dispose();
   }
 
   @override
@@ -57,144 +47,199 @@ class _TaoBaiVietState extends State<TaoBaiViet> {
           child: Text('Soạn tin tức'),
         ),
       ),
-      body: Center(
-        // ignore: avoid_unnecessary_containers
-        child: Container(
-          child: Form(
-            key: _formKey,
-            child: Container(
-              margin: const EdgeInsets.all(10),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const Padding(padding: EdgeInsets.only(top: 20)),
-                  Row(
-                    children: [
-                      TextField(
-                        controller: _tenTaiLieuController,
-                        decoration:
-                            const InputDecoration(labelText: 'Tên bài viết'),
-                      ),
-                    ],
-                  ),
-                  const Padding(padding: EdgeInsets.only(top: 10)),
-                  TextField(
-                    controller: _tieuDeController,
-                    decoration: const InputDecoration(labelText: 'Tiêu đề'),
-                  ),
-                  const Padding(padding: EdgeInsets.only(top: 10)),
-                  TextField(
-                    controller: _noiDungController,
-                    // maxLength: 999,
-                    // maxLines: 17,
-                    decoration: const InputDecoration(labelText: 'Nội dung '),
-                  ),
-                  const SizedBox(height: 16),
-                  ElevatedButton(
+      body: SingleChildScrollView(
+        child: Form(
+          key: _formKey,
+          child: Container(
+            margin: const EdgeInsets.all(10),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                _buildTextFormField(tieuDe, 'Tiêu đề'),
+                _buildTextFormField(noiDung, 'Nội dung'),
+                _buildTextFormField(noiDungChiTiet, 'Nội dung chi tiết'),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.05,
+                  child: ElevatedButton.icon(
                     onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        final tenTaiLieu = _tenTaiLieuController.text;
-                        final documentReference = firestore
-                            .collection('danhSachBaiViet')
-                            .doc(tenTaiLieu);
-                        documentReference.set({
-                          'tieuDe': _tieuDeController.text,
-                          'noiDung': _noiDungController.text,
-                        });
-                        // Hiển thị thông báo sau khi thêm tài liệu thành công
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text('Đã thêm tài liệu thành công'),
-                          ),
-                        );
-                        // Quay lại màn hình trước đó
-                        // Navigator.pop(context);
-                      }
+                      _selectFile(true);
                     },
-                    child: const Text('Thêm mới tài liệu'),
-                  ),
-                  ElevatedButton(
-                    onPressed: _uploadImages,
-                    child: const Text('Upload Images'),
-                  ),
-                  TextButton(
-                    child: const Text(
-                      'Thêm tài liệu',
+                    icon: const Icon(
+                      Icons.camera,
                     ),
+                    label: const Text(
+                      'Pick Image',
+                      style: TextStyle(),
+                    ),
+                  ),
+                ),
+                _buildImageCarousel(),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.05,
+                  child: ElevatedButton.icon(
                     onPressed: () {
-                      final documentReference =
-                          firestore.collection('baiviet').doc('NguyenVanA');
-                      documentReference.set({
-                        'name': _tieuDeController.text,
-                        'email': _noiDungController.text,
-                      });
+                      _selectFile(true);
                     },
+                    icon: const Icon(
+                      Icons.camera,
+                    ),
+                    label: const Text(
+                      'Pick Image',
+                      style: TextStyle(),
+                    ),
                   ),
-                  FloatingActionButton(
-                    child: const Text('Thêm tài liệu'),
-                    onPressed: () {
-                      final documentReference =
-                          firestore.collection('baiviet').doc('NguyenVanA');
-
-                      documentReference.set({
-                        'name': 'John Doe12',
-                        'email': 'johndoe12@example.com',
-                      });
-                    },
+                ),
+                if (isItemSaved)
+                  const CircularProgressIndicator(
+                    color: Colors.green,
                   ),
-                  FloatingActionButton(
-                    child: const Text('Đọc tài liệu'),
-                    onPressed: () async {
-                      final documentReference =
-                          firestore.collection('users').doc('johndoe');
-
-                      // Đọc tài liệu
-                      final documentSnapshot = await documentReference.get();
-
-                      // Kiểm tra xem data không phải là null trước khi truy cập
-                      if (documentSnapshot.data() != null) {
-                        // Lấy dữ liệu từ tài liệu
-                        final name = documentSnapshot.data()!['name'];
-                        final email = documentSnapshot.data()!['email'];
-
-                        // Hiển thị dữ liệu
-                        // ignore: use_build_context_synchronously
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text('Tên: $name, Email: $email'),
-                          ),
-                        );
-                      }
-                    },
-                  ),
-                  FloatingActionButton(
-                    child: const Text('Cập nhật tài liệu'),
-                    onPressed: () async {
-                      // Tạo tham chiếu đến tài liệu
-                      final documentReference =
-                          firestore.collection('users').doc('johndoe');
-
-                      // Cập nhật dữ liệu trên tài liệu
-                      documentReference.update({
-                        'name': 'Jane Doe',
-                      });
-                    },
-                  ),
-                  FloatingActionButton(
-                    child: const Text('Xóa tài liệu'),
-                    onPressed: () async {
-                      final documentReference =
-                          firestore.collection('users').doc('johndoe');
-                      // Xóa tài liệu
-                      documentReference.delete();
-                    },
-                  ),
-                ],
-              ),
+                _buildTextField(_itemNameController, 'Item Name'),
+                _buildTextField(_itemPriceController, 'Item Price'),
+                ElevatedButton(
+                  onPressed: () async {
+                    if (_formKey.currentState!.validate()) {
+                      await _saveItem();
+                    }
+                  },
+                  child: const Text('Thêm mới tài liệu'),
+                ),
+              ],
             ),
           ),
         ),
       ),
+      floatingActionButton: _buildFloatingActionButton(),
     );
+  }
+
+  // Build TextFormField
+  Widget _buildTextFormField(
+      TextEditingController controller, String labelText) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 10),
+      child: TextFormField(
+        controller: controller,
+        decoration: InputDecoration(labelText: labelText),
+      ),
+    );
+  }
+
+  // Build Image Carousel
+  Widget _buildImageCarousel() {
+    return Container(
+      child: selectedFile.isEmpty
+          ? Image.network(defaultImageUrl)
+          : CarouselSlider(
+              options: CarouselOptions(height: 400),
+              items: pickedImagesInBytes.map((i) {
+                return Builder(
+                  builder: (BuildContext context) {
+                    return Container(
+                      width: MediaQuery.of(context).size.width,
+                      margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                      decoration: const BoxDecoration(
+                        color: Colors.amber,
+                      ),
+                      child: Image.memory(i),
+                    );
+                  },
+                );
+              }).toList(),
+            ),
+    );
+  }
+
+  // Build FloatingActionButton
+  Widget _buildFloatingActionButton() {
+    return Container(
+      width: MediaQuery.of(context).size.width * 0.08,
+      margin: EdgeInsets.only(
+        bottom: MediaQuery.of(context).size.height * 0.02,
+      ),
+      decoration: BoxDecoration(
+        color: Colors.green,
+        borderRadius: BorderRadius.circular(25),
+      ),
+      child: TextButton(
+        onPressed: () {
+          _saveItem();
+        },
+        child: const Text(
+          'Save',
+          style: TextStyle(
+            fontSize: 18,
+            color: Colors.white,
+          ),
+        ),
+      ),
+    );
+  }
+
+  // Build TextField
+  Widget _buildTextField(TextEditingController controller, String labelText) {
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.1,
+      width: MediaQuery.of(context).size.width * 0.3,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25),
+      ),
+      child: TextField(
+        cursorColor: Colors.black,
+        decoration: InputDecoration(
+          hintStyle: const TextStyle(color: Colors.black),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: const BorderSide(color: Colors.black, width: 1),
+          ),
+          focusedBorder: const OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.black, width: 1),
+          ),
+          labelText: labelText,
+          labelStyle: const TextStyle(color: Colors.black),
+        ),
+        controller: controller,
+        style: const TextStyle(color: Colors.black),
+      ),
+    );
+  }
+
+  // Select File Method
+  void _selectFile(bool imageFrom) async {
+    FilePickerResult? fileResult =
+        await FilePicker.platform.pickFiles(allowMultiple: true);
+
+    if (fileResult != null) {
+      selectedFile = fileResult.files.first.name;
+      for (var element in fileResult.files) {
+        setState(() {
+          pickedImagesInBytes.add(element.bytes!);
+          imageCounts += 1;
+        });
+      }
+    }
+    // print(selectedFile);
+  }
+
+  // Save Item Method
+  Future<void> _saveItem() async {
+    setState(() {
+      isItemSaved = true;
+    });
+
+    // await _uploadMultipleFiles(_itemNameController.text);
+
+    await FirebaseFirestore.instance.collection('vegetables').add({
+      'itemName': _itemNameController.text,
+      'itemPrice': _itemPriceController.text,
+      'itemImageUrl': imageUrls,
+      'createdOn': DateTime.now().toIso8601String(),
+    }).then((value) {
+      setState(() {
+        isItemSaved = false;
+      });
+      Navigator.of(context).pop(MaterialPageRoute(
+        builder: ((context) => const DanhSachBaiViet()),
+      ));
+    });
   }
 }

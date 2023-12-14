@@ -45,6 +45,15 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
   }
 
   @override
+  void dispose() {
+    // tieuDeController.dispose();
+    // noiDungController.dispose();
+    // noiDungChiTietController.dispose();
+    // hinhanhController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
 
@@ -89,11 +98,7 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
                         ),
                         TextButton(
                           onPressed: () {
-                            Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(
-                                builder: (context) => const DanhSachBaiViet(),
-                              ),
-                            );
+                            Navigator.pop(context);
                           },
                           child: const Text('Huỷ'),
                         ),

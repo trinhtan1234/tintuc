@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:tintuc/danhsachbaiviet/taobaivieta.dart';
 import 'package:tintuc/danhsachbaiviet/capnhapbaiviet.dart';
+import 'package:tintuc/screen_nav_bottom.dart';
 
 class DanhSachBaiViet extends StatefulWidget {
   const DanhSachBaiViet({Key? key}) : super(key: key);
@@ -17,6 +18,16 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(
+                builder: (context) => const ScreenNavigationBottom(),
+              ),
+            );
+          },
+          icon: const Icon(Icons.arrow_back_ios_new),
+        ),
         title: const Center(
           child: Text(
             'Danh sách bài viết',
@@ -63,7 +74,7 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
 
               return GestureDetector(
                 onTap: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                       builder: (context) => CapNhatBaiViet(
@@ -110,8 +121,7 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
-            context,
+          Navigator.of(context).pushReplacement(
             MaterialPageRoute(
               builder: (context) => const TaoBaiVieta(),
             ),

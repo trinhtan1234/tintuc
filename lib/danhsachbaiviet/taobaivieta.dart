@@ -8,16 +8,16 @@ import 'package:image_picker/image_picker.dart';
 import 'package:video_player/video_player.dart';
 import 'danhsach.dart';
 
-class TaoBaiViet extends StatefulWidget {
-  const TaoBaiViet({Key? key}) : super(key: key);
+class TaoTinBai extends StatefulWidget {
+  const TaoTinBai({Key? key}) : super(key: key);
 
   @override
-  State<TaoBaiViet> createState() => _TaoBaiVietState();
+  State<TaoTinBai> createState() => _TaoTinBaiState();
 }
 
-class _TaoBaiVietState extends State<TaoBaiViet> {
+class _TaoTinBaiState extends State<TaoTinBai> {
   final firestore = FirebaseFirestore.instance;
-  final _formKeyTaoBaiViet = GlobalKey<FormState>();
+  final _formKeyTaoTinBai = GlobalKey<FormState>();
 
   final TextEditingController tieuDe = TextEditingController();
   final TextEditingController noiDung = TextEditingController();
@@ -97,7 +97,7 @@ class _TaoBaiVietState extends State<TaoBaiViet> {
       body: Center(
         child: Container(
           child: Form(
-            key: _formKeyTaoBaiViet,
+            key: _formKeyTaoTinBai,
             child: Container(
               margin: const EdgeInsets.only(right: 10, left: 10),
               child: Column(
@@ -181,7 +181,7 @@ class _TaoBaiVietState extends State<TaoBaiViet> {
                         ),
                         ElevatedButton(
                           onPressed: () async {
-                            if (_formKeyTaoBaiViet.currentState!.validate()) {
+                            if (_formKeyTaoTinBai.currentState!.validate()) {
                               await _uploadImages();
                               final documentReference =
                                   firestore.collection('bai_viet').doc();

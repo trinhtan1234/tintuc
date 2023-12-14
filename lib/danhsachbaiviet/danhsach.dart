@@ -4,14 +4,15 @@ import 'package:tintuc/danhsachbaiviet/taobaivieta.dart';
 import 'package:tintuc/danhsachbaiviet/capnhapbaiviet.dart';
 
 class DanhSachBaiViet extends StatefulWidget {
-  const DanhSachBaiViet({super.key});
+  const DanhSachBaiViet({Key? key}) : super(key: key);
+
   @override
   State<DanhSachBaiViet> createState() => _DanhSachBaiVietState();
 }
 
 class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
-  final _formKey = GlobalKey<FormState>();
   final firestore = FirebaseFirestore.instance;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +28,6 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
         ),
       ),
       body: StreamBuilder(
-        key: _formKey,
         stream: firestore.collection('bai_viet').snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasError) {
@@ -40,7 +40,6 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
               child: CircularProgressIndicator(),
             );
           }
-          // Kiểm tra nếu không có dữ liệu
           if (snapshot.data!.docs.isEmpty) {
             return const Center(
               child: Text('Không có bài viết nào'),
@@ -50,22 +49,30 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
             itemCount: snapshot.data!.docs.length,
             itemBuilder: (BuildContext context, int index) {
               final document = snapshot.data!.docs[index];
-              final tieuDe = document.get('tieuDe');
-              final noiDung = document.get('noiDung');
-              final noiDungChiTiet = document.get('noiDungChiTiet');
+              final tieuDe = document['tieuDe'];
+              final noiDung = document['noiDung'];
+              final noiDungChiTiet = document['noiDungChiTiet'];
+              final hinhanh = document.data() as Map<String,
+                  dynamic>?; // Chắc chắn rằng dữ liệu là kiểu Map
+              final hinhanhValue =
+                  hinhanh != null && hinhanh.containsKey('hinhanh')
+                      ? hinhanh['hinhanh']
+                      : '';
+
               final uniqueTag = document.id;
+
               return GestureDetector(
                 onTap: () {
-                  Navigator.pop(
+                  Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => CapNhatBaiViet(
                         tieuDe: tieuDe,
                         noiDung: noiDung,
                         noiDungChiTiet: noiDungChiTiet,
+                        hinhanh: hinhanhValue,
                         documentId: uniqueTag,
                       ),
-                      settings: RouteSettings(name: uniqueTag),
                     ),
                   );
                 },

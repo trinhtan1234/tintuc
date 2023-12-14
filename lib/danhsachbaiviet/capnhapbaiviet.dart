@@ -8,11 +8,13 @@ class CapNhatBaiViet extends StatefulWidget {
       required this.documentId,
       required this.tieuDe,
       required this.noiDung,
-      required this.noiDungChiTiet});
+      required this.noiDungChiTiet,
+      required this.hinhanh});
   final String documentId;
   final String tieuDe;
   final String noiDung;
   final String noiDungChiTiet;
+  final String hinhanh;
 
   @override
   State<CapNhatBaiViet> createState() => _CapNhatBaiVietState();
@@ -24,10 +26,12 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
   TextEditingController tieuDeController = TextEditingController();
   TextEditingController noiDungController = TextEditingController();
   TextEditingController noiDungChiTietController = TextEditingController();
+  TextEditingController hinhanhController = TextEditingController();
 
   String tieuDe = '';
   String noiDung = '';
   String noiDungChiTiet = '';
+  String hinhanh = '';
 
   @override
   void initState() {
@@ -37,6 +41,7 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
     tieuDeController.text = widget.tieuDe;
     noiDungController.text = widget.noiDung;
     noiDungChiTietController.text = widget.noiDungChiTiet;
+    hinhanhController.text = widget.hinhanh;
   }
 
   @override
@@ -153,6 +158,18 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
                 },
               ),
             ),
+            Expanded(
+              child: TextFormField(
+                controller: hinhanhController,
+                decoration: const InputDecoration(labelText: 'Hình ảnh'),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return;
+                  }
+                  return null;
+                },
+              ),
+            ),
             TextButton(
               // key: formKeyCapNhat,
               onPressed: () {
@@ -167,6 +184,7 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
                     'tieuDe': tieuDeController.text,
                     'noiDung': noiDungController.text,
                     'noiDungChiTiet': noiDungChiTietController.text,
+                    'hinhanh': hinhanhController.text,
                   });
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(

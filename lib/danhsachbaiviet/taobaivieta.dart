@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:typed_data';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:file_picker/file_picker.dart';
+// import 'package:file_picker/file_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -25,13 +25,13 @@ class _TaoTinBaiState extends State<TaoTinBai> {
 
   List<Uint8List> pickedImagesInBytes = [];
   int imageCounts = 0;
-  List<String> imageUrls = [];
-  static const String defaultImageUrl =
-      'https://cdn.pixabay.com/photo/2016/03/23/15/00/ice-cream-1274894_1280.jpg';
+  // static String defaultImageUrl = '';
+  // 'https://cdn.pixabay.com/photo/2016/03/23/15/00/ice-cream-1274894_1280.jpg';
 
   File? _imageFile;
   File? _videoFile;
   final ImagePicker _imagePicker = ImagePicker();
+  List<String> imageUrls = [];
 
   final FirebaseStorage _storage =
       FirebaseStorage.instanceFor(bucket: 'gs://tintuc-a0ba2.appspot.com');
@@ -57,24 +57,19 @@ class _TaoTinBaiState extends State<TaoTinBai> {
     }
   }
 
-  Future<void> _uploadFile(File? file) async {
-    if (file == null) return;
+  Future<bool> _uploadFile(File? file) async {
+    if (file == null) return false;
 
     try {
       final fileName = file.path.split('/').last;
       final ref = _storage.ref().child(fileName);
-      await ref.putFile(file);
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('File upload thành công'),
-        ),
-      );
+      await ref.putFile(file).then((p) async {
+        String downloadUrl = await p.ref.getDownloadURL();
+        imageUrls.add(downloadUrl);
+      });
+      return true;
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Lỗi tải file'),
-        ),
-      );
+      return false;
     }
   }
 
@@ -94,31 +89,46 @@ class _TaoTinBaiState extends State<TaoTinBai> {
           child: Text('Soạn tin bài'),
         ),
       ),
-      body: Center(
-        child: Container(
-          child: Form(
-            key: _formKeyTaoTinBai,
-            child: Container(
-              margin: const EdgeInsets.only(right: 10, left: 10),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const Padding(padding: EdgeInsets.only(top: 0)),
-                  TextFormField(
-                    controller: tieuDe,
-                    decoration: const InputDecoration(labelText: 'Tiêu đề'),
-                    validator: (value) {
-                      if (value?.isEmpty ?? true) {
-                        return 'Nhập thông tin tiêu đề';
-                      }
-                      return null;
-                    },
-                  ),
-                  const Padding(padding: EdgeInsets.only(top: 5)),
-                  TextFormField(
-                    controller: noiDung,
+      body: Container(
+        margin: const EdgeInsets.only(right: 20, left: 20),
+        child: Form(
+          key: _formKeyTaoTinBai,
+          child: Container(
+            margin: const EdgeInsets.only(right: 10, left: 10),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                const Divider(),
+                const Padding(padding: EdgeInsets.only(top: 0)),
+                TextFormField(
+                  controller: tieuDe,
+                  decoration: const InputDecoration(labelText: 'Tiêu đề'),
+                  validator: (value) {
+                    if (value?.isEmpty ?? true) {
+                      return 'Nhập thông tin tiêu đề';
+                    }
+                    return null;
+                  },
+                ),
+                const Padding(padding: EdgeInsets.only(top: 5)),
+                TextFormField(
+                  controller: noiDung,
+                  decoration:
+                      const InputDecoration(labelText: 'Tóm tắt nội dung'),
+                  validator: (value) {
+                    if (value?.isEmpty ?? true) {
+                      return 'Nhập tóm tắt nội dung';
+                    }
+                    return null;
+                  },
+                ),
+                Expanded(
+                  child: TextFormField(
+                    controller: noiDungChiTiet,
+                    maxLength: 999,
+                    maxLines: 15,
                     decoration:
-                        const InputDecoration(labelText: 'Tóm tắt nội dung'),
+                        const InputDecoration(labelText: 'Nội dung chi tiết'),
                     validator: (value) {
                       if (value?.isEmpty ?? true) {
                         return 'Nhập tóm tắt nội dung';
@@ -126,85 +136,90 @@ class _TaoTinBaiState extends State<TaoTinBai> {
                       return null;
                     },
                   ),
-                  Expanded(
-                    child: TextFormField(
-                      controller: noiDungChiTiet,
-                      maxLength: 999,
-                      maxLines: 15,
-                      decoration:
-                          const InputDecoration(labelText: 'Nội dung chi tiết'),
-                      validator: (value) {
-                        if (value?.isEmpty ?? true) {
-                          return 'Nhập tóm tắt nội dung';
-                        }
-                        return null;
-                      },
-                    ),
+                ),
+                const SizedBox(height: 16),
+                Expanded(child: _buildImageCarousel()),
+                if (_imageFile != null)
+                  Image.file(
+                    _imageFile!,
+                    height: 150,
                   ),
-                  const SizedBox(height: 16),
-                  Expanded(child: _buildImageCarousel()),
-                  if (_imageFile != null)
-                    Image.file(
-                      _imageFile!,
-                      height: 150,
-                    ),
-                  if (_videoFile != null)
-                    VideoPlayer(
-                      _videoFile != null
-                          ? VideoPlayerController.file(_videoFile!)
-                          : VideoPlayerController.network(''),
-                    ),
-                  Row(
-                    children: [
-                      ElevatedButton(
-                        onPressed: _pickImage,
-                        child: const Text('Chọn ảnh'),
-                      ),
-                      ElevatedButton(
-                        onPressed: _pickVideo,
-                        child: const Text('Chọn video'),
-                      ),
-                    ],
+                if (_videoFile != null)
+                  VideoPlayer(
+                    _videoFile != null
+                        ? VideoPlayerController.file(_videoFile!)
+                        : VideoPlayerController.networkUrl('' as Uri),
                   ),
-                  Row(
-                    children: [
-                      ElevatedButton(
-                        onPressed: () => _uploadFile(_imageFile),
-                        child: const Text('Tải ảnh'),
-                      ),
-                      ElevatedButton(
-                        onPressed: () => _uploadFile(_videoFile),
-                        child: const Text('Tải Video'),
-                      ),
-                    ],
-                  ),
-                  ElevatedButton(
-                    onPressed: () async {
-                      if (_formKeyTaoTinBai.currentState!.validate()) {
-                        // await _uploadImages();
-                        final documentReference =
-                            firestore.collection('bai_viet').doc();
-                        documentReference.set({
-                          'tieuDe': tieuDe.text,
-                          'noiDung': noiDung.text,
-                          'noiDungChiTiet': noiDungChiTiet.text,
-                        });
+                Row(
+                  children: [
+                    ElevatedButton(
+                      onPressed: _pickImage,
+                      child: const Text('Chọn ảnh'),
+                    ),
+                    ElevatedButton(
+                      onPressed: _pickVideo,
+                      child: const Text('Chọn video'),
+                    ),
+                  ],
+                ),
+                // Row(
+                //   children: [
+                //     ElevatedButton(
+                //       onPressed: () => _uploadFile(_imageFile),
+                //       child: const Text('Tải ảnh'),
+                //     ),
+                //     ElevatedButton(
+                //       onPressed: () => _uploadFile(_videoFile),
+                //       child: const Text('Tải Video'),
+                //     ),
+                //   ],
+                // ),
+                ElevatedButton(
+                  onPressed: () async {
+                    if (_formKeyTaoTinBai.currentState!.validate()) {
+                      bool imageUploadSuccess = await _uploadFile(_imageFile);
+                      if (!mounted) return;
+
+                      if (imageUploadSuccess) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
-                            content: Text('Thêm tin bài thành công'),
-                          ),
+                              content: Text('File upload thành công')),
                         );
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(
-                            builder: (context) => const DanhSachBaiViet(),
-                          ),
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Lỗi tải file')),
                         );
                       }
-                    },
-                    child: const Text('Thêm tin bài'),
-                  ),
-                ],
-              ),
+
+                      await _uploadFile(_videoFile);
+                      if (!mounted) return;
+
+                      await _uploadImages();
+                      if (!mounted) return;
+
+                      final documentReference =
+                          firestore.collection('bai_viet').doc();
+                      await documentReference.set({
+                        'tieuDe': tieuDe.text,
+                        'noiDung': noiDung.text,
+                        'noiDungChiTiet': noiDungChiTiet.text,
+                        'imageUrls': imageUrls,
+                      });
+                      if (!mounted) return;
+
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                            content: Text('Thêm tin bài thành công')),
+                      );
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                            builder: (context) => const DanhSachBaiViet()),
+                      );
+                    }
+                  },
+                  child: const Text('Thêm tin bài'),
+                ),
+              ],
             ),
           ),
         ),
@@ -212,33 +227,30 @@ class _TaoTinBaiState extends State<TaoTinBai> {
     );
   }
 
-  void _selectFile(bool imageFrom) async {
-    FilePickerResult? fileResult =
-        await FilePicker.platform.pickFiles(allowMultiple: true);
+  // void _selectFile(bool imageFrom) async {
+  //   FilePickerResult? fileResult =
+  //       await FilePicker.platform.pickFiles(allowMultiple: true);
 
-    if (fileResult != null) {
-      for (var element in fileResult.files) {
-        if (element.bytes != null) {
-          setState(() {
-            pickedImagesInBytes.add(element.bytes!);
-            imageCounts += 1;
-          });
-        }
-      }
-    }
-  }
+  //   if (fileResult != null) {
+  //     for (var element in fileResult.files) {
+  //       if (element.bytes != null) {
+  //         setState(() {
+  //           pickedImagesInBytes.add(element.bytes!);
+  //           imageCounts += 1;
+  //         });
+  //       }
+  //     }
+  //   }
+  // }
 
   Widget _buildImageCarousel() {
     return SizedBox(
       height: 100,
       child: pickedImagesInBytes.isEmpty
-          ? Image.network(
-              defaultImageUrl,
-              height: 100,
-              width: 100,
-            )
+          ? const Center(child: Text('No images selected'))
           : ListView.builder(
-              scrollDirection: Axis.horizontal,
+              scrollDirection:
+                  Axis.horizontal, // Đúng vị trí cho scrollDirection
               itemCount: pickedImagesInBytes.length,
               itemBuilder: (context, index) {
                 return Container(
@@ -272,6 +284,7 @@ class _TaoTinBaiState extends State<TaoTinBai> {
         imageUrls.add(downloadUrl);
       }
     } catch (error) {
+      // ignore: avoid_print
       print('Error uploading images: $error');
     }
   }

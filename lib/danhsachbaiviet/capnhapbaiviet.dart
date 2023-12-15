@@ -9,12 +9,12 @@ class CapNhatBaiViet extends StatefulWidget {
       required this.tieuDe,
       required this.noiDung,
       required this.noiDungChiTiet,
-      required this.hinhanh});
+      required this.imageUrls});
   final String documentId;
   final String tieuDe;
   final String noiDung;
   final String noiDungChiTiet;
-  final String hinhanh;
+  final String imageUrls;
 
   @override
   State<CapNhatBaiViet> createState() => _CapNhatBaiVietState();
@@ -26,12 +26,12 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
   TextEditingController tieuDeController = TextEditingController();
   TextEditingController noiDungController = TextEditingController();
   TextEditingController noiDungChiTietController = TextEditingController();
-  TextEditingController hinhanhController = TextEditingController();
+  TextEditingController imageUrlsController = TextEditingController();
 
   String tieuDe = '';
   String noiDung = '';
   String noiDungChiTiet = '';
-  String hinhanh = '';
+  String imageUrls = '';
 
   @override
   void initState() {
@@ -41,7 +41,7 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
     tieuDeController.text = widget.tieuDe;
     noiDungController.text = widget.noiDung;
     noiDungChiTietController.text = widget.noiDungChiTiet;
-    hinhanhController.text = widget.hinhanh;
+    imageUrlsController.text = widget.imageUrls;
   }
 
   @override
@@ -125,94 +125,112 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
           ),
         ],
       ),
-      body: Form(
-        key: formKey,
-        child: Column(
-          children: [
-            TextFormField(
-              controller: tieuDeController,
-              decoration: const InputDecoration(labelText: 'Tên bài viết'),
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Vui lòng nhập tên bài viết';
-                }
-                return null;
-              },
-            ),
-            TextFormField(
-              controller: noiDungController,
-              decoration: const InputDecoration(labelText: 'Nội dung tóm tắt'),
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Vui lòng nhập tiêu đề';
-                }
-                return null;
-              },
-            ),
-            Expanded(
-              child: TextFormField(
-                controller: noiDungChiTietController,
-                maxLines: null,
+      body: Container(
+        margin: const EdgeInsets.only(right: 20, left: 20),
+        child: Form(
+          key: formKey,
+          child: Column(
+            children: [
+              TextFormField(
+                controller: tieuDeController,
+                decoration: const InputDecoration(labelText: 'Tên bài viết'),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Vui lòng nhập tên bài viết';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
+                controller: noiDungController,
                 decoration:
-                    const InputDecoration(labelText: 'Nội dung chi tiết'),
+                    const InputDecoration(labelText: 'Nội dung tóm tắt'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Vui lòng nhập nội dung';
+                    return 'Vui lòng nhập tiêu đề';
                   }
                   return null;
                 },
               ),
-            ),
-            Expanded(
-              child: TextFormField(
-                controller: hinhanhController,
-                decoration: const InputDecoration(labelText: 'Hình ảnh'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return;
-                  }
-                  return null;
-                },
+              Expanded(
+                child: TextFormField(
+                  controller: noiDungChiTietController,
+                  maxLines: null,
+                  decoration:
+                      const InputDecoration(labelText: 'Nội dung chi tiết'),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Vui lòng nhập nội dung';
+                    }
+                    return null;
+                  },
+                ),
               ),
-            ),
-            TextButton(
-              // key: formKeyCapNhat,
-              onPressed: () {
-                if (formKey.currentState!.validate()) {
-                  //Tạo tham chiếu đến document
-                  final documentRef = FirebaseFirestore.instance
-                      .collection('bai_viet')
-                      .doc(widget.documentId);
-                  // Cập nhật dữ liệu
-                  documentRef.update({
-                    // documentId: uniqueTag,
-                    'tieuDe': tieuDeController.text,
-                    'noiDung': noiDungController.text,
-                    'noiDungChiTiet': noiDungChiTietController.text,
-                    'hinhanh': hinhanhController.text,
-                  });
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Cập nhật thông tin bài viết thành công'),
+              Expanded(
+                child: TextFormField(
+                  controller: imageUrlsController,
+                  decoration: const InputDecoration(labelText: 'Hình ảnh'),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter a URL';
+                    }
+                    return null;
+                  },
+                  onChanged: (value) {
+                    setState(() {
+                      imageUrls =
+                          value; // Ensure imageUrl is treated as a String
+                    });
+                  },
+                ),
+              ),
+              imageUrls.isNotEmpty
+                  ? Image.network(
+                      imageUrls,
+                      width: 100,
+                      height: 100,
+                      fit: BoxFit.cover,
+                    )
+                  : Container(),
+              TextButton(
+                // key: formKeyCapNhat,
+                onPressed: () {
+                  if (formKey.currentState!.validate()) {
+                    //Tạo tham chiếu đến document
+                    final documentRef = FirebaseFirestore.instance
+                        .collection('bai_viet')
+                        .doc(widget.documentId);
+                    // Cập nhật dữ liệu
+                    documentRef.update({
+                      // documentId: uniqueTag,
+                      'tieuDe': tieuDeController.text,
+                      'noiDung': noiDungController.text,
+                      'noiDungChiTiet': noiDungChiTietController.text,
+                      'imageUrls': imageUrlsController.text,
+                    });
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Cập nhật thông tin bài viết thành công'),
+                      ),
+                    );
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Vui lòng nhập thông tin'),
+                      ),
+                    );
+                  }
+                  // Quay lại màn hình Danh sách bài viết
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                      builder: (context) => const DanhSachBaiViet(),
                     ),
                   );
-                } else {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Vui lòng nhập thông tin'),
-                    ),
-                  );
-                }
-                // Quay lại màn hình Danh sách bài viết
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) => const DanhSachBaiViet(),
-                  ),
-                );
-              },
-              child: const Text('Cập nhật tin bài'),
-            ),
-          ],
+                },
+                child: const Text('Cập nhật tin bài'),
+              ),
+            ],
+          ),
         ),
       ),
     );

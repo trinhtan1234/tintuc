@@ -81,7 +81,7 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
                         tieuDe: tieuDe,
                         noiDung: noiDung,
                         noiDungChiTiet: noiDungChiTiet,
-                        hinhanh: hinhanhValue,
+                        imageUrls: hinhanhValue,
                         documentId: uniqueTag,
                       ),
                     ),

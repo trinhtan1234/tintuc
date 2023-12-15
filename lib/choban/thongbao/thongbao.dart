@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ThongBao extends StatelessWidget {
-  const ThongBao({Key? key}) : super(key: key);
+  const ThongBao({super.key});
 
   @override
   Widget build(BuildContext context) {

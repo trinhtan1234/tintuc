@@ -9,7 +9,7 @@ import 'package:video_player/video_player.dart';
 import 'danhsach.dart';
 
 class TaoTinBai extends StatefulWidget {
-  const TaoTinBai({Key? key}) : super(key: key);
+  const TaoTinBai({super.key});
 
   @override
   State<TaoTinBai> createState() => _TaoTinBaiState();

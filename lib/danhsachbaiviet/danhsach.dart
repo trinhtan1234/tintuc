@@ -5,7 +5,7 @@ import 'package:tintuc/danhsachbaiviet/taobaivieta.dart';
 import 'package:tintuc/screen_nav_bottom.dart';
 
 class DanhSachBaiViet extends StatefulWidget {
-  const DanhSachBaiViet({Key? key}) : super(key: key);
+  const DanhSachBaiViet({super.key});
 
   @override
   State<DanhSachBaiViet> createState() => _DanhSachBaiVietState();
@@ -64,12 +64,12 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
               final tieuDe = document['tieuDe'];
               final noiDung = document['noiDung'];
               final noiDungChiTiet = document['noiDungChiTiet'];
-              final List<String> imageUrlsList =
-                  List<String>.from(document['imageUrls'] ?? []);
+              final List<dynamic> imageUrlsList = document['imageUrls'] ?? [];
               final String firstImageUrl =
-                  imageUrlsList.isNotEmpty ? imageUrlsList.first : '';
+                  imageUrlsList.isNotEmpty && imageUrlsList.first is String
+                      ? imageUrlsList.first
+                      : '';
               final uniqueTag = document.id;
-
               return GestureDetector(
                 onTap: () {
                   Navigator.pushReplacement(
@@ -92,7 +92,7 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
                     height: 150,
                     color: const Color.fromARGB(255, 241, 239, 239),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         SizedBox(
                           width: 100,
@@ -121,7 +121,7 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
                                     width: 100,
                                     fit: BoxFit.cover,
                                   )
-                                : null,
+                                : const SizedBox(), // Thêm SizedBox() nếu không có hình ảnh
                           ),
                         ),
                       ],

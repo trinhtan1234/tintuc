@@ -1,22 +1,24 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:tintuc/danhsachbaiviet/danhsach.dart';
 
 class CapNhatBaiViet extends StatefulWidget {
-  const CapNhatBaiViet(
-      {super.key,
-      required this.documentId,
-      required this.tieuDe,
-      required this.noiDung,
-      required this.noiDungChiTiet,
-      required this.imageUrls,
-      required this.timeTinBai});
+  const CapNhatBaiViet({
+    super.key,
+    required this.documentId,
+    required this.tieuDe,
+    required this.noiDung,
+    required this.noiDungChiTiet,
+    required this.imageUrls,
+    required this.timeTinBai,
+  });
   final String documentId;
   final String tieuDe;
   final String noiDung;
   final String noiDungChiTiet;
   final String imageUrls;
-  final String timeTinBai;
+  final Timestamp timeTinBai;
 
   @override
   State<CapNhatBaiViet> createState() => _CapNhatBaiVietState();
@@ -195,6 +197,10 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
                       fit: BoxFit.cover,
                     )
                   : Container(),
+              Text(
+                DateFormat('dd/MM/yyyy HH:mm')
+                    .format(widget.timeTinBai.toDate()),
+              ),
               TextButton(
                 // key: formKeyCapNhat,
                 onPressed: () {
@@ -230,8 +236,22 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
                     ),
                   );
                 },
-                child: const Text('Cập nhật tin bài'),
+                child: Container(
+                  height: 40,
+                  width: 300,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.deepPurple,
+                      width: 1.0,
+                    ),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: const Center(
+                    child: Text('Cập nhật tin bài'),
+                  ),
+                ),
               ),
+              Padding(padding: EdgeInsets.only(bottom: 20)),
             ],
           ),
         ),

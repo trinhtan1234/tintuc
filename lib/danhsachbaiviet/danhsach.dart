@@ -1,8 +1,10 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:tintuc/danhsachbaiviet/capnhapbaiviet.dart';
 import 'package:tintuc/danhsachbaiviet/taobaivieta.dart';
 import 'package:tintuc/screen_nav_bottom.dart';
+import 'package:intl/intl.dart';
 
 class DanhSachBaiViet extends StatefulWidget {
   const DanhSachBaiViet({super.key});
@@ -64,7 +66,9 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
               final tieuDe = document['tieuDe'];
               final noiDung = document['noiDung'];
               final noiDungChiTiet = document['noiDungChiTiet'];
+              final timeTinBai = document['timeTinBai'];
               final List<dynamic> imageUrlsList = document['imageUrls'] ?? [];
+
               final String firstImageUrl =
                   imageUrlsList.isNotEmpty && imageUrlsList.first is String
                       ? imageUrlsList.first
@@ -80,6 +84,7 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
                         noiDung: noiDung,
                         noiDungChiTiet: noiDungChiTiet,
                         imageUrls: firstImageUrl,
+                        timeTinBai: timeTinBai,
                         documentId: uniqueTag,
                       ),
                     ),
@@ -91,38 +96,50 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
                     margin: const EdgeInsets.all(10),
                     height: 150,
                     color: const Color.fromARGB(255, 241, 239, 239),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                    child: Row(
+                      // mainAxisAlignment: MainAxisAlignment.start,
+                      // crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
-                          width: 100,
-                          child: ListTile(
-                            title: Text(
-                              tieuDe,
-                              maxLines: 2,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                              ),
-                            ),
-                            subtitle: Text(
-                              noiDung,
-                              maxLines: 3,
+                        Expanded(
+                          child: SizedBox(
+                            // width: 100,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  tieuDe,
+                                  maxLines: 2,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                                Text(
+                                  DateFormat('dd/MM/yyyy HH:mm')
+                                      .format(timeTinBai.toDate()),
+                                ),
+                                Text(
+                                  noiDung,
+                                  maxLines: 3,
+                                ),
+                              ],
                             ),
                           ),
                         ),
-                        Expanded(
-                          child: Container(
-                            color: Colors.blue,
-                            child: firstImageUrl.isNotEmpty
-                                ? Image.network(
-                                    firstImageUrl,
-                                    height: 100,
-                                    width: 100,
-                                    fit: BoxFit.cover,
-                                  )
-                                : const SizedBox(), // Thêm SizedBox() nếu không có hình ảnh
-                          ),
+                        Container(
+                          child: firstImageUrl.isNotEmpty
+                              ? CachedNetworkImage(
+                                  imageUrl: firstImageUrl,
+                                  height: 130,
+                                  width: 120,
+                                  fit: BoxFit.cover,
+                                  placeholder: (context, url) =>
+                                      const CircularProgressIndicator(),
+                                  errorWidget: (context, url, error) =>
+                                      const Icon(Icons.error),
+                                )
+                              : const SizedBox(), // Thêm SizedBox() nếu không có hình ảnh
                         ),
                       ],
                     ),

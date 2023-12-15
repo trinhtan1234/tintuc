@@ -9,12 +9,14 @@ class CapNhatBaiViet extends StatefulWidget {
       required this.tieuDe,
       required this.noiDung,
       required this.noiDungChiTiet,
-      required this.imageUrls});
+      required this.imageUrls,
+      required this.timeTinBai});
   final String documentId;
   final String tieuDe;
   final String noiDung;
   final String noiDungChiTiet;
   final String imageUrls;
+  final String timeTinBai;
 
   @override
   State<CapNhatBaiViet> createState() => _CapNhatBaiVietState();
@@ -32,6 +34,7 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
   String noiDung = '';
   String noiDungChiTiet = '';
   String imageUrls = '';
+  Timestamp? timeTinBai;
 
   @override
   void initState() {

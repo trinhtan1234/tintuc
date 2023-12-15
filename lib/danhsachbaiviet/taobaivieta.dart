@@ -22,11 +22,10 @@ class _TaoTinBaiState extends State<TaoTinBai> {
   final TextEditingController tieuDe = TextEditingController();
   final TextEditingController noiDung = TextEditingController();
   final TextEditingController noiDungChiTiet = TextEditingController();
+  Timestamp timeTinBai = Timestamp.now();
 
   List<Uint8List> pickedImagesInBytes = [];
   int imageCounts = 0;
-  // static String defaultImageUrl = '';
-  // 'https://cdn.pixabay.com/photo/2016/03/23/15/00/ice-cream-1274894_1280.jpg';
 
   File? _imageFile;
   File? _videoFile;
@@ -151,6 +150,7 @@ class _TaoTinBaiState extends State<TaoTinBai> {
                         : VideoPlayerController.networkUrl('' as Uri),
                   ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     ElevatedButton(
                       onPressed: _pickImage,
@@ -162,18 +162,6 @@ class _TaoTinBaiState extends State<TaoTinBai> {
                     ),
                   ],
                 ),
-                // Row(
-                //   children: [
-                //     ElevatedButton(
-                //       onPressed: () => _uploadFile(_imageFile),
-                //       child: const Text('Tải ảnh'),
-                //     ),
-                //     ElevatedButton(
-                //       onPressed: () => _uploadFile(_videoFile),
-                //       child: const Text('Tải Video'),
-                //     ),
-                //   ],
-                // ),
                 ElevatedButton(
                   onPressed: () async {
                     if (_formKeyTaoTinBai.currentState!.validate()) {
@@ -204,6 +192,7 @@ class _TaoTinBaiState extends State<TaoTinBai> {
                         'noiDung': noiDung.text,
                         'noiDungChiTiet': noiDungChiTiet.text,
                         'imageUrls': imageUrls,
+                        'timeTinBai': timeTinBai,
                       });
                       if (!mounted) return;
 
@@ -217,8 +206,16 @@ class _TaoTinBaiState extends State<TaoTinBai> {
                       );
                     }
                   },
-                  child: const Text('Thêm tin bài'),
+                  child: Container(
+                    width: 300,
+                    height: 50,
+                    decoration: const BoxDecoration(border: Border()),
+                    child: const Center(
+                      child: Text('Thêm tin bài'),
+                    ),
+                  ),
                 ),
+                const Padding(padding: EdgeInsets.only(bottom: 20)),
               ],
             ),
           ),
@@ -226,22 +223,6 @@ class _TaoTinBaiState extends State<TaoTinBai> {
       ),
     );
   }
-
-  // void _selectFile(bool imageFrom) async {
-  //   FilePickerResult? fileResult =
-  //       await FilePicker.platform.pickFiles(allowMultiple: true);
-
-  //   if (fileResult != null) {
-  //     for (var element in fileResult.files) {
-  //       if (element.bytes != null) {
-  //         setState(() {
-  //           pickedImagesInBytes.add(element.bytes!);
-  //           imageCounts += 1;
-  //         });
-  //       }
-  //     }
-  //   }
-  // }
 
   Widget _buildImageCarousel() {
     return SizedBox(

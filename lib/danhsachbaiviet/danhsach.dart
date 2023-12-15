@@ -65,6 +65,10 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
               final noiDungChiTiet = document['noiDungChiTiet'];
               final hinhanh = document.data() as Map<String,
                   dynamic>?; // Chắc chắn rằng dữ liệu là kiểu Map
+              final firstImageUrl =
+                  hinhanh != null && hinhanh.containsKey('hinhanhKey')
+                      ? hinhanh['hinhanhKey']
+                      : '';
               final hinhanhValue =
                   hinhanh != null && hinhanh.containsKey('hinhanh')
                       ? hinhanh['hinhanh']
@@ -89,14 +93,12 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
                 },
                 child: Hero(
                   tag: uniqueTag,
-                  child: Container(
-                    margin: const EdgeInsets.all(10),
-                    height: 150,
-                    color: const Color.fromARGB(255, 241, 239, 239),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        ListTile(
+                  child: Column(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.all(10),
+                        color: const Color.fromARGB(255, 237, 233, 233),
+                        child: ListTile(
                           title: Text(
                             tieuDe,
                             maxLines: 2,
@@ -110,8 +112,8 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
                             maxLines: 3,
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               );

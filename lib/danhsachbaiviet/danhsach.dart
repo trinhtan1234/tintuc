@@ -56,6 +56,7 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
               child: Text('Không có bài viết nào'),
             );
           }
+
           return ListView.builder(
             itemCount: snapshot.data!.docs.length,
             itemBuilder: (BuildContext context, int index) {
@@ -63,17 +64,10 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
               final tieuDe = document['tieuDe'];
               final noiDung = document['noiDung'];
               final noiDungChiTiet = document['noiDungChiTiet'];
-              final hinhanh = document.data() as Map<String,
-                  dynamic>?; // Chắc chắn rằng dữ liệu là kiểu Map
-              final firstImageUrl =
-                  hinhanh != null && hinhanh.containsKey('hinhanhKey')
-                      ? hinhanh['hinhanhKey']
-                      : '';
-              final hinhanhValue =
-                  hinhanh != null && hinhanh.containsKey('hinhanh')
-                      ? hinhanh['hinhanh']
-                      : '';
-
+              final List<String> imageUrlsList =
+                  List<String>.from(document['imageUrls'] ?? []);
+              final String firstImageUrl =
+                  imageUrlsList.isNotEmpty ? imageUrlsList.first : '';
               final uniqueTag = document.id;
 
               return GestureDetector(
@@ -85,7 +79,7 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
                         tieuDe: tieuDe,
                         noiDung: noiDung,
                         noiDungChiTiet: noiDungChiTiet,
-                        imageUrls: hinhanhValue,
+                        imageUrls: firstImageUrl,
                         documentId: uniqueTag,
                       ),
                     ),
@@ -93,27 +87,45 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
                 },
                 child: Hero(
                   tag: uniqueTag,
-                  child: Column(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.all(10),
-                        color: const Color.fromARGB(255, 237, 233, 233),
-                        child: ListTile(
-                          title: Text(
-                            tieuDe,
-                            maxLines: 2,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
+                  child: Container(
+                    margin: const EdgeInsets.all(10),
+                    height: 150,
+                    color: const Color.fromARGB(255, 241, 239, 239),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        SizedBox(
+                          width: 100,
+                          child: ListTile(
+                            title: Text(
+                              tieuDe,
+                              maxLines: 2,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
+                            ),
+                            subtitle: Text(
+                              noiDung,
+                              maxLines: 3,
                             ),
                           ),
-                          subtitle: Text(
-                            noiDung,
-                            maxLines: 3,
+                        ),
+                        Expanded(
+                          child: Container(
+                            color: Colors.blue,
+                            child: firstImageUrl.isNotEmpty
+                                ? Image.network(
+                                    firstImageUrl,
+                                    height: 100,
+                                    width: 100,
+                                    fit: BoxFit.cover,
+                                  )
+                                : null,
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               );

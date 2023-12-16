@@ -143,54 +143,36 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
             children: [
               TextFormField(
                 controller: loaiTinBaiController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Loại tin bài',
-                  suffixIcon: DropdownButton<String>(
-                    value: loaiTinBaiController.text,
-                    items: const <DropdownMenuItem<String>>[
-                      DropdownMenuItem(
-                        value: 'Tin tức',
-                        child: Text('Tin tức'),
-                      ),
-                      DropdownMenuItem(
-                        value: 'Thể thao',
-                        child: Text('Thể thao'),
-                      ),
-                      DropdownMenuItem(
-                        value: 'Giải trí',
-                        child: Text('Giải trí'),
-                      ),
-                    ],
-                    onChanged: (value) => loaiTinBaiController.text = value!,
-                  ),
                 ),
-                validator: (value) {
-                  if (value?.isEmpty ?? true) {
-                    return 'Nhập loại ti bài';
-                  }
-                  return null;
-                },
+                // validator: (value) {
+                //   if (value?.isEmpty ?? true) {
+                //     return 'Nhập loại ti bài';
+                //   }
+                //   return null;
+                // },
               ),
               TextFormField(
                 controller: tieuDeController,
                 decoration: const InputDecoration(labelText: 'Tên bài viết'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Vui lòng nhập tên bài viết';
-                  }
-                  return null;
-                },
+                // validator: (value) {
+                //   if (value == null || value.isEmpty) {
+                //     return 'Vui lòng nhập tên bài viết';
+                //   }
+                //   return null;
+                // },
               ),
               TextFormField(
                 controller: diaDiemController,
                 decoration:
                     const InputDecoration(labelText: 'Nội dung tóm tắt'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Vui lòng nhập tiêu đề';
-                  }
-                  return null;
-                },
+                // validator: (value) {
+                //   if (value == null || value.isEmpty) {
+                //     return 'Vui lòng nhập tiêu đề';
+                //   }
+                //   return null;
+                // },
               ),
               Expanded(
                 child: TextFormField(
@@ -198,24 +180,24 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
                   maxLines: null,
                   decoration:
                       const InputDecoration(labelText: 'Nội dung chi tiết'),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Vui lòng nhập nội dung';
-                    }
-                    return null;
-                  },
+                  // validator: (value) {
+                  //   if (value == null || value.isEmpty) {
+                  //     return 'Vui lòng nhập nội dung';
+                  //   }
+                  //   return null;
+                  // },
                 ),
               ),
               Expanded(
                 child: TextFormField(
                   controller: imageUrlsController,
                   decoration: const InputDecoration(labelText: 'Hình ảnh'),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'nhập đường dẫn URL';
-                    }
-                    return null;
-                  },
+                  // validator: (value) {
+                  //   if (value == null || value.isEmpty) {
+                  //     return 'nhập đường dẫn URL';
+                  //   }
+                  //   return null;
+                  // },
                   onChanged: (value) {
                     setState(() {
                       imageUrls =

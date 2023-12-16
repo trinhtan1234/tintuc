@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tintuc/caidat/caidat.dart';
 import 'package:tintuc/danhsachbaiviet/danhsach.dart';
 import 'package:tintuc/media/menu_media.dart';
-import 'package:tintuc/tinchinh/manhinh/menutinchinh.dart';
+import 'package:tintuc/tinchinhmoi/menutinchinh.dart';
 
 class ScreenNavigationBottom extends StatefulWidget {
   const ScreenNavigationBottom({super.key});

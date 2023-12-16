@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tintuc/caidat/login/thongtintaikhoan.dart';
 import 'package:tintuc/choban/thongbao/thongbao.dart';
-import 'package:tintuc/tinchinh/tintuc.dart';
+import 'package:tintuc/tinchinhmoi/tintuc.dart';
+import 'package:tintuc/tinchinhmoi/tinvietnam.dart';
 
 class MenuTinChinh extends StatefulWidget {
   const MenuTinChinh({super.key});
@@ -15,11 +16,11 @@ class _MenuTinChinhState extends State<MenuTinChinh>
   late TabController _tabController;
   int _currentIndex = 0;
 
-  List<Widget?> tabData = List.filled(4, null);
+  List<Widget?> tabData = List.filled(0, null);
 
   @override
   void initState() {
-    _tabController = TabController(length: 4, vsync: this);
+    _tabController = TabController(length: 2, vsync: this);
     super.initState();
   }
 
@@ -108,16 +109,13 @@ class _MenuTinChinhState extends State<MenuTinChinh>
             ),
             Tab(
               text: 'Việt Nam',
-              // icon: Icon(Icons.beach_access_sharp),
             ),
-            Tab(
-              text: 'Thế giới',
-              // icon: Icon(Icons.beach_access_sharp),
-            ),
-            Tab(
-              text: 'Kinh doanh',
-              // icon: Icon(Icons.beach_access_sharp),
-            ),
+            // Tab(
+            //   text: 'Thế giới',
+            // ),
+            // Tab(
+            //   text: 'Kinh doanh',
+            // ),
           ],
           onTap: (index) {
             setState(() {
@@ -127,14 +125,14 @@ class _MenuTinChinhState extends State<MenuTinChinh>
                     tabData[index] = const Center(child: TinTuc());
                     break;
                   case 1:
-                    tabData[index] = const Center(child: Text('Việt Nam'));
+                    tabData[index] = const Center(child: VietNam());
                     break;
-                  case 2:
-                    tabData[index] = const Center(child: Text('Thế giới'));
-                    break;
-                  case 3:
-                    tabData[index] = const Center(child: Text('Kinh doanh'));
-                    break;
+                  // case 2:
+                  //   tabData[index] = const Center(child: Text('Thế giới'));
+                  //   break;
+                  // case 3:
+                  //   tabData[index] = const Center(child: Text('Kinh doanh'));
+                  //   break;
                 }
               }
               _currentIndex = index;
@@ -146,9 +144,9 @@ class _MenuTinChinhState extends State<MenuTinChinh>
         index: _currentIndex,
         children: const <Widget>[
           Center(child: TinTuc()),
-          Center(child: Text('Việt Nam')),
-          Center(child: Text('TheGioi')),
-          Center(child: Text('Kinh doanh')),
+          Center(child: VietNam()),
+          // Center(child: Text('TheGioi')),
+          // Center(child: Text('Kinh doanh')),
         ],
       ),
     );

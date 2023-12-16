@@ -29,16 +29,22 @@ class _TinTucState extends State<TinTuc> {
               child: CircularProgressIndicator(),
             );
           }
-          if (snapshot.data!.docs.isEmpty) {
+
+          // Lọc ra các bài viết loại "Tin tức"
+          final filteredDocs = snapshot.data!.docs
+              .where((doc) => doc['loaiTinBai'] == 'Tin tức')
+              .toList();
+
+          if (filteredDocs.isEmpty) {
             return const Center(
               child: Text('Không có bài viết nào'),
             );
           }
 
           return ListView.builder(
-            itemCount: snapshot.data!.docs.length,
+            itemCount: filteredDocs.length,
             itemBuilder: (BuildContext context, int index) {
-              final document = snapshot.data!.docs[index];
+              final document = filteredDocs[index];
               final tieuDe = document['tieuDe'];
               final diaDiem = document['diaDiem'];
               final loaiTinBai = document['loaiTinBai'];
@@ -55,14 +61,14 @@ class _TinTucState extends State<TinTuc> {
                   imageUrlsList.isNotEmpty ? imageUrlsList.first : '';
 
               final uniqueTag = document.id;
+
               return GestureDetector(
                 onTap: () {},
                 child: Hero(
                   tag: uniqueTag,
                   child: Container(
-                    margin: const EdgeInsets.only(left: 10, right: 10),
+                    margin: const EdgeInsets.only(left: 10, right: 10, top: 5),
                     height: 400,
-                    // color: const Color.fromARGB(255, 241, 239, 239),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,

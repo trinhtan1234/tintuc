@@ -32,7 +32,7 @@ class _VietNamState extends State<VietNam> {
 
           // Lọc ra các bài viết loại "Tin tức"
           final filteredDocs = snapshot.data!.docs
-              .where((doc) => doc['loaiTinBai'] == 'Việt Nam')
+              .where((doc) => doc['loaiTinBai'] == "Việt Nam")
               .toList();
 
           if (filteredDocs.isEmpty) {

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tintuc/caidat/login/thongtintaikhoan.dart';
 import 'package:tintuc/choban/thongbao/thongbao.dart';
+import 'package:tintuc/tinchinhmoi/kinhdoanh.dart';
+import 'package:tintuc/tinchinhmoi/thegioi.dart';
 import 'package:tintuc/tinchinhmoi/tintuc.dart';
 import 'package:tintuc/tinchinhmoi/tinvietnam.dart';
 
@@ -16,11 +18,16 @@ class _MenuTinChinhState extends State<MenuTinChinh>
   late TabController _tabController;
   int _currentIndex = 0;
 
-  List<Widget?> tabData = List.filled(0, null);
+  List<Widget> tabData = [
+    const TinTuc(),
+    const VietNam(),
+    const TheGioi(),
+    const KinhDoanh(),
+  ];
 
   @override
   void initState() {
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(length: 4, vsync: this);
     super.initState();
   }
 
@@ -110,31 +117,15 @@ class _MenuTinChinhState extends State<MenuTinChinh>
             Tab(
               text: 'Việt Nam',
             ),
-            // Tab(
-            //   text: 'Thế giới',
-            // ),
-            // Tab(
-            //   text: 'Kinh doanh',
-            // ),
+            Tab(
+              text: 'Thế giới',
+            ),
+            Tab(
+              text: 'Kinh doanh',
+            ),
           ],
           onTap: (index) {
             setState(() {
-              if (tabData[index] == null) {
-                switch (index) {
-                  case 0:
-                    tabData[index] = const Center(child: TinTuc());
-                    break;
-                  case 1:
-                    tabData[index] = const Center(child: VietNam());
-                    break;
-                  // case 2:
-                  //   tabData[index] = const Center(child: Text('Thế giới'));
-                  //   break;
-                  // case 3:
-                  //   tabData[index] = const Center(child: Text('Kinh doanh'));
-                  //   break;
-                }
-              }
               _currentIndex = index;
             });
           },
@@ -142,12 +133,7 @@ class _MenuTinChinhState extends State<MenuTinChinh>
       ),
       body: IndexedStack(
         index: _currentIndex,
-        children: const <Widget>[
-          Center(child: TinTuc()),
-          Center(child: VietNam()),
-          // Center(child: Text('TheGioi')),
-          // Center(child: Text('Kinh doanh')),
-        ],
+        children: tabData,
       ),
     );
   }

@@ -3,14 +3,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class TinTuc extends StatefulWidget {
-  const TinTuc({super.key});
+class TheGioi extends StatefulWidget {
+  const TheGioi({super.key});
 
   @override
-  State<TinTuc> createState() => _TinTucState();
+  State<TheGioi> createState() => _TheGioiState();
 }
 
-class _TinTucState extends State<TinTuc> {
+class _TheGioiState extends State<TheGioi> {
   final firestore = FirebaseFirestore.instance;
 
   @override
@@ -32,7 +32,7 @@ class _TinTucState extends State<TinTuc> {
 
           // Lọc ra các bài viết loại "Tin tức"
           final filteredDocs = snapshot.data!.docs
-              .where((doc) => doc['loaiTinBai'] == "Tin tức")
+              .where((doc) => doc['loaiTinBai'] == "Thế giới")
               .toList();
 
           if (filteredDocs.isEmpty) {

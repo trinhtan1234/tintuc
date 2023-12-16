@@ -20,7 +20,7 @@ class _TaoTinBaiState extends State<TaoTinBai> {
   final _formKeyTaoTinBai = GlobalKey<FormState>();
 
   final TextEditingController tieuDe = TextEditingController();
-  final TextEditingController noiDung = TextEditingController();
+  final TextEditingController diaDiem = TextEditingController();
   final TextEditingController noiDungChiTiet = TextEditingController();
   final TextEditingController loaiTinBai = TextEditingController();
 
@@ -77,7 +77,7 @@ class _TaoTinBaiState extends State<TaoTinBai> {
   @override
   void dispose() {
     tieuDe.dispose();
-    noiDung.dispose();
+    diaDiem.dispose();
     noiDungChiTiet.dispose();
     loaiTinBai.dispose();
     super.dispose();
@@ -126,7 +126,7 @@ class _TaoTinBaiState extends State<TaoTinBai> {
                 ),
                 const Padding(padding: EdgeInsets.only(top: 5)),
                 TextFormField(
-                  controller: noiDung,
+                  controller: diaDiem,
                   decoration:
                       const InputDecoration(labelText: 'Tóm tắt nội dung'),
                   // validator: (value) {
@@ -205,7 +205,7 @@ class _TaoTinBaiState extends State<TaoTinBai> {
                       await documentReference.set({
                         'loaiTinBai': loaiTinBai.text,
                         'tieuDe': tieuDe.text,
-                        'noiDung': noiDung.text,
+                        'diaDiem': diaDiem.text,
                         'noiDungChiTiet': noiDungChiTiet.text,
                         'imageUrls': imageUrls,
                         'timeTinBai': timeTinBai,

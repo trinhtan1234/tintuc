@@ -40,8 +40,9 @@ class _TinTucState extends State<TinTuc> {
             itemBuilder: (BuildContext context, int index) {
               final document = snapshot.data!.docs[index];
               final tieuDe = document['tieuDe'];
-              final noiDung = document['noiDung'];
-              // final noiDungChiTiet = document['noiDungChiTiet'];
+              final diaDiem = document['diaDiem'];
+              final loaiTinBai = document['loaiTinBai'];
+              final noiDungChiTiet = document['noiDungChiTiet'];
               final timeTinBai = document['timeTinBai'];
 
               final dynamic imageUrls = document['imageUrls'];
@@ -63,29 +64,45 @@ class _TinTucState extends State<TinTuc> {
                     height: 400,
                     // color: const Color.fromARGB(255, 241, 239, 239),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Expanded(
                           child: SizedBox(
-                            // width: 100,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  tieuDe,
-                                  maxLines: 2,
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 18,
-                                  ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text('$diaDiem : ',
+                                        style: const TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
+                                        )),
+                                    Flexible(
+                                      child: Text(
+                                        tieuDe,
+                                        overflow: TextOverflow
+                                            .clip, // Thay đổi từ ellipsis thành clip
+                                        maxLines: 1, // Thay đổi từ 2 thành 1
+                                        style: const TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                                 Text(
                                   DateFormat('dd/MM/yyyy HH:mm')
                                       .format(timeTinBai.toDate()),
                                 ),
                                 Text(
-                                  noiDung,
+                                  noiDungChiTiet,
                                   maxLines: 3,
+                                  style: const TextStyle(),
                                 ),
                               ],
                             ),
@@ -108,6 +125,14 @@ class _TinTucState extends State<TinTuc> {
                                       const Icon(Icons.error),
                                 )
                               : const SizedBox(), // Thêm SizedBox() nếu không có hình ảnh
+                        ),
+                        const Padding(padding: EdgeInsets.only(top: 10)),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(loaiTinBai),
+                            const Text('Bình luận'),
+                          ],
                         ),
                         const Padding(padding: EdgeInsets.only(top: 10)),
                         const Divider(),

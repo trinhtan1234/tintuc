@@ -9,7 +9,7 @@ class CapNhatBaiViet extends StatefulWidget {
     required this.documentId,
     required this.loaiTinBai,
     required this.tieuDe,
-    required this.noiDung,
+    required this.diaDiem,
     required this.noiDungChiTiet,
     required this.imageUrls,
     required this.timeTinBai,
@@ -17,7 +17,7 @@ class CapNhatBaiViet extends StatefulWidget {
   final String documentId;
   final String loaiTinBai;
   final String tieuDe;
-  final String noiDung;
+  final String diaDiem;
   final String noiDungChiTiet;
   final String imageUrls;
   final Timestamp timeTinBai;
@@ -30,14 +30,14 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
   final formKey = GlobalKey<FormState>();
 
   TextEditingController tieuDeController = TextEditingController();
-  TextEditingController noiDungController = TextEditingController();
+  TextEditingController diaDiemController = TextEditingController();
   TextEditingController noiDungChiTietController = TextEditingController();
   TextEditingController loaiTinBaiController = TextEditingController();
   TextEditingController imageUrlsController = TextEditingController();
 
   String loaiTinBai = '';
   String tieuDe = '';
-  String noiDung = '';
+  String diaDiem = '';
   String noiDungChiTiet = '';
   String imageUrls = '';
   Timestamp? timeTinBai;
@@ -49,7 +49,7 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
     //Khởi tạo dữ liệu từ widget
     loaiTinBaiController.text = widget.loaiTinBai;
     tieuDeController.text = widget.tieuDe;
-    noiDungController.text = widget.noiDung;
+    diaDiemController.text = widget.diaDiem;
     noiDungChiTietController.text = widget.noiDungChiTiet;
     imageUrlsController.text = widget.imageUrls;
   }
@@ -182,7 +182,7 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
                 },
               ),
               TextFormField(
-                controller: noiDungController,
+                controller: diaDiemController,
                 decoration:
                     const InputDecoration(labelText: 'Nội dung tóm tắt'),
                 validator: (value) {
@@ -248,7 +248,7 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
                     documentRef.update({
                       // documentId: uniqueTag,
                       'tieuDe': tieuDeController.text,
-                      'noiDung': noiDungController.text,
+                      'noiDung': diaDiemController.text,
                       'noiDungChiTiet': noiDungChiTietController.text,
                       'imageUrls': imageUrlsController.text,
                     });

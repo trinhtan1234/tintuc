@@ -1,45 +1,21 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:tintuc/danhsachbaiviet/capnhapbaiviet.dart';
-import 'package:tintuc/danhsachbaiviet/taobaivieta.dart';
-import 'package:tintuc/screen_nav_bottom.dart';
 import 'package:intl/intl.dart';
 
-class DanhSachBaiViet extends StatefulWidget {
-  const DanhSachBaiViet({super.key});
+class TinTuc extends StatefulWidget {
+  const TinTuc({super.key});
 
   @override
-  State<DanhSachBaiViet> createState() => _DanhSachBaiVietState();
+  State<TinTuc> createState() => _TinTucState();
 }
 
-class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
+class _TinTucState extends State<TinTuc> {
   final firestore = FirebaseFirestore.instance;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.of(context).pushReplacement(
-              MaterialPageRoute(
-                builder: (context) => const ScreenNavigationBottom(),
-              ),
-            );
-          },
-          icon: const Icon(Icons.arrow_back_ios_new),
-        ),
-        title: const Center(
-          child: Text(
-            'Danh sách bài viết',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Colors.deepPurple,
-            ),
-          ),
-        ),
-      ),
       body: StreamBuilder(
         stream: firestore.collection('bai_viet').snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -64,10 +40,10 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
             itemBuilder: (BuildContext context, int index) {
               final document = snapshot.data!.docs[index];
               final tieuDe = document['tieuDe'];
-              final loaiTinBai = document['loaiTinBai'];
               final noiDung = document['noiDung'];
-              final noiDungChiTiet = document['noiDungChiTiet'];
+              // final noiDungChiTiet = document['noiDungChiTiet'];
               final timeTinBai = document['timeTinBai'];
+
               final dynamic imageUrls = document['imageUrls'];
 
               final List<dynamic> imageUrlsList =
@@ -79,29 +55,14 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
 
               final uniqueTag = document.id;
               return GestureDetector(
-                onTap: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => CapNhatBaiViet(
-                        tieuDe: tieuDe,
-                        noiDung: noiDung,
-                        noiDungChiTiet: noiDungChiTiet,
-                        imageUrls: firstImageUrl,
-                        timeTinBai: timeTinBai,
-                        documentId: uniqueTag,
-                        loaiTinBai: loaiTinBai,
-                      ),
-                    ),
-                  );
-                },
+                onTap: () {},
                 child: Hero(
                   tag: uniqueTag,
                   child: Container(
-                    margin: const EdgeInsets.all(10),
-                    height: 110,
-                    color: const Color.fromARGB(255, 241, 239, 239),
-                    child: Row(
+                    margin: const EdgeInsets.only(left: 10, right: 10),
+                    height: 400,
+                    // color: const Color.fromARGB(255, 241, 239, 239),
+                    child: Column(
                       children: [
                         Expanded(
                           child: SizedBox(
@@ -110,9 +71,6 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(loaiTinBai),
-                                Text(DateFormat('dd/MM/yyyy HH:mm')
-                                    .format(timeTinBai.toDate())),
                                 Text(
                                   tieuDe,
                                   maxLines: 2,
@@ -121,10 +79,14 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
                                     fontSize: 18,
                                   ),
                                 ),
-                                // Text(
-                                //   noiDung,
-                                //   maxLines: 3,
-                                // ),
+                                Text(
+                                  DateFormat('dd/MM/yyyy HH:mm')
+                                      .format(timeTinBai.toDate()),
+                                ),
+                                Text(
+                                  noiDung,
+                                  maxLines: 3,
+                                ),
                               ],
                             ),
                           ),
@@ -133,16 +95,22 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
                           child: firstImageUrl.isNotEmpty
                               ? CachedNetworkImage(
                                   imageUrl: firstImageUrl,
-                                  height: 100,
-                                  width: 100,
+                                  width: MediaQuery.of(context).size.width - 20,
+                                  height: 230,
                                   fit: BoxFit.cover,
                                   placeholder: (context, url) =>
-                                      const CircularProgressIndicator(),
+                                      const CircularProgressIndicator(
+                                    strokeWidth: 1,
+                                    strokeCap: StrokeCap.square,
+                                    strokeAlign: BorderSide.strokeAlignCenter,
+                                  ),
                                   errorWidget: (context, url, error) =>
                                       const Icon(Icons.error),
                                 )
                               : const SizedBox(), // Thêm SizedBox() nếu không có hình ảnh
                         ),
+                        const Padding(padding: EdgeInsets.only(top: 10)),
+                        const Divider(),
                       ],
                     ),
                   ),
@@ -151,16 +119,6 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
             },
           );
         },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context).pushReplacement(
-            MaterialPageRoute(
-              builder: (context) => const TaoTinBai(),
-            ),
-          );
-        },
-        child: const Icon(Icons.add),
       ),
     );
   }

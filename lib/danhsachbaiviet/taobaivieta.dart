@@ -22,6 +22,8 @@ class _TaoTinBaiState extends State<TaoTinBai> {
   final TextEditingController tieuDe = TextEditingController();
   final TextEditingController noiDung = TextEditingController();
   final TextEditingController noiDungChiTiet = TextEditingController();
+  final TextEditingController loaiTinBai = TextEditingController();
+
   Timestamp timeTinBai = Timestamp.now();
 
   List<Uint8List> pickedImagesInBytes = [];
@@ -77,6 +79,7 @@ class _TaoTinBaiState extends State<TaoTinBai> {
     tieuDe.dispose();
     noiDung.dispose();
     noiDungChiTiet.dispose();
+    loaiTinBai.dispose();
     super.dispose();
   }
 
@@ -100,26 +103,38 @@ class _TaoTinBaiState extends State<TaoTinBai> {
                 const Divider(),
                 const Padding(padding: EdgeInsets.only(top: 0)),
                 TextFormField(
+                  controller: loaiTinBai,
+                  decoration: const InputDecoration(
+                    labelText: 'Loại tin bài',
+                  ),
+                  // validator: (value) {
+                  //   if (value?.isEmpty ?? true) {
+                  //     return 'Nhập loại ti bài';
+                  //   }
+                  //   return null;
+                  // },
+                ),
+                TextFormField(
                   controller: tieuDe,
                   decoration: const InputDecoration(labelText: 'Tiêu đề'),
-                  validator: (value) {
-                    if (value?.isEmpty ?? true) {
-                      return 'Nhập thông tin tiêu đề';
-                    }
-                    return null;
-                  },
+                  // validator: (value) {
+                  //   if (value?.isEmpty ?? true) {
+                  //     return 'Nhập thông tin tiêu đề';
+                  //   }
+                  //   return null;
+                  // },
                 ),
                 const Padding(padding: EdgeInsets.only(top: 5)),
                 TextFormField(
                   controller: noiDung,
                   decoration:
                       const InputDecoration(labelText: 'Tóm tắt nội dung'),
-                  validator: (value) {
-                    if (value?.isEmpty ?? true) {
-                      return 'Nhập tóm tắt nội dung';
-                    }
-                    return null;
-                  },
+                  // validator: (value) {
+                  //   if (value?.isEmpty ?? true) {
+                  //     return 'Nhập tóm tắt nội dung';
+                  //   }
+                  //   return null;
+                  // },
                 ),
                 Expanded(
                   child: TextFormField(
@@ -128,12 +143,12 @@ class _TaoTinBaiState extends State<TaoTinBai> {
                     maxLines: 15,
                     decoration:
                         const InputDecoration(labelText: 'Nội dung chi tiết'),
-                    validator: (value) {
-                      if (value?.isEmpty ?? true) {
-                        return 'Nhập tóm tắt nội dung';
-                      }
-                      return null;
-                    },
+                    // validator: (value) {
+                    //   if (value?.isEmpty ?? true) {
+                    //     return 'Nhập tóm tắt nội dung';
+                    //   }
+                    //   return null;
+                    // },
                   ),
                 ),
                 const SizedBox(height: 16),
@@ -188,6 +203,7 @@ class _TaoTinBaiState extends State<TaoTinBai> {
                       final documentReference =
                           firestore.collection('bai_viet').doc();
                       await documentReference.set({
+                        'loaiTinBai': loaiTinBai.text,
                         'tieuDe': tieuDe.text,
                         'noiDung': noiDung.text,
                         'noiDungChiTiet': noiDungChiTiet.text,

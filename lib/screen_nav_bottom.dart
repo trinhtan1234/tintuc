@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tintuc/caidat/caidat.dart';
 import 'package:tintuc/danhsachbaiviet/danhsach.dart';
 import 'package:tintuc/media/menu_media.dart';
+import 'package:tintuc/tinchinh/manhinh/menutinchinh.dart';
 
 class ScreenNavigationBottom extends StatefulWidget {
   const ScreenNavigationBottom({super.key});
@@ -24,7 +25,7 @@ class _ScreenNavigationBottomState extends State<ScreenNavigationBottom> {
     super.initState();
 
     _pages = [
-      // const MenuTinChinh(),
+      const MenuTinChinh(),
       const TinTucMedia(),
       const DanhSachBaiViet(),
       const CaiDat(),
@@ -41,7 +42,7 @@ class _ScreenNavigationBottomState extends State<ScreenNavigationBottom> {
         onTap: _navigateBottomBar,
         type: BottomNavigationBarType.fixed,
         items: const [
-          // BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Tin chính'),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Tin chính'),
           BottomNavigationBarItem(
               icon: Icon(Icons.headset_outlined), label: 'Media'),
           BottomNavigationBarItem(

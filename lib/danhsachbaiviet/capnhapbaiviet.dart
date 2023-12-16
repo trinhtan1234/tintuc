@@ -7,6 +7,7 @@ class CapNhatBaiViet extends StatefulWidget {
   const CapNhatBaiViet({
     super.key,
     required this.documentId,
+    required this.loaiTinBai,
     required this.tieuDe,
     required this.noiDung,
     required this.noiDungChiTiet,
@@ -14,6 +15,7 @@ class CapNhatBaiViet extends StatefulWidget {
     required this.timeTinBai,
   });
   final String documentId;
+  final String loaiTinBai;
   final String tieuDe;
   final String noiDung;
   final String noiDungChiTiet;
@@ -30,8 +32,10 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
   TextEditingController tieuDeController = TextEditingController();
   TextEditingController noiDungController = TextEditingController();
   TextEditingController noiDungChiTietController = TextEditingController();
+  TextEditingController loaiTinBaiController = TextEditingController();
   TextEditingController imageUrlsController = TextEditingController();
 
+  String loaiTinBai = '';
   String tieuDe = '';
   String noiDung = '';
   String noiDungChiTiet = '';
@@ -43,6 +47,7 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
     super.initState();
 
     //Khởi tạo dữ liệu từ widget
+    loaiTinBaiController.text = widget.loaiTinBai;
     tieuDeController.text = widget.tieuDe;
     noiDungController.text = widget.noiDung;
     noiDungChiTietController.text = widget.noiDungChiTiet;
@@ -137,6 +142,36 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
           child: Column(
             children: [
               TextFormField(
+                controller: loaiTinBaiController,
+                decoration: InputDecoration(
+                  labelText: 'Loại tin bài',
+                  suffixIcon: DropdownButton<String>(
+                    value: loaiTinBaiController.text,
+                    items: const <DropdownMenuItem<String>>[
+                      DropdownMenuItem(
+                        value: 'Tin tức',
+                        child: Text('Tin tức'),
+                      ),
+                      DropdownMenuItem(
+                        value: 'Thể thao',
+                        child: Text('Thể thao'),
+                      ),
+                      DropdownMenuItem(
+                        value: 'Giải trí',
+                        child: Text('Giải trí'),
+                      ),
+                    ],
+                    onChanged: (value) => loaiTinBaiController.text = value!,
+                  ),
+                ),
+                validator: (value) {
+                  if (value?.isEmpty ?? true) {
+                    return 'Nhập loại ti bài';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
                 controller: tieuDeController,
                 decoration: const InputDecoration(labelText: 'Tên bài viết'),
                 validator: (value) {
@@ -177,7 +212,7 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
                   decoration: const InputDecoration(labelText: 'Hình ảnh'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter a URL';
+                      return 'nhập đường dẫn URL';
                     }
                     return null;
                   },
@@ -251,7 +286,7 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
                   ),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(bottom: 20)),
+              const Padding(padding: EdgeInsets.only(bottom: 20)),
             ],
           ),
         ),

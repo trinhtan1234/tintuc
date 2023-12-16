@@ -1,6 +1,5 @@
 // import 'package:flutter/material.dart';
 // import 'package:tintuc/tinchinh/bloc/news_bloc.dart';
-// import 'package:tintuc/tinchinh/manhinh/thoisu/chitiet_thoisu.dart';
 // import 'package:tintuc/tinchinh/networking/models/model_news.dart';
 
 // class ThoiSu extends StatefulWidget {
@@ -84,14 +83,14 @@
 //     SampleItem? selectedMenu;
 //     return GestureDetector(
 //       onTap: () {
-//         Navigator.push(
-//           context,
-//           MaterialPageRoute(
-//             builder: (context) => ChiTietThoiSu(
-//               news: widget.news,
-//             ),
-//           ),
-//         );
+//         // Navigator.push(
+//         //   context,
+//         //   MaterialPageRoute(
+//         //     builder: (context) => ChiTietThoiSu(
+//         //       news: widget.news,
+//         //     ),
+//         //   ),
+//         // );
 //       },
 //       child: Container(
 //         margin: const EdgeInsets.only(right: 10, left: 10),
@@ -233,14 +232,14 @@
 //     SampleItem? selectedMenu;
 //     return GestureDetector(
 //       onTap: () {
-//         Navigator.push(
-//           context,
-//           MaterialPageRoute(
-//             builder: (context) => ChiTietThoiSu(
-//               news: widget.news,
-//             ),
-//           ),
-//         );
+//         // Navigator.push(
+//         //   context,
+//         //   MaterialPageRoute(
+//         //     builder: (context) => ChiTietThoiSu(
+//         //       news: widget.news,
+//         //     ),
+//         //   ),
+//         // );
 //       },
 //       child: Container(
 //         margin: const EdgeInsets.only(right: 10, left: 10),

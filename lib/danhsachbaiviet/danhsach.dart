@@ -76,8 +76,8 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
               // Lấy URL ảnh đầu tiên
               final String firstImageUrl =
                   imageUrlsList.isNotEmpty ? imageUrlsList.first : '';
-
-              final uniqueTag = document.id;
+              // const uniqueTag = '1';
+              final uniqueTag = '${document.id}-$index';
               return GestureDetector(
                 onTap: () {
                   Navigator.pushReplacement(
@@ -99,13 +99,13 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
                   tag: uniqueTag,
                   child: Container(
                     margin: const EdgeInsets.all(10),
-                    height: 110,
+                    height: 100,
                     color: const Color.fromARGB(255, 241, 239, 239),
                     child: Row(
                       children: [
                         Expanded(
                           child: SizedBox(
-                            // width: 100,
+                            width: 100,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -121,10 +121,7 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
                                     fontSize: 18,
                                   ),
                                 ),
-                                // Text(
-                                //   noiDung,
-                                //   maxLines: 3,
-                                // ),
+                                // const Text(uniqueTag),
                               ],
                             ),
                           ),

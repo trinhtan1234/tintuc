@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:video_player/video_player.dart';
 import 'danhsach.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class TaoTinBai extends StatefulWidget {
   const TaoTinBai({super.key});
@@ -38,6 +39,7 @@ class _TaoTinBaiState extends State<TaoTinBai> {
       FirebaseStorage.instanceFor(bucket: 'gs://tintuc-a0ba2.appspot.com');
 
   Future<void> _pickImage() async {
+    await checkAndRequestPermission();
     final pickedFile =
         await _imagePicker.pickImage(source: ImageSource.gallery);
     if (pickedFile != null) {
@@ -47,7 +49,15 @@ class _TaoTinBaiState extends State<TaoTinBai> {
     }
   }
 
+  Future<void> checkAndRequestPermission() async {
+    var status = await Permission.photos.status;
+    if (!status.isGranted) {
+      await Permission.photos.request();
+    }
+  }
+
   Future<void> _pickVideo() async {
+    await checkAndRequestPermission();
     final pickedFile =
         await _imagePicker.pickVideo(source: ImageSource.gallery);
 
@@ -242,16 +252,16 @@ class _TaoTinBaiState extends State<TaoTinBai> {
 
   Widget _buildImageCarousel() {
     return SizedBox(
-      height: 100,
+      // height: 100,
       child: pickedImagesInBytes.isEmpty
-          ? const Center(child: Text('No images selected'))
+          ? const Center(child: Text('Không có ảnh chọn'))
           : ListView.builder(
               scrollDirection:
                   Axis.horizontal, // Đúng vị trí cho scrollDirection
               itemCount: pickedImagesInBytes.length,
               itemBuilder: (context, index) {
                 return Container(
-                  width: 100,
+                  // width: 100,
                   margin: const EdgeInsets.symmetric(horizontal: 5.0),
                   decoration: const BoxDecoration(
                     color: Colors.amber,

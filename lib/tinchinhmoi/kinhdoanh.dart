@@ -59,8 +59,8 @@ class _KinhDoanhState extends State<KinhDoanh> {
               // Lấy URL ảnh đầu tiên
               final String firstImageUrl =
                   imageUrlsList.isNotEmpty ? imageUrlsList.first : '';
-
-              final uniqueTag = document.id;
+              const uniqueTag = '2';
+              // final uniqueTag = '${document.id}-$index';
 
               return GestureDetector(
                 onTap: () {},

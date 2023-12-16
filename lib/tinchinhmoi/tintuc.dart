@@ -59,8 +59,8 @@ class _TinTucState extends State<TinTuc> {
               // Lấy URL ảnh đầu tiên
               final String firstImageUrl =
                   imageUrlsList.isNotEmpty ? imageUrlsList.first : '';
-
-              final uniqueTag = document.id;
+              // const uniqueTag = '4';
+              final uniqueTag = '${document.id}-$index';
 
               return GestureDetector(
                 onTap: () {},

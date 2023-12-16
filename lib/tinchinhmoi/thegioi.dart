@@ -60,8 +60,8 @@ class _TheGioiState extends State<TheGioi> {
               final String firstImageUrl =
                   imageUrlsList.isNotEmpty ? imageUrlsList.first : '';
 
-              final uniqueTag = document.id;
-
+              // final uniqueTag = '${document.id}-$index';
+              const uniqueTag = '3';
               return GestureDetector(
                 onTap: () {},
                 child: Hero(

@@ -84,13 +84,13 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
                     context,
                     MaterialPageRoute(
                       builder: (context) => CapNhatBaiViet(
-                        tieuDe: tieuDe,
-                        diaDiem: diaDiem,
-                        noiDungChiTiet: noiDungChiTiet,
+                        tieuDe: tieuDe ?? '',
+                        diaDiem: diaDiem ?? '',
+                        noiDungChiTiet: noiDungChiTiet ?? '',
                         imageUrls: firstImageUrl,
-                        timeTinBai: timeTinBai,
+                        timeTinBai: timeTinBai ?? '',
                         documentId: uniqueTag,
-                        loaiTinBai: loaiTinBai,
+                        loaiTinBai: loaiTinBai ?? '',
                       ),
                     ),
                   );
@@ -102,6 +102,7 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
                     height: 100,
                     color: const Color.fromARGB(255, 241, 239, 239),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Expanded(
                           child: SizedBox(

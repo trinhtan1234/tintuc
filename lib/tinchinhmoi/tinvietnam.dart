@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:tintuc/tinchinhmoi/chitiet.dart';
 
 class VietNam extends StatefulWidget {
   const VietNam({super.key});
@@ -63,7 +64,19 @@ class _VietNamState extends State<VietNam> {
               // final uniqueTag = '${document.id}-$index';
 
               return GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => ChiTietBaiViet(
+                        tieuDe: document['tieuDe'],
+                        loaiTinBai: document['loaiTinBai'],
+                        timeTinBai: document['timeTinBai'],
+                        noiDungChiTiet: document['noiDungChiTiet'],
+                        firstImageUrl: firstImageUrl,
+                      ), // Truyền tiêu đề
+                    ),
+                  );
+                },
                 child: Hero(
                   tag: uniqueTag,
                   child: Container(
@@ -73,45 +86,43 @@ class _VietNamState extends State<VietNam> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Expanded(
-                          child: SizedBox(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Text('$diaDiem : ',
-                                        style: const TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 18,
-                                        )),
-                                    Flexible(
-                                      child: Text(
-                                        tieuDe,
-                                        overflow: TextOverflow
-                                            .clip, // Thay đổi từ ellipsis thành clip
-                                        maxLines: 1, // Thay đổi từ 2 thành 1
-                                        style: const TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 18,
-                                        ),
+                        SizedBox(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Text('$diaDiem : ',
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18,
+                                      )),
+                                  Flexible(
+                                    child: Text(
+                                      tieuDe,
+                                      overflow: TextOverflow
+                                          .clip, // Thay đổi từ ellipsis thành clip
+                                      maxLines: 1, // Thay đổi từ 2 thành 1
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18,
                                       ),
                                     ),
-                                  ],
-                                ),
-                                Text(
-                                  DateFormat('dd/MM/yyyy HH:mm')
-                                      .format(timeTinBai.toDate()),
-                                ),
-                                Text(
-                                  noiDungChiTiet,
-                                  maxLines: 3,
-                                  style: const TextStyle(),
-                                ),
-                              ],
-                            ),
+                                  ),
+                                ],
+                              ),
+                              Text(
+                                DateFormat('dd/MM/yyyy HH:mm')
+                                    .format(timeTinBai.toDate()),
+                              ),
+                              Text(
+                                noiDungChiTiet,
+                                maxLines: 3,
+                                style: const TextStyle(),
+                              ),
+                            ],
                           ),
                         ),
                         Container(

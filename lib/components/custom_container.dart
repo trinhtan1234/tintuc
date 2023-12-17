@@ -79,19 +79,17 @@ class _AppContainerState extends State<AppContainer> {
             ),
           ),
           if (widget.urlToImage != null && widget.urlToImage!.isNotEmpty)
-            Expanded(
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width - 20,
-                child: ClipRRect(
-                  child: AspectRatio(
-                    aspectRatio: 16 / 9,
-                    child: Image(
-                      image: NetworkImage(
-                        widget.urlToImage ?? '',
-                      ),
-                      fit: BoxFit.cover,
-                      width: MediaQuery.of(context).size.width - 20,
+            SizedBox(
+              width: MediaQuery.of(context).size.width - 20,
+              child: ClipRRect(
+                child: AspectRatio(
+                  aspectRatio: 16 / 9,
+                  child: Image(
+                    image: NetworkImage(
+                      widget.urlToImage ?? '',
                     ),
+                    fit: BoxFit.cover,
+                    width: MediaQuery.of(context).size.width - 20,
                   ),
                 ),
               ),

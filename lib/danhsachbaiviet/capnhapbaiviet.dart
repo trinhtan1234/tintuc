@@ -15,11 +15,11 @@ class CapNhatBaiViet extends StatefulWidget {
     required this.timeTinBai,
   });
   final String documentId;
-  final String loaiTinBai;
-  final String tieuDe;
-  final String diaDiem;
-  final String noiDungChiTiet;
-  final String imageUrls;
+  final String? loaiTinBai;
+  final String? tieuDe;
+  final String? diaDiem;
+  final String? noiDungChiTiet;
+  final String? imageUrls;
   final Timestamp timeTinBai;
 
   @override
@@ -35,11 +35,11 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
   TextEditingController loaiTinBaiController = TextEditingController();
   TextEditingController imageUrlsController = TextEditingController();
 
-  String loaiTinBai = '';
-  String tieuDe = '';
-  String diaDiem = '';
-  String noiDungChiTiet = '';
-  String imageUrls = '';
+  String? loaiTinBai = '';
+  String? tieuDe = '';
+  String? diaDiem = '';
+  String? noiDungChiTiet = '';
+  String? imageUrls = '';
   Timestamp? timeTinBai;
 
   @override
@@ -47,19 +47,19 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
     super.initState();
 
     //Khởi tạo dữ liệu từ widget
-    loaiTinBaiController.text = widget.loaiTinBai;
-    tieuDeController.text = widget.tieuDe;
-    diaDiemController.text = widget.diaDiem;
-    noiDungChiTietController.text = widget.noiDungChiTiet;
-    imageUrlsController.text = widget.imageUrls;
+    loaiTinBaiController.text = widget.loaiTinBai ?? '';
+    tieuDeController.text = widget.tieuDe ?? '';
+    diaDiemController.text = widget.diaDiem ?? '';
+    noiDungChiTietController.text = widget.noiDungChiTiet ?? '';
+    imageUrlsController.text = widget.imageUrls ?? '';
   }
 
   @override
   void dispose() {
-    // tieuDeController.dispose();
-    // noiDungController.dispose();
-    // noiDungChiTietController.dispose();
-    // hinhanhController.dispose();
+    tieuDeController.dispose();
+    diaDiemController.dispose();
+    noiDungChiTietController.dispose();
+    imageUrlsController.dispose();
     super.dispose();
   }
 
@@ -173,41 +173,36 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
                 //   return null;
                 // },
               ),
-              Expanded(
-                child: TextFormField(
-                  controller: noiDungChiTietController,
-                  maxLines: null,
-                  decoration:
-                      const InputDecoration(labelText: 'Nội dung chi tiết'),
-                  // validator: (value) {
-                  //   if (value == null || value.isEmpty) {
-                  //     return 'Vui lòng nhập nội dung';
-                  //   }
-                  //   return null;
-                  // },
-                ),
+              TextFormField(
+                controller: noiDungChiTietController,
+                maxLines: null,
+                decoration:
+                    const InputDecoration(labelText: 'Nội dung chi tiết'),
+                // validator: (value) {
+                //   if (value == null || value.isEmpty) {
+                //     return 'Vui lòng nhập nội dung';
+                //   }
+                //   return null;
+                // },
               ),
-              Expanded(
-                child: TextFormField(
-                  controller: imageUrlsController,
-                  decoration: const InputDecoration(labelText: 'Hình ảnh'),
-                  // validator: (value) {
-                  //   if (value == null || value.isEmpty) {
-                  //     return 'nhập đường dẫn URL';
-                  //   }
-                  //   return null;
-                  // },
-                  onChanged: (value) {
-                    setState(() {
-                      imageUrls =
-                          value; // Ensure imageUrl is treated as a String
-                    });
-                  },
-                ),
+              TextFormField(
+                controller: imageUrlsController,
+                decoration: const InputDecoration(labelText: 'Hình ảnh'),
+                // validator: (value) {
+                //   if (value == null || value.isEmpty) {
+                //     return 'nhập đường dẫn URL';
+                //   }
+                //   return null;
+                // },
+                onChanged: (value) {
+                  setState(() {
+                    imageUrls = value; // Ensure imageUrl is treated as a String
+                  });
+                },
               ),
-              imageUrls.isNotEmpty
+              imageUrls!.isNotEmpty
                   ? Image.network(
-                      imageUrls,
+                      imageUrls!,
                       width: 100,
                       height: 100,
                       fit: BoxFit.cover,

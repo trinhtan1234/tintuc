@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:tintuc/danhsachbaiviet/capnhapbaiviet.dart';
-import 'package:tintuc/danhsachbaiviet/taobaivieta.dart';
+import 'package:tintuc/danhsachbaiviet/taobaiviet.dart';
 import 'package:tintuc/screen_nav_bottom.dart';
 import 'package:intl/intl.dart';
 
@@ -77,7 +77,7 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
               final String firstImageUrl =
                   imageUrlsList.isNotEmpty ? imageUrlsList.first : '';
               // const uniqueTag = '1';
-              final uniqueTag = '${document.id}-$index';
+              final uniqueTag = document.id;
               return GestureDetector(
                 onTap: () {
                   Navigator.pushReplacement(

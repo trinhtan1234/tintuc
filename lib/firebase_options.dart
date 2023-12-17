@@ -24,6 +24,7 @@ class DefaultFirebaseOptions {
         return android;
       case TargetPlatform.iOS:
         return ios;
+
       case TargetPlatform.macOS:
         return macos;
       case TargetPlatform.windows:
@@ -70,8 +71,10 @@ class DefaultFirebaseOptions {
     projectId: 'tintuc-a0ba2',
     databaseURL: 'https://tintuc-a0ba2-default-rtdb.firebaseio.com',
     storageBucket: 'tintuc-a0ba2.appspot.com',
-    androidClientId: '386891168137-bv01gm6mag4ou5q342ga9pj5e489j19e.apps.googleusercontent.com',
-    iosClientId: '386891168137-6fs0g2u4anrt6sm089t6k1pmqitc69ca.apps.googleusercontent.com',
+    androidClientId:
+        '386891168137-bv01gm6mag4ou5q342ga9pj5e489j19e.apps.googleusercontent.com',
+    iosClientId:
+        '386891168137-6fs0g2u4anrt6sm089t6k1pmqitc69ca.apps.googleusercontent.com',
     iosBundleId: 'com.example.tintuc',
   );
 
@@ -82,8 +85,10 @@ class DefaultFirebaseOptions {
     projectId: 'tintuc-a0ba2',
     databaseURL: 'https://tintuc-a0ba2-default-rtdb.firebaseio.com',
     storageBucket: 'tintuc-a0ba2.appspot.com',
-    androidClientId: '386891168137-bv01gm6mag4ou5q342ga9pj5e489j19e.apps.googleusercontent.com',
-    iosClientId: '386891168137-1ffkad4cfq38sp1dhu8parsnl63t763o.apps.googleusercontent.com',
+    androidClientId:
+        '386891168137-bv01gm6mag4ou5q342ga9pj5e489j19e.apps.googleusercontent.com',
+    iosClientId:
+        '386891168137-1ffkad4cfq38sp1dhu8parsnl63t763o.apps.googleusercontent.com',
     iosBundleId: 'com.example.tintuc.RunnerTests',
   );
 }

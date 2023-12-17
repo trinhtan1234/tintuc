@@ -137,11 +137,10 @@ class _TaoTinBaiState extends State<TaoTinBai> {
                 const Padding(padding: EdgeInsets.only(top: 5)),
                 TextFormField(
                   controller: diaDiem,
-                  decoration:
-                      const InputDecoration(labelText: 'Tóm tắt nội dung'),
+                  decoration: const InputDecoration(labelText: 'Địa điểm'),
                   // validator: (value) {
                   //   if (value?.isEmpty ?? true) {
-                  //     return 'Nhập tóm tắt nội dung';
+                  //     return 'Nhập tóm tắt nội dung'R;
                   //   }
                   //   return null;
                   // },

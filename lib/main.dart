@@ -10,6 +10,7 @@ void main() async {
   FirebaseFirestore.instance.settings =
       const Settings(persistenceEnabled: true);
   // await FirebaseAppCheck.instance.activate();
+
   runApp(const MyApp());
 }
 

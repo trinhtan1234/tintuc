@@ -165,8 +165,7 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
               ),
               TextFormField(
                 controller: diaDiemController,
-                decoration:
-                    const InputDecoration(labelText: 'Nội dung tóm tắt'),
+                decoration: const InputDecoration(labelText: 'Địa điểm'),
                 // validator: (value) {
                 //   if (value == null || value.isEmpty) {
                 //     return 'Vui lòng nhập tiêu đề';
@@ -230,7 +229,7 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
                     documentRef.update({
                       // documentId: uniqueTag,
                       'tieuDe': tieuDeController.text,
-                      'noiDung': diaDiemController.text,
+                      'diaDiem': diaDiemController.text,
                       'noiDungChiTiet': noiDungChiTietController.text,
                       'imageUrls': imageUrlsController.text,
                     });

@@ -19,7 +19,7 @@ class CapNhatBaiViet extends StatefulWidget {
   final String? tieuDe;
   final String? diaDiem;
   final String? noiDungChiTiet;
-  final String? imageUrls;
+  final String? imageUrls; // url images
   final Timestamp timeTinBai;
 
   @override
@@ -35,12 +35,13 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
   TextEditingController loaiTinBaiController = TextEditingController();
   TextEditingController imageUrlsController = TextEditingController();
 
-  String? loaiTinBai = '';
-  String? tieuDe = '';
-  String? diaDiem = '';
-  String? noiDungChiTiet = '';
-  String? imageUrls = '';
-  Timestamp? timeTinBai;
+  // String? loaiTinBai = '';
+  // String? tieuDe = '';
+  // String? diaDiem = '';
+  // String? noiDungChiTiet = '';
+  // String? imageUrls = '';
+  // Timestamp? timeTinBai;
+  // String? firstImageUrl;
 
   @override
   void initState() {
@@ -66,7 +67,6 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Soạn tin bài'),
@@ -135,135 +135,161 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
           ),
         ],
       ),
-      body: Container(
-        margin: const EdgeInsets.only(right: 20, left: 20),
-        child: Form(
-          key: formKey,
-          child: Column(
-            children: [
-              TextFormField(
-                controller: loaiTinBaiController,
-                decoration: const InputDecoration(
-                  labelText: 'Loại tin bài',
+      body: SingleChildScrollView(
+        child: Container(
+          margin: const EdgeInsets.only(right: 20, left: 20),
+          child: Form(
+            key: formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                TextFormField(
+                  controller: loaiTinBaiController,
+                  decoration: const InputDecoration(
+                    labelText: 'Loại tin bài',
+                  ),
+                  // validator: (value) {
+                  //   if (value?.isEmpty ?? true) {
+                  //     return 'Nhập loại ti bài';
+                  //   }
+                  //   return null;
+                  // },
                 ),
-                // validator: (value) {
-                //   if (value?.isEmpty ?? true) {
-                //     return 'Nhập loại ti bài';
-                //   }
-                //   return null;
-                // },
-              ),
-              TextFormField(
-                controller: tieuDeController,
-                decoration: const InputDecoration(labelText: 'Tên bài viết'),
-                // validator: (value) {
-                //   if (value == null || value.isEmpty) {
-                //     return 'Vui lòng nhập tên bài viết';
-                //   }
-                //   return null;
-                // },
-              ),
-              TextFormField(
-                controller: diaDiemController,
-                decoration: const InputDecoration(labelText: 'Địa điểm'),
-                // validator: (value) {
-                //   if (value == null || value.isEmpty) {
-                //     return 'Vui lòng nhập tiêu đề';
-                //   }
-                //   return null;
-                // },
-              ),
-              TextFormField(
-                controller: noiDungChiTietController,
-                maxLines: null,
-                decoration:
-                    const InputDecoration(labelText: 'Nội dung chi tiết'),
-                // validator: (value) {
-                //   if (value == null || value.isEmpty) {
-                //     return 'Vui lòng nhập nội dung';
-                //   }
-                //   return null;
-                // },
-              ),
-              TextFormField(
-                controller: imageUrlsController,
-                decoration: const InputDecoration(labelText: 'Hình ảnh'),
-                // validator: (value) {
-                //   if (value == null || value.isEmpty) {
-                //     return 'nhập đường dẫn URL';
-                //   }
-                //   return null;
-                // },
-                onChanged: (value) {
-                  setState(() {
-                    imageUrls = value; // Ensure imageUrl is treated as a String
-                  });
-                },
-              ),
-              imageUrls!.isNotEmpty
-                  ? Image.network(
-                      imageUrls!,
-                      width: 100,
-                      height: 100,
-                      fit: BoxFit.cover,
-                    )
-                  : Container(),
-              Text(
-                DateFormat('dd/MM/yyyy HH:mm')
-                    .format(widget.timeTinBai.toDate()),
-              ),
-              TextButton(
-                // key: formKeyCapNhat,
-                onPressed: () {
-                  if (formKey.currentState!.validate()) {
-                    //Tạo tham chiếu đến document
-                    final documentRef = FirebaseFirestore.instance
-                        .collection('bai_viet')
-                        .doc(widget.documentId);
-                    // Cập nhật dữ liệu
-                    documentRef.update({
-                      // documentId: uniqueTag,
-                      'tieuDe': tieuDeController.text,
-                      'diaDiem': diaDiemController.text,
-                      'noiDungChiTiet': noiDungChiTietController.text,
-                      'imageUrls': imageUrlsController.text,
-                    });
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('Cập nhật thông tin bài viết thành công'),
+                TextFormField(
+                  controller: tieuDeController,
+                  decoration: const InputDecoration(labelText: 'Tên bài viết'),
+                  // validator: (value) {
+                  //   if (value == null || value.isEmpty) {
+                  //     return 'Vui lòng nhập tên bài viết';
+                  //   }
+                  //   return null;
+                  // },
+                ),
+                TextFormField(
+                  controller: diaDiemController,
+                  decoration: const InputDecoration(labelText: 'Địa điểm'),
+                  // validator: (value) {
+                  //   if (value == null || value.isEmpty) {
+                  //     return 'Vui lòng nhập tiêu đề';
+                  //   }
+                  //   return null;
+                  // },
+                ),
+                TextFormField(
+                  controller: noiDungChiTietController,
+                  maxLines: 10,
+                  decoration:
+                      const InputDecoration(labelText: 'Nội dung chi tiết'),
+                  // validator: (value) {
+                  //   if (value == null || value.isEmpty) {
+                  //     return 'Vui lòng nhập nội dung';
+                  //   }
+                  //   return null;
+                  // },
+                ),
+                TextFormField(
+                  controller: imageUrlsController,
+                  decoration: const InputDecoration(labelText: 'ImageUrl'),
+                  // validator: (value) {
+                  //   if (value == null || value.isEmpty) {
+                  //     return 'Vui lòng nhập nội dung';
+                  //   }
+                  //   return null;
+                  // },
+                ),
+
+                // TextFormField(
+                //   controller: imageUrlsController,
+                //   decoration: const InputDecoration(labelText: 'Hình ảnh'),
+                //   // validator: (value) {
+                //   //   if (value == null || value.isEmpty) {
+                //   //     return 'nhập đường dẫn URL';
+                //   //   }
+                //   //   return null;
+                //   // },
+                //   onChanged: (value) {
+                //     setState(() {
+                //       imageUrls =
+                //           value; // Ensure imageUrl is treated as a String
+                //     });
+                //   },
+                // ),
+                // Container(
+                //   child: imageUrls!.isNotEmpty
+                //       ? Image.network(
+                //           imageUrls!,
+                //           width: 100,
+                //           height: 100,
+                //           fit: BoxFit.cover,
+                //         )
+                //       : Container(),
+                // ),
+                const Padding(padding: EdgeInsets.only(bottom: 100)),
+                Text(
+                  DateFormat('dd/MM/yyyy HH:mm')
+                      .format(widget.timeTinBai.toDate()),
+                ),
+                const Padding(padding: EdgeInsets.only(bottom: 10)),
+                TextButton(
+                  // key: formKeyCapNhat,
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {
+                      //Tạo tham chiếu đến document
+                      final documentRef = FirebaseFirestore.instance
+                          .collection('bai_viet')
+                          .doc(widget.documentId);
+                      // Cập nhật dữ liệu
+                      documentRef.update({
+                        // documentId: uniqueTag,
+                        'tieuDe': tieuDeController.text,
+                        'diaDiem': diaDiemController.text,
+                        'noiDungChiTiet': noiDungChiTietController.text,
+                        'imageUrls': imageUrlsController.text,
+                      });
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content:
+                              Text('Cập nhật thông tin bài viết thành công'),
+                        ),
+                      );
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Vui lòng nhập thông tin'),
+                        ),
+                      );
+                    }
+                    // Quay lại màn hình Danh sách bài viết
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) => const DanhSachBaiViet(),
                       ),
                     );
-                  } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('Vui lòng nhập thông tin'),
+                  },
+                  child: Container(
+                    height: 60,
+                    width: 350,
+                    decoration: BoxDecoration(
+                      color: Colors.grey,
+                      border: Border.all(
+                        color: Colors.deepPurple,
+                        width: 1.0,
                       ),
-                    );
-                  }
-                  // Quay lại màn hình Danh sách bài viết
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(
-                      builder: (context) => const DanhSachBaiViet(),
+                      borderRadius: BorderRadius.circular(20),
                     ),
-                  );
-                },
-                child: Container(
-                  height: 40,
-                  width: 300,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.deepPurple,
-                      width: 1.0,
+                    child: const Center(
+                      child: Text(
+                        'Cập nhật tin bài',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
                     ),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: const Center(
-                    child: Text('Cập nhật tin bài'),
                   ),
                 ),
-              ),
-              const Padding(padding: EdgeInsets.only(bottom: 20)),
-            ],
+              ],
+            ),
           ),
         ),
       ),

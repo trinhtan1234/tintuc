@@ -101,145 +101,147 @@ class _TaoTinBaiState extends State<TaoTinBai> {
           child: Text('Soạn tin bài'),
         ),
       ),
-      body: Container(
-        margin: const EdgeInsets.only(right: 20, left: 20),
-        child: Form(
-          key: _formKeyTaoTinBai,
-          child: Container(
-            margin: const EdgeInsets.only(right: 10, left: 10),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                const Divider(),
-                const Padding(padding: EdgeInsets.only(top: 0)),
-                TextFormField(
-                  controller: loaiTinBai,
-                  decoration: const InputDecoration(
-                    labelText: 'Loại tin bài',
-                  ),
-                  // validator: (value) {
-                  //   if (value?.isEmpty ?? true) {
-                  //     return 'Nhập loại ti bài';
-                  //   }
-                  //   return null;
-                  // },
-                ),
-                TextFormField(
-                  controller: tieuDe,
-                  decoration: const InputDecoration(labelText: 'Tiêu đề'),
-                  // validator: (value) {
-                  //   if (value?.isEmpty ?? true) {
-                  //     return 'Nhập thông tin tiêu đề';
-                  //   }
-                  //   return null;
-                  // },
-                ),
-                const Padding(padding: EdgeInsets.only(top: 5)),
-                TextFormField(
-                  controller: diaDiem,
-                  decoration: const InputDecoration(labelText: 'Địa điểm'),
-                  // validator: (value) {
-                  //   if (value?.isEmpty ?? true) {
-                  //     return 'Nhập tóm tắt nội dung';
-                  //   }
-                  //   return null;
-                  // },
-                ),
-                TextFormField(
-                  controller: noiDungChiTiet,
-                  maxLength: 999,
-                  maxLines: 15,
-                  decoration:
-                      const InputDecoration(labelText: 'Nội dung chi tiết'),
-                  // validator: (value) {
-                  //   if (value?.isEmpty ?? true) {
-                  //     return 'Nhập tóm tắt nội dung';
-                  //   }
-                  //   return null;
-                  // },
-                ),
-                const SizedBox(height: 16),
-                _buildImageCarousel(),
-                if (_imageFile != null)
-                  Image.file(
-                    _imageFile!,
-                    height: 150,
-                  ),
-                if (_videoFile != null)
-                  VideoPlayer(
-                    _videoFile != null
-                        ? VideoPlayerController.file(_videoFile!)
-                        : VideoPlayerController.networkUrl('' as Uri),
-                  ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    ElevatedButton(
-                      onPressed: _pickImage,
-                      child: const Text('Chọn ảnh'),
+      body: SingleChildScrollView(
+        child: Container(
+          margin: const EdgeInsets.only(right: 20, left: 20),
+          child: Form(
+            key: _formKeyTaoTinBai,
+            child: Container(
+              margin: const EdgeInsets.only(right: 10, left: 10),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const Divider(),
+                  const Padding(padding: EdgeInsets.only(top: 0)),
+                  TextFormField(
+                    controller: loaiTinBai,
+                    decoration: const InputDecoration(
+                      labelText: 'Loại tin bài',
                     ),
-                    ElevatedButton(
-                      onPressed: _pickVideo,
-                      child: const Text('Chọn video'),
+                    // validator: (value) {
+                    //   if (value?.isEmpty ?? true) {
+                    //     return 'Nhập loại ti bài';
+                    //   }
+                    //   return null;
+                    // },
+                  ),
+                  TextFormField(
+                    controller: tieuDe,
+                    decoration: const InputDecoration(labelText: 'Tiêu đề'),
+                    // validator: (value) {
+                    //   if (value?.isEmpty ?? true) {
+                    //     return 'Nhập thông tin tiêu đề';
+                    //   }
+                    //   return null;
+                    // },
+                  ),
+                  const Padding(padding: EdgeInsets.only(top: 5)),
+                  TextFormField(
+                    controller: diaDiem,
+                    decoration: const InputDecoration(labelText: 'Địa điểm'),
+                    // validator: (value) {
+                    //   if (value?.isEmpty ?? true) {
+                    //     return 'Nhập tóm tắt nội dung';
+                    //   }
+                    //   return null;
+                    // },
+                  ),
+                  TextFormField(
+                    controller: noiDungChiTiet,
+                    maxLength: 999,
+                    maxLines: 10,
+                    decoration:
+                        const InputDecoration(labelText: 'Nội dung chi tiết'),
+                    // validator: (value) {
+                    //   if (value?.isEmpty ?? true) {
+                    //     return 'Nhập tóm tắt nội dung';
+                    //   }
+                    //   return null;
+                    // },
+                  ),
+                  const SizedBox(height: 16),
+                  _buildImageCarousel(),
+                  if (_imageFile != null)
+                    Image.file(
+                      _imageFile!,
+                      height: 150,
                     ),
-                  ],
-                ),
-                ElevatedButton(
-                  onPressed: () async {
-                    if (_formKeyTaoTinBai.currentState!.validate()) {
-                      bool imageUploadSuccess = await _uploadFile(_imageFile);
-                      if (!mounted) return;
+                  if (_videoFile != null)
+                    VideoPlayer(
+                      _videoFile != null
+                          ? VideoPlayerController.file(_videoFile!)
+                          : VideoPlayerController.networkUrl('' as Uri),
+                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ElevatedButton(
+                        onPressed: _pickImage,
+                        child: const Text('Chọn ảnh'),
+                      ),
+                      ElevatedButton(
+                        onPressed: _pickVideo,
+                        child: const Text('Chọn video'),
+                      ),
+                    ],
+                  ),
+                  ElevatedButton(
+                    onPressed: () async {
+                      if (_formKeyTaoTinBai.currentState!.validate()) {
+                        bool imageUploadSuccess = await _uploadFile(_imageFile);
+                        if (!mounted) return;
 
-                      if (imageUploadSuccess) {
+                        if (imageUploadSuccess) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                content: Text('File upload thành công')),
+                          );
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('Lỗi tải file')),
+                          );
+                        }
+
+                        await _uploadFile(_videoFile);
+                        if (!mounted) return;
+
+                        await _uploadImages();
+                        if (!mounted) return;
+
+                        final documentReference =
+                            firestore.collection('bai_viet').doc();
+                        await documentReference.set({
+                          'loaiTinBai': loaiTinBai?.text,
+                          'tieuDe': tieuDe?.text,
+                          'diaDiem': diaDiem?.text,
+                          'noiDungChiTiet': noiDungChiTiet?.text,
+                          'imageUrls': imageUrls,
+                          'timeTinBai': timeTinBai,
+                        });
+                        if (!mounted) return;
+
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
-                              content: Text('File upload thành công')),
+                              content: Text('Thêm tin bài thành công')),
                         );
-                      } else {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Lỗi tải file')),
+                        Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(
+                              builder: (context) => const DanhSachBaiViet()),
                         );
                       }
-
-                      await _uploadFile(_videoFile);
-                      if (!mounted) return;
-
-                      await _uploadImages();
-                      if (!mounted) return;
-
-                      final documentReference =
-                          firestore.collection('bai_viet').doc();
-                      await documentReference.set({
-                        'loaiTinBai': loaiTinBai?.text,
-                        'tieuDe': tieuDe?.text,
-                        'diaDiem': diaDiem?.text,
-                        'noiDungChiTiet': noiDungChiTiet?.text,
-                        'imageUrls': imageUrls,
-                        'timeTinBai': timeTinBai,
-                      });
-                      if (!mounted) return;
-
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                            content: Text('Thêm tin bài thành công')),
-                      );
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                            builder: (context) => const DanhSachBaiViet()),
-                      );
-                    }
-                  },
-                  child: Container(
-                    width: 300,
-                    height: 50,
-                    decoration: const BoxDecoration(border: Border()),
-                    child: const Center(
-                      child: Text('Thêm tin bài'),
+                    },
+                    child: Container(
+                      width: 300,
+                      height: 50,
+                      decoration: const BoxDecoration(border: Border()),
+                      child: const Center(
+                        child: Text('Thêm tin bài'),
+                      ),
                     ),
                   ),
-                ),
-                const Padding(padding: EdgeInsets.only(bottom: 20)),
-              ],
+                  const Padding(padding: EdgeInsets.only(bottom: 20)),
+                ],
+              ),
             ),
           ),
         ),

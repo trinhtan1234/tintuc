@@ -3,7 +3,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:tintuc/danhsachbaiviet/capnhapbaiviet.dart';
 import 'package:tintuc/danhsachbaiviet/taobaiviet.dart';
-import 'package:tintuc/screen_nav_bottom.dart';
 import 'package:intl/intl.dart';
 
 class DanhSachBaiViet extends StatefulWidget {
@@ -20,26 +19,26 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.of(context).pushReplacement(
-              MaterialPageRoute(
-                builder: (context) => const ScreenNavigationBottom(),
-              ),
-            );
-          },
-          icon: const Icon(Icons.arrow_back_ios_new),
-        ),
-        title: const Center(
-          child: Text(
-            'Danh sách bài viết',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Colors.deepPurple,
-            ),
+          // leading: IconButton(
+          //   onPressed: () {
+          //     Navigator.of(context).pushReplacement(
+          //       MaterialPageRoute(
+          //         builder: (context) => const ScreenNavigationBottom(),
+          //       ),
+          //     );
+          //   },
+          //   icon: const Icon(Icons.arrow_back_ios_new),
+          // ),
+          // title: const Center(
+          //   child: Text(
+          //     'Danh sách bài viết',
+          //     style: TextStyle(
+          //       fontWeight: FontWeight.bold,
+          //       color: Colors.deepPurple,
+          //     ),
+          //   ),
+          // ),
           ),
-        ),
-      ),
       body: StreamBuilder(
         stream: firestore.collection('bai_viet').snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -69,6 +68,8 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
               final noiDungChiTiet = document['noiDungChiTiet'];
               final timeTinBai = document['timeTinBai'];
               final dynamic imageUrls = document['imageUrls'];
+              final imageUrl =
+                  imageUrls is List ? imageUrls.join(',') : imageUrls;
 
               final List<dynamic> imageUrlsList =
                   imageUrls is List ? imageUrls : [];
@@ -95,52 +96,56 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
                     ),
                   );
                 },
-                child: Hero(
-                  tag: uniqueTag,
-                  child: Container(
-                    padding: const EdgeInsets.all(10),
-                    height: 120,
-                    color: const Color.fromARGB(255, 252, 252, 252),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(loaiTinBai, overflow: TextOverflow.ellipsis),
-                              Text(DateFormat('dd/MM/yyyy HH:mm')
-                                  .format(timeTinBai.toDate())),
-                              Text(
-                                tieuDe,
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
+                child: SingleChildScrollView(
+                  child: Hero(
+                    tag: uniqueTag,
+                    child: Container(
+                      margin: const EdgeInsets.only(
+                        right: 5,
+                        left: 5,
+                        bottom: 10,
+                      ),
+                      // padding: const EdgeInsets.all(10),
+                      height: 120,
+                      color: const Color.fromARGB(255, 197, 187, 187),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(loaiTinBai,
+                                    overflow: TextOverflow.ellipsis),
+                                Text(DateFormat('dd/MM/yyyy HH:mm')
+                                    .format(timeTinBai.toDate())),
+                                Text(
+                                  tieuDe,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                        CachedNetworkImage(
-                          imageUrl: firstImageUrl.isNotEmpty
-                              ? firstImageUrl
-                              : imageUrls.isNotEmpty
-                                  ? imageUrls.join(',')
-                                  : '',
-                          width: MediaQuery.of(context).size.width - 20,
-                          height: 230,
-                          fit: BoxFit.cover,
-                          placeholder: (context, url) =>
-                              const CircularProgressIndicator(
-                            strokeWidth: 1,
-                            strokeCap: StrokeCap.square,
-                            strokeAlign: BorderSide.strokeAlignCenter,
+                          CachedNetworkImage(
+                            imageUrl: imageUrl ?? '',
+                            width: 80,
+                            height: 80,
+                            fit: BoxFit.cover,
+                            placeholder: (context, url) =>
+                                const CircularProgressIndicator(
+                              strokeWidth: 1,
+                              strokeCap: StrokeCap.square,
+                              strokeAlign: BorderSide.strokeAlignCenter,
+                            ),
+                            errorWidget: (context, url, error) =>
+                                const Icon(Icons.error),
                           ),
-                          errorWidget: (context, url, error) =>
-                              const Icon(Icons.error),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),

@@ -61,6 +61,11 @@ class _TinTucState extends State<TinTuc> {
               // const uniqueTag = '4';
               final uniqueTag = '${document.id}-$index';
 
+              // final dynamic imageUrls = document['imageUrls'];
+              final String imageUrl = imageUrls is List
+                  ? imageUrls.join(',')
+                  : (imageUrls as String? ?? '');
+
               return GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(
@@ -124,11 +129,7 @@ class _TinTucState extends State<TinTuc> {
                           ),
                         ),
                         CachedNetworkImage(
-                          imageUrl: firstImageUrl.isNotEmpty
-                              ? firstImageUrl
-                              : imageUrls.isNotEmpty
-                                  ? imageUrls.join(',')
-                                  : '',
+                          imageUrl: imageUrl,
                           width: MediaQuery.of(context).size.width - 20,
                           height: 230,
                           fit: BoxFit.cover,

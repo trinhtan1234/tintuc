@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:tintuc/tinchinhmoi/tintuc.dart';
 import 'package:video_player/video_player.dart';
 import 'danhsach.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -101,6 +102,15 @@ class _TaoTinBaiState extends State<TaoTinBai> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const TinTuc(), // Truyền tiêu đề
+                ),
+              );
+            },
+            icon: const Icon(Icons.arrow_back_ios_new_outlined)),
         title: const Center(
           child: Text('Soạn tin bài'),
         ),

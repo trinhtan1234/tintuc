@@ -24,6 +24,7 @@ class _AppTextButtomState extends State<AppTextButtom> {
     return TextButton(
       onPressed: widget.onPressed,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
             children: [

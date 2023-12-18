@@ -24,7 +24,6 @@ class DefaultFirebaseOptions {
         return android;
       case TargetPlatform.iOS:
         return ios;
-
       case TargetPlatform.macOS:
         return macos;
       case TargetPlatform.windows:
@@ -45,50 +44,37 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDL6dsusnECOfPmLCnRFyCfml9N0ng25GM',
-    appId: '1:386891168137:web:77916e1851f2ce5a314958',
-    messagingSenderId: '386891168137',
-    projectId: 'tintuc-a0ba2',
-    authDomain: 'tintuc-a0ba2.firebaseapp.com',
-    databaseURL: 'https://tintuc-a0ba2-default-rtdb.firebaseio.com',
-    storageBucket: 'tintuc-a0ba2.appspot.com',
-    measurementId: 'G-EZB2449TGD',
+    apiKey: 'AIzaSyCO52Vs-DDSFKiX_ichSPpES6ju_8DKXVg',
+    appId: '1:516952873621:web:431737b0dbcd5064ab999c',
+    messagingSenderId: '516952873621',
+    projectId: 'apptintuc-db349',
+    authDomain: 'apptintuc-db349.firebaseapp.com',
+    storageBucket: 'apptintuc-db349.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDdhuGKCVaGv6r27AjSmpT2Bl43E5qzkJs',
-    appId: '1:386891168137:android:e7cc0da67a08f809314958',
-    messagingSenderId: '386891168137',
-    projectId: 'tintuc-a0ba2',
-    databaseURL: 'https://tintuc-a0ba2-default-rtdb.firebaseio.com',
-    storageBucket: 'tintuc-a0ba2.appspot.com',
+    apiKey: 'AIzaSyAk5kDBTvjRVulgWeacZxl0w64Hrof7HrY',
+    appId: '1:516952873621:android:723f11b63bfad897ab999c',
+    messagingSenderId: '516952873621',
+    projectId: 'apptintuc-db349',
+    storageBucket: 'apptintuc-db349.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCamUAnoUFhE_8fOjtN5rHdaDkCgfjZY5A',
-    appId: '1:386891168137:ios:978ff18ddfc067d0314958',
-    messagingSenderId: '386891168137',
-    projectId: 'tintuc-a0ba2',
-    databaseURL: 'https://tintuc-a0ba2-default-rtdb.firebaseio.com',
-    storageBucket: 'tintuc-a0ba2.appspot.com',
-    androidClientId:
-        '386891168137-bv01gm6mag4ou5q342ga9pj5e489j19e.apps.googleusercontent.com',
-    iosClientId:
-        '386891168137-6fs0g2u4anrt6sm089t6k1pmqitc69ca.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDgTF_4karG3-FA-p7316XzfrFQcy4whd0',
+    appId: '1:516952873621:ios:921008beb1919a34ab999c',
+    messagingSenderId: '516952873621',
+    projectId: 'apptintuc-db349',
+    storageBucket: 'apptintuc-db349.appspot.com',
     iosBundleId: 'com.example.tintuc',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCamUAnoUFhE_8fOjtN5rHdaDkCgfjZY5A',
-    appId: '1:386891168137:ios:9afbed10ca39ab33314958',
-    messagingSenderId: '386891168137',
-    projectId: 'tintuc-a0ba2',
-    databaseURL: 'https://tintuc-a0ba2-default-rtdb.firebaseio.com',
-    storageBucket: 'tintuc-a0ba2.appspot.com',
-    androidClientId:
-        '386891168137-bv01gm6mag4ou5q342ga9pj5e489j19e.apps.googleusercontent.com',
-    iosClientId:
-        '386891168137-1ffkad4cfq38sp1dhu8parsnl63t763o.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDgTF_4karG3-FA-p7316XzfrFQcy4whd0',
+    appId: '1:516952873621:ios:1c5722d0aa0107edab999c',
+    messagingSenderId: '516952873621',
+    projectId: 'apptintuc-db349',
+    storageBucket: 'apptintuc-db349.appspot.com',
     iosBundleId: 'com.example.tintuc.RunnerTests',
   );
 }

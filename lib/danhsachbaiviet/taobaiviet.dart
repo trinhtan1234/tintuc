@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'dart:typed_data';
 import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:file_picker/file_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -36,7 +35,7 @@ class _TaoTinBaiState extends State<TaoTinBai> {
   List<String> imageUrls = [];
 
   final FirebaseStorage _storage =
-      FirebaseStorage.instanceFor(bucket: 'gs://tintuc-a0ba2.appspot.com');
+      FirebaseStorage.instanceFor(bucket: 'gs://apptintuc-db349.appspot.com');
 
   Future<void> _pickImage() async {
     await checkAndRequestPermission();
@@ -69,16 +68,21 @@ class _TaoTinBaiState extends State<TaoTinBai> {
   }
 
   Future<bool> _uploadFile(File? file) async {
-    if (file == null) return false;
+    if (file == null) return true;
 
     try {
       final fileName = file.path.split('/').last;
       final ref = _storage.ref().child(fileName);
-      await ref.putFile(file).then((p) async {
-        String downloadUrl = await p.ref.getDownloadURL();
+
+      TaskSnapshot taskSnapshot = await ref.putFile(file);
+
+      if (taskSnapshot.state == TaskState.success) {
+        String downloadUrl = await ref.getDownloadURL();
         imageUrls.add(downloadUrl);
-      });
-      return true;
+        return true;
+      } else {
+        return false;
+      }
     } catch (e) {
       return false;
     }
@@ -118,46 +122,22 @@ class _TaoTinBaiState extends State<TaoTinBai> {
                     decoration: const InputDecoration(
                       labelText: 'Loại tin bài',
                     ),
-                    // validator: (value) {
-                    //   if (value?.isEmpty ?? true) {
-                    //     return 'Nhập loại ti bài';
-                    //   }
-                    //   return null;
-                    // },
                   ),
                   TextFormField(
                     controller: tieuDe,
                     decoration: const InputDecoration(labelText: 'Tiêu đề'),
-                    // validator: (value) {
-                    //   if (value?.isEmpty ?? true) {
-                    //     return 'Nhập thông tin tiêu đề';
-                    //   }
-                    //   return null;
-                    // },
                   ),
                   const Padding(padding: EdgeInsets.only(top: 5)),
                   TextFormField(
                     controller: diaDiem,
                     decoration: const InputDecoration(labelText: 'Địa điểm'),
-                    // validator: (value) {
-                    //   if (value?.isEmpty ?? true) {
-                    //     return 'Nhập tóm tắt nội dung';
-                    //   }
-                    //   return null;
-                    // },
                   ),
                   TextFormField(
                     controller: noiDungChiTiet,
                     maxLength: 999,
-                    maxLines: 10,
+                    maxLines: 5,
                     decoration:
                         const InputDecoration(labelText: 'Nội dung chi tiết'),
-                    // validator: (value) {
-                    //   if (value?.isEmpty ?? true) {
-                    //     return 'Nhập tóm tắt nội dung';
-                    //   }
-                    //   return null;
-                    // },
                   ),
                   const SizedBox(height: 16),
                   _buildImageCarousel(),
@@ -251,16 +231,13 @@ class _TaoTinBaiState extends State<TaoTinBai> {
 
   Widget _buildImageCarousel() {
     return SizedBox(
-      // height: 100,
       child: pickedImagesInBytes.isEmpty
           ? const Center(child: Text('Không có ảnh chọn'))
           : ListView.builder(
-              scrollDirection:
-                  Axis.horizontal, // Đúng vị trí cho scrollDirection
+              scrollDirection: Axis.horizontal,
               itemCount: pickedImagesInBytes.length,
               itemBuilder: (context, index) {
                 return Container(
-                  // width: 100,
                   margin: const EdgeInsets.symmetric(horizontal: 5.0),
                   decoration: const BoxDecoration(
                     color: Colors.amber,
@@ -290,7 +267,6 @@ class _TaoTinBaiState extends State<TaoTinBai> {
         imageUrls.add(downloadUrl);
       }
     } catch (error) {
-      // ignore: avoid_print
       print('Error uploading images: $error');
     }
   }

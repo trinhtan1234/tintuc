@@ -32,9 +32,7 @@ class _TinTucState extends State<TinTuc> {
           }
 
           // Lọc ra các bài viết loại "Tin tức"
-          final filteredDocs = snapshot.data!.docs
-              .where((doc) => doc['loaiTinBai'] == "Tin tức")
-              .toList();
+          final filteredDocs = snapshot.data!.docs.toList();
 
           if (filteredDocs.isEmpty) {
             return const Center(
@@ -81,7 +79,7 @@ class _TinTucState extends State<TinTuc> {
                   tag: uniqueTag,
                   child: Container(
                     margin: const EdgeInsets.only(left: 10, right: 10, top: 5),
-                    height: 400,
+                    // height: 400,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -125,23 +123,23 @@ class _TinTucState extends State<TinTuc> {
                             ],
                           ),
                         ),
-                        Container(
-                          child: firstImageUrl.isNotEmpty
-                              ? CachedNetworkImage(
-                                  imageUrl: firstImageUrl,
-                                  width: MediaQuery.of(context).size.width - 20,
-                                  height: 230,
-                                  fit: BoxFit.cover,
-                                  placeholder: (context, url) =>
-                                      const CircularProgressIndicator(
-                                    strokeWidth: 1,
-                                    strokeCap: StrokeCap.square,
-                                    strokeAlign: BorderSide.strokeAlignCenter,
-                                  ),
-                                  errorWidget: (context, url, error) =>
-                                      const Icon(Icons.error),
-                                )
-                              : const SizedBox(), // Thêm SizedBox() nếu không có hình ảnh
+                        CachedNetworkImage(
+                          imageUrl: firstImageUrl.isNotEmpty
+                              ? firstImageUrl
+                              : imageUrls.isNotEmpty
+                                  ? imageUrls.join(',')
+                                  : '',
+                          width: MediaQuery.of(context).size.width - 20,
+                          height: 230,
+                          fit: BoxFit.cover,
+                          placeholder: (context, url) =>
+                              const CircularProgressIndicator(
+                            strokeWidth: 1,
+                            strokeCap: StrokeCap.square,
+                            strokeAlign: BorderSide.strokeAlignCenter,
+                          ),
+                          errorWidget: (context, url, error) =>
+                              const Icon(Icons.error),
                         ),
                         const Padding(padding: EdgeInsets.only(top: 10)),
                         Row(

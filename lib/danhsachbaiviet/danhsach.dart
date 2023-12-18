@@ -60,7 +60,7 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
           }
 
           return ListView.builder(
-            itemCount: snapshot.data!.docs.length,
+            itemCount: snapshot.data?.docs.length ?? 0,
             itemBuilder: (BuildContext context, int index) {
               final document = snapshot.data!.docs[index];
               final tieuDe = document['tieuDe'];
@@ -80,7 +80,7 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
               final uniqueTag = document.id;
               return GestureDetector(
                 onTap: () {
-                  Navigator.pushReplacement(
+                  Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => CapNhatBaiViet(
@@ -98,48 +98,47 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
                 child: Hero(
                   tag: uniqueTag,
                   child: Container(
-                    margin: const EdgeInsets.all(10),
-                    height: 100,
-                    color: const Color.fromARGB(255, 241, 239, 239),
+                    padding: const EdgeInsets.all(10),
+                    height: 120,
+                    color: const Color.fromARGB(255, 252, 252, 252),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Expanded(
-                          child: SizedBox(
-                            width: 100,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(loaiTinBai),
-                                Text(DateFormat('dd/MM/yyyy HH:mm')
-                                    .format(timeTinBai.toDate())),
-                                Text(
-                                  tieuDe,
-                                  maxLines: 2,
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 18,
-                                  ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(loaiTinBai, overflow: TextOverflow.ellipsis),
+                              Text(DateFormat('dd/MM/yyyy HH:mm')
+                                  .format(timeTinBai.toDate())),
+                              Text(
+                                tieuDe,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
                                 ),
-                                // const Text(uniqueTag),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
-                        Container(
-                          child: firstImageUrl.isNotEmpty
-                              ? CachedNetworkImage(
-                                  imageUrl: firstImageUrl,
-                                  height: 100,
-                                  width: 100,
-                                  fit: BoxFit.cover,
-                                  placeholder: (context, url) =>
-                                      const CircularProgressIndicator(),
-                                  errorWidget: (context, url, error) =>
-                                      const Icon(Icons.error),
-                                )
-                              : const SizedBox(), // Thêm SizedBox() nếu không có hình ảnh
+                        CachedNetworkImage(
+                          imageUrl: firstImageUrl.isNotEmpty
+                              ? firstImageUrl
+                              : imageUrls.isNotEmpty
+                                  ? imageUrls.join(',')
+                                  : '',
+                          width: MediaQuery.of(context).size.width - 20,
+                          height: 230,
+                          fit: BoxFit.cover,
+                          placeholder: (context, url) =>
+                              const CircularProgressIndicator(
+                            strokeWidth: 1,
+                            strokeCap: StrokeCap.square,
+                            strokeAlign: BorderSide.strokeAlignCenter,
+                          ),
+                          errorWidget: (context, url, error) =>
+                              const Icon(Icons.error),
                         ),
                       ],
                     ),

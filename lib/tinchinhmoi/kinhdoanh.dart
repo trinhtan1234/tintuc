@@ -125,23 +125,21 @@ class _KinhDoanhState extends State<KinhDoanh> {
                             ],
                           ),
                         ),
-                        Container(
-                          child: firstImageUrl.isNotEmpty
-                              ? CachedNetworkImage(
-                                  imageUrl: firstImageUrl,
-                                  width: MediaQuery.of(context).size.width - 20,
-                                  height: 230,
-                                  fit: BoxFit.cover,
-                                  placeholder: (context, url) =>
-                                      const CircularProgressIndicator(
-                                    strokeWidth: 1,
-                                    strokeCap: StrokeCap.square,
-                                    strokeAlign: BorderSide.strokeAlignCenter,
-                                  ),
-                                  errorWidget: (context, url, error) =>
-                                      const Icon(Icons.error),
-                                )
-                              : const SizedBox(), // Thêm SizedBox() nếu không có hình ảnh
+                        CachedNetworkImage(
+                          imageUrl: firstImageUrl.isNotEmpty
+                              ? firstImageUrl
+                              : imageUrls ?? '',
+                          width: MediaQuery.of(context).size.width - 20,
+                          height: 230,
+                          fit: BoxFit.cover,
+                          placeholder: (context, url) =>
+                              const CircularProgressIndicator(
+                            strokeWidth: 1,
+                            strokeCap: StrokeCap.square,
+                            strokeAlign: BorderSide.strokeAlignCenter,
+                          ),
+                          errorWidget: (context, url, error) =>
+                              const Icon(Icons.error),
                         ),
                         const Padding(padding: EdgeInsets.only(top: 10)),
                         Row(

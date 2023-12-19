@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:tintuc/caidat/login/dangkytaikhoan.dart';
 
 class ThongTinTaiKhoan extends StatefulWidget {
   const ThongTinTaiKhoan({super.key});
@@ -10,42 +9,98 @@ class ThongTinTaiKhoan extends StatefulWidget {
 }
 
 class _ThongTinTaiKhoanState extends State<ThongTinTaiKhoan> {
-  final _auth = FirebaseAuth.instance;
+  final _formKey = GlobalKey<FormState>();
+  late TextEditingController _nameController;
+  late TextEditingController _emailController;
+  late TextEditingController imageUrlsController;
+
+  final user = FirebaseAuth.instance.currentUser;
+
+  @override
+  void initState() {
+    _nameController = TextEditingController();
+    _emailController = TextEditingController();
+    imageUrlsController = TextEditingController();
+    final user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      _nameController.text = user.displayName ?? '';
+      _emailController.text = user.email ?? '';
+      imageUrlsController.text = user.photoURL ?? '';
+    }
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _emailController.dispose();
+    imageUrlsController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _capNhatThongTinTaiKhoan() async {
+    if (_formKey.currentState!.validate()) {
+      try {
+        User? user = FirebaseAuth.instance.currentUser;
+        if (user != null) {
+          await user.updateDisplayName(_nameController.text);
+          await user.updateEmail(_emailController.text);
+          await user.updatePhotoURL(imageUrlsController.text);
+
+          // ignore: use_build_context_synchronously
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Thông tin tài khoản đã được cập nhật'),
+            ),
+          );
+        }
+      } on FirebaseAuthException catch (e) {
+        // ignore: use_build_context_synchronously
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Lỗi: ${e.message}')),
+        );
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    final myUser = FirebaseAuth.instance.currentUser;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Thông tin tài khoản'),
       ),
-      body: myUser == null
-          ? const Center(
-              child: Text('Bạn chưa đăng nhập'),
-            )
-          : Column(
-              children: [
-                Text('Email: ${myUser.email}'),
-                Text('Tên tài khoản: ${myUser.displayName}'),
-                Text('Số điện thoại: ${myUser.phoneNumber}'),
-                TextButton(
-                  onPressed: () async {
-                    await myUser.updateDisplayName('TrInh vawn A');
-                  },
-                  child: const Text('Cập nhật tài khoản'),
-                ),
-                TextButton(
-                    onPressed: () {
-                      _auth.signOut();
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const ManHinhDangKy(),
-                        ),
-                      );
-                    },
-                    child: const Text('Đăng xuất'))
-              ],
+      body: Form(
+        key: _formKey,
+        child: ListView(
+          padding: const EdgeInsets.all(16),
+          children: <Widget>[
+            TextFormField(
+              controller: _nameController,
+              decoration: const InputDecoration(labelText: 'Tên'),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Vui lòng nhập tên';
+                }
+                return null;
+              },
             ),
+            TextFormField(
+              controller: _emailController,
+              decoration: const InputDecoration(labelText: 'Email'),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Vui lòng nhập email';
+                }
+                return null;
+              },
+            ),
+            ElevatedButton(
+              onPressed: _capNhatThongTinTaiKhoan,
+              child: const Text('Cập Nhật Thông Tin'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

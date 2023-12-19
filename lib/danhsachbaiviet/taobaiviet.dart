@@ -4,9 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:tintuc/tinchinhmoi/tintuc.dart';
 import 'package:video_player/video_player.dart';
-import 'danhsach.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class TaoTinBai extends StatefulWidget {
@@ -56,17 +54,17 @@ class _TaoTinBaiState extends State<TaoTinBai> {
     }
   }
 
-  Future<void> _pickVideo() async {
-    await checkAndRequestPermission();
-    final pickedFile =
-        await _imagePicker.pickVideo(source: ImageSource.gallery);
+  // Future<void> _pickVideo() async {
+  //   await checkAndRequestPermission();
+  //   final pickedFile =
+  //       await _imagePicker.pickVideo(source: ImageSource.gallery);
 
-    if (pickedFile != null) {
-      setState(() {
-        _videoFile = File(pickedFile.path);
-      });
-    }
-  }
+  //   if (pickedFile != null) {
+  //     setState(() {
+  //       _videoFile = File(pickedFile.path);
+  //     });
+  //   }
+  // }
 
   Future<bool> _uploadFile(File? file) async {
     if (file == null) return true;
@@ -104,11 +102,13 @@ class _TaoTinBaiState extends State<TaoTinBai> {
       appBar: AppBar(
         leading: IconButton(
             onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const TinTuc(), // Truyền tiêu đề
-                ),
-              );
+              Navigator.pop(context);
+              // Navigator.of(context).push(
+              //   MaterialPageRoute(
+              //     builder: (context) =>
+              //         const DanhSachBaiViet(), // Truyền tiêu đề
+              //   ),
+              // );
             },
             icon: const Icon(Icons.arrow_back_ios_new_outlined)),
         title: const Center(
@@ -169,10 +169,10 @@ class _TaoTinBaiState extends State<TaoTinBai> {
                         onPressed: _pickImage,
                         child: const Text('Chọn ảnh'),
                       ),
-                      ElevatedButton(
-                        onPressed: _pickVideo,
-                        child: const Text('Chọn video'),
-                      ),
+                      // ElevatedButton(
+                      //   onPressed: _pickVideo,
+                      //   child: const Text('Chọn video'),
+                      // ),
                     ],
                   ),
                   ElevatedButton(
@@ -214,10 +214,16 @@ class _TaoTinBaiState extends State<TaoTinBai> {
                           const SnackBar(
                               content: Text('Thêm tin bài thành công')),
                         );
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(
-                              builder: (context) => const DanhSachBaiViet()),
-                        );
+                        Navigator.pop(context);
+
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(builder: (context) => DanhSachBaiViet()),
+                        // );
+                        // Navigator.of(context).pushReplacement(
+                        //   MaterialPageRoute(
+                        //       builder: (context) => const DanhSachBaiViet()),
+                        // );
                       }
                     },
                     child: Container(
@@ -242,7 +248,7 @@ class _TaoTinBaiState extends State<TaoTinBai> {
   Widget _buildImageCarousel() {
     return SizedBox(
       child: pickedImagesInBytes.isEmpty
-          ? const Center(child: Text('Không có ảnh chọn'))
+          ? const Center(child: Text(''))
           : ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: pickedImagesInBytes.length,
@@ -277,7 +283,7 @@ class _TaoTinBaiState extends State<TaoTinBai> {
         imageUrls.add(downloadUrl);
       }
     } catch (error) {
-      print('Error uploading images: $error');
+      // print('Error uploading images: $error');
     }
   }
 }

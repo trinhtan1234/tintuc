@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:tintuc/danhsachbaiviet/capnhapbaiviet.dart';
 import 'package:tintuc/danhsachbaiviet/taobaiviet.dart';
 import 'package:intl/intl.dart';
+import 'package:tintuc/screen_nav_bottom.dart';
 
 class DanhSachBaiViet extends StatefulWidget {
   const DanhSachBaiViet({super.key});
@@ -19,26 +20,26 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          // leading: IconButton(
-          //   onPressed: () {
-          //     Navigator.of(context).pushReplacement(
-          //       MaterialPageRoute(
-          //         builder: (context) => const ScreenNavigationBottom(),
-          //       ),
-          //     );
-          //   },
-          //   icon: const Icon(Icons.arrow_back_ios_new),
-          // ),
-          // title: const Center(
-          //   child: Text(
-          //     'Danh sách bài viết',
-          //     style: TextStyle(
-          //       fontWeight: FontWeight.bold,
-          //       color: Colors.deepPurple,
-          //     ),
-          //   ),
-          // ),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(
+                builder: (context) => const ScreenNavigationBottom(),
+              ),
+            );
+          },
+          icon: const Icon(Icons.arrow_back_ios_new),
+        ),
+        title: const Center(
+          child: Text(
+            'Danh sách bài viết',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.deepPurple,
+            ),
           ),
+        ),
+      ),
       body: StreamBuilder(
         stream: firestore.collection('bai_viet').snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -101,8 +102,8 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
                     tag: uniqueTag,
                     child: Container(
                       margin: const EdgeInsets.only(
-                        right: 5,
-                        left: 5,
+                        right: 10,
+                        left: 10,
                         bottom: 10,
                       ),
                       // padding: const EdgeInsets.all(10),
@@ -156,10 +157,9 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).pushReplacement(
-            MaterialPageRoute(
-              builder: (context) => const TaoTinBai(),
-            ),
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const TaoTinBai()),
           );
         },
         child: const Icon(Icons.add),

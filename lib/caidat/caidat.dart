@@ -10,6 +10,8 @@ class CaiDat extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final User? currentUser = FirebaseAuth.instance.currentUser;
+    final bool isLoggedIn = currentUser != null;
     final auth = FirebaseAuth.instance;
 
     Future<String> getUser() async {
@@ -21,7 +23,6 @@ class CaiDat extends StatelessWidget {
       future: getUser(),
       builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
         if (snapshot.hasData) {
-          final userName = snapshot.data!;
           return Scaffold(
             appBar: AppBar(
               leading: const Icon(
@@ -80,10 +81,17 @@ class CaiDat extends StatelessWidget {
                   AppTextButtom(
                     iconLeft: const Icon(Icons.person),
                     iconRight: const Icon(Icons.arrow_forward_ios),
-                    labelTitle: userName,
+                    labelTitle: isLoggedIn
+                        ? currentUser.displayName ?? 'Tên người dung'
+                        : 'Chưa đăng nhập',
                     onPressed: () {
-                      if (userName != "Chưa đăng nhập") {
-                        auth.signOut();
+                      if (isLoggedIn) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ThongTinTaiKhoan(),
+                          ),
+                        );
                       } else {
                         Navigator.push(
                           context,

@@ -99,7 +99,7 @@ class _TinTucMediaState extends State<TinTucMedia>
               if (tabData[index] == null) {
                 switch (index) {
                   case 0:
-                    tabData[index] = const Center(child: Video());
+                    tabData[index] = const Center(child: TinTucVideo());
                     break;
                   case 1:
                     tabData[index] = const Center(child: Postcats());
@@ -115,7 +115,7 @@ class _TinTucMediaState extends State<TinTucMedia>
         index: _currentIndex,
         children: const <Widget>[
           Center(
-            child: Video(),
+            child: TinTucVideo(),
           ),
           Center(
             child: Postcats(),

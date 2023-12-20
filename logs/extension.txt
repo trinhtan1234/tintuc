@@ -1,0 +1,402 @@
+!! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
+Dart Code extension: 3.78.2
+Flutter extension: 3.79.20231130 (not activated)
+
+App: Visual Studio Code
+App Host: desktop
+Version: win 1.85.1
+
+
+Logging Categories:
+    General
+
+Wed Dec 20 2023 [16:44:00 GMT+0700 (Indochina Time)] Log file started
+[4:44:00 PM] [General] [Info] Searching for SDKs...
+[4:44:00 PM] [General] [Info] Environment PATH:
+[4:44:00 PM] [General] [Info]     C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin
+[4:44:00 PM] [General] [Info]     C:\Python312\Scripts\
+[4:44:00 PM] [General] [Info]     C:\Python312\
+[4:44:00 PM] [General] [Info]     C:\Program Files\Common Files\Oracle\Java\javapath
+[4:44:00 PM] [General] [Info]     C:\Program Files (x86)\Common Files\Oracle\Java\javapath
+[4:44:00 PM] [General] [Info]     C:\Windows\system32
+[4:44:00 PM] [General] [Info]     C:\Windows
+[4:44:00 PM] [General] [Info]     C:\Windows\System32\Wbem
+[4:44:00 PM] [General] [Info]     C:\Windows\System32\WindowsPowerShell\v1.0\
+[4:44:00 PM] [General] [Info]     C:\Windows\System32\OpenSSH\
+[4:44:00 PM] [General] [Info]     C:\Program Files\dotnet\
+[4:44:00 PM] [General] [Info]     C:\ProgramData\chocolatey\bin
+[4:44:00 PM] [General] [Info]     C:\Program Files\Go\bin
+[4:44:00 PM] [General] [Info]     C:\src\tools
+[4:44:00 PM] [General] [Info]     C:\Program Files\nodejs\
+[4:44:00 PM] [General] [Info]     C:\Users\tantv\AppData\Local\Pub\Cache\bin
+[4:44:00 PM] [General] [Info]     C:\Program Files\Git\cmd
+[4:44:00 PM] [General] [Info]     C:\Program Files\Java\jdk-21\bin
+[4:44:00 PM] [General] [Info]     C:\Program Files\Docker\Docker\resources\bin
+[4:44:00 PM] [General] [Info]     C:\Program Files\Cloudflare\Cloudflare WARP\
+[4:44:00 PM] [General] [Info]     C:\Users\tantv\AppData\Local\Microsoft\WindowsApps
+[4:44:00 PM] [General] [Info]     C:\Program Files\Go\bin
+[4:44:00 PM] [General] [Info]     C:\Users\tantv\.dotnet\tools
+[4:44:00 PM] [General] [Info]     C:\Program Files\Go
+[4:44:00 PM] [General] [Info]     C:\src\flutter\bin
+[4:44:00 PM] [General] [Info]     C:\tools\dart-sdk\bin
+[4:44:00 PM] [General] [Info]     C:\Users\tantv\AppData\Roaming\Pub\Cache\bin
+[4:44:00 PM] [General] [Info]     C:\Users\tantv\go\bin
+[4:44:00 PM] [General] [Info]     C:\Users\tantv\AppData\Local\Programs\Microsoft VS Code\bin
+[4:44:00 PM] [General] [Info]     C:\Program Files\nodejs\node_modules\npm
+[4:44:00 PM] [General] [Info]     C:\Users\tantv\AppData\Roaming\npm
+[4:44:00 PM] [General] [Info]     C:\Program Files\Java\jdk-21\bin
+[4:44:01 PM] [General] [Info] Took 319ms to search for projects (5 levels)
+[4:44:01 PM] [General] [Info] Took 2ms to filter out excluded projects (0 exclusion rules)
+[4:44:01 PM] [General] [Info] Found Flutter project at D:\Flutter\tintuc:
+			Mobile? true
+			Web? false
+			Create Trigger? false
+			Flutter Repo? false
+[4:44:01 PM] [General] [Info] Searching for flutter.bat
+[4:44:01 PM] [General] [Info]     Looking for flutter.bat in:
+[4:44:01 PM] [General] [Info]         D:\Flutter\tintuc
+[4:44:01 PM] [General] [Info]         D:\Flutter\tintuc -> D:\Flutter\tintuc\bin
+[4:44:01 PM] [General] [Info]         C:\src\flutter\bin\
+[4:44:01 PM] [General] [Info]         D:\Flutter\tintuc\.flutter
+[4:44:01 PM] [General] [Info]         D:\Flutter\tintuc\.flutter -> D:\Flutter\tintuc\.flutter\bin
+[4:44:01 PM] [General] [Info]         D:\Flutter\tintuc\vendor\flutter
+[4:44:01 PM] [General] [Info]         D:\Flutter\tintuc\vendor\flutter -> D:\Flutter\tintuc\vendor\flutter\bin
+[4:44:01 PM] [General] [Info]         C:\Users\tantv\flutter-sdk
+[4:44:01 PM] [General] [Info]         C:\Users\tantv\flutter-sdk -> C:\Users\tantv\flutter-sdk\bin
+[4:44:01 PM] [General] [Info]         /google/flutter
+[4:44:01 PM] [General] [Info]         /google/flutter -> \google\flutter\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin
+[4:44:01 PM] [General] [Info]         C:\Python312\Scripts\
+[4:44:01 PM] [General] [Info]         C:\Python312\Scripts\ -> C:\Python312\Scripts\bin
+[4:44:01 PM] [General] [Info]         C:\Python312\
+[4:44:01 PM] [General] [Info]         C:\Python312\ -> C:\Python312\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\Common Files\Oracle\Java\javapath
+[4:44:01 PM] [General] [Info]         C:\Program Files\Common Files\Oracle\Java\javapath -> C:\Program Files\Common Files\Oracle\Java\javapath\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files (x86)\Common Files\Oracle\Java\javapath
+[4:44:01 PM] [General] [Info]         C:\Program Files (x86)\Common Files\Oracle\Java\javapath -> C:\Program Files (x86)\Common Files\Oracle\Java\javapath\bin
+[4:44:01 PM] [General] [Info]         C:\Windows\system32
+[4:44:01 PM] [General] [Info]         C:\Windows\system32 -> C:\Windows\system32\bin
+[4:44:01 PM] [General] [Info]         C:\Windows
+[4:44:01 PM] [General] [Info]         C:\Windows -> C:\Windows\bin
+[4:44:01 PM] [General] [Info]         C:\Windows\System32\Wbem
+[4:44:01 PM] [General] [Info]         C:\Windows\System32\Wbem -> C:\Windows\System32\Wbem\bin
+[4:44:01 PM] [General] [Info]         C:\Windows\System32\WindowsPowerShell\v1.0\
+[4:44:01 PM] [General] [Info]         C:\Windows\System32\WindowsPowerShell\v1.0\ -> C:\Windows\System32\WindowsPowerShell\v1.0\bin
+[4:44:01 PM] [General] [Info]         C:\Windows\System32\OpenSSH\
+[4:44:01 PM] [General] [Info]         C:\Windows\System32\OpenSSH\ -> C:\Windows\System32\OpenSSH\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\dotnet\
+[4:44:01 PM] [General] [Info]         C:\Program Files\dotnet\ -> C:\Program Files\dotnet\bin
+[4:44:01 PM] [General] [Info]         C:\ProgramData\chocolatey\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\Go\bin
+[4:44:01 PM] [General] [Info]         C:\src\tools
+[4:44:01 PM] [General] [Info]         C:\src\tools -> C:\src\tools\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\nodejs\
+[4:44:01 PM] [General] [Info]         C:\Program Files\nodejs\ -> C:\Program Files\nodejs\bin
+[4:44:01 PM] [General] [Info]         C:\Users\tantv\AppData\Local\Pub\Cache\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\Git\cmd
+[4:44:01 PM] [General] [Info]         C:\Program Files\Git\cmd -> C:\Program Files\Git\cmd\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\Java\jdk-21\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\Docker\Docker\resources\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\Cloudflare\Cloudflare WARP\
+[4:44:01 PM] [General] [Info]         C:\Program Files\Cloudflare\Cloudflare WARP\ -> C:\Program Files\Cloudflare\Cloudflare WARP\bin
+[4:44:01 PM] [General] [Info]         C:\Users\tantv\AppData\Local\Microsoft\WindowsApps
+[4:44:01 PM] [General] [Info]         C:\Users\tantv\AppData\Local\Microsoft\WindowsApps -> C:\Users\tantv\AppData\Local\Microsoft\WindowsApps\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\Go\bin
+[4:44:01 PM] [General] [Info]         C:\Users\tantv\.dotnet\tools
+[4:44:01 PM] [General] [Info]         C:\Users\tantv\.dotnet\tools -> C:\Users\tantv\.dotnet\tools\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\Go
+[4:44:01 PM] [General] [Info]         C:\Program Files\Go -> C:\Program Files\Go\bin
+[4:44:01 PM] [General] [Info]         C:\src\flutter\bin
+[4:44:01 PM] [General] [Info]         C:\tools\dart-sdk\bin
+[4:44:01 PM] [General] [Info]         C:\Users\tantv\AppData\Roaming\Pub\Cache\bin
+[4:44:01 PM] [General] [Info]         C:\Users\tantv\go\bin
+[4:44:01 PM] [General] [Info]         C:\Users\tantv\AppData\Local\Programs\Microsoft VS Code\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\nodejs\node_modules\npm
+[4:44:01 PM] [General] [Info]         C:\Program Files\nodejs\node_modules\npm -> C:\Program Files\nodejs\node_modules\npm\bin
+[4:44:01 PM] [General] [Info]         C:\Users\tantv\AppData\Roaming\npm
+[4:44:01 PM] [General] [Info]         C:\Users\tantv\AppData\Roaming\npm -> C:\Users\tantv\AppData\Roaming\npm\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\Java\jdk-21\bin
+[4:44:01 PM] [General] [Info]     Found at:
+[4:44:01 PM] [General] [Info]         C:\src\flutter\bin\
+[4:44:01 PM] [General] [Info]         C:\src\flutter\bin
+[4:44:01 PM] [General] [Info]     Candidate paths to be post-filtered:
+[4:44:01 PM] [General] [Info]         C:\src\flutter\bin\ -> C:\src\flutter
+[4:44:01 PM] [General] [Info]         C:\src\flutter\bin -> C:\src\flutter
+[4:44:01 PM] [General] [Info]     Found at C:\src\flutter\bin\ -> C:\src\flutter
+[4:44:01 PM] [General] [Info]     Returning SDK path C:\src\flutter for flutter.bat
+[4:44:01 PM] [General] [Info] Searching for dart.exe
+[4:44:01 PM] [General] [Info]     Looking for dart.exe in:
+[4:44:01 PM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk
+[4:44:01 PM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk -> C:\src\flutter\bin\cache\dart-sdk\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin
+[4:44:01 PM] [General] [Info]         C:\Python312\Scripts\
+[4:44:01 PM] [General] [Info]         C:\Python312\Scripts\ -> C:\Python312\Scripts\bin
+[4:44:01 PM] [General] [Info]         C:\Python312\
+[4:44:01 PM] [General] [Info]         C:\Python312\ -> C:\Python312\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\Common Files\Oracle\Java\javapath
+[4:44:01 PM] [General] [Info]         C:\Program Files\Common Files\Oracle\Java\javapath -> C:\Program Files\Common Files\Oracle\Java\javapath\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files (x86)\Common Files\Oracle\Java\javapath
+[4:44:01 PM] [General] [Info]         C:\Program Files (x86)\Common Files\Oracle\Java\javapath -> C:\Program Files (x86)\Common Files\Oracle\Java\javapath\bin
+[4:44:01 PM] [General] [Info]         C:\Windows\system32
+[4:44:01 PM] [General] [Info]         C:\Windows\system32 -> C:\Windows\system32\bin
+[4:44:01 PM] [General] [Info]         C:\Windows
+[4:44:01 PM] [General] [Info]         C:\Windows -> C:\Windows\bin
+[4:44:01 PM] [General] [Info]         C:\Windows\System32\Wbem
+[4:44:01 PM] [General] [Info]         C:\Windows\System32\Wbem -> C:\Windows\System32\Wbem\bin
+[4:44:01 PM] [General] [Info]         C:\Windows\System32\WindowsPowerShell\v1.0\
+[4:44:01 PM] [General] [Info]         C:\Windows\System32\WindowsPowerShell\v1.0\ -> C:\Windows\System32\WindowsPowerShell\v1.0\bin
+[4:44:01 PM] [General] [Info]         C:\Windows\System32\OpenSSH\
+[4:44:01 PM] [General] [Info]         C:\Windows\System32\OpenSSH\ -> C:\Windows\System32\OpenSSH\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\dotnet\
+[4:44:01 PM] [General] [Info]         C:\Program Files\dotnet\ -> C:\Program Files\dotnet\bin
+[4:44:01 PM] [General] [Info]         C:\ProgramData\chocolatey\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\Go\bin
+[4:44:01 PM] [General] [Info]         C:\src\tools
+[4:44:01 PM] [General] [Info]         C:\src\tools -> C:\src\tools\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\nodejs\
+[4:44:01 PM] [General] [Info]         C:\Program Files\nodejs\ -> C:\Program Files\nodejs\bin
+[4:44:01 PM] [General] [Info]         C:\Users\tantv\AppData\Local\Pub\Cache\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\Git\cmd
+[4:44:01 PM] [General] [Info]         C:\Program Files\Git\cmd -> C:\Program Files\Git\cmd\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\Java\jdk-21\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\Docker\Docker\resources\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\Cloudflare\Cloudflare WARP\
+[4:44:01 PM] [General] [Info]         C:\Program Files\Cloudflare\Cloudflare WARP\ -> C:\Program Files\Cloudflare\Cloudflare WARP\bin
+[4:44:01 PM] [General] [Info]         C:\Users\tantv\AppData\Local\Microsoft\WindowsApps
+[4:44:01 PM] [General] [Info]         C:\Users\tantv\AppData\Local\Microsoft\WindowsApps -> C:\Users\tantv\AppData\Local\Microsoft\WindowsApps\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\Go\bin
+[4:44:01 PM] [General] [Info]         C:\Users\tantv\.dotnet\tools
+[4:44:01 PM] [General] [Info]         C:\Users\tantv\.dotnet\tools -> C:\Users\tantv\.dotnet\tools\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\Go
+[4:44:01 PM] [General] [Info]         C:\Program Files\Go -> C:\Program Files\Go\bin
+[4:44:01 PM] [General] [Info]         C:\src\flutter\bin
+[4:44:01 PM] [General] [Info]         C:\tools\dart-sdk\bin
+[4:44:01 PM] [General] [Info]         C:\Users\tantv\AppData\Roaming\Pub\Cache\bin
+[4:44:01 PM] [General] [Info]         C:\Users\tantv\go\bin
+[4:44:01 PM] [General] [Info]         C:\Users\tantv\AppData\Local\Programs\Microsoft VS Code\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\nodejs\node_modules\npm
+[4:44:01 PM] [General] [Info]         C:\Program Files\nodejs\node_modules\npm -> C:\Program Files\nodejs\node_modules\npm\bin
+[4:44:01 PM] [General] [Info]         C:\Users\tantv\AppData\Roaming\npm
+[4:44:01 PM] [General] [Info]         C:\Users\tantv\AppData\Roaming\npm -> C:\Users\tantv\AppData\Roaming\npm\bin
+[4:44:01 PM] [General] [Info]         C:\Program Files\Java\jdk-21\bin
+[4:44:01 PM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk
+[4:44:01 PM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk -> C:\src\flutter\bin\cache\dart-sdk\bin
+[4:44:01 PM] [General] [Info]     Found at:
+[4:44:01 PM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk -> C:\src\flutter\bin\cache\dart-sdk\bin
+[4:44:01 PM] [General] [Info]         C:\tools\dart-sdk\bin
+[4:44:01 PM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk -> C:\src\flutter\bin\cache\dart-sdk\bin
+[4:44:01 PM] [General] [Info]     Candidate paths to be post-filtered:
+[4:44:01 PM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk
+[4:44:01 PM] [General] [Info]         C:\tools\dart-sdk\bin -> C:\tools\dart-sdk
+[4:44:01 PM] [General] [Info]         C:\src\flutter\bin\cache\dart-sdk
+[4:44:01 PM] [General] [Info]     Found at C:\src\flutter\bin\cache\dart-sdk
+[4:44:01 PM] [General] [Info]     Returning SDK path C:\src\flutter\bin\cache\dart-sdk for dart.exe
+[4:44:01 PM] [General] [Info] Experiment random number is 33 for experiment 'sdkDaps'. Experiment is enabled for <= 100
+[4:44:01 PM] [General] [Info] Experiment 'sdkDaps' is activating (not first time)
+[4:44:01 PM] [General] [Info] Experiment random number is 33 for experiment 'sdkDaps'. Experiment is enabled for <= 100
+[4:44:01 PM] [General] [Info] Experiment 'sdkDaps' is activating (not first time)
+[4:44:01 PM] [General] [Info] Experiment random number is 33 for experiment 'sdkDaps'. Experiment is enabled for <= 10
+[4:44:01 PM] [General] [Info] Experiment 'sdkDaps' does not apply and will not be activated
+[4:44:01 PM] [General] [Info] !! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
+Dart Code extension: 3.78.2
+Flutter extension: 3.79.20231130 (not activated)
+
+App: Visual Studio Code
+App Host: desktop
+Version: win 1.85.1
+
+Workspace type: Flutter (LSP)
+
+Dart (3.2.3): C:\src\flutter\bin\cache\dart-sdk
+Flutter (3.16.3): C:\src\flutter (No device)
+[4:44:01 PM] [General] [Info] Returning cached results for project search
+[4:44:01 PM] [General] [Info] Checking 1 projects for supported platforms
+[4:44:01 PM] [General] [Info] Returning cached results for project search
+[4:44:01 PM] [General] [Info] Activating Flutter extension for Flutter project...
+[4:44:01 PM] [General] [Info] Version last used for Pub is 3.2.3 (3.2.0), current is 3.2.3 (3.2.0)
+[4:44:01 PM] [General] [Info] Found 0 folders requiring "pub get" or "pub upgrade":
+[4:44:04 PM] [General] [Info] Supported platforms for the workspace are linux, macos, windows, ios, android, web
+[4:44:04 PM] [General] [Info] Loaded 20000 package names from vscode-userdata:/c%3A/Users/tantv/AppData/Roaming/Code/User/globalStorage/dart-code.dart-code/package_cache.json
+[4:44:04 PM] [General] [Info] !! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
+Dart Code extension: 3.78.2
+Flutter extension: 3.79.20231130 (activated)
+
+App: Visual Studio Code
+App Host: desktop
+Version: win 1.85.1
+
+Workspace type: Flutter (LSP)
+
+Dart (3.2.3): C:\src\flutter\bin\cache\dart-sdk
+Flutter (3.16.3): C:\src\flutter (No device)
+[4:44:05 PM] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[4:44:05 PM] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[4:44:05 PM] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[4:44:05 PM] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[4:44:05 PM] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[4:44:05 PM] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[4:44:05 PM] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[4:44:05 PM] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[4:44:08 PM] [General] [Info] Returning cached results for project search
+[4:44:26 PM] [General] [Info] Starting debug session...
+[4:44:26 PM] [General] [Info]     workspace: D:\Flutter\tintuc
+[4:44:26 PM] [General] [Info]     program  : D:\Flutter\tintuc\lib\main.dart
+[4:44:26 PM] [General] [Info] Setting cwd based on likely entry point: D:\Flutter\tintuc
+[4:44:26 PM] [General] [Info] Using workspace as cwd: D:\Flutter\tintuc
+[4:44:26 PM] [General] [Info] Detected launch project as Flutter
+[4:44:26 PM] [General] [Info] Using Flutter debug adapter for this session
+[4:44:26 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[4:44:26 PM] [General] [Info] Checking for errors before launching
+[4:44:26 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Dart  (Windows)",
+        "noDebug": false,
+        "request": "launch",
+        "type": "dart",
+        "program": "D:\\Flutter\\tintuc\\lib\\main.dart",
+        "dartCodeDebugSessionID": "session-13e67",
+        "projectRootPath": "D:\\Flutter\\tintuc",
+        "cwd": "D:\\Flutter\\tintuc",
+        "deviceId": "windows",
+        "deviceName": "Windows (windows-x64)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\src\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "D:\\Flutter\\tintuc"
+        ],
+        "args": [],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "windows",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\src\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "D:\\Flutter\\tintuc\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "dartTestLogFile": "D:\\Flutter\\tintuc\\logs\\dart_test.txt",
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": false,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "showGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\src\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "D:\\Flutter\\tintuc\\logs\\flutter_run.txt",
+        "flutterTestLogFile": "D:\\Flutter\\tintuc\\logs\\flutter_test.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[4:44:26 PM] [General] [Info] Using flutter debugger for Flutter
+[4:44:26 PM] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[4:44:26 PM] [General] [Info] Running SDK DAP Dart VM in undefined: C:\src\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\src\\flutter"}}
+[4:44:27 PM] [General] [Info] Did not find session 552d0d14-9904-4ff0-b7a4-ed214f06e574 to handle dart.progressStart. There were 0 sessions:
+[4:44:27 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[4:44:27 PM] [General] [Info] Processing delayed event dart.progressStart for session 552d0d14-9904-4ff0-b7a4-ed214f06e574
+[4:44:28 PM] [General] [Info] Returning cached results for project search
+[4:44:28 PM] [General] [Info] Checking 1 projects for supported platforms
+[4:44:28 PM] [General] [Info] Supported platforms for the workspace are linux, macos, windows, ios, android, web
+[4:44:37 PM] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[4:44:53 PM] [General] [Info] Saving emulator-5554 as preferred device
+[4:44:53 PM] [General] [Info] Returning cached results for project search
+[4:44:53 PM] [General] [Info] Checking 1 projects for supported platforms
+[4:44:53 PM] [General] [Info] Supported platforms for the workspace are linux, macos, windows, ios, android, web
+[4:44:53 PM] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[4:44:53 PM] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[4:44:53 PM] [General] [Info] Exposing URL: ws://127.0.0.1:64824/4WnF1k7PvM8%3D/ws
+[4:44:53 PM] [General] [Info] Mapping URI: http://127.0.0.1:64824/4WnF1k7PvM8%3D/ws
+[4:44:53 PM] [General] [Info] Mapped URI: http://127.0.0.1:64824/4WnF1k7PvM8%3D/ws
+[4:44:53 PM] [General] [Info] Mapped URL: http://127.0.0.1:64824/4WnF1k7PvM8%3D/ws
+[4:44:53 PM] [General] [Info] Final URL: ws://127.0.0.1:64824/4WnF1k7PvM8=/ws
+[4:44:54 PM] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[4:44:55 PM] [General] [Info] Returning cached results for project search
+[4:45:26 PM] [General] [Info] Returning cached results for project search
+[4:45:30 PM] [General] [Error] Canceled
+Canceled: Canceled
+    at o.Q (vscode-file://vscode-app/c:/Users/tantv/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:920:38833)
+    at vscode-file://vscode-app/c:/Users/tantv/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:920:38760
+[4:45:39 PM] [General] [Info] Starting debug session...
+[4:45:39 PM] [General] [Info]     workspace: D:\Flutter\tintuc
+[4:45:39 PM] [General] [Info]     program  : D:\Flutter\tintuc\lib\main.dart
+[4:45:39 PM] [General] [Info] Setting cwd based on likely entry point: D:\Flutter\tintuc
+[4:45:39 PM] [General] [Info] Using workspace as cwd: D:\Flutter\tintuc
+[4:45:39 PM] [General] [Info] Detected launch project as Flutter
+[4:45:39 PM] [General] [Info] Using Flutter debug adapter for this session
+[4:45:39 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[4:45:39 PM] [General] [Info] Checking for errors before launching
+[4:45:39 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Dart  (Pixel 6 Pro API 33)",
+        "noDebug": false,
+        "request": "launch",
+        "type": "dart",
+        "program": "D:\\Flutter\\tintuc\\lib\\main.dart",
+        "dartCodeDebugSessionID": "session-b4f1a",
+        "projectRootPath": "D:\\Flutter\\tintuc",
+        "cwd": "D:\\Flutter\\tintuc",
+        "deviceId": "emulator-5554",
+        "deviceName": "Pixel 6 Pro API 33 (android-x64)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\src\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "D:\\Flutter\\tintuc"
+        ],
+        "args": [],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "emulator-5554",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\src\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "D:\\Flutter\\tintuc\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "dartTestLogFile": "D:\\Flutter\\tintuc\\logs\\dart_test.txt",
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": false,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "showGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\src\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "D:\\Flutter\\tintuc\\logs\\flutter_run.txt",
+        "flutterTestLogFile": "D:\\Flutter\\tintuc\\logs\\flutter_test.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[4:45:39 PM] [General] [Info] Using flutter debugger for Flutter
+[4:45:39 PM] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[4:45:39 PM] [General] [Info] Running SDK DAP Dart VM in undefined: C:\src\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\src\\flutter"}}
+[4:45:40 PM] [General] [Info] Did not find session 13dfeb1e-c0f8-4630-b0eb-fe1b8d0c1cb5 to handle dart.progressStart. There were 0 sessions:
+[4:45:40 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[4:45:40 PM] [General] [Info] Processing delayed event dart.progressStart for session 13dfeb1e-c0f8-4630-b0eb-fe1b8d0c1cb5
+[4:46:20 PM] [General] [Info] Exposing URL: ws://127.0.0.1:65100/bWfpT_Hej7I%3D/ws
+[4:46:20 PM] [General] [Info] Mapping URI: http://127.0.0.1:65100/bWfpT_Hej7I%3D/ws
+[4:46:20 PM] [General] [Info] Mapped URI: http://127.0.0.1:65100/bWfpT_Hej7I%3D/ws
+[4:46:20 PM] [General] [Info] Mapped URL: http://127.0.0.1:65100/bWfpT_Hej7I%3D/ws
+[4:46:20 PM] [General] [Info] Final URL: ws://127.0.0.1:65100/bWfpT_Hej7I=/ws
+[4:46:22 PM] [General] [Info] Returning cached results for project search
+[5:26:05 PM] [General] [Info] Took 89ms to search for projects (5 levels)
+[5:26:05 PM] [General] [Info] Took 2ms to filter out excluded projects (0 exclusion rules)
+[5:26:05 PM] [General] [Info] Checking 1 projects for supported platforms
+[5:26:05 PM] [General] [Info] Supported platforms for the workspace are linux, macos, windows, ios, android, web
+[5:26:05 PM] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[5:26:05 PM] [General] [Info] Returning cached promise for getSupportedPlatforms()

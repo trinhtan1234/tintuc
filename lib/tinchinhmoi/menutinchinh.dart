@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tintuc/caidat/login/thongtintaikhoan.dart';
-import 'package:tintuc/choban/thongbao/thongbao.dart';
 import 'package:tintuc/tinchinhmoi/kinhdoanh.dart';
 import 'package:tintuc/tinchinhmoi/thegioi.dart';
 import 'package:tintuc/tinchinhmoi/tintuc.dart';
@@ -63,23 +62,23 @@ class _MenuTinChinhState extends State<MenuTinChinh>
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ThongBao(),
-                ),
-              );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) => const ThongBao(),
+              //   ),
+              // );
             },
             icon: const Icon(Icons.add),
           ),
           IconButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ThongBao(),
-                ),
-              );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) => const ThongBao(),
+              //   ),
+              // );
             },
             icon: const Icon(Icons.notifications_none_sharp),
           ),

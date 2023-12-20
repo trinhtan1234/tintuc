@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tintuc/choban/thongbao/thongbao.dart';
 import 'package:tintuc/media/postcats.dart';
 import 'package:tintuc/media/video.dart';
 
@@ -55,12 +54,12 @@ class _TinTucMediaState extends State<TinTucMedia>
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ThongBao(),
-                ),
-              );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) => const ThongBao(),
+              //   ),
+              // );
             },
             icon: const Icon(Icons.notifications_none_sharp),
           ),

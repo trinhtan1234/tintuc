@@ -71,7 +71,6 @@ class _ThongTinTaiKhoanState extends State<ThongTinTaiKhoan> {
   Future<void> _chonAnhDaiDien() async {
     final ImagePicker picker = ImagePicker();
     final pickedFile = await picker.pickImage(source: ImageSource.gallery);
-
     if (pickedFile != null) {
       imageUrlsController.text = pickedFile.path;
     }

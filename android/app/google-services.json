@@ -12,7 +12,12 @@
           "package_name": "com.example.tintuc"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "516952873621-588q1aui833h2o8h8rhe8l2c6al834gv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAk5kDBTvjRVulgWeacZxl0w64Hrof7HrY"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "516952873621-588q1aui833h2o8h8rhe8l2c6al834gv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "516952873621-f2bjcqcu196tt4jlh1vhcrgkidanan3a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tintuc.RunnerTests"
+              }
+            }
+          ]
         }
       }
     }

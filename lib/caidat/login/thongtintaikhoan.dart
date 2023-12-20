@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:tintuc/caidat/login/dangnhaptaikhoan.dart';
 
 class ThongTinTaiKhoan extends StatefulWidget {
   const ThongTinTaiKhoan({super.key});
@@ -63,11 +64,46 @@ class _ThongTinTaiKhoanState extends State<ThongTinTaiKhoan> {
     }
   }
 
+  Future<void> _dangXuat() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (context) => ManHinhDangNhap(),
+        ),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Lỗi đăng xuất: ${e.toString()}'),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Thông tin tài khoản'),
+        actions: [
+          IconButton(
+            onPressed: _dangXuat,
+            icon: const Row(
+              children: [
+                Text(
+                  'Đăng xuất',
+                  style: TextStyle(color: Colors.red),
+                ),
+                Padding(padding: EdgeInsets.only(right: 5)),
+                Icon(
+                  Icons.logout,
+                  color: Colors.red,
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
       body: Form(
         key: _formKey,
@@ -94,6 +130,15 @@ class _ThongTinTaiKhoanState extends State<ThongTinTaiKhoan> {
                 return null;
               },
             ),
+            const Padding(padding: EdgeInsets.only(top: 20)),
+            Container(
+              height: 100,
+              width: 100,
+              child: imageUrlsController.text.isNotEmpty
+                  ? Image.network(imageUrlsController.text)
+                  : const Placeholder(),
+            ),
+            const Padding(padding: EdgeInsets.only(top: 20)),
             ElevatedButton(
               onPressed: _capNhatThongTinTaiKhoan,
               child: const Text('Cập Nhật Thông Tin'),

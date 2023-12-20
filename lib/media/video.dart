@@ -17,7 +17,8 @@ class _TinTucVideoState extends State<TinTucVideo> {
   @override
   void initState() {
     super.initState();
-    // Initialize the video controller as before
+
+    // ignore: deprecated_member_use
     _controller = VideoPlayerController.network(
       'https://firebasestorage.googleapis.com/v0/b/apptintuc-db349.appspot.com/o/video%2Fa.mp4?alt=media&token=b8970dfb-d527-4df0-ad2f-2c9f3bfa3623',
     );

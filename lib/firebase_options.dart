@@ -66,6 +66,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '516952873621',
     projectId: 'apptintuc-db349',
     storageBucket: 'apptintuc-db349.appspot.com',
+    iosClientId: '516952873621-h918dtd7igfl50bhgc7i7i97liilh06i.apps.googleusercontent.com',
     iosBundleId: 'com.example.tintuc',
   );
 
@@ -75,6 +76,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '516952873621',
     projectId: 'apptintuc-db349',
     storageBucket: 'apptintuc-db349.appspot.com',
+    iosClientId: '516952873621-f2bjcqcu196tt4jlh1vhcrgkidanan3a.apps.googleusercontent.com',
     iosBundleId: 'com.example.tintuc.RunnerTests',
   );
 }

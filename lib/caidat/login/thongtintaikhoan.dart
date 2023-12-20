@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:tintuc/caidat/login/dangnhaptaikhoan.dart';
 
 class ThongTinTaiKhoan extends StatefulWidget {
@@ -11,6 +12,7 @@ class ThongTinTaiKhoan extends StatefulWidget {
 
 class _ThongTinTaiKhoanState extends State<ThongTinTaiKhoan> {
   final _formKey = GlobalKey<FormState>();
+
   late TextEditingController _nameController;
   late TextEditingController _emailController;
   late TextEditingController imageUrlsController;
@@ -21,11 +23,14 @@ class _ThongTinTaiKhoanState extends State<ThongTinTaiKhoan> {
   void initState() {
     _nameController = TextEditingController();
     _emailController = TextEditingController();
+
     imageUrlsController = TextEditingController();
+
     final user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       _nameController.text = user.displayName ?? '';
       _emailController.text = user.email ?? '';
+
       imageUrlsController.text = user.photoURL ?? '';
     }
     super.initState();
@@ -48,7 +53,6 @@ class _ThongTinTaiKhoanState extends State<ThongTinTaiKhoan> {
           await user.updateEmail(_emailController.text);
           await user.updatePhotoURL(imageUrlsController.text);
 
-          // ignore: use_build_context_synchronously
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
               content: Text('Thông tin tài khoản đã được cập nhật'),
@@ -64,12 +68,21 @@ class _ThongTinTaiKhoanState extends State<ThongTinTaiKhoan> {
     }
   }
 
+  Future<void> _chonAnhDaiDien() async {
+    final ImagePicker picker = ImagePicker();
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+
+    if (pickedFile != null) {
+      imageUrlsController.text = pickedFile.path;
+    }
+  }
+
   Future<void> _dangXuat() async {
     try {
       await FirebaseAuth.instance.signOut();
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => ManHinhDangNhap(),
+          builder: (context) => const ManHinhDangNhap(),
         ),
       );
     } catch (e) {
@@ -131,12 +144,18 @@ class _ThongTinTaiKhoanState extends State<ThongTinTaiKhoan> {
               },
             ),
             const Padding(padding: EdgeInsets.only(top: 20)),
-            Container(
-              height: 100,
-              width: 100,
-              child: imageUrlsController.text.isNotEmpty
-                  ? Image.network(imageUrlsController.text)
-                  : const Placeholder(),
+            Row(
+              children: [
+                SizedBox(
+                  height: 100,
+                  width: 100,
+                  child: imageUrlsController.text.isNotEmpty
+                      ? Image.network(imageUrlsController.text)
+                      : const Placeholder(),
+                ),
+                TextButton(
+                    onPressed: _chonAnhDaiDien, child: const Text('Thay ảnh'))
+              ],
             ),
             const Padding(padding: EdgeInsets.only(top: 20)),
             ElevatedButton(

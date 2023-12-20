@@ -46,8 +46,8 @@ class _TinTucMediaState extends State<TinTucMedia>
               'Tin tức Media',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 16,
                 color: Colors.deepPurple,
+                fontSize: 20,
               ),
             ),
           ],

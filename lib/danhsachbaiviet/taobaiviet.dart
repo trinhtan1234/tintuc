@@ -215,15 +215,6 @@ class _TaoTinBaiState extends State<TaoTinBai> {
                               content: Text('Thêm tin bài thành công')),
                         );
                         Navigator.pop(context);
-
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => DanhSachBaiViet()),
-                        // );
-                        // Navigator.of(context).pushReplacement(
-                        //   MaterialPageRoute(
-                        //       builder: (context) => const DanhSachBaiViet()),
-                        // );
                       }
                     },
                     child: Container(

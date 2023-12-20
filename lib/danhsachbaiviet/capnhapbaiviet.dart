@@ -304,12 +304,13 @@ class _CapNhatBaiVietState extends State<CapNhatBaiViet> {
                   onPressed: () async {
                     if (formKey.currentState!.validate()) {
                       await _updateBaiViet();
-                      // ignore: use_build_context_synchronously
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const DanhSachBaiViet(),
-                        ),
-                      );
+                      Navigator.pop(context);
+
+                      // Navigator.of(context).push(
+                      //   MaterialPageRoute(
+                      //     builder: (context) => const DanhSachBaiViet(),
+                      //   ),
+                      // );
                     }
                   },
                   child: Container(

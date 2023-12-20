@@ -36,6 +36,7 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
             style: TextStyle(
               fontWeight: FontWeight.bold,
               color: Colors.deepPurple,
+              fontSize: 20,
             ),
           ),
         ),

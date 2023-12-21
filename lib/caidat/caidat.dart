@@ -16,6 +16,7 @@ class CaiDat extends StatelessWidget {
 
     Future<String> getUser() async {
       final currentUser = auth.currentUser;
+
       return currentUser?.displayName ?? "Chưa đăng nhập";
     }
 
@@ -63,8 +64,8 @@ class CaiDat extends StatelessWidget {
                       );
                     },
                     icon: ClipOval(
-                      child: Image.asset(
-                        'assets/images/tantv.jpg',
+                      child: Image.network(
+                        currentUser?.photoURL ?? '',
                         width: 30,
                         height: 30,
                         fit: BoxFit.cover,

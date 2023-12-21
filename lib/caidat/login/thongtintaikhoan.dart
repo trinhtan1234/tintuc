@@ -53,6 +53,7 @@ class _ThongTinTaiKhoanState extends State<ThongTinTaiKhoan> {
           await user.updateEmail(_emailController.text);
           await user.updatePhotoURL(imageUrlsController.text);
 
+          // ignore: use_build_context_synchronously
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
               content: Text('Thông tin tài khoản đã được cập nhật'),
@@ -79,12 +80,14 @@ class _ThongTinTaiKhoanState extends State<ThongTinTaiKhoan> {
   Future<void> _dangXuat() async {
     try {
       await FirebaseAuth.instance.signOut();
+      // ignore: use_build_context_synchronously
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (context) => const ManHinhDangNhap(),
         ),
       );
     } catch (e) {
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Lỗi đăng xuất: ${e.toString()}'),

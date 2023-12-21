@@ -57,11 +57,13 @@ class _TinTucVideoState extends State<TinTucVideo> {
         var downloadURL = await storageRef.getDownloadURL();
 
         // Now you can use the downloadURL to play the uploaded video
+        // ignore: avoid_print
         print('Video uploaded. Download URL: $downloadURL');
       } else {
         // User canceled the file picker
       }
     } catch (e) {
+      // ignore: avoid_print
       print('Error uploading video: $e');
     }
   }

@@ -1,11 +1,13 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore: avoid_web_libraries_in_flutter
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:tintuc/tinchinhmoi/model_comment.dart';
 import 'package:tintuc/tinchinhmoi/tintuc.dart';
 
-class ChiTietBaiViet extends StatelessWidget {
+class ChiTietBaiViet extends StatefulWidget {
   const ChiTietBaiViet({
     super.key,
     this.timeTinBai,
@@ -21,10 +23,36 @@ class ChiTietBaiViet extends StatelessWidget {
   final String? firstImageUrl;
 
   @override
+  State<ChiTietBaiViet> createState() => _ChiTietBaiVietState();
+}
+
+Future<void> sendComment(Comment commentData) async {
+  CollectionReference comments =
+      FirebaseFirestore.instance.collection('comments');
+  try {
+    await comments.add(commentData.toJson());
+  } catch (error) {
+    // ignore: avoid_print
+    print('Failed to add comment: $error');
+  }
+}
+
+class _ChiTietBaiVietState extends State<ChiTietBaiViet> {
+  final TextEditingController _commentcontroller = TextEditingController();
+
+  void _submitComment() {
+    final String content = _commentcontroller.text;
+    if (content.isNotEmpty) {
+      sendComment(Comment.create(content: content));
+      _commentcontroller.clear();
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text(loaiTinBai ?? '')),
+        title: Center(child: Text(widget.loaiTinBai ?? '')),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -34,13 +62,13 @@ class ChiTietBaiViet extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                timeTinBai != null
+                widget.timeTinBai != null
                     ? DateFormat('EEEE, dd/MM/yyyy HH:mm')
-                        .format(timeTinBai!.toDate())
+                        .format(widget.timeTinBai!.toDate())
                     : 'No Date',
               ),
               Text(
-                tieuDe ?? '',
+                widget.tieuDe ?? '',
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
@@ -48,9 +76,10 @@ class ChiTietBaiViet extends StatelessWidget {
               ),
               const Padding(padding: EdgeInsets.only(top: 5)),
               Container(
-                child: firstImageUrl != null && firstImageUrl!.isNotEmpty
+                child: widget.firstImageUrl != null &&
+                        widget.firstImageUrl!.isNotEmpty
                     ? CachedNetworkImage(
-                        imageUrl: firstImageUrl ?? '',
+                        imageUrl: widget.firstImageUrl ?? '',
                         width: MediaQuery.of(context).size.width - 20,
                         height: 230,
                         fit: BoxFit.cover,
@@ -67,7 +96,7 @@ class ChiTietBaiViet extends StatelessWidget {
               ),
               const Padding(padding: EdgeInsets.only(top: 5)),
               Text(
-                noiDungChiTiet ?? '',
+                widget.noiDungChiTiet ?? '',
                 style: const TextStyle(
                   fontWeight: FontWeight.normal,
                   fontSize: 15,
@@ -117,12 +146,18 @@ class ChiTietBaiViet extends StatelessWidget {
                 ],
               ),
               const Padding(padding: EdgeInsets.only(bottom: 10)),
-              const TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30))),
+              Center(
+                child: TextField(
+                  decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                        onPressed: _submitComment,
+                        icon: const Icon(Icons.send)),
+                    hintText: 'Bình luận',
+                    border: const OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))),
+                  ),
                 ),
-              )
+              ),
             ],
           ),
         ),
@@ -142,13 +177,6 @@ class ChiTietBaiViet extends StatelessWidget {
                       );
                     },
                     icon: const Icon(Icons.arrow_back),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.arrow_back,
-                      color: Colors.white,
-                    ),
                   ),
                 ],
               ),

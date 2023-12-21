@@ -123,11 +123,11 @@ class _TinTucState extends State<TinTuc> {
                               Text(
                                 noiDungChiTiet,
                                 maxLines: 3,
-                                style: const TextStyle(),
                               ),
                             ],
                           ),
                         ),
+                        const Padding(padding: EdgeInsets.only(top: 10)),
                         CachedNetworkImage(
                           imageUrl: imageUrl,
                           width: MediaQuery.of(context).size.width - 20,

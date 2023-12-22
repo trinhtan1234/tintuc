@@ -17,6 +17,7 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
+  // late Binding binding;
   bool servicestatus = false;
   bool haspermission = false;
   late LocationPermission permission;
@@ -44,6 +45,7 @@ class _MapScreenState extends State<MapScreen> {
     super.initState();
     checkGps();
     loadGeoJSON();
+    // binding = WidgetsBinding.instance;
   }
 
   Future<void> checkGps() async {

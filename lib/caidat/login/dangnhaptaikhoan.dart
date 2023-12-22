@@ -128,7 +128,7 @@ class _ManHinhDangNhapState extends State<ManHinhDangNhap> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const ScreenNavigationBottom(),
+                        builder: (context) => const MenuKhungApp(),
                       ),
                     );
                   } else {}
@@ -226,7 +226,7 @@ class _ManHinhDangNhapState extends State<ManHinhDangNhap> {
                             Navigator.of(context).push(
                               MaterialPageRoute<void>(
                                 builder: (BuildContext context) =>
-                                    const ScreenNavigationBottom(),
+                                    const MenuKhungApp(),
                               ),
                             );
                             // ignore: unused_catch_clause

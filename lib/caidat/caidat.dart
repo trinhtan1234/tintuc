@@ -4,6 +4,7 @@ import 'package:tintuc/caidat/login/dangnhaptaikhoan.dart';
 import 'package:tintuc/caidat/login/thongtintaikhoan.dart';
 import 'package:tintuc/caidat/thietlapungdung.dart';
 import 'package:tintuc/components/textbuttom.dart';
+import 'package:tintuc/maptintuc/maptintuc.dart';
 
 class CaiDat extends StatelessWidget {
   const CaiDat({super.key});
@@ -53,7 +54,11 @@ class CaiDat extends StatelessWidget {
               ),
               actions: [
                 Container(
-                  margin: const EdgeInsets.only(right: 20),
+                  height: 100,
+                  width: 100,
+                  margin: const EdgeInsets.only(
+                    right: 20,
+                  ),
                   child: IconButton(
                     onPressed: () {
                       Navigator.push(
@@ -64,12 +69,14 @@ class CaiDat extends StatelessWidget {
                       );
                     },
                     icon: ClipOval(
-                      child: Image.network(
-                        currentUser?.photoURL ?? '',
-                        width: 30,
-                        height: 30,
-                        fit: BoxFit.cover,
-                      ),
+                      child: currentUser?.photoURL != null
+                          ? Image.network(
+                              currentUser?.photoURL ?? '',
+                              width: 30,
+                              height: 30,
+                              fit: BoxFit.cover,
+                            )
+                          : const Icon(Icons.person),
                     ),
                   ),
                 ),
@@ -146,15 +153,15 @@ class CaiDat extends StatelessWidget {
                   AppTextButtom(
                     iconLeft: const Icon(Icons.location_on),
                     iconRight: const Icon(Icons.arrow_forward_ios),
-                    labelTitle: 'Viet Nam',
-                    onPressed: () {},
-                  ),
-                  const Divider(),
-                  AppTextButtom(
-                    iconLeft: const Icon(Icons.location_on),
-                    iconRight: const Icon(Icons.arrow_forward_ios),
-                    labelTitle: 'World',
-                    onPressed: () {},
+                    labelTitle: 'Bản đồ địa điểm',
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MapScreen(),
+                        ),
+                      );
+                    },
                   ),
                   const Divider(),
                   const Row(

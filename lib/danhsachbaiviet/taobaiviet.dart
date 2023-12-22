@@ -22,6 +22,7 @@ class _TaoTinBaiState extends State<TaoTinBai> {
   final TextEditingController? diaDiem = TextEditingController();
   final TextEditingController? noiDungChiTiet = TextEditingController();
   final TextEditingController? loaiTinBai = TextEditingController();
+  
 
   Timestamp timeTinBai = Timestamp.now();
 

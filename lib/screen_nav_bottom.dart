@@ -4,14 +4,14 @@ import 'package:tintuc/danhsachbaiviet/danhsach.dart';
 import 'package:tintuc/media/menu_media.dart';
 import 'package:tintuc/tinchinhmoi/menutinchinh.dart';
 
-class ScreenNavigationBottom extends StatefulWidget {
-  const ScreenNavigationBottom({super.key});
+class MenuKhungApp extends StatefulWidget {
+  const MenuKhungApp({super.key});
 
   @override
-  State<ScreenNavigationBottom> createState() => _ScreenNavigationBottomState();
+  State<MenuKhungApp> createState() => _MenuKhungAppState();
 }
 
-class _ScreenNavigationBottomState extends State<ScreenNavigationBottom> {
+class _MenuKhungAppState extends State<MenuKhungApp> {
   int _selectedIndex = 0;
 
   void _navigateBottomBar(int index) {

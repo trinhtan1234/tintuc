@@ -1,6 +1,11 @@
+import 'dart:io';
+import 'dart:typed_data';
+
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:tintuc/caidat/login/dangnhaptaikhoan.dart';
 
 class ThongTinTaiKhoan extends StatefulWidget {
@@ -18,6 +23,10 @@ class _ThongTinTaiKhoanState extends State<ThongTinTaiKhoan> {
   late TextEditingController imageUrlsController;
 
   final user = FirebaseAuth.instance.currentUser;
+
+  final ImagePicker _imagePicker = ImagePicker();
+  File? _imageFile;
+  List<Uint8List> pickedImagesInBytes = [];
 
   @override
   void initState() {
@@ -44,38 +53,38 @@ class _ThongTinTaiKhoanState extends State<ThongTinTaiKhoan> {
     super.dispose();
   }
 
-  Future<void> _capNhatThongTinTaiKhoan() async {
-    if (_formKey.currentState!.validate()) {
-      try {
-        User? user = FirebaseAuth.instance.currentUser;
-        if (user != null) {
-          await user.updateDisplayName(_nameController.text);
-          await user.updateEmail(_emailController.text);
-          await user.updatePhotoURL(imageUrlsController.text);
+  // Future<void> _capNhatThongTinTaiKhoan() async {
+  //   if (_formKey.currentState!.validate()) {
+  //     try {
+  //       User? user = FirebaseAuth.instance.currentUser;
+  //       if (user != null) {
+  //         await user.updateDisplayName(_nameController.text);
+  //         await user.updateEmail(_emailController.text);
+  //         await user.updatePhotoURL(imageUrlsController.text);
 
-          // ignore: use_build_context_synchronously
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Thông tin tài khoản đã được cập nhật'),
-            ),
-          );
-        }
-      } on FirebaseAuthException catch (e) {
-        // ignore: use_build_context_synchronously
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Lỗi: ${e.message}')),
-        );
-      }
-    }
-  }
+  //         // ignore: use_build_context_synchronously
+  //         ScaffoldMessenger.of(context).showSnackBar(
+  //           const SnackBar(
+  //             content: Text('Thông tin tài khoản đã được cập nhật'),
+  //           ),
+  //         );
+  //       }
+  //     } on FirebaseAuthException catch (e) {
+  //       // ignore: use_build_context_synchronously
+  //       ScaffoldMessenger.of(context).showSnackBar(
+  //         SnackBar(content: Text('Lỗi: ${e.message}')),
+  //       );
+  //     }
+  //   }
+  // }
 
-  Future<void> _chonAnhDaiDien() async {
-    final ImagePicker picker = ImagePicker();
-    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
-    if (pickedFile != null) {
-      imageUrlsController.text = pickedFile.path;
-    }
-  }
+  // Future<void> _chonAnhDaiDien() async {
+  //   final ImagePicker picker = ImagePicker();
+  //   final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+  //   if (pickedFile != null) {
+  //     imageUrlsController.text = pickedFile.path;
+  //   }
+  // }
 
   Future<void> _dangXuat() async {
     try {
@@ -148,6 +157,13 @@ class _ThongTinTaiKhoanState extends State<ThongTinTaiKhoan> {
             const Padding(padding: EdgeInsets.only(top: 20)),
             Row(
               children: [
+                _buildImageCarousel(),
+                if (_imageFile != null)
+                  Image.file(
+                    _imageFile!,
+                    height: 100,
+                    width: 100,
+                  ),
                 SizedBox(
                   height: 100,
                   width: 100,
@@ -156,17 +172,95 @@ class _ThongTinTaiKhoanState extends State<ThongTinTaiKhoan> {
                       : const Placeholder(),
                 ),
                 TextButton(
-                    onPressed: _chonAnhDaiDien, child: const Text('Thay ảnh'))
+                  onPressed: _pickImage,
+                  child: const Text('Thay ảnh'),
+                ),
               ],
             ),
             const Padding(padding: EdgeInsets.only(top: 20)),
             ElevatedButton(
-              onPressed: _capNhatThongTinTaiKhoan,
+              onPressed: _uploadImageAndUpdateInfo,
               child: const Text('Cập Nhật Thông Tin'),
             ),
           ],
         ),
       ),
     );
+  }
+
+  Future<void> _pickImage() async {
+    //check quyen truy cap thu vien
+    await checkAndRequestPermission();
+    final pickedFile =
+        await _imagePicker.pickImage(source: ImageSource.gallery);
+    if (pickedFile != null) {
+      setState(() {
+        _imageFile = File(pickedFile.path);
+      });
+    }
+  }
+
+  Future<void> checkAndRequestPermission() async {
+    var status = await Permission.photos.status;
+    if (!status.isGranted) {
+      await Permission.photos.request();
+    }
+  }
+
+  Widget _buildImageCarousel() {
+    return SizedBox(
+      child: pickedImagesInBytes.isEmpty
+          ? const Center(child: Text(''))
+          : ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: pickedImagesInBytes.length,
+              itemBuilder: (context, index) {
+                return Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                  decoration: const BoxDecoration(color: Colors.amber),
+                  child: Image.memory(pickedImagesInBytes[index]),
+                );
+              },
+            ),
+    );
+  }
+
+  Future<void> _uploadImageAndUpdateInfo() async {
+    if (_formKey.currentState!.validate()) {
+      try {
+        String? imageUrlsController;
+        // check if an image was picked
+        if (_imageFile != null) {
+          // Upload the image and get the Url
+          imageUrlsController = await _uploadImageToStorage(_imageFile!);
+        }
+
+        User? user = FirebaseAuth.instance.currentUser;
+        if (user != null) {
+          await user.updateDisplayName(_nameController.text);
+          await user.updateEmail(_emailController.text);
+          if (imageUrlsController != null) {
+            await user.updatePhotoURL(imageUrlsController);
+          }
+          // ignore: use_build_context_synchronously
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Thông tin tài khoản được cập nhật'),
+            ),
+          );
+        }
+      } on FirebaseAuthException catch (e) {
+        // ignore: use_build_context_synchronously
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Lỗi: ${e.message}')),
+        );
+      }
+    }
+  }
+
+  Future<String> _uploadImageToStorage(File imageFile) async {
+    final ref = FirebaseStorage.instance.ref().child('${user!.uid}.jpg');
+    await ref.putFile(imageFile);
+    return await ref.getDownloadURL();
   }
 }

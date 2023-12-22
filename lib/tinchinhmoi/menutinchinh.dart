@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tintuc/caidat/login/thongtintaikhoan.dart';
 import 'package:tintuc/tinchinhmoi/kinhdoanh.dart';
@@ -38,6 +39,7 @@ class _MenuTinChinhState extends State<MenuTinChinh>
 
   @override
   Widget build(BuildContext context) {
+    final User? currentUser = FirebaseAuth.instance.currentUser;
     return Scaffold(
       appBar: AppBar(
         title: const Row(
@@ -92,12 +94,14 @@ class _MenuTinChinhState extends State<MenuTinChinh>
               );
             },
             child: ClipOval(
-              child: Image.asset(
-                'assets/images/tantv.jpg',
-                width: 30,
-                height: 30,
-                fit: BoxFit.cover,
-              ),
+              child: currentUser?.photoURL != null
+                  ? Image.network(
+                      currentUser?.photoURL ?? '',
+                      width: 30,
+                      height: 30,
+                      fit: BoxFit.cover,
+                    )
+                  : const Icon(Icons.person),
             ),
           ),
         ],

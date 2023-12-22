@@ -24,7 +24,7 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
           onPressed: () {
             Navigator.of(context).pushReplacement(
               MaterialPageRoute(
-                builder: (context) => const ScreenNavigationBottom(),
+                builder: (context) => const MenuKhungApp(),
               ),
             );
           },

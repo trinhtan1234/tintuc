@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tintuc/media/postcats.dart';
 import 'package:tintuc/media/video.dart';
@@ -30,6 +31,7 @@ class _TinTucMediaState extends State<TinTucMedia>
 
   @override
   Widget build(BuildContext context) {
+    final User? currentUser = FirebaseAuth.instance.currentUser;
     return Scaffold(
       appBar: AppBar(
         title: const Row(
@@ -53,25 +55,20 @@ class _TinTucMediaState extends State<TinTucMedia>
         ),
         actions: [
           IconButton(
-            onPressed: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) => const ThongBao(),
-              //   ),
-              // );
-            },
+            onPressed: () {},
             icon: const Icon(Icons.notifications_none_sharp),
           ),
           TextButton(
             onPressed: () {},
             child: ClipOval(
-              child: Image.asset(
-                'assets/images/tantv.jpg',
-                width: 30,
-                height: 30,
-                fit: BoxFit.cover,
-              ),
+              child: currentUser?.photoURL != null
+                  ? Image.network(
+                      currentUser?.photoURL ?? '',
+                      width: 30,
+                      height: 30,
+                      fit: BoxFit.cover,
+                    )
+                  : const Icon(Icons.person),
             ),
           ),
         ],

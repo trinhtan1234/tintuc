@@ -4,48 +4,36 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:tintuc/tinchinhmoi/model_comment.dart';
+import 'package:tintuc/tinchinhmoi/binhluan.dart';
 import 'package:tintuc/tinchinhmoi/tintuc.dart';
 
 class ChiTietBaiViet extends StatefulWidget {
-  const ChiTietBaiViet({
-    super.key,
-    this.timeTinBai,
-    this.tieuDe,
-    this.loaiTinBai,
-    this.noiDungChiTiet,
-    this.firstImageUrl,
-  });
+  const ChiTietBaiViet(
+      {super.key,
+      this.timeTinBai,
+      this.tieuDe,
+      this.loaiTinBai,
+      this.noiDungChiTiet,
+      this.firstImageUrl,
+      this.documentId});
   final String? tieuDe;
   final String? loaiTinBai;
   final Timestamp? timeTinBai;
   final String? noiDungChiTiet;
   final String? firstImageUrl;
+  late String? documentId;
 
   @override
   State<ChiTietBaiViet> createState() => _ChiTietBaiVietState();
 }
 
-Future<void> sendComment(Comment commentData) async {
-  CollectionReference comments =
-      FirebaseFirestore.instance.collection('comments');
-  try {
-    await comments.add(commentData.toJson());
-  } catch (error) {
-    // ignore: avoid_print
-    print('Failed to add comment: $error');
-  }
-}
-
 class _ChiTietBaiVietState extends State<ChiTietBaiViet> {
-  final TextEditingController _commentcontroller = TextEditingController();
-
-  void _submitComment() {
-    final String content = _commentcontroller.text;
-    if (content.isNotEmpty) {
-      sendComment(Comment.create(content: content));
-      _commentcontroller.clear();
-    }
+  late String documentId;
+  @override
+  void initState() {
+    super.initState();
+    documentId = widget.documentId ??
+        ''; // Initialize it in initState or wherever appropriate
   }
 
   @override
@@ -107,7 +95,7 @@ class _ChiTietBaiVietState extends State<ChiTietBaiViet> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    ' Nguyeenx Van A',
+                    ' Nguyễn Van A',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
@@ -146,18 +134,18 @@ class _ChiTietBaiVietState extends State<ChiTietBaiViet> {
                 ],
               ),
               const Padding(padding: EdgeInsets.only(bottom: 10)),
-              Center(
-                child: TextField(
-                  decoration: InputDecoration(
-                    suffixIcon: IconButton(
-                        onPressed: _submitComment,
-                        icon: const Icon(Icons.send)),
-                    hintText: 'Bình luận',
-                    border: const OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(30))),
-                  ),
-                ),
-              ),
+              // Center(
+              //   child: TextField(
+              //     decoration: InputDecoration(
+              //       suffixIcon: IconButton(
+              //           onPressed: _submitComment,
+              //           icon: const Icon(Icons.send)),
+              //       hintText: 'Bình luận',
+              //       border: const OutlineInputBorder(
+              //           borderRadius: BorderRadius.all(Radius.circular(30))),
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ),
@@ -191,12 +179,25 @@ class _ChiTietBaiVietState extends State<ChiTietBaiViet> {
                   ),
                   IconButton(
                     onPressed: () {
-                      // showModeBottomSheet(context);
+                      showModalBottomSheet<void>(
+                          context: context,
+                          builder: (BuildContext context) {
+                            double screenHeight =
+                                MediaQuery.of(context).size.height;
+                            double containerHeight = screenHeight * 0.9;
+                            return SizedBox(
+                              height: containerHeight <= 0.9 * screenHeight
+                                  ? containerHeight
+                                  : 0.9 * screenHeight,
+                              child: CommentScreen(
+                                documentId: documentId,
+                              ),
+                            );
+                          });
                     },
                     icon: const Row(
                       children: [
                         Icon(Icons.chat_bubble_outline_outlined),
-                        Text('22'),
                       ],
                     ),
                   ),

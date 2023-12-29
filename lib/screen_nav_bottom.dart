@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tintuc/caidat/caidat.dart';
 import 'package:tintuc/danhsachbaiviet/danhsach.dart';
-import 'package:tintuc/media/menu_media.dart';
+// import 'package:tintuc/media/menu_media.dart';
 import 'package:tintuc/tinchinhmoi/menutinchinh.dart';
 
 class MenuKhungApp extends StatefulWidget {
@@ -26,7 +26,7 @@ class _MenuKhungAppState extends State<MenuKhungApp> {
 
     _pages = [
       const MenuTinChinh(),
-      const TinTucMedia(),
+      // const TinTucMedia(),
       const DanhSachBaiViet(),
       const CaiDat(),
     ];
@@ -43,8 +43,8 @@ class _MenuKhungAppState extends State<MenuKhungApp> {
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Tin chính'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.headset_outlined), label: 'Media'),
+          // BottomNavigationBarItem(
+          //     icon: Icon(Icons.headset_outlined), label: 'Media'),
           BottomNavigationBarItem(
               icon: Icon(Icons.post_add_outlined), label: 'Tạo bài viết'),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Cài đặt'),

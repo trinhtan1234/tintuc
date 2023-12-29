@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tintuc/caidat/login/dangnhaptaikhoan.dart';
 import 'package:tintuc/caidat/login/thongtintaikhoan.dart';
-import 'package:tintuc/caidat/thietlapungdung.dart';
+// import 'package:tintuc/caidat/thietlapungdung.dart';
 import 'package:tintuc/components/textbuttom.dart';
 import 'package:tintuc/maptintuc/maptintuc.dart';
 
@@ -111,45 +111,45 @@ class CaiDat extends StatelessWidget {
                     },
                   ),
                   const Divider(),
-                  AppTextButtom(
-                    iconLeft: const Icon(Icons.settings),
-                    iconRight: const Icon(Icons.arrow_forward_ios),
-                    labelTitle: 'Cài đặt',
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const ThietLapUngDung(),
-                        ),
-                      );
-                    },
-                  ),
-                  const Divider(),
-                  AppTextButtom(
-                    iconLeft: const Icon(Icons.timeline),
-                    iconRight: const Icon(Icons.arrow_forward_ios),
-                    labelTitle: 'Watch it later',
-                    onPressed: () {},
-                  ),
-                  const Divider(),
-                  AppTextButtom(
-                    iconLeft: const Icon(Icons.widgets),
-                    iconRight: const Icon(Icons.arrow_forward_ios),
-                    labelTitle: 'Widgets',
-                    onPressed: () {},
-                  ),
-                  const Divider(),
-                  const Row(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(left: 10),
-                        child: Text(
-                          'News by region',
-                        ),
-                      ),
-                    ],
-                  ),
-                  const Divider(),
+                  // AppTextButtom(
+                  //   iconLeft: const Icon(Icons.settings),
+                  //   iconRight: const Icon(Icons.arrow_forward_ios),
+                  //   labelTitle: 'Cài đặt',
+                  //   onPressed: () {
+                  //     Navigator.push(
+                  //       context,
+                  //       MaterialPageRoute(
+                  //         builder: (context) => const ThietLapUngDung(),
+                  //       ),
+                  //     );
+                  //   },
+                  // ),
+                  // const Divider(),
+                  // AppTextButtom(
+                  //   iconLeft: const Icon(Icons.timeline),
+                  //   iconRight: const Icon(Icons.arrow_forward_ios),
+                  //   labelTitle: 'Watch it later',
+                  //   onPressed: () {},
+                  // ),
+                  // const Divider(),
+                  // AppTextButtom(
+                  //   iconLeft: const Icon(Icons.widgets),
+                  //   iconRight: const Icon(Icons.arrow_forward_ios),
+                  //   labelTitle: 'Widgets',
+                  //   onPressed: () {},
+                  // ),
+                  // const Divider(),
+                  // const Row(
+                  //   children: [
+                  //     Padding(
+                  //       padding: EdgeInsets.only(left: 10),
+                  //       child: Text(
+                  //         'News by region',
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
+                  // const Divider(),
                   AppTextButtom(
                     iconLeft: const Icon(Icons.location_on),
                     iconRight: const Icon(Icons.arrow_forward_ios),
@@ -163,71 +163,71 @@ class CaiDat extends StatelessWidget {
                       );
                     },
                   ),
-                  const Divider(),
-                  const Row(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(left: 10),
-                        child: Text(
-                          'Categories',
-                          style: TextStyle(),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const Divider(),
-                  AppTextButtom(
-                    iconLeft: const Icon(Icons.fiber_new),
-                    iconRight: const Icon(Icons.arrow_forward_ios),
-                    labelTitle: 'Home',
-                    onPressed: () {},
-                  ),
-                  const Divider(),
-                  AppTextButtom(
-                    iconLeft: const Icon(Icons.fiber_new),
-                    iconRight: const Icon(Icons.arrow_forward_ios),
-                    labelTitle: 'Finance',
-                    onPressed: () {},
-                  ),
-                  const Divider(),
-                  AppTextButtom(
-                    iconLeft: const Icon(Icons.fiber_new),
-                    iconRight: const Icon(Icons.arrow_forward_ios),
-                    labelTitle: 'Business',
-                    onPressed: () {},
-                  ),
-                  const Divider(),
-                  AppTextButtom(
-                    iconLeft: const Icon(Icons.fiber_new),
-                    iconRight: const Icon(Icons.arrow_forward_ios),
-                    labelTitle: 'World',
-                    onPressed: () {},
-                  ),
-                  const Divider(),
-                  const Row(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(left: 10),
-                        child: Text('Follow'),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.facebook),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.tiktok),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.cast_for_education),
-                      ),
-                    ],
-                  ),
+                  // const Divider(),
+                  // const Row(
+                  //   children: [
+                  //     Padding(
+                  //       padding: EdgeInsets.only(left: 10),
+                  //       child: Text(
+                  //         'Categories',
+                  //         style: TextStyle(),
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
+                  // const Divider(),
+                  // AppTextButtom(
+                  //   iconLeft: const Icon(Icons.fiber_new),
+                  //   iconRight: const Icon(Icons.arrow_forward_ios),
+                  //   labelTitle: 'Home',
+                  //   onPressed: () {},
+                  // ),
+                  // const Divider(),
+                  // AppTextButtom(
+                  //   iconLeft: const Icon(Icons.fiber_new),
+                  //   iconRight: const Icon(Icons.arrow_forward_ios),
+                  //   labelTitle: 'Finance',
+                  //   onPressed: () {},
+                  // ),
+                  // const Divider(),
+                  // AppTextButtom(
+                  //   iconLeft: const Icon(Icons.fiber_new),
+                  //   iconRight: const Icon(Icons.arrow_forward_ios),
+                  //   labelTitle: 'Business',
+                  //   onPressed: () {},
+                  // ),
+                  // const Divider(),
+                  // AppTextButtom(
+                  //   iconLeft: const Icon(Icons.fiber_new),
+                  //   iconRight: const Icon(Icons.arrow_forward_ios),
+                  //   labelTitle: 'World',
+                  //   onPressed: () {},
+                  // ),
+                  // const Divider(),
+                  // const Row(
+                  //   children: [
+                  //     Padding(
+                  //       padding: EdgeInsets.only(left: 10),
+                  //       child: Text('Follow'),
+                  //     ),
+                  //   ],
+                  // ),
+                  // Row(
+                  //   children: [
+                  //     IconButton(
+                  //       onPressed: () {},
+                  //       icon: const Icon(Icons.facebook),
+                  //     ),
+                  //     IconButton(
+                  //       onPressed: () {},
+                  //       icon: const Icon(Icons.tiktok),
+                  //     ),
+                  //     IconButton(
+                  //       onPressed: () {},
+                  //       icon: const Icon(Icons.cast_for_education),
+                  //     ),
+                  //   ],
+                  // ),
                   Center(
                     child: TextButton(
                       onPressed: () {},

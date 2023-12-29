@@ -22,7 +22,6 @@ class _TaoTinBaiState extends State<TaoTinBai> {
   final TextEditingController? diaDiem = TextEditingController();
   final TextEditingController? noiDungChiTiet = TextEditingController();
   final TextEditingController? loaiTinBai = TextEditingController();
-  
 
   Timestamp timeTinBai = Timestamp.now();
 
@@ -54,18 +53,6 @@ class _TaoTinBaiState extends State<TaoTinBai> {
       await Permission.photos.request();
     }
   }
-
-  // Future<void> _pickVideo() async {
-  //   await checkAndRequestPermission();
-  //   final pickedFile =
-  //       await _imagePicker.pickVideo(source: ImageSource.gallery);
-
-  //   if (pickedFile != null) {
-  //     setState(() {
-  //       _videoFile = File(pickedFile.path);
-  //     });
-  //   }
-  // }
 
   Future<bool> _uploadFile(File? file) async {
     if (file == null) return true;
@@ -208,6 +195,7 @@ class _TaoTinBaiState extends State<TaoTinBai> {
                           'noiDungChiTiet': noiDungChiTiet?.text,
                           'imageUrls': imageUrls,
                           'timeTinBai': timeTinBai,
+                          'comments': [],
                         });
                         if (!mounted) return;
 

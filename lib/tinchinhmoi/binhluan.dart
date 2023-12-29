@@ -2,11 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class CommentScreen extends StatefulWidget {
-  const CommentScreen({
-    super.key,
-    required this.documentId,
-  });
-  final String documentId;
+  const CommentScreen({super.key});
+
   @override
   _CommentScreenState createState() => _CommentScreenState();
 }
@@ -14,11 +11,8 @@ class CommentScreen extends StatefulWidget {
 class _CommentScreenState extends State<CommentScreen> {
   final TextEditingController _commentController = TextEditingController();
 
-  final DocumentReference _commentsCollection = FirebaseFirestore.instance
-      .collection('bai_viet')
-      .doc(widget.documentId)
-      .collection('comments')
-      .doc();
+  final CollectionReference _commentsCollection =
+      FirebaseFirestore.instance.collection('bai_viet');
 
   @override
   Widget build(BuildContext context) {

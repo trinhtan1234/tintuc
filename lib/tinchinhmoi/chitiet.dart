@@ -8,20 +8,19 @@ import 'package:tintuc/tinchinhmoi/binhluan.dart';
 import 'package:tintuc/tinchinhmoi/tintuc.dart';
 
 class ChiTietBaiViet extends StatefulWidget {
-  const ChiTietBaiViet(
-      {super.key,
-      this.timeTinBai,
-      this.tieuDe,
-      this.loaiTinBai,
-      this.noiDungChiTiet,
-      this.firstImageUrl,
-      this.documentId});
+  const ChiTietBaiViet({
+    super.key,
+    this.timeTinBai,
+    this.tieuDe,
+    this.loaiTinBai,
+    this.noiDungChiTiet,
+    this.firstImageUrl,
+  });
   final String? tieuDe;
   final String? loaiTinBai;
   final Timestamp? timeTinBai;
   final String? noiDungChiTiet;
   final String? firstImageUrl;
-  late String? documentId;
 
   @override
   State<ChiTietBaiViet> createState() => _ChiTietBaiVietState();
@@ -32,8 +31,6 @@ class _ChiTietBaiVietState extends State<ChiTietBaiViet> {
   @override
   void initState() {
     super.initState();
-    documentId = widget.documentId ??
-        ''; // Initialize it in initState or wherever appropriate
   }
 
   @override
@@ -189,9 +186,7 @@ class _ChiTietBaiVietState extends State<ChiTietBaiViet> {
                               height: containerHeight <= 0.9 * screenHeight
                                   ? containerHeight
                                   : 0.9 * screenHeight,
-                              child: CommentScreen(
-                                documentId: documentId,
-                              ),
+                              child: const CommentScreen(),
                             );
                           });
                     },

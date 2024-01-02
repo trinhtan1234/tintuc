@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:tintuc/caidat/login/dangnhaptaikhoan.dart';
+import 'package:tintuc/screen_nav_bottom.dart';
 
 class ThongTinTaiKhoan extends StatefulWidget {
   const ThongTinTaiKhoan({super.key});
@@ -45,13 +46,13 @@ class _ThongTinTaiKhoanState extends State<ThongTinTaiKhoan> {
     super.initState();
   }
 
-  @override
-  void dispose() {
-    _nameController.dispose();
-    _emailController.dispose();
-    imageUrlsController.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   _nameController.dispose();
+  //   _emailController.dispose();
+  //   imageUrlsController.dispose();
+  //   super.dispose();
+  // }
 
   // Future<void> _capNhatThongTinTaiKhoan() async {
   //   if (_formKey.currentState!.validate()) {
@@ -242,6 +243,10 @@ class _ThongTinTaiKhoanState extends State<ThongTinTaiKhoan> {
           if (imageUrlsController != null) {
             await user.updatePhotoURL(imageUrlsController);
           }
+
+          // ignore: use_build_context_synchronously
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => const MenuKhungApp()));
           // ignore: use_build_context_synchronously
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(

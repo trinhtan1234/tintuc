@@ -44,14 +44,13 @@ class _TinTucState extends State<TinTuc> {
             itemCount: filteredDocs.length,
             itemBuilder: (BuildContext context, int index) {
               final document = filteredDocs[index];
-              final tieuDe = document['tieuDe'];
-              final diaDiem = document['diaDiem'];
-              final loaiTinBai = document['loaiTinBai'];
-              final noiDungChiTiet = document['noiDungChiTiet'];
+              final tieuDe = document['tieuDe'] ?? '';
+              final diaDiem = document['diaDiem'] ?? '';
+              final loaiTinBai = document['loaiTinBai'] ?? '';
+              final noiDungChiTiet = document['noiDungChiTiet'] ?? '';
               final timeTinBai = document['timeTinBai'];
 
-              final dynamic imageUrls = document['imageUrls'];
-
+              final dynamic imageUrls = document['imageUrls'] ?? '';
               final List<dynamic> imageUrlsList =
                   imageUrls is List ? imageUrls : [];
 

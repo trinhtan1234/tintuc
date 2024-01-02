@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tintuc/caidat/login/dangkytaikhoan.dart';
 import 'package:tintuc/screen_nav_bottom.dart';
 
@@ -43,6 +44,36 @@ class _ManHinhDangNhapState extends State<ManHinhDangNhap> {
   final TextEditingController _passwordController = TextEditingController();
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  Future<void> saveUserCredentials(String email, String password) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('email', email);
+    prefs.setString('password', password);
+  }
+
+  Future<bool> isUserLoggedIn() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.containsKey('email') && prefs.containsKey('password');
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    isUserLoggedIn().then((loggedIn) {
+      if (loggedIn) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const ManHinhDangNhap()),
+        );
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    // isUserLoggedIn();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -216,17 +247,22 @@ class _ManHinhDangNhapState extends State<ManHinhDangNhap> {
                           // print('Đăng nhập');
                           try {
                             final email = _userNameController.text;
-                            // ignore: unused_local_variable
-                            final userCredential =
-                                await _auth.signInWithEmailAndPassword(
-                                    email: email,
-                                    password: _passwordController.text);
+                            final password = _passwordController.text;
+
+                            await saveUserCredentials(email, password);
+
+                            await _auth.signInWithEmailAndPassword(
+                                email: email, password: password);
+
+                            // final userCredential =
+                            //     await _auth.signInWithEmailAndPassword(
+                            //         email: email, password: password);
                             // print(userCredential);
                             // ignore: use_build_context_synchronously
                             Navigator.of(context).push(
                               MaterialPageRoute<void>(
                                 builder: (BuildContext context) =>
-                                    const MenuKhungApp(),
+                                    const ManHinhDangNhap(),
                               ),
                             );
                             // ignore: unused_catch_clause

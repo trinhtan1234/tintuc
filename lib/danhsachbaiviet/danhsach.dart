@@ -65,9 +65,9 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
             itemBuilder: (BuildContext context, int index) {
               final document = snapshot.data!.docs[index];
               final tieuDe = document['tieuDe'];
-              final loaiTinBai = document['loaiTinBai'];
+              final loaiTinBai = document['loaiTinBai'] ?? '';
               final diaDiem = document['diaDiem'];
-              final noiDungChiTiet = document['noiDungChiTiet'];
+              final noiDungChiTiet = document['noiDungChiTiet'] ?? '';
               final timeTinBai = document['timeTinBai'];
               final dynamic imageUrls = document['imageUrls'];
               final imageUrl =

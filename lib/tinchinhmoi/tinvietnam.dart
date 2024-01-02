@@ -8,7 +8,8 @@ class VietNam extends StatefulWidget {
   const VietNam({super.key});
 
   @override
-  State<VietNam> createState() => _VietNamState();
+  // ignore: library_private_types_in_public_api
+  _VietNamState createState() => _VietNamState();
 }
 
 class _VietNamState extends State<VietNam> {
@@ -31,7 +32,6 @@ class _VietNamState extends State<VietNam> {
             );
           }
 
-          // Lọc ra các bài viết loại "Tin tức"
           final filteredDocs = snapshot.data!.docs
               .where((doc) => doc['loaiTinBai'] == "Việt Nam")
               .toList();
@@ -48,20 +48,20 @@ class _VietNamState extends State<VietNam> {
               final document = filteredDocs[index];
               final tieuDe = document['tieuDe'];
               final diaDiem = document['diaDiem'];
-              final loaiTinBai = document['loaiTinBai'];
+
+              // Handle the case when 'loaiTinBai' might not exist
+              final loaiTinBai = document['loaiTinBai'] ?? 'Unknown';
+
               final noiDungChiTiet = document['noiDungChiTiet'];
               final timeTinBai = document['timeTinBai'];
-
               final dynamic imageUrls = document['imageUrls'];
 
               final List<dynamic> imageUrlsList =
                   imageUrls is List ? imageUrls : [];
 
-              // Lấy URL ảnh đầu tiên
               final String firstImageUrl =
                   imageUrlsList.isNotEmpty ? imageUrlsList.first : '';
               const uniqueTag = '6';
-              // final uniqueTag = '${document.id}-$index';
 
               return GestureDetector(
                 onTap: () {
@@ -73,7 +73,7 @@ class _VietNamState extends State<VietNam> {
                         timeTinBai: document['timeTinBai'],
                         noiDungChiTiet: document['noiDungChiTiet'],
                         firstImageUrl: firstImageUrl,
-                      ), // Truyền tiêu đề
+                      ),
                     ),
                   );
                 },
@@ -102,9 +102,8 @@ class _VietNamState extends State<VietNam> {
                                   Flexible(
                                     child: Text(
                                       tieuDe,
-                                      overflow: TextOverflow
-                                          .clip, // Thay đổi từ ellipsis thành clip
-                                      maxLines: 1, // Thay đổi từ 2 thành 1
+                                      overflow: TextOverflow.clip,
+                                      maxLines: 1,
                                       style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 18,

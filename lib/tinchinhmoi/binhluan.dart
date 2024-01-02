@@ -2,8 +2,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class CommentScreen extends StatefulWidget {
-  const CommentScreen({super.key});
-
+  const CommentScreen({
+    super.key,
+    required this.tieuDe,
+    required this.documentId,
+  });
+  final String? tieuDe;
+  final String? documentId;
   @override
   // ignore: library_private_types_in_public_api
   _CommentScreenState createState() => _CommentScreenState();

@@ -186,7 +186,10 @@ class _ChiTietBaiVietState extends State<ChiTietBaiViet> {
                               height: containerHeight <= 0.9 * screenHeight
                                   ? containerHeight
                                   : 0.9 * screenHeight,
-                              child: const CommentScreen(),
+                              child: CommentScreen(
+                                tieuDe: widget.tieuDe ?? '',
+                                documentId: documentId,
+                              ),
                             );
                           });
                     },

@@ -49,11 +49,9 @@ class _TinTucState extends State<TinTuc> {
               final loaiTinBai = document['loaiTinBai'] ?? '';
               final noiDungChiTiet = document['noiDungChiTiet'] ?? '';
               final timeTinBai = document['timeTinBai'];
-
               final dynamic imageUrls = document['imageUrls'] ?? '';
               final List<dynamic> imageUrlsList =
                   imageUrls is List ? imageUrls : [];
-
               // Lấy URL ảnh đầu tiên
               final String firstImageUrl =
                   imageUrlsList.isNotEmpty ? imageUrlsList.first : '';
@@ -64,7 +62,6 @@ class _TinTucState extends State<TinTuc> {
               final String imageUrl = imageUrls is List
                   ? imageUrls.join(',')
                   : (imageUrls as String? ?? '');
-
               return GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(

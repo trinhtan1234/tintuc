@@ -33,7 +33,7 @@ class _KinhDoanhState extends State<KinhDoanh> {
 
           // Lọc ra các bài viết loại "Tin tức"
           final filteredDocs = snapshot.data!.docs
-              .where((doc) => doc['loaiTinBai'] == "Thế giới")
+              .where((doc) => doc['loaiTinBai'] == "Kinh doanh")
               .toList();
 
           if (filteredDocs.isEmpty) {

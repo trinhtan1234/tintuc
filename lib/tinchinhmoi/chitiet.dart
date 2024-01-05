@@ -4,7 +4,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:tintuc/tinchinhmoi/binhluan.dart';
 import 'package:tintuc/tinchinhmoi/tintuc.dart';
 
 class ChiTietBaiViet extends StatefulWidget {
@@ -15,12 +14,14 @@ class ChiTietBaiViet extends StatefulWidget {
     this.loaiTinBai,
     this.noiDungChiTiet,
     this.firstImageUrl,
+    this.comments,
   });
   final String? tieuDe;
   final String? loaiTinBai;
   final Timestamp? timeTinBai;
   final String? noiDungChiTiet;
   final String? firstImageUrl;
+  final List<String>? comments;
 
   @override
   State<ChiTietBaiViet> createState() => _ChiTietBaiVietState();
@@ -186,8 +187,23 @@ class _ChiTietBaiVietState extends State<ChiTietBaiViet> {
                               height: containerHeight <= 0.9 * screenHeight
                                   ? containerHeight
                                   : 0.9 * screenHeight,
-                              child: CommentScreen(
-                                tieuDe: widget.tieuDe ?? '',
+                              child: Scaffold(
+                                appBar: AppBar(
+                                  title: Text(widget.tieuDe ?? ''),
+                                ),
+                                body: ListView.builder(
+                                  itemCount: widget.comments?.length ?? 0,
+                                  itemBuilder:
+                                      (BuildContext context, int index) {
+                                    return Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Text(widget.comments?[index] ?? ''),
+                                      ],
+                                    );
+                                  },
+                                ),
                               ),
                             );
                           });

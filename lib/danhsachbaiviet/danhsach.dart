@@ -109,7 +109,7 @@ class _DanhSachBaiVietState extends State<DanhSachBaiViet> {
                       ),
                       // padding: const EdgeInsets.all(10),
                       height: 120,
-                      color: const Color.fromARGB(255, 197, 187, 187),
+                      color: Color.fromARGB(255, 247, 245, 245),
                       child: Row(
                         children: [
                           Expanded(

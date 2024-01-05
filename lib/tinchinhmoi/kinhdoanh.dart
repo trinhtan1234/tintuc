@@ -51,6 +51,7 @@ class _KinhDoanhState extends State<KinhDoanh> {
               final loaiTinBai = document['loaiTinBai'];
               final noiDungChiTiet = document['noiDungChiTiet'];
               final timeTinBai = document['timeTinBai'];
+              // final List<String> comments = ['comments'];
 
               final dynamic imageUrls = document['imageUrls'];
 
@@ -73,6 +74,7 @@ class _KinhDoanhState extends State<KinhDoanh> {
                         timeTinBai: document['timeTinBai'],
                         noiDungChiTiet: document['noiDungChiTiet'],
                         firstImageUrl: firstImageUrl,
+                        comments: document['comments'],
                       ), // Truyền tiêu đề
                     ),
                   );

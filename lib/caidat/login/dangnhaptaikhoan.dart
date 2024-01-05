@@ -56,23 +56,24 @@ class _ManHinhDangNhapState extends State<ManHinhDangNhap> {
     return prefs.containsKey('email') && prefs.containsKey('password');
   }
 
-  @override
-  void initState() {
-    super.initState();
-    isUserLoggedIn().then((loggedIn) {
-      if (loggedIn) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const ManHinhDangNhap()),
-        );
-      }
-    });
-  }
+//Lỗi nháy màn hình
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   isUserLoggedIn().then((loggedIn) {
+  //     if (loggedIn) {
+  //       Navigator.push(
+  //         context,
+  //         MaterialPageRoute(builder: (context) => const ManHinhDangNhap()),
+  //       );
+  //     }
+  //   });
+  // }
 
   @override
   void dispose() {
     super.dispose();
-    // isUserLoggedIn();
+    isUserLoggedIn();
   }
 
   @override

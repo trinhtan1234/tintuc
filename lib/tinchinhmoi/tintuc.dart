@@ -1,7 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:intl/intl.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:tintuc/tinchinhmoi/chitiet.dart';
 
 class TinTuc extends StatefulWidget {
@@ -31,7 +31,6 @@ class _TinTucState extends State<TinTuc> {
             );
           }
 
-          // Lọc ra các bài viết loại "Tin tức"
           final filteredDocs = snapshot.data!.docs.toList();
 
           if (filteredDocs.isEmpty) {
@@ -52,27 +51,26 @@ class _TinTucState extends State<TinTuc> {
               final dynamic imageUrls = document['imageUrls'] ?? '';
               final List<dynamic> imageUrlsList =
                   imageUrls is List ? imageUrls : [];
-              // Lấy URL ảnh đầu tiên
               final String firstImageUrl =
                   imageUrlsList.isNotEmpty ? imageUrlsList.first : '';
-              // const uniqueTag = '4';
               final uniqueTag = '${document.id}-$index';
 
-              // final dynamic imageUrls = document['imageUrls'];
               final String imageUrl = imageUrls is List
                   ? imageUrls.join(',')
                   : (imageUrls as String? ?? '');
+
               return GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => ChiTietBaiViet(
-                        tieuDe: document['tieuDe'],
-                        loaiTinBai: document['loaiTinBai'],
-                        timeTinBai: document['timeTinBai'],
-                        noiDungChiTiet: document['noiDungChiTiet'],
+                        tieuDe: tieuDe,
+                        loaiTinBai: loaiTinBai,
+                        timeTinBai: timeTinBai,
+                        noiDungChiTiet: noiDungChiTiet,
+                        // comments: document['comments'],
                         firstImageUrl: firstImageUrl,
-                      ), // Truyền tiêu đề
+                      ),
                     ),
                   );
                 },
@@ -80,7 +78,6 @@ class _TinTucState extends State<TinTuc> {
                   tag: uniqueTag,
                   child: Container(
                     margin: const EdgeInsets.only(left: 10, right: 10, top: 5),
-                    // height: 400,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -101,9 +98,8 @@ class _TinTucState extends State<TinTuc> {
                                   Flexible(
                                     child: Text(
                                       tieuDe,
-                                      overflow: TextOverflow
-                                          .clip, // Thay đổi từ ellipsis thành clip
-                                      maxLines: 1, // Thay đổi từ 2 thành 1
+                                      overflow: TextOverflow.clip,
+                                      maxLines: 1,
                                       style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 18,

@@ -3,8 +3,7 @@ import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:tintuc/firebase_options.dart';
-import 'package:tintuc/realfirebases.dart';
-// import 'package:tintuc/screen_nav_bottom.dart';
+import 'package:tintuc/screen_nav_bottom.dart';
 
 String kWebRecaptchaSiteKey = '';
 
@@ -36,7 +35,7 @@ class MyApp extends StatelessWidget {
       ),
       darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.system,
-      home: DuLieuThuc(),
+      home: const MenuKhungApp(),
     );
   }
 }

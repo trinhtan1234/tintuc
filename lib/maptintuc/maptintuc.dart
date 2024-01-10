@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:flutter_map_cancellable_tile_provider/flutter_map_cancellable_tile_provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -12,6 +14,8 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
+  late Position _currentPosition;
+  late String _currentAddress = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +23,8 @@ class _MapScreenState extends State<MapScreen> {
         children: [
           FlutterMap(
             options: MapOptions(
-              initialCenter: const LatLng(51.5, -0.09),
+              initialCenter:
+                  const LatLng(37.7749, -122.4194), // Updated initial position
               initialZoom: 5,
               cameraConstraint: CameraConstraint.contain(
                 bounds: LatLngBounds(
@@ -53,8 +58,45 @@ class _MapScreenState extends State<MapScreen> {
               ),
             ],
           ),
+          Text(_currentAddress),
+          FloatingActionButton(
+            onPressed: () {
+              _getCurrentLocation();
+            },
+            child: const Icon(Icons.add),
+          )
         ],
       ),
     );
+  }
+
+  _getCurrentLocation() {
+    Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.best,
+      forceAndroidLocationManager: true,
+    ).then((Position position) {
+      setState(() {
+        _currentPosition = position;
+        _getAddressFromLatLng();
+      });
+    }).catchError((e) {
+      print(e);
+    });
+  }
+
+  _getAddressFromLatLng() async {
+    try {
+      List<Placemark> placemarks = await placemarkFromCoordinates(
+          _currentPosition.latitude, _currentPosition.longitude);
+
+      Placemark place = placemarks[0];
+
+      setState(() {
+        _currentAddress =
+            "${place.locality}, ${place.postalCode}, ${place.country}";
+      });
+    } catch (e) {
+      print(e);
+    }
   }
 }

@@ -48,13 +48,15 @@ class _TinTucState extends State<TinTuc> {
               final loaiTinBai = document['loaiTinBai'] ?? '';
               final noiDungChiTiet = document['noiDungChiTiet'] ?? '';
               final timeTinBai = document['timeTinBai'];
+              final comments = (document['comments'] as List)
+                  .map((e) => e.toString())
+                  .toList();
               final dynamic imageUrls = document['imageUrls'] ?? '';
               final List<dynamic> imageUrlsList =
                   imageUrls is List ? imageUrls : [];
               final String firstImageUrl =
                   imageUrlsList.isNotEmpty ? imageUrlsList.first : '';
               final uniqueTag = '${document.id}-$index';
-
               final String imageUrl = imageUrls is List
                   ? imageUrls.join(',')
                   : (imageUrls as String? ?? '');
@@ -68,7 +70,7 @@ class _TinTucState extends State<TinTuc> {
                         loaiTinBai: loaiTinBai,
                         timeTinBai: timeTinBai,
                         noiDungChiTiet: noiDungChiTiet,
-                        // comments: document['comments'],
+                        comments: comments,
                         firstImageUrl: firstImageUrl,
                       ),
                     ),

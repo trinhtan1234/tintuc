@@ -132,18 +132,17 @@ class _ChiTietBaiVietState extends State<ChiTietBaiViet> {
                 ],
               ),
               const Padding(padding: EdgeInsets.only(bottom: 10)),
-              // Center(
-              //   child: TextField(
-              //     decoration: InputDecoration(
-              //       suffixIcon: IconButton(
-              //           onPressed: _submitComment,
-              //           icon: const Icon(Icons.send)),
-              //       hintText: 'Bình luận',
-              //       border: const OutlineInputBorder(
-              //           borderRadius: BorderRadius.all(Radius.circular(30))),
-              //     ),
-              //   ),
-              // ),
+              Center(
+                child: TextField(
+                  decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                        onPressed: () {}, icon: const Icon(Icons.send)),
+                    hintText: 'Bình luận',
+                    border: const OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

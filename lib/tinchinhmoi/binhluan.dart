@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 class CommentScreen extends StatefulWidget {
   const CommentScreen({
     super.key,
-    required this.tieuDe,
+    this.tieuDe,
     this.commnets,
   });
 
-  final String tieuDe;
+  final String? tieuDe;
   final List<String>? commnets;
 
   @override
@@ -18,12 +18,12 @@ class CommentScreen extends StatefulWidget {
 
 class _CommentScreenState extends State<CommentScreen> {
   final firestore = FirebaseFirestore.instance;
-
+  late String documentId;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.tieuDe),
+        title: Text(widget.tieuDe ?? ''),
       ),
       body: StreamBuilder(
         stream: firestore.collection('bai_viet').snapshots(),

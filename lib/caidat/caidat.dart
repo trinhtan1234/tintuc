@@ -2,9 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tintuc/caidat/login/dangnhaptaikhoan.dart';
 import 'package:tintuc/caidat/login/thongtintaikhoan.dart';
-// import 'package:tintuc/caidat/thietlapungdung.dart';
+
 import 'package:tintuc/components/textbuttom.dart';
-import 'package:tintuc/maptintuc/maptintuc.dart';
 
 class CaiDat extends StatelessWidget {
   const CaiDat({super.key});
@@ -154,14 +153,7 @@ class CaiDat extends StatelessWidget {
                     iconLeft: const Icon(Icons.location_on),
                     iconRight: const Icon(Icons.arrow_forward_ios),
                     labelTitle: 'Bản đồ địa điểm',
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const MapScreen(),
-                        ),
-                      );
-                    },
+                    onPressed: () {},
                   ),
                   // const Divider(),
                   // const Row(
